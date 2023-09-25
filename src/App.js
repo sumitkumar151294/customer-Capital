@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import GiftCard from './Component/GiftCard/GiftCard';
+import Header from './Component/Header/Header';
+import LetShop from './Component/LetShop/LetShop';
+import NewHeader from './Component/NewHeader/NewHeader';
+import SectionHero from './Component/SectionHero/SectionHero';
+import Shop from './Component/Shop/Shop';
+import Footer from './Component/Footer/Footer';
+import Productcard from './Component/Productcard/Productcard';
+import Cart from './Component/Cart/cart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header />
+    {/* <NewHeader />
+    <SectionHero />
+    <Shop />
+    <LetShop />
+    <GiftCard /> */}
+    <Productcard/>
+    {/* <Cart/> */}
+    {/* <Footer/> */}
+    </>
   );
 }
 
