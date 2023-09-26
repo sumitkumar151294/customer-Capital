@@ -4,16 +4,18 @@ import './App.css';
 import Home from './Container/Home';
 import ProductCard from './Container/ProductCard';
 import Offer from './Container/Offer';
+import HomeAdmin from './Admin/HomeAdmin/HomeAdmin';
 
 function App() {
   return (
-     <Router>
-     <Routes>
-     <Route path="/" element={<Home />} />
-     <Route path="/offers" element={<Offer />} />
-     <Route path="/productcart" element={<ProductCard />} />
-     </Routes>
-   </Router>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/offers" element={<Offer />} />
+        <Route path="/productcart" element={<ProductCard />} />
+      </Routes>
+    </Router>
+    // <HomeAdmin/>
   );
 }
 
