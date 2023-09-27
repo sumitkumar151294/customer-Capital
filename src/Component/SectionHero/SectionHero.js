@@ -17,12 +17,12 @@ const SectionHero = () => {
             >
               <h1 class="heading-primary">
                 Buy and Send
-                {/* <br> */}
+                <br/>
                 Gift Cards Instantly
               </h1>
               <p class="hero-description">
                 Buy premium gift cards.
-                {/* <br> */}
+                <br/>
                 Send by email, text, or hand deliver.
               </p>
               <Link to="/offers" class="vouch mt-2">Get Offers &nbsp;<i class="fa fa-arrow-right"></i></Link>

@@ -18019,7 +18019,7 @@ font-size:15px!important;
 .note-pts{
 font-size: 9px;
 margin-bottom: 10px;
-text-align: ;
+/* text-align: ; */
 }
 
 .sixthing{
@@ -21801,7 +21801,3 @@ border: 1px dashed #d61448;
 .order-tracking:first-child:before{display: none;}
 .order-tracking.completed:before{background-color: #0072fd;}
 
-
-.mobile-hide{
-  display: flex;
-}
