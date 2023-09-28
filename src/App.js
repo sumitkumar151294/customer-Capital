@@ -6,6 +6,10 @@ import ProductCard from './Container/ProductCard';
 import Offer from './Container/Offer';
 import OrderPlaced from './Component/OrderPlaced/OrderPlaced';
 import CartInfo from './Container/CartInfo';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6b781cd241ace3a5b03d173cd2d6149ede83640a
 
 function App() {
   return (
@@ -16,7 +20,10 @@ function App() {
      <Route path="/productcart" element={<ProductCard />} />
      <Route path="/orderconfirm" element={<OrderPlaced />} />
      <Route path="/cartInfo" element={<CartInfo />} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b781cd241ace3a5b03d173cd2d6149ede83640a
      </Routes>
    </Router>
   );

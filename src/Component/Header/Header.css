@@ -16849,6 +16849,7 @@ button.close.modalclosebtn {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .offer-bg-1{
 
 background: #0764a8;
@@ -19404,6 +19405,9 @@ font-weight: 700;
 =======
 .offer-bg-1 {
 >>>>>>> 4c238a05282977d7217eedbc51e3b41569dd302a
+=======
+.offer-bg-1 {
+>>>>>>> 6b781cd241ace3a5b03d173cd2d6149ede83640a
 
   background: #0764a8;
   padding: 19px !important;
@@ -20719,6 +20723,10 @@ input::-webkit-inner-spin-button {
 }
 .ml-28{
   margin-left: 28px !important;
+.note-pts{
+font-size: 9px;
+margin-bottom: 10px;
+/* text-align: ; */
 
 }
 
@@ -22001,7 +22009,10 @@ textarea {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6b781cd241ace3a5b03d173cd2d6149ede83640a
 
 
 .price-rmn5 {
@@ -24639,4 +24650,8 @@ textarea {
 .mobile-hide {
   display: flex;
 }
+<<<<<<< HEAD
 >>>>>>> 4c238a05282977d7217eedbc51e3b41569dd302a
+=======
+
+>>>>>>> 6b781cd241ace3a5b03d173cd2d6149ede83640a

@@ -43,8 +43,14 @@ const Home = () => {
             {/* <Blog /> */}
             <MyProfile />
 
+<<<<<<< HEAD
             
 </>
+=======
+
+
+        </>
+>>>>>>> 6b781cd241ace3a5b03d173cd2d6149ede83640a
     )
 }
 
