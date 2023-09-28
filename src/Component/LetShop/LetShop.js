@@ -109,7 +109,7 @@ const LetShop = () => {
 
                     </div>
 
-                    <div className="row mt-2 mobile-hide ">
+                    <div className="row mt-2 mobile-hide " style={{display:'flex'}} >
                         <div className="col-lg-2 col-6 mb-3">
                             <div className="box-coupen3">
                                 <div className="img-sec">

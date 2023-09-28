@@ -18164,6 +18164,10 @@ input::-webkit-inner-spin-button {
 }
 .ml-28{
   margin-left: 28px !important;
+.note-pts{
+font-size: 9px;
+margin-bottom: 10px;
+/* text-align: ; */
 
 }
 
@@ -22082,3 +22086,4 @@ textarea {
 .mobile-hide {
   display: flex;
 }
+
