@@ -22087,6 +22087,7 @@ textarea {
 
 
 .mobile-hide {
-  display: flex;
+  /* display: flex; */
+display: block;
 }
 
