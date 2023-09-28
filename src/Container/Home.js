@@ -7,11 +7,11 @@ import React from 'react'
 // import Footer from '../Component/Footer/Footer'
 // import NewHeader from '../Component/NewHeader/NewHeader'
 
-import AboutUs from '../Component/AboutUs/AboutUs'
-import Blog from '../Component/Blog/Blog'
-import ContactUs from '../Component/ContactUs/ContactUs'
-import FAQs from '../Component/FAQs/FAQs'
-import MyProfile from '../Component/MyProfile/MyProfile'
+// import AboutUs from '../Component/AboutUs/AboutUs'
+// import Blog from '../Component/Blog/Blog'
+// import ContactUs from '../Component/ContactUs/ContactUs'
+// import FAQs from '../Component/FAQs/FAQs'
+// import MyProfile from '../Component/MyProfile/MyProfile'
 // import FAQs from '../Component/FAQs/FAQs'
 // import Blog from '../Component/Blog/Blog'
 // import MyProfile from '../Component/MyProfile/MyProfile'
@@ -44,7 +44,7 @@ const Home = () => {
             <MyProfile />
 
             
-        </>
+</>
     )
 }
 
