@@ -18162,11 +18162,14 @@ input::-webkit-inner-spin-button {
 .mt-37px {
   margin-top: 37px !important;
 }
+.ml-28{
+  margin-left: 28px !important;
+
+}
 
 .note-pts {
   font-size: 9px;
   margin-bottom: 10px;
-  text-align: ;
 }
 
 .sixthing {
@@ -18719,7 +18722,7 @@ input::-webkit-inner-spin-button {
 }
 
 .rs-label::after {
-  content: "â‚¹";
+  /* content: ""; */
   display: block;
   font-size: 14px;
   letter-spacing: 0.07em;
@@ -21350,7 +21353,7 @@ input::-webkit-inner-spin-button {
 }
 
 .rs-label::after {
-  content: "â‚¹";
+  content: "₹";
   display: block;
   font-size: 14px;
   letter-spacing: 0.07em;
