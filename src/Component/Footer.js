@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import image from '.././src/Assets/whatsapp.png';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -35,7 +35,7 @@ function Footer() {
         <div class="row gx-0">
             <div class="col-12 col-md-8 pb-3 mb-3 border-bottom">
                 <ul class="list-inline m-0 text-center text-md-start">
-                    <li class="list-inline-item"><a href="contact.html" class="clr-white">Contact us</a></li>
+                <li class="list-inline-item"><Link to="/contactus" class="vouch mt-2">Contact Us</Link></li>
                     <li class="list-inline-item" ><a href="about.html" class="clr-white">About us</a></li>
                     <li class="list-inline-item"><a href="faq.html" class="clr-white">FAQs</a></li>
                     <li class="list-inline-item"><a href="blog.html" class="clr-white">Blog</a></li>

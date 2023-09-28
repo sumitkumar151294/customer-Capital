@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 function Footer() {
   return (
     <footer class="footer">
@@ -32,12 +33,18 @@ function Footer() {
         <div class="row gx-0">
             <div class="col-12 col-md-8 pb-3 mb-3 border-bottom">
                 <ul class="list-inline m-0 text-center text-md-start">
-                    <li class="list-inline-item"><a href="contact.html" class="clr-white">Contact us</a></li>
-                    <li class="list-inline-item" ><a href="about.html" class="clr-white">About us</a></li>
+                    <li class="list-inline-item"><Link to="/contactus" class="clr-white" >Contact Us</Link></li>
+                    <li class="list-inline-item"><Link to="/aboutus" class="clr-white" >About us</Link></li>
+                    <li class="list-inline-item"><Link to="/faqs" class="clr-white" >FAQs</Link></li>
+                    <li class="list-inline-item"><Link to="/blog" class="clr-white" >Blog</Link></li>
+                    <li class="list-inline-item"><Link to="/myprofile" class="clr-white" >My Profile</Link></li>
+                    <li class="list-inline-item"><Link to="/myorder" class="clr-white" >My Orders</Link></li>
+                    
+                    {/* <li class="list-inline-item" ><a href="about.html" class="clr-white">About us</a></li>
                     <li class="list-inline-item"><a href="faq.html" class="clr-white">FAQs</a></li>
                     <li class="list-inline-item"><a href="blog.html" class="clr-white">Blog</a></li>
                     <li class="list-inline-item"><a href="dashboard.html" class="clr-white">My Profile</a></li>
-                    <li class="list-inline-item"><a href="dashboard.html#v-pills-profile" class="clr-white">My Orders</a></li>
+                    <li class="list-inline-item"><a href="dashboard.html#v-pills-profile" class="clr-white">My Orders</a></li> */}
                 </ul>
             </div>
             <div class="col-5 col-md-4 pb-3 mb-3 border-bottom">
