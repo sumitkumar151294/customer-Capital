@@ -5,17 +5,18 @@ import SectionHero from '../Component/SectionHero/SectionHero'
 import Shop from '../Component/Shop/Shop'
 import LetShop from '../Component/LetShop/LetShop'
 import GiftCard from '../Component/GiftCard/GiftCard'
-import Footer from '../Component/Footer/Footer'
-
+import Footer from '../Component/Footer/Footer';
+import Finalcart from '../Component/Finalcart/Finalcart'
 const Home = () => {
     return (
         <>
             <Header />
-            <NewHeader />
+            <Finalcart/>
+            {/* <NewHeader />
             <SectionHero />
             <Shop />
             <LetShop />
-            <GiftCard />
+            <GiftCard /> */}
             <Footer />
         </>
     )
