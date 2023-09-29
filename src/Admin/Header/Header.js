@@ -1,5 +1,6 @@
 import React from 'react'
 import '../HomeAdmin/Admin.css';
+import user from '../../assets/img/user-profile.png'
 
 const Header = () => {
     return (
@@ -7,8 +8,6 @@ const Header = () => {
             <div className="nav-header">
                 <a href="#" className="brand-logo">
                     <img className="w-100" src="https://beta.shop-loyalty.com/images/logo.png" />
-
-
                 </a>
                 <div className="nav-control">
                     <div className="hamburger">
@@ -35,7 +34,7 @@ const Header = () => {
 
                                 <li className="nav-item dropdown  header-profile">
                                     <a className="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                            <img src="img/user-profile.png" width="56" alt="" />
+                                            <img src={user} width="56" alt="" />
                                         </a>
 
                                 </li>
