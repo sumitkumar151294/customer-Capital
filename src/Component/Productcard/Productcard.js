@@ -6,6 +6,7 @@ import dominos from '../../Images/dominoz.png';
 import bata from '../../Images/bata.png';
 import coffeeday from '../../Images/cafecoffee.png';
 import amazon from '../../Images/amazon.png'
+import { Link } from "react-router-dom";
 
 
 
@@ -107,7 +108,7 @@ const Productcard=()=>{
                                 <div class="thebtncart text-center">
                                     <a href="#">
 
-                                        <a class="avail2 " href="cart.html">Add &nbsp;<i class="fa fa-arrow-right"></i></a>
+                                        <Link to="/cartInfo" class="avail2 " href="cart.html">Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
 
 
                                     </a>
@@ -159,7 +160,7 @@ const Productcard=()=>{
                                 <div class="thebtncart text-center">
                                     <a href="#">
 
-                                        <a class="avail2 " href="#">Add &nbsp;<i class="fa fa-arrow-right"></i></a>
+                                         <Link to="/cartInfo" class="avail2 " href="#">Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
 
 
                                     </a>
@@ -209,7 +210,7 @@ const Productcard=()=>{
                                 <div class="thebtncart text-center">
                                     <a href="#">
 
-                                        <a class="avail2 " href="#">Add &nbsp;<i class="fa fa-arrow-right"></i></a>
+                                    <Link to="/cartInfo" class="avail2 " href="#">Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
 
 
                                     </a>
@@ -261,7 +262,8 @@ const Productcard=()=>{
                                 <div class="thebtncart text-center">
                                     <a href="#">
 
-                                        <a class="avail2 " href="#">Add &nbsp;<i class="fa fa-arrow-right"></i></a>
+                                        
+                                         <Link to="/cartInfo" class="avail2 " href="#">Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
 
 
                                     </a>

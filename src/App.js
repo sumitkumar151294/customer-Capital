@@ -13,9 +13,11 @@ function App() {
     //     <Route path="/" element={<Home />} />
     //     <Route path="/offers" element={<Offer />} />
     //     <Route path="/productcart" element={<ProductCard />} />
+    //     <Route path="/orderconfirm" element={<OrderPlaced />} />
+    //     <Route path="/cartInfo" element={<CartInfo />} />
     //   </Routes>
     // </Router>
-    <HomeAdmin/>
+    <HomeAdmin />
   );
 }
 
