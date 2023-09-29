@@ -11,6 +11,8 @@ import AboutUs from './Component/AboutUs/AboutUs'
 import FAQs from './Component/FAQs/FAQs'
 import Blog from './Component/Blog/Blog'
 import MyProfile from './Component/MyProfile/MyProfile'
+import Finalcart from './Component/Finalcart/Finalcart';
+import FinalcartInfo from './Container/FinalcartInfo';
 
 
 
@@ -25,6 +27,8 @@ function App() {
      <Route path="/productcart" element={<ProductCard />} />
      <Route path="/orderconfirm" element={<OrderPlaced />} />
      <Route path="/cartInfo" element={<CartInfo />} />
+     <Route path="/finalcart" element={<FinalcartInfo />} />
+
      <Route path="/contactus" element={<ContactUs />} />
      <Route path="/aboutus" element={<AboutUs />} />
      <Route path="/faqs" element={<FAQs />} />
