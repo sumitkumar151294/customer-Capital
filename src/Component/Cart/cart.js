@@ -3,6 +3,7 @@ import tanisq from '../../Images/tanishq.png'
 import bata from '../../Images/bata.png'
 import bigBasket from '../../Images/bigbasket.png'
 import coin from '../../Images/coin.png'
+import { Link } from "react-router-dom";
 
 
 
@@ -334,7 +335,7 @@ const Cart = () => {
 
                   <div className="p-md-2 d-grid ">
                     <a href="finalcart.html" className="cnt-shop-blue">
-                      <button className=
+                      <Link to="/finalcart"  className=
                         "btn py-md-2 btss2"
                         style={{
                           backgroundColor
@@ -342,7 +343,7 @@ const Cart = () => {
                             '#0072fd'
                         }}>            Proceed to Checkout &nbsp;
                         <i className="fa fa-arrow-right "></i>
-                      </button>
+                      </Link>
                     </a>
                   </div>
 
