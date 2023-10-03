@@ -25,7 +25,7 @@ export const authenticationSlice = createSlice({
         status_code
       };
     },
-    onLoginSubmitError: (state, { payload }) => {debugger;
+    onLoginSubmitError: (state, { payload }) => {
       const { data = {}, message = '', status_code = 200 } = payload;
       return {
         ...state,
