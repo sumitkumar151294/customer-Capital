@@ -349,7 +349,8 @@ const Cart = () => {
 
                   <div className="p-md-2 d-grid ">
                     <a href="productcart.html" className="cnt-shop">
-                      <button className="btn py-3 py-md-2 btss "
+
+                      <Link to="/productcart"  className="btn py-3 py-md-2 btss "
                         style={{
                           backgroundColor
                             :
@@ -357,7 +358,7 @@ const Cart = () => {
                         }}>
                         Continue Shopping &nbsp;
                         <i className="fa fa-arrow-right"></i>
-                      </button>
+                      </Link>
                     </a>
                   </div>
                 </div>
