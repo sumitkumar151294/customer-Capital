@@ -3028,8 +3028,8 @@
   
   .input-group:not(.has-validation)> :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),
   .input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n + 3) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
   }
   
   .input-group.has-validation> :nth-last-child(n + 3):not(.dropdown-toggle):not(.dropdown-menu),
@@ -13544,13 +13544,13 @@
   }
   
   .header-left .search-area .form-control {
-    border: 0.0625rem solid #EEEEEE;
-    border-top-left-radius: 2.625rem;
-    border-bottom-left-radius: 2.625rem;
-    height: 3.5rem;
-    padding: 0.3125rem 1.875rem;
-    font-size: 1rem;
-    border-right: 0;
+    border: 0.0625rem solid #EEEEEE !important;
+    border-top-left-radius: 2.625rem !important;
+    border-bottom-left-radius: 2.625rem !important;
+    height: 3.5rem !important;
+    padding: 0.3125rem 1.875rem !important;
+    font-size: 1rem !important;
+    border-right: 0 !important;
   }
   
   @media only screen and (max-width: 1400px) {
@@ -30454,12 +30454,12 @@
   }
   
   .form-control {
-    background: #fff;
-    border: 3px solid #616161;
-    padding: 0.3125rem 1.25rem;
-    color: #6e6e6e;
-    height: 2.5rem;
-    border-radius: 1rem;
+    background: #fff !important;
+    border: 3px solid #616161 !important;
+    padding: 0.3125rem 1.25rem !important;
+    color: #6e6e6e !important;
+    height: 2.5rem !important;
+    border-radius: 1rem !important;
   }
   
   @media only screen and (max-width: 1400px) {
@@ -30697,9 +30697,9 @@
   
   .form-file .form-control {
     margin: 0;
-    border-radius: 0;
-    border: 0;
-    height: auto;
+    border-radius: 0 !important;
+    border: 0 !important;
+    height: auto !important;
   }
   
   :root {
@@ -33913,7 +33913,7 @@
   
   .btn-primary {
     border-color: var(--primary);
-    background-color: var(--primary);
+    background-color: var(--primary) !important;
   }
   
   .btn-primary:active,

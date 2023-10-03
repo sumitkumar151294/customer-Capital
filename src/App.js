@@ -12,6 +12,11 @@ import HomeAdmin from './Admin/HomeAdmin/HomeAdmin';
 import VendorMaster from './Admin/VendorMaster/VendorMaster';
 import RoleMaster from './Admin/RoleMaster/RoleMaster';
 import CMS from './Admin/CMS/CMS';
+import ClientMaster from './Admin/ClientMaster/ClientMaster';
+import ProductCategory from './Admin/ProductCategory/ProductCategory';
+import ProductCatalouge from './Admin/ProductCatalouge/ProductCatalouge';
+import Orders from './Admin/Orders/Orders';
+import Faqs from './Admin/Faqs/Faqs';
 
 function App() {
   return (
@@ -27,7 +32,11 @@ function App() {
         <Route path="/LC-admin/allocationmaster" element={<HomeAdmin Component={AllocationMaster}/>} />
         <Route path="/LC-admin/rolemaster" element={<HomeAdmin Component={RoleMaster}/>} />
         <Route path="/LC-admin/cms" element={<HomeAdmin Component={CMS}/>} />
-        
+        <Route path="/LC-admin/clientmaster" element={<HomeAdmin Component={ClientMaster}/>} />
+        <Route path="/LC-admin/productcata" element={<HomeAdmin Component={ProductCategory}/>} />
+        <Route path="/LC-admin/productcatalouge" element={<HomeAdmin Component={ProductCatalouge}/>} />
+        <Route path="/LC-admin/orders" element={<HomeAdmin Component={Orders}/>} />
+        <Route path="/LC-admin/faqs" element={<HomeAdmin Component={Faqs}/>} />
       </Routes>
     </Router>
   );

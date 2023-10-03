@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="header">
+            <header className="header1">
                 <div className="fixheader">
                     <div className="botheader top-hh mobile-hide">  <div className="top-menu"><p className="promo">Get upto 10X Rewards on Gift Cards</p></div></div>
 

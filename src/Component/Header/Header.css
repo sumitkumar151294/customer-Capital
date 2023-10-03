@@ -10058,10 +10058,6 @@ a:hover {
   overflow-y: auto !important
 }
 
-.orderheader .headertopoffer {
-  background: #fff
-}
-
 .footicondiv {
   border-bottom: 1px solid #757575;
   border-bottom: 1px solid #757575;
@@ -11354,7 +11350,7 @@ strong {
   font-weight: 600
 }
 
-.header {
+.header1 {
   z-index: 40;
   width: 100%;
   transition: all .3s;
