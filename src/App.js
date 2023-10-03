@@ -4,9 +4,11 @@ import './App.css';
 import Home from './Container/Home';
 import ProductCard from './Container/ProductCard';
 import Offer from './Container/Offer';
-import HomeAdmin from './Admin/HomeAdmin/HomeAdmin';
+import AllocationMaster from './Admin/AllocationMaster/AllocationMaster';
 import OrderPlaced from '../src/Component/OrderPlaced/OrderPlaced'
 import CartInfo from '../src/Container/CartInfo'
+import Dashboard from './Admin/Dashboard/Dashboard';
+import HomeAdmin from './Admin/HomeAdmin/HomeAdmin';
 
 function App() {
   return (
@@ -17,10 +19,10 @@ function App() {
         <Route path="/productcart" element={<ProductCard />} />
         <Route path="/orderconfirm" element={<OrderPlaced />} />
         <Route path="/cartInfo" element={<CartInfo />} />
-        <Route path="/LC-admin" element={<HomeAdmin />} />
+        <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard}/>} />
+        <Route path="/LC-admin/allocationmaster" element={<HomeAdmin Component={AllocationMaster}/>} />
       </Routes>
     </Router>
-    // <HomeAdmin />
   );
 }
 

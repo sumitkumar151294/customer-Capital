@@ -6,6 +6,7 @@ import clists from '../../assets/img/clists.png'
 import blog from '../../assets/img/blog.png'
 import faq from '../../assets/img/faq.png'
 import cnlists from '../../assets/img/cnlist.png'
+import { Link } from 'react-router-dom'
 
 
 const Sidebar = () => {
@@ -27,10 +28,10 @@ const Sidebar = () => {
 
             </li>
 
-            <li><a className="ai-icon" href="allocationmaster.html" aria-expanded="false">
+            <li><Link to="/LC-admin/allocationmaster" className="ai-icon" aria-expanded="false">
                 <img className="w-20px" src={allocation}/>
                     <span className="nav-text">Allocated Master</span>
-            </a>
+            </Link>
 
             </li>
 
