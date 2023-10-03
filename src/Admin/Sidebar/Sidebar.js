@@ -74,10 +74,10 @@ const Sidebar = () => {
                     </Link>
                     </li>
 
-                    <li><a href="blog.html" className="ai-icon" aria-expanded="false">
+                    <li><Link to='/LC-admin/blog' className="ai-icon" aria-expanded="false">
                         <img className="w-20px" src={blog} />
                         <span className="nav-text">Blog Master</span>
-                    </a>
+                    </Link>
                     </li>
 
 
@@ -88,22 +88,22 @@ const Sidebar = () => {
                     </li>
 
 
-                    <li><a href="contactlist.html" className="ai-icon" aria-expanded="false">
+                    <li><Link to="/LC-admin/contactlist" className="ai-icon" aria-expanded="false">
                         <img className="w-20px" src={cnlists} />
                         <span className="nav-text">Contacted List Master</span>
-                    </a>
+                    </Link>
                     </li>
 
-                    <li><a href="customerlist.html" className="ai-icon" aria-expanded="false">
+                    <li><Link to="/LC-admin/customerlist" className="ai-icon" aria-expanded="false">
                         <img className="w-20px" src={cnlists} />
                         <span className="nav-text">Customer List</span>
-                    </a>
+                    </Link>
                     </li>
 
-                    <li><a href="emailtemplates.html" className="ai-icon" aria-expanded="false">
+                    <li><Link to="/LC-admin/emailtemplate" className="ai-icon" aria-expanded="false">
                         <img className="w-20px" src={cnlists} />
                         <span className="nav-text">Email Templates</span>
-                    </a>
+                    </Link>
                     </li>
                 </ul>
             </div>

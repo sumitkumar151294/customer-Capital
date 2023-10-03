@@ -17,6 +17,10 @@ import ProductCategory from './Admin/ProductCategory/ProductCategory';
 import ProductCatalouge from './Admin/ProductCatalouge/ProductCatalouge';
 import Orders from './Admin/Orders/Orders';
 import Faqs from './Admin/Faqs/Faqs';
+import Blog from './Admin/Blog/Blog';
+import ContactListMaster from './Admin/ContactList/ContactListMaster';
+import CustomerList from './Admin/CustomerList/CustomerList';
+import Email from './Admin/Email/Email';
 
 function App() {
   return (
@@ -37,6 +41,10 @@ function App() {
         <Route path="/LC-admin/productcatalouge" element={<HomeAdmin Component={ProductCatalouge}/>} />
         <Route path="/LC-admin/orders" element={<HomeAdmin Component={Orders}/>} />
         <Route path="/LC-admin/faqs" element={<HomeAdmin Component={Faqs}/>} />
+        <Route path="/LC-admin/blog" element={<HomeAdmin Component={Blog}/>} />
+        <Route path="/LC-admin/contactlist" element={<HomeAdmin Component={ContactListMaster}/>} />
+        <Route path="/LC-admin/customerlist" element={<HomeAdmin Component={CustomerList}/>} />
+        <Route path="/LC-admin/emailtemplate" element={<HomeAdmin Component={Email}/>} />
       </Routes>
     </Router>
   );
