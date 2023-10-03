@@ -2,6 +2,7 @@ import React from 'react'
 import vendor from '../../assets/img/vendor.png'
 import allocation from '../../assets/img/allocation.png'
 import clientmaster from '../../assets/img/clientmaster.png'
+import rolemaster from '../../assets/img/clientmaster.png'
 import clists from '../../assets/img/clists.png'
 import blog from '../../assets/img/blog.png'
 import faq from '../../assets/img/faq.png'
@@ -14,17 +15,17 @@ const Sidebar = () => {
     <div className="deznav">
     <div className="deznav-scroll">
         <ul className="metismenu" id="menu">
-            <li><a className="ai-icon" href="index.html" aria-expanded="false">
+            <li><Link to="/LC-admin" className="ai-icon" aria-expanded="false">
                 <img className="w-20px" src={vendor}/>
                     <span className="nav-text">Dashbaord</span>
-            </a>
+            </Link>
 
             </li>
 
-            <li><a className="ai-icon" href="vendormaster.html" aria-expanded="false">
+            <li><Link to="/LC-admin/vendornmaster" className="ai-icon" href="vendormaster.html" aria-expanded="false">
                 <img className="w-20px" src={vendor}/>
                     <span className="nav-text">Vendor Master</span>
-            </a>
+            </Link>
 
             </li>
 
@@ -41,6 +42,13 @@ const Sidebar = () => {
             </a>
 
             </li>
+
+            <li><Link to='/LC-admin/rolemaster'  className="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src={rolemaster} />
+                            <span class="nav-text">Role Master</span>
+                        </Link>
+                       
+                    </li>
 
             <li><a href="productcata.html" className="ai-icon" aria-expanded="false">
                 <img className="w-20px" src={clists}/>
@@ -60,10 +68,10 @@ const Sidebar = () => {
             </a>
             </li>
 
-            <li><a href="CMS.html" className="ai-icon" aria-expanded="false">
+            <li><Link to='/LC-admin/cms'  className="ai-icon" aria-expanded="false">
                 <img className="w-20px" src={clists}/>
                     <span className="nav-text">CMS</span>
-            </a>
+            </Link>
             </li>
 
             <li><a href="blog.html" className="ai-icon" aria-expanded="false">

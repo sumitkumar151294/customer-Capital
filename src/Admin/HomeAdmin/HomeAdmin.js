@@ -2,7 +2,7 @@ import React from 'react'
 import './Admin.css';
 import Header from '../Header/Header';
 import Sidebar from '../Sidebar/Sidebar';
-import Dashboard from '../Dashboard/Dashboard';
+// import Dashboard from '../Dashboard/Dashboard';
 import Footer from '../Footer/Footer';
 const HomeAdmin = (props) => {
     const { Component } = props;
