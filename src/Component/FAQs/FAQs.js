@@ -12,10 +12,6 @@ const FAQs = () => {
     <NewHeader /> 
     <FAQsContent />
     <Footer />
-
-
-
-
     </>
   )
 }

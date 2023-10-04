@@ -3,7 +3,7 @@ import React from 'react'
 const NewHeader = () => {
   return (
     <>
-    <header class="newheader">
+    <header class="newheader user">
       <div class="container">
         <div class="row v-center kjk ">
           
