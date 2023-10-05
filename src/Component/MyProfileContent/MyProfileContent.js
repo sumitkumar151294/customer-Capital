@@ -1,6 +1,7 @@
 import React from 'react'
 import img1 from '../../Images/amazon.png'
 import img2 from '../../Images/amazon.com.png'
+import { Link } from 'react-router-dom'
 const MyProfileContent = () => {
   return (
     <>
@@ -12,9 +13,9 @@ const MyProfileContent = () => {
             <div class="col-md-3">
                 
                 <div class="nav  nav-pills nav-pills-custom flex-dir" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link mb-3 p-3 shadow active mr-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <Link class="nav-link mb-3 p-3 shadow active mr-2" id="v-pills-home-tab" data-toggle="pill"  role="tab" aria-controls="v-pills-home" aria-selected="true">
                         <i class="fa fa-user "></i>
-                        <span class="font-weight-bold small text-uppercase">Dashboard</span></a>
+                        <span class="font-weight-bold small text-uppercase">Dashboard</span></Link>
 
                     <a class="nav-link mb-3 p-3 shadow mr-2" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                         <i class="fa-solid fa-cart-shopping"></i>
