@@ -24,7 +24,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className={location.pathname === '/LC-admin/vendornmaster' ? 'mm-active' : ''}>
-                        <Link to="/LC-admin/vendornmaster" className="ai-icon" href="vendormaster.html" aria-expanded="false">
+                        <Link to="/LC-admin/vendornmaster" className="ai-icon" aria-expanded="false">
                         <img className="w-20px" src={vendor} />
                         <span className="nav-text">Vendor Master</span>
                     </Link>
@@ -40,7 +40,7 @@ const Sidebar = () => {
                     </li>
 
                     <li className={location.pathname === '/LC-admin/clientmaster' ? 'mm-active' : ''}>
-                        <Link to='/LC-admin/clientmaster' className="ai-icon" href="clientmaster.html" aria-expanded="false">
+                        <Link to='/LC-admin/clientmaster' className="ai-icon" aria-expanded="false">
                         <img className="w-20px" src={clientmaster} />
                         <span className="nav-text">Client Master</span>
                     </Link>

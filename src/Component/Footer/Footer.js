@@ -1,7 +1,7 @@
 import React from "react";
 function Footer() {
   return (
-    <footer class="footer">
+    <footer class="footer1">
     <section class="contact-area pb-3" id="contact">
         <div class="container">
             <div class="row">
