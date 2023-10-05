@@ -2,6 +2,53 @@ import React from 'react'
 import pizz1 from '../../assets/img/pizz1.jpg'
 
 const Orders = () => {
+    const productList = [
+        {
+            imgSrc: pizz1,
+            description: 'Amazon Voucher',
+            originalPrice: '₹ 2000',
+            discountedPrice: '₹ 200',
+            discountPercentage: '5%',
+            points: 'Pts - 559',
+            date: '09-13-2023',
+        },
+        {
+            imgSrc: pizz1,
+            description: 'Amazon Voucher',
+            originalPrice: '₹ 2000',
+            discountedPrice: '₹ 200',
+            discountPercentage: '5%',
+            points: 'Pts - 559',
+            date: '09-13-2023',
+        },
+        {
+            imgSrc: pizz1,
+            description: 'Amazon Voucher',
+            originalPrice: '₹ 2000',
+            discountedPrice: '₹ 200',
+            discountPercentage: '5%',
+            points: 'Pts - 559',
+            date: '09-13-2023',
+        },
+        {
+            imgSrc: pizz1,
+            description: 'Amazon Voucher',
+            originalPrice: '₹ 2000',
+            discountedPrice: '₹ 200',
+            discountPercentage: '5%',
+            points: 'Pts - 559',
+            date: '09-13-2023',
+        },
+        {
+            imgSrc: pizz1,
+            description: 'Amazon Voucher',
+            originalPrice: '₹ 2000',
+            discountedPrice: '₹ 200',
+            discountPercentage: '5%',
+            points: 'Pts - 559',
+            date: '09-13-2023',
+        }
+    ]
     return (
         <div class="content-body">
             <div class="container-fluid">
@@ -10,7 +57,7 @@ const Orders = () => {
                     <div class="col-xl-12 col-xxl-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
-                                <h4 class="card-title">Customer List</h4>
+                                <h4 class="card-title">Orders List</h4>
                             </div>
 
                             <div class="card-body">
@@ -28,58 +75,19 @@ const Orders = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td><img src={pizz1} style={{ width: '50px' }} /><br />
-                                                </td>
-                                                <td>Amazon Pay<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>₹2000</td>
-                                                <td> Pts - 20
-                                                </td>
-                                                <td>₹ 200</td>
-                                                <td>5%
-                                                </td>
-                                                <td>#52533</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src={pizz1} style={{ width: '50px' }} /><br />
-                                                </td>
-                                                <td>Amazon Pay<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>₹2000</td>
-                                                <td> Pts - 20
-                                                </td>
-                                                <td>₹ 200</td>
-                                                <td>5%
-                                                </td>
-                                                <td>#52533</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src={pizz1} style={{ width: '50px' }} /><br />
-                                                </td>
-                                                <td>Amazon Pay<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>₹2000</td>
-                                                <td> Pts - 20
-                                                </td>
-                                                <td>₹ 200</td>
-                                                <td>5%
-                                                </td>
-                                                <td>#52533</td>
-                                            </tr>
-                                            <tr>
-                                                <td><img src={pizz1} style={{ width: '50px' }} /><br />
-                                                </td>
-                                                <td>Amazon Pay<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>₹2000</td>
-                                                <td> Pts - 20
-                                                </td>
-                                                <td>₹ 200</td>
-                                                <td>5%
-                                                </td>
-                                                <td>#52533</td>
-                                            </tr>
+                                            {productList.map((item, index) => (
+                                                <tr key={index}>
+                                                    <td>
+                                                        <img src={item.imgSrc} style={{ width: '50px' }} alt={`Item ${index + 1}`} />
+                                                    </td>
+                                                    <td>{item.description}</td>
+                                                    <td>{item.originalPrice}</td>
+                                                    <td>{item.discountedPrice}</td>
+                                                    <td>{item.discountPercentage}</td>
+                                                    <td>{item.points}</td>
+                                                    <td>{item.date}</td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>
