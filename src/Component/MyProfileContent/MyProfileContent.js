@@ -4,7 +4,7 @@ import img2 from '../../Images/amazon.com.png'
 const MyProfileContent = () => {
   return (
     <>
-    <section class="py-3 header">
+    <section class="py-3 header1">
     <div class="container">
        
 
@@ -12,25 +12,25 @@ const MyProfileContent = () => {
             <div class="col-md-3">
                 
                 <div class="nav  nav-pills nav-pills-custom flex-dir" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link mb-3 p-3 shadow active mr-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                    <a class="nav-link1 mb-3 p-3 shadow active mr-2" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                         <i class="fa fa-user "></i>
                         <span class="font-weight-bold small text-uppercase">Dashboard</span></a>
 
-                    <a class="nav-link mb-3 p-3 shadow mr-2" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                    <a class="nav-link1 mb-3 p-3 shadow mr-2" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="font-weight-bold small text-uppercase">My Orders</span></a>
 
 
-                           <a class="nav-link mb-3 p-3 shadow mr-2" id="v-pills-wish-tab" data-toggle="pill" href="#wishlist" role="tab" aria-controls="v-wish-profile" aria-selected="false">
+                           <a class="nav-link1 mb-3 p-3 shadow mr-2" id="v-pills-wish-tab" data-toggle="pill" href="#wishlist" role="tab" aria-controls="v-wish-profile" aria-selected="false">
                       <i class="fa-solid fa-heart"></i>
                         <span class="font-weight-bold small text-uppercase">Wishlist</span></a>
 
                    
-                    <a class="nav-link mb-3 p-3 shadow mr-2" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                    <a class="nav-link1 mb-3 p-3 shadow mr-2" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
                        <i class="las la-headset"></i>
                         <span class="font-weight-bold small text-uppercase">Customer Help Desk</span></a>
 
-                         <a class="nav-link mb-3 p-3 shadow mr-2" id="v-pills-messages-tab" >
+                         <a class="nav-link1 mb-3 p-3 shadow mr-2" id="v-pills-messages-tab" >
                        <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="font-weight-bold small text-uppercase">Logout</span></a>
 
@@ -47,7 +47,7 @@ const MyProfileContent = () => {
                             <h5>Personal Information</h5>
                             <br/>
                         <div class="col-lg-4">
-                            <div class="card mb-3 widget-content bg-midnight-bloom">
+                            <div class="card1 mb-3 widget-content bg-midnight-bloom">
                                     <div class="widget-content-wrapper text-white">
                                         <div class="widget-content-left">
                                             <div class="widget-heading">Total Points</div>
@@ -61,7 +61,7 @@ const MyProfileContent = () => {
 
                        
                          
-                           <div class="card mb-3 widget-content bg-premium-dark">
+                           <div class="card1 mb-3 widget-content bg-premium-dark">
                                     <div class="widget-content-wrapper text-white">
                                         <div class="widget-content-left">
                                             <div class="widget-heading">Total Orders</div>
@@ -73,7 +73,7 @@ const MyProfileContent = () => {
                                     </div>
                                 </div>
 
-                                  <div class="card mb-3 widget-content bg-midnight-bloom">
+                                  <div class="card1 mb-3 widget-content bg-midnight-bloom">
                                     <div class="widget-content-wrapper text-white">
                                         <div class="widget-content-left">
                                             <div class="widget-heading">Pending Order</div>
