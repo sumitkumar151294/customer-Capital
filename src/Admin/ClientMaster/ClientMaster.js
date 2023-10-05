@@ -66,67 +66,67 @@ const ClientMaster = () => {
                             <div class="card-header">
                                 <h4 class="card-title">Client Master</h4>
                             </div>
-                            <div class="card-body ">
+                            <div class="card-body">
                                 <div class="container mt-3">
                                     <form onSubmit={handleSubmit}>
                                         <div class="row">
 
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="name-f">Contact Name</label>
-                                                <input type="text" class="form-control" name="fname" id="name-f" placeholder="" onChange={(e) => setClientData({ ...clientData, name: e.target.value })} required />
+                                                <label for="contact-name">Contact Name</label>
+                                                <input type="text" class="form-control" name="contactName" id="contact-name" placeholder="" onChange={(e) => setClientData({ ...clientData, name: e.target.value })} required />
                                             </div>
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="name-l">Contact Number</label>
-                                                <input type="text" class="form-control" name="lname" id="name-l" placeholder="" onChange={(e) => setClientData({ ...clientData, number: e.target.value })} required />
+                                                <label for="contact-number">Contact Number</label>
+                                                <input type="text" class="form-control" name="contactNumber" id="contact-number" placeholder="" onChange={(e) => setClientData({ ...clientData, number: e.target.value })} required />
                                             </div>
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="email">Contact Email</label>
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="" onChange={(e) => setClientData({ ...clientData, email: e.target.value })} required />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2">
-                                                <label for="email">Domain</label>
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="" onChange={(e) => setClientData({ ...clientData, domain: e.target.value })} required />
+                                                <label for="contact-email">Contact Email</label>
+                                                <input type="email" class="form-control" name="contactEmail" id="contact-email" placeholder="" onChange={(e) => setClientData({ ...clientData, email: e.target.value })} required />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="pass">DNS</label>
-                                                <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setClientData({ ...clientData, dns: e.target.value })} required />
+                                                <label for="domain">Domain</label>
+                                                <input type="text" class="form-control" name="domain" id="domain" placeholder="" onChange={(e) => setClientData({ ...clientData, domain: e.target.value })} required />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="pass">IP Address</label>
-                                                <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setClientData({ ...clientData, ipAddress: e.target.value })} required />
+                                                <label for="dns">DNS</label>
+                                                <input type="password" name="dns" class="form-control" id="dns" placeholder="" onChange={(e) => setClientData({ ...clientData, dns: e.target.value })} required />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="pass">Domain Provider</label>
-                                                <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setClientData({ ...clientData, domainProvider: e.target.value })} required />
+                                                <label for="ipAddress">IP Address</label>
+                                                <input type="password" name="ipAddress" class="form-control" id="ipAddress" placeholder="" onChange={(e) => setClientData({ ...clientData, ipAddress: e.target.value })} required />
+                                            </div>
+
+                                            <div class="col-sm-4 form-group mb-2">
+                                                <label for="domainProvider">Domain Provider</label>
+                                                <input type="text" name="domainProvider" class="form-control" id="domainPprovider" placeholder="" onChange={(e) => setClientData({ ...clientData, domainProvider: e.target.value })} required />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="pass">DB Link</label>
-                                                <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setClientData({ ...clientData, link: e.target.value })} required />
+                                                <label for="db-link">DB Link</label>
+                                                <input type="password" name="dbLink" class="form-control" id="db-link" placeholder="" onChange={(e) => setClientData({ ...clientData, link: e.target.value })} />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="pass">DB Username</label>
-                                                <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setClientData({ ...clientData, username: e.target.value })} required />
+                                                <label for="db-username">DB Username</label>
+                                                <input type="password" name="dbUsername" class="form-control" id="db-username" placeholder="" onChange={(e) => setClientData({ ...clientData, username: e.target.value })} />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="pass">DB Password</label>
-                                                <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setClientData({ ...clientData, password: e.target.value })} required />
+                                                <label for="db-password">DB Password</label>
+                                                <input type="password" name="dbPassword" class="form-control" id="db-password" placeholder="" onChange={(e) => setClientData({ ...clientData, password: e.target.value })} />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="pass">DB Type</label>
-                                                <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setClientData({ ...clientData, type: e.target.value })} required />
+                                                <label for="db-type">DB Type</label>
+                                                <input type="password" name="dbType" class="form-control" id="db-type" placeholder="" onChange={(e) => setClientData({ ...clientData, type: e.target.value })} />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2">
                                                 <label for="status">Status</label>
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select class="form-select" name="status" id="status" aria-label="Default select example">
                                                     <option selected>Select</option>
                                                     <option value="Active">Active</option>
                                                     <option value="Non-Active">Non-Active</option>
@@ -134,51 +134,47 @@ const ClientMaster = () => {
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="name-f">Color</label>
-                                                <input type="color" class="form-control" name="fname" id="name-f" placeholder="" onChange={(e) => setClientData({ ...clientData, color: e.target.value })} required />
+                                                <label for="color">Color</label>
+                                                <input type="color" class="form-control" name="color" id="color" placeholder="" onChange={(e) => setClientData({ ...clientData, color: e.target.value })} required />
                                             </div>
 
                                             <div class="col-sm-12 input-group mb-2 mt-2">
-
                                                 <div class="form-file">
-
                                                     <input type="file" class="form-file-input form-control" />
                                                 </div>
                                                 <span class="input-group-text">Upload Logo</span>
                                             </div>
 
-                                            <div class="row mt-2" >
-                                                <h3 style={{ borderBottom: '1px solid #ededed' }}> Razorpay Payment Gateway</h3>
+                                            <div class="row mt-2">
+                                                <h3 style={{ borderBottom: '1px solid #ededed' }}>Razorpay Payment Gateway</h3>
 
                                                 <div class="col-lg-6 mt-2">
                                                     <div class="row p-0">
                                                         <h4>Staging</h4>
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="text" class="form-control" name="fname" id="name-f" placeholder="Key" onChange={(e) => setClientData({ ...clientData, stagingKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="stagingKey" id="staging-key" placeholder="Key" onChange={(e) => setClientData({ ...clientData, stagingKey: e.target.value })} required />
                                                         </div>
 
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="text" class="form-control" name="fname" id="name-f" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, stagingSecretKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="stagingSecretKey" id="staging-secret-key" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, stagingSecretKey: e.target.value })} required />
                                                         </div>
                                                     </div>
                                                 </div>
-
 
                                                 <div class="col-lg-6 mt-2">
                                                     <div class="row p-0">
                                                         <h4>Production</h4>
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="text" class="form-control" name="fname" id="name-f" placeholder="Key" onChange={(e) => setClientData({ ...clientData, productionKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="productionKey" id="production-key" placeholder="Key" onChange={(e) => setClientData({ ...clientData, productionKey: e.target.value })} required />
                                                         </div>
 
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="text" class="form-control" name="fname" id="name-f" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, productionSecretKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="productionSecretKey" id="production-secret-key" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, productionSecretKey: e.target.value })} required />
                                                         </div>
                                                     </div>
                                                 </div>
 
                                             </div>
-
 
                                             <div class="col-sm-12 form-group mb-0 mt-2">
                                                 <button type='submit' class="btn btn-primary float-right pad-aa">Add<i class="fa fa-arrow-right"></i></button>
@@ -188,6 +184,7 @@ const ClientMaster = () => {
                                     </form>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
