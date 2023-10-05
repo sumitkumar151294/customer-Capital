@@ -21,6 +21,17 @@ import Blog from './Admin/Blog/Blog';
 import ContactListMaster from './Admin/ContactList/ContactListMaster';
 import CustomerList from './Admin/CustomerList/CustomerList';
 import Email from './Admin/Email/Email';
+import ContactUs from './Component/ContactUs/ContactUs';
+import AboutUs from './Component/AboutUs/AboutUs'
+import FAQs from './Component/FAQs/FAQs'
+import Blogs from './Component/Blogs/Blogs'
+import MyProfile from './Component/MyProfile/MyProfile'
+import PrivacyPolicy from './Component/PrivacyPolicy/PrivacyPolicy';
+import TermsofUse from './Component/TermsofUse/TermsofUse';
+import LoyaltyProgram from './Component/LoyaltyProgram/LoyaltyProgram';
+import Finalcart from './Component/Finalcart/Finalcart';
+import MyProfileContent from './Component/MyProfileContent/MyProfileContent';
+
 
 function App() {
   return (
@@ -31,6 +42,23 @@ function App() {
         <Route path="/productcart" element={<ProductCard />} />
         <Route path="/orderconfirm" element={<OrderPlaced />} />
         <Route path="/cartInfo" element={<CartInfo />} />
+        <Route path="/finalcart" element={<Finalcart />} />
+        <Route path="/contactus" element={<ContactUs />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/faqs" element={<FAQs />} />
+        <Route path="/blog" element={<Blogs />} />
+        <Route path="/myprofile" element={<MyProfile />} />
+        <Route path="/myorders" element={<MyProfile />} />
+        <Route path="/myprofilecontent" element={<MyProfileContent />} />
+        
+
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/termsofuse" element={<TermsofUse />} />
+        <Route path="/loyaltyprogram" element={<LoyaltyProgram />} />
+        
+
+        
+
         <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard}/>} />
         <Route path="/LC-admin/vendornmaster" element={<HomeAdmin Component={VendorMaster}/>} />
         <Route path="/LC-admin/allocationmaster" element={<HomeAdmin Component={AllocationMaster}/>} />

@@ -2,6 +2,7 @@ import React from 'react'
 import img1 from '../../Images/amazon.png'
 import img2 from '../../Images/amazon.com.png'
 import img3 from '../../Images/coin.png'
+import { Link } from 'react-router-dom'
 
 
 const OrderContainer = () => {
@@ -286,14 +287,15 @@ const OrderContainer = () => {
 
 
 
-                        <div className="p-md-2 d-grid "><a href="dashboard.html" className="cnt-shop-blue"><button className=
+                        <div className="p-md-2 d-grid "><Link to='/myprofilecontent'
+                         className="cnt-shop-blue"><button className=
                             "btn py-md-2 btss2"
                             style={{
                                 backgroundColor
                                     :
                                     '#0072fd'
                             }}>
-                            Go to My Order &nbsp; <i className="fa fa-arrow-right "></i></button></a></div>
+                            Go to My Order &nbsp; <i className="fa fa-arrow-right "></i></button></Link></div>
 
 
                         <div className="p-md-2 d-grid "><a href="productcart.html" className="cnt-shop"><button className=

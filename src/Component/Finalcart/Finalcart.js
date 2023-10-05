@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const Finalcart = () => {
     return (
         <>
@@ -399,12 +400,12 @@ const Finalcart = () => {
                                 </div>
 
                                 <div className="p-md-2 d-grid mt-4">
-                                    <a href="orderconfirm.html" className="cnt-shop-blue">
+                                    <Link to='/orderconfirm' className="cnt-shop-blue">
                                         <button className="btn py-3 py-md-2 btss2">
                                             Confirm & Pay Now &nbsp;
                                             <i className="fa fa-arrow-right "></i>
                                         </button>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
