@@ -4,6 +4,7 @@ import img2 from '../../Images/airbnb-uk-approved-nov21.png'
 import img3 from '../../Images/prezzee-uk-themes-0-copy-ad2f252.png'
 import img4 from '../../Images/asos.png'
 import img5 from '../../Images/john-lewis-partners-uk-1120.jpg'
+import { Link } from 'react-router-dom'
 
 const Shop = () => {
   return (
@@ -29,7 +30,7 @@ const Shop = () => {
 </div>
 
 <div class="col-lg-2 col-3 text-center">
-    <a href="productcart.html">
+    <Link to="/productcart" >
     <div class="offer-box1">
     <img class="w-100" src={img1} />
 
@@ -42,7 +43,7 @@ const Shop = () => {
        
       </div>
 </div>
-</a>
+</Link>
 </div>
 
 
