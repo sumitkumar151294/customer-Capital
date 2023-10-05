@@ -1,6 +1,9 @@
 const AdminAPI = {
     vendorApi: '/vendor',
-    clientMasterApi: '/clientMaster'
+    clientMasterApi: '/clientMaster',
+    cmsApi: '/cms',
+    blogApi: '/blog',
+    faqsApi: '/faqs',
 }
 
 export default AdminAPI;

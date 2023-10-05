@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 
 const Blog = () => {
+    const [blogData, setBlogData] = useState({pageName:'', shortDescription:'', longDescription:'' });
+    const dispatch = useDispatch();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // dispatch(onBlogSubmit(blogData));
+    };
+
     return (
         <div class="content-body">
             <div class="container-fluid">
@@ -44,7 +52,7 @@ const Blog = () => {
                                 </div>
 
                                 <div class="form-group mb-0 mt-2">
-                                    <button class="btn btn-primary float-right pad-aa">Submit <i class="fa fa-arrow-right"></i></button>
+                                    <button type='submit' class="btn btn-primary float-right pad-aa" onClick={handleSubmit}>Submit <i class="fa fa-arrow-right"></i></button>
                                 </div>
 
                             </div>

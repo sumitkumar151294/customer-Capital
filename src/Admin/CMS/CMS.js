@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { onCmsSubmit } from '../../redux/modules/Admin/cmsSlice';
 
 const CMS = () => {
+    const [cmsData, setCmsData] = useState({pageName:'', shortDescription:'', longDescription:'' });
+    const dispatch = useDispatch();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(onCmsSubmit(cmsData));
+    };
+
     return (
         <>
             <div class="content-body">
@@ -15,7 +24,12 @@ const CMS = () => {
                                     <div class="dropdown-side">
                                         <div class="form-group mb-2">
 
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select"
+                                            name='pageName'
+                                            value={cmsData.pageName}
+                                                        onChange={(e) => setCmsData({ ...cmsData, pageName: e.target.value })} // Update the vendorData
+                                                    
+                                            aria-label="Default select example">
                                                 <option selected>Select Page Name &nbsp;<i class="fa fa-angle-down"></i></option>
                                                 <option value="About us">About us</option>
                                                 <option value="Privacy Policy">Privacy Policy</option>
@@ -33,16 +47,16 @@ const CMS = () => {
                                 <div class="card-body ">
                                     <div class="form-group mb-2">
                                         <label for="name-f">Short Description</label>
-                                        <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder=""></textarea>
+                                        <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => setCmsData({ ...cmsData, shortDescription: e.target.value })}></textarea>
                                     </div>
 
                                     <div class="form-group mb-2 if">
                                         <label for="name-f">Long Description</label>
-                                        <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder=""></textarea>
+                                        <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => setCmsData({ ...cmsData, longDescription: e.target.value })}></textarea>
                                     </div>
 
                                     <div class="form-group mb-0 mt-2">
-                                        <button class="btn btn-primary float-right pad-aa">Submit <i class="fa fa-arrow-right"></i></button>
+                                        <button type='submit' class="btn btn-primary float-right pad-aa" onClick={handleSubmit}>Submit <i class="fa fa-arrow-right"></i></button>
                                     </div>
                                 </div>
                             </div>

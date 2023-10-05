@@ -2,6 +2,36 @@ import React from 'react'
 import pizz1 from '../../assets/img/pizz1.jpg'
 
 const ProductCategory = () => {
+    const vouchers = [
+        {
+            name: 'Dominoz Voucher',
+            img:pizz1,
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            date: '03-08-2023',
+            selected: false,
+        },
+        {
+            name: 'Dominoz Voucher',
+            img:pizz1,
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            date: '03-08-2023',
+            selected: false,
+        },
+        {
+            name: 'Dominoz Voucher',
+            img:pizz1,
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            date: '03-08-2023',
+            selected: false,
+        },
+        {
+            name: 'Dominoz Voucher',
+            img:pizz1,
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            date: '03-08-2023',
+            selected: false,
+        },
+    ]
     return (
         <div class="content-body">
             <div class="container-fluid">
@@ -10,7 +40,7 @@ const ProductCategory = () => {
                     <div class="col-xl-12 col-xxl-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Product Catalouge</h4>
+                                <h4 class="card-title">Product Categories</h4>
                             </div>
                             <div class="card-body bhh ">
                                 <div class="container mt-3">
@@ -58,33 +88,36 @@ const ProductCategory = () => {
 
                             <div class="container mt-1">
 
-                                <div class="row top-top">
-                                    <div class="col-lg-11 ">
-                                        <div class="d-flex justify-content-start">
-                                            <div class="one text-center mr-4">
-                                                <img src={pizz1} style={{width:'50px'}} /><br />
-                                            </div>
+                                {vouchers.map((voucher, index) => (
+                                    <div class="row top-top mt-2">
+                                        <div class="col-lg-11 ">
+                                            <div class="d-flex justify-content-start">
+                                                <div class="one text-center mr-4">
+                                                    <img src={voucher.img} style={{ width: '50px' }} /><br />
+                                                </div>
 
-                                            <div class="two">
-                                                <h4>Dominoz Eats Voucher</h4>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                                <span>03-08-2023</span>
+                                                <div class="two">
+                                                    <h4>{voucher.name}</h4>
+                                                    <p>{voucher.description}</p>
+                                                    <span>{voucher.date}</span>
+                                                </div>
+
                                             </div>
 
                                         </div>
 
-                                    </div>
+                                        <div class="col-lg-1">
 
-                                    <div class="col-lg-1">
+                                            <div class="form-check mt-2">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
 
-                                        <div class="form-check mt-2">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
-
+                                            </div>
                                         </div>
-                                    </div>
 
-                                </div>
-                                <div class="row top-top mt-2">
+                                    </div>
+                                ))}
+
+                                {/* <div class="row top-top mt-2">
                                     <div class="col-lg-11 ">
                                         <div class="d-flex justify-content-start">
                                             <div class="one text-center mr-4">
@@ -155,7 +188,7 @@ const ProductCategory = () => {
 
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

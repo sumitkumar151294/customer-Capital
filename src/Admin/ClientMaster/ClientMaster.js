@@ -48,6 +48,7 @@ const ClientMaster = () => {
         stagingSecretKey: '',
         productionKey: '',
         productionSecretKey: '',
+        status:''
     });
 
     const dispatch = useDispatch();
@@ -126,7 +127,11 @@ const ClientMaster = () => {
 
                                             <div class="col-sm-4 form-group mb-2">
                                                 <label for="status">Status</label>
-                                                <select class="form-select" name="status" id="status" aria-label="Default select example">
+                                                <select class="form-select" name="status" 
+                                                value={clientData.status}
+                                                onChange={(e) => setClientData({ ...clientData, status: e.target.value })}
+                                            
+                                                id="status" aria-label="Default select example">
                                                     <option selected>Select</option>
                                                     <option value="Active">Active</option>
                                                     <option value="Non-Active">Non-Active</option>
