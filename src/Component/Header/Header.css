@@ -2930,7 +2930,7 @@ strong {
   font-weight: 600
 }
 
-.header {
+.header1 {
   z-index: 40;
   width: 100%;
   transition: all .3s;
@@ -16939,7 +16939,7 @@ button.close.modalclosebtn {
   margin-bottom: 5px;
 }
 
-.footer {
+.footer1 {
   background: #212121;
   color: white;
   padding: 10px;
@@ -17382,13 +17382,13 @@ button.close.modalclosebtn {
 
 
 
-.nav-pills-custom .nav-link {
+.nav-pills-custom .nav-link1 {
   color: #aaa;
   background: #fff;
   position: relative;
 }
 
-.nav-pills-custom .nav-link.active {
+.nav-pills-custom .nav-link1.active {
   color: #45b649;
   background: #fff;
 }
@@ -17396,7 +17396,7 @@ button.close.modalclosebtn {
 
 /* Add indicator arrow for the active tab */
 @media (min-width: 992px) {
-  .nav-pills-custom .nav-link::before {
+  .nav-pills-custom .nav-link1::before {
     content: '';
     display: block;
     border-top: 8px solid transparent;
@@ -17410,7 +17410,7 @@ button.close.modalclosebtn {
   }
 }
 
-.nav-pills-custom .nav-link.active::before {
+.nav-pills-custom .nav-link1.active::before {
   opacity: 1;
 }
 
@@ -17419,7 +17419,7 @@ button.close.modalclosebtn {
   width: 90px;
 }
 
-.card {
+.card1 {
   position: relative;
   display: block !important;
   flex-direction: column;
@@ -17431,7 +17431,7 @@ button.close.modalclosebtn {
   border-radius: 0.25rem;
 }
 
-.card {
+.card1 {
   box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, .03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, .03), 0 0.25rem 0.53125rem rgba(4, 9, 20, .05), 0 0.125rem 0.1875rem rgba(4, 9, 20, .03);
   border-width: 0;
   transition: all .2s;
@@ -19576,7 +19576,7 @@ textarea {
   margin-bottom: 5px;
 }
 
-.footer {
+.footer1 {
   background: #212121;
   color: white;
   padding: 10px;
@@ -20019,21 +20019,22 @@ textarea {
 
 
 
-.nav-pills-custom .nav-link {
+.nav-pills-custom .nav-link1 {
   color: #aaa;
   background: #fff;
   position: relative;
+  border-radius: 0.25rem;
 }
 
-.nav-pills-custom .nav-link.active {
-  color: #45b649;
-  background: #fff;
+.nav-pills-custom .nav-link1.active {
+  color: #fff;
+  background: #2170ce;
 }
 
 
 /* Add indicator arrow for the active tab */
 @media (min-width: 992px) {
-  .nav-pills-custom .nav-link::before {
+  .nav-pills-custom .nav-link1::before {
     content: '';
     display: block;
     border-top: 8px solid transparent;
@@ -20047,7 +20048,7 @@ textarea {
   }
 }
 
-.nav-pills-custom .nav-link.active::before {
+.nav-pills-custom .nav-link1.active::before {
   opacity: 1;
 }
 
@@ -20068,7 +20069,7 @@ textarea {
   border-radius: 0.25rem;
 }
 
-.card {
+.card1 {
   box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, .03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, .03), 0 0.25rem 0.53125rem rgba(4, 9, 20, .05), 0 0.125rem 0.1875rem rgba(4, 9, 20, .03);
   border-width: 0;
   transition: all .2s;

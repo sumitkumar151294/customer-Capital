@@ -250,7 +250,7 @@
     font-weight: 400;
     line-height: 1.5;
     color: #969ba0;
-    background-color: #FBFBFB;
+    background-color: #FBFBFB !important;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
@@ -3492,8 +3492,8 @@
   
   .btn-danger {
     color: #000;
-    background-color: #f72b50;
-    border-color: #f72b50;
+    background-color: #f72b50 !important;
+    border-color: #f72b50 !important;
   }
   
   .btn-danger:hover {

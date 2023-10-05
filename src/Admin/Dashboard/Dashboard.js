@@ -128,8 +128,8 @@ const Dashboard = () => {
                                                     </svg>
                                                 </div>
                                                 <div className="dropdown-menu dropdown-menu-right">
-                                                    {/* <a className="dropdown-item" href="javascript:void(0);">Details</a> */}
-                                                    {/* <a className="dropdown-item text-danger" href="javascript:void(0);">Cancel</a> */}
+                                                    <a className="dropdown-item" href="javascript:void(0);">Details</a>
+                                                    <a className="dropdown-item text-danger" href="javascript:void(0);">Cancel</a>
                                                 </div>
                                             </div>
                                         </div>
