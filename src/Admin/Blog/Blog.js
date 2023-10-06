@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { onBlogSubmit } from '../../redux/modules/Admin/blogSlice';
 
 const Blog = () => {
-    const [blogData, setBlogData] = useState({pageName:'', shortDescription:'', longDescription:'' });
+    const [blogData, setBlogData] = useState({ name: '', date: '', heading: '', longDescription: '' });
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
-        // dispatch(onBlogSubmit(blogData));
+        dispatch(onBlogSubmit(blogData));
     };
 
     return (
@@ -21,20 +22,20 @@ const Blog = () => {
                             </div>
 
                             <div class="card-body ">
-                                <form>
+                                <form onSubmit={handleSubmit}>
                                     <div class="row">
 
                                         <div class="col-sm-3 form-group mb-2">
                                             <label for="name-f">Author Name</label>
-                                            <input type="text" class="form-control" name="fname" id="name-f" placeholder="" required />
+                                            <input type="text" class="form-control" name="fname" id="name-f" placeholder="" onChange={(e) => setBlogData({ ...blogData, name: e.target.value })} required />
                                         </div>
                                         <div class="col-sm-3 form-group mb-2">
                                             <label for="name-l">Blog Date</label>
-                                            <input type="date" class="form-control" name="bdate" id="name-l" placeholder="" required />
+                                            <input type="date" class="form-control" name="bdate" id="name-l" placeholder="" onChange={(e) => setBlogData({ ...blogData, date: e.target.value })} required />
                                         </div>
                                         <div class="col-sm-6 form-group mb-2">
                                             <label for="heading">Heading 1 </label>
-                                            <input type="text" class="form-control" name="heading" id="heading" placeholder="" required />
+                                            <input type="text" class="form-control" name="heading" id="heading" placeholder="" onChange={(e) => setBlogData({ ...blogData, heading: e.target.value })} required />
                                         </div>
 
                                         <div class="col-sm-12 input-group mb-2">
@@ -48,11 +49,11 @@ const Blog = () => {
 
                                 <div class="form-group mb-2 if">
                                     <label for="name-f">Long Description</label>
-                                    <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder=""></textarea>
+                                    <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => setBlogData({ ...blogData, longDescription: e.target.value })}></textarea>
                                 </div>
 
                                 <div class="form-group mb-0 mt-2">
-                                    <button type='submit' class="btn btn-primary float-right pad-aa" onClick={handleSubmit}>Submit <i class="fa fa-arrow-right"></i></button>
+                                    <button type='submit' class="btn btn-primary float-right pad-aa" >Submit <i class="fa fa-arrow-right"></i></button>
                                 </div>
 
                             </div>

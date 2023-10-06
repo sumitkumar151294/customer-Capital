@@ -38,10 +38,10 @@ ul {
   display: block;
   width: 100%;
   position: relative;
-  z-index: 99;
+  /* z-index: 99; */
   /*padding: 15px;
          background: linear-gradient(90deg, rgba(255,255,255,1) 80%, #3b71fe 20%);*/
-  z-index: 1;
+  /* z-index: 1; */
   border-bottom: 1px solid #dbdbdb !important;
 }
 
@@ -8466,10 +8466,10 @@ ul {
   display: block;
   width: 100%;
   position: relative;
-  z-index: 99;
+  /* z-index: 99; */
   /*padding: 15px;
        background: linear-gradient(90deg, rgba(255,255,255,1) 80%, #3b71fe 20%);*/
-  z-index: 1;
+  /* z-index: 1; */
   border-bottom: 1px solid #dbdbdb !important;
 }
 

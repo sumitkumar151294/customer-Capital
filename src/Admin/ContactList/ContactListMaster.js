@@ -1,6 +1,36 @@
 import React from 'react'
 
 const ContactListMaster = () => {
+    const contactMasterList = [
+        {
+            name: 'Jaswant Rawat',
+            number: '9650531790',
+            email: 'jaswant@way2webworld.com',
+            subject: 'Voucher issue',
+            description: 'Having issue while generating voucher in website',
+        },
+        {
+            name: 'Jaswant Rawat',
+            number: '9650531790',
+            email: 'jaswant@way2webworld.com',
+            subject: 'Voucher issue',
+            description: 'Having issue while generating voucher in website',
+        },
+        {
+            name: 'Jaswant Rawat',
+            number: '9650531790',
+            email: 'jaswant@way2webworld.com',
+            subject: 'Voucher issue',
+            description: 'Having issue while generating voucher in website',
+        },
+        {
+            name: 'Jaswant Rawat',
+            number: '9650531790',
+            email: 'jaswant@way2webworld.com',
+            subject: 'Voucher issue',
+            description: 'Having issue while generating voucher in website',
+        },
+    ];
     return (
         <div class="content-body">
             <div class="container-fluid">
@@ -27,70 +57,26 @@ const ContactListMaster = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Jaswant Rawat<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>9650531790</td>
-                                                <td><span class="text-muted">jaswant@way2webworld.com</span>
-                                                </td>
-                                                <td>Voucher issue</td>
-                                                <td>Having issue while generating voucher in website
-                                                </td>
-                                                <td><div class="d-flex">
-
-                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                </div></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Manish Gautam<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>7838345657</td>
-                                                <td><span class="text-muted">manishgautam.1@way.webworld.com</span>
-                                                </td>
-                                                <td>Coupen Issue</td>
-                                                <td>Coupen code is not showing
-                                                </td>
-                                                <td><div class="d-flex">
-                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                </div></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Naveen Jha<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>9876680901</td>
-                                                <td><span class="text-muted">naveenjha@way2webworld.com</span>
-                                                </td>
-                                                <td>Order issue</td>
-                                                <td>Order is not generating
-                                                </td>
-                                                <td><div class="d-flex">
-
-                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                </div></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Vithal Chaudhary<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>7890654321</td>
-                                                <td><span class="text-muted">vithalchaudhary@way2webworld.com</span>
-                                                </td>
-                                                <td>Login issue</td>
-                                                <td>Not able to login while adding cart to my purse
-                                                </td>
-                                                <td><div class="d-flex">
-
-                                                    <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                </div></td>
-
-                                            </tr>
+                                            {contactMasterList.map((contact, index) => (
+                                                <tr>
+                                                    <td>{contact.name}</td>
+                                                    <td>{contact.number}</td>
+                                                    <td><span class="text-muted">{contact.email}</span></td>
+                                                    <td>{contact.subject}</td>
+                                                    <td>{contact.description}</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>
 
                                 <div class="form-group mb-0 mt-2">
-                                    <button class="btn btn-primary float-right pad-aa">Submit <i class="fa fa-arrow-right"></i></button>
+                                    <button type='submit' class="btn btn-primary float-right pad-aa">Submit <i class="fa fa-arrow-right"></i></button>
                                 </div>
                             </div>
                         </div>

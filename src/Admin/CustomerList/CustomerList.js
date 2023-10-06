@@ -1,6 +1,44 @@
 import React from 'react'
 
 const CustomerList = () => {
+    const customerList = [
+        {
+            name: 'Jaswant Rawat',
+            customerId: 'AD2566',
+            email: 'jaswant@way2webworld.com',
+            points: 'Pts - 1202',
+            placeOrder: 'Amazon Voucher',
+            date: '09-13-2023',
+            lastSignIn: '28 Minutes Ago',
+        },
+        {
+            name: 'Jaswant Rawat',
+            customerId: 'AD2566',
+            email: 'jaswant@way2webworld.com',
+            points: 'Pts - 1202',
+            placeOrder: 'Amazon Voucher',
+            date: '09-13-2023',
+            lastSignIn: '28 Minutes Ago',
+        },
+        {
+            name: 'Jaswant Rawat',
+            customerId: 'AD2566',
+            email: 'jaswant@way2webworld.com',
+            points: 'Pts - 1202',
+            placeOrder: 'Amazon Voucher',
+            date: '09-13-2023',
+            lastSignIn: '28 Minutes Ago',
+        },
+        {
+            name: 'Jaswant Rawat',
+            customerId: 'AD2566',
+            email: 'jaswant@way2webworld.com',
+            points: 'Pts - 1202',
+            placeOrder: 'Amazon Voucher',
+            date: '09-13-2023',
+            lastSignIn: '28 Minutes Ago',
+        },
+    ];
     return (
 
         <div class="content-body">
@@ -29,54 +67,17 @@ const CustomerList = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Jaswant Rawat<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>AD2566</td>
-                                                <td><span class="text-muted">jaswant@way2webworld.com</span>
-                                                </td>
-                                                <td>Pts - 1202</td>
-                                                <td>Amazon Voucher
-                                                </td>
-                                                <td>09-13-2023</td>
-                                                <td>28 Minutes Ago</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jaswant Rawat<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>AD2566</td>
-                                                <td><span class="text-muted">jaswant@way2webworld.com</span>
-                                                </td>
-                                                <td>Pts - 1202</td>
-                                                <td>Amazon Voucher
-                                                </td>
-                                                <td>09-13-2023</td>
-                                                <td>28 Minutes Ago</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jaswant Rawat<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>AD2566</td>
-                                                <td><span class="text-muted">jaswant@way2webworld.com</span>
-                                                </td>
-                                                <td>Pts - 1202</td>
-                                                <td>Amazon Voucher
-                                                </td>
-                                                <td>09-13-2023</td>
-                                                <td>28 Minutes Ago</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jaswant Rawat<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>AD2566</td>
-                                                <td><span class="text-muted">jaswant@way2webworld.com</span>
-                                                </td>
-                                                <td>Pts - 1202</td>
-                                                <td>Amazon Voucher
-                                                </td>
-                                                <td>09-13-2023</td>
-                                                <td>28 Minutes Ago</td>
-                                            </tr>
+                                            {customerList.map((item) => (
+                                                <tr>
+                                                    <td>{item.name}</td>
+                                                    <td>{item.customerId}</td>
+                                                    <td>{item.email}</td>
+                                                    <td>{item.points}</td>
+                                                    <td>{item.placeOrder}</td>
+                                                    <td>{item.date}</td>
+                                                    <td>{item.lastSignIn}</td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>

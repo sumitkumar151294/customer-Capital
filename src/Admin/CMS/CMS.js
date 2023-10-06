@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { onCmsSubmit } from '../../redux/modules/Admin/cmsSlice';
 
 const CMS = () => {
-    const [cmsData, setCmsData] = useState({pageName:'', shortDescription:'', longDescription:'' });
+    const [cmsData, setCmsData] = useState({ pageName: '', shortDescription: '', longDescription: '' });
     const dispatch = useDispatch();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,11 +25,10 @@ const CMS = () => {
                                         <div class="form-group mb-2">
 
                                             <select class="form-select"
-                                            name='pageName'
-                                            value={cmsData.pageName}
-                                                        onChange={(e) => setCmsData({ ...cmsData, pageName: e.target.value })} // Update the vendorData
-                                                    
-                                            aria-label="Default select example">
+                                                name='pageName'
+                                                value={cmsData.pageName}
+                                                onChange={(e) => setCmsData({ ...cmsData, pageName: e.target.value })}
+                                                aria-label="Default select example">
                                                 <option selected>Select Page Name &nbsp;<i class="fa fa-angle-down"></i></option>
                                                 <option value="About us">About us</option>
                                                 <option value="Privacy Policy">Privacy Policy</option>
