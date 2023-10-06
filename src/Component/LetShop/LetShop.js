@@ -9,6 +9,7 @@ import img7 from '../../Images/bata.png'
 import img8 from '../../Images/giftpay.png'
 import img9 from '../../Images/prestige.png'
 import img10 from '../../Images/trollbads.png'
+import img11 from '../../Images/coin.png'
 
 
 const LetShop = () => {
@@ -50,7 +51,7 @@ const LetShop = () => {
                                 <div className="coupendis">
                                     <div className="fnt-12px mb-1">Domino's</div>
                                     <div className="price-rr mb-1">₹1050 - ₹2300 </div>
-                                    <div className="price-rmn"><img src="img/coin.png" className="w-24px" /> 0.5% Rewards Earned</div>
+                                    <div className="price-rmn"><img src={img11} className="w-24px" /> 0.5% Rewards Earned</div>
 
                                 </div>
                             </div>
@@ -82,7 +83,7 @@ const LetShop = () => {
                                 <div className="coupendis">
                                     <div className="fnt-12px mb-1">Pantaloons</div>
                                     <div className="price-rr mb-1">₹3000 - ₹4500</div>
-                                    <div className="price-rmn"> <img src="img/coin.png" className="w-24px" />11% Rewards Earned</div>
+                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11% Rewards Earned</div>
 
 
                                 </div>
@@ -101,7 +102,7 @@ const LetShop = () => {
                                 <div className="coupendis">
                                     <div className="fnt-12px mb-1">Flipcart </div>
                                     <div className="price-rr mb-1">₹670 - ₹1500</div>
-                                    <div className="price-rmn"> <img src="img/coin.png" className="w-24px" />11.5% Rewards Earned</div>
+                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11.5% Rewards Earned</div>
 
                                 </div>
                             </div>
@@ -134,7 +135,7 @@ const LetShop = () => {
                                 <div className="coupendis">
                                     <div className="fnt-12px mb-1">Bata </div>
                                     <div className="price-rr mb-1">₹450 - ₹950 </div>
-                                    <div className="price-rmn"> <img src="img/coin.png" className="w-24px" />11.5% Rewards Earned</div>
+                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11.5% Rewards Earned</div>
 
 
                                 </div>
@@ -171,7 +172,7 @@ const LetShop = () => {
                                 <div className="coupendis">
                                     <div className="fnt-12px mb-1 ">Prestige</div>
                                     <div className="price-rr mb-1">₹890 - ₹1200 </div>
-                                    <div className="price-rmn"> <img src="img/coin.png" className="w-24px" />11.5% Rewards Earned</div>
+                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11.5% Rewards Earned</div>
 
                                 </div>
                             </div>

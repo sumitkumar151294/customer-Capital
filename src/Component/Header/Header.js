@@ -27,7 +27,7 @@ const Header = () => {
                                         <div className="mobile-menu-trigger">
                                             <span></span>
                                         </div>
-                                        <a href="index.html">
+                                        <a >
                                             <img src={img} />
                                         </a>
                                     </div>
@@ -53,15 +53,15 @@ const Header = () => {
                                                     <div className="logindrop2">
                                                         <ul>
                                                             <li>
-                                                                <a id="#" href="dashboard.html">My Account</a></li>
+                                                                <a id="#" >My Account</a></li>
                                                             <li>
-                                                                <a id="#" href="dashboard.html">My Points</a></li>
+                                                                <a id="#" >My Points</a></li>
                                                             <li>
                                                                 <a id="#" href="#">Use Points</a></li>
 
                                                             <li><a href="#">Customer Support </a></li>
 
-                                                            <li><a href="index.html">Logout </a></li>
+                                                            <li><a >Logout </a></li>
 
                                                         </ul>
                                                     </div>

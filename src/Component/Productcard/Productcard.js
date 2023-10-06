@@ -108,7 +108,7 @@ const Productcard=()=>{
                                 <div class="thebtncart text-center">
                                     <a href="#">
 
-                                        <Link to="/cartInfo" class="avail2 " href="cart.html">Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
+                                        <Link to="/cartInfo" class="avail2 " >Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
 
 
                                     </a>
@@ -363,7 +363,7 @@ const Productcard=()=>{
                             </div>
 
 
-                            <a href="cart.html"><span class="cnt-shop-bluecart clr-white flr-ryt">Add to Cart</span></a>
+                            <a ><span class="cnt-shop-bluecart clr-white flr-ryt">Add to Cart</span></a>
                         </div>
                     </div>
 
