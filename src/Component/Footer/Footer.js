@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer class="footer1">
@@ -32,12 +33,12 @@ function Footer() {
         <div class="row gx-0">
             <div class="col-12 col-md-8 pb-3 mb-3 border-bottom">
                 <ul class="list-inline m-0 text-center text-md-start">
-                    <li class="list-inline-item"><a href="contact.html" class="clr-white">Contact us</a></li>
-                    <li class="list-inline-item" ><a href="about.html" class="clr-white">About us</a></li>
-                    <li class="list-inline-item"><a href="faq.html" class="clr-white">FAQs</a></li>
-                    <li class="list-inline-item"><a href="blog.html" class="clr-white">Blog</a></li>
-                    <li class="list-inline-item"><a href="dashboard.html" class="clr-white">My Profile</a></li>
-                    <li class="list-inline-item"><a href="dashboard.html#v-pills-profile" class="clr-white">My Orders</a></li>
+                    <li class="list-inline-item"><Link to='/contactus' class="clr-white">Contact us</Link></li>
+                    <li class="list-inline-item" ><Link to='/aboutus' class="clr-white">About us</Link></li>
+                    <li class="list-inline-item"><Link to='/faqs' class="clr-white">FAQs</Link></li>
+                    <li class="list-inline-item"><Link to='/blog' class="clr-white">Blog</Link></li>
+                    <li class="list-inline-item"><Link to='/myprofile' class="clr-white">My Profile</Link></li>
+                    <li class="list-inline-item"><Link to='/myorder' class="clr-white">My Orders</Link></li>
                 </ul>
             </div>
             <div class="col-5 col-md-4 pb-3 mb-3 border-bottom">
@@ -59,10 +60,10 @@ function Footer() {
             </div>
             <div class="col-12 col-md-12 order-mobile-last text-center">
                 <ul class="list-inline m-0 fs-12 text-center text-md-start">
-                    <li class="list-inline-item"><a href="privacypolicy.html" class="clr-white">Privacy Policy</a></li>
-                    <li class="list-inline-item"><a href="termsofuse.html" class="clr-white">Terms of Use</a></li>
-                    <li class="list-inline-item"><a href="loyaltyprogram.html" class="clr-white">LC Loyalty-Program</a></li>
-                    <li class="list-inline-item"><a href="#" class="clr-white">Site Map</a></li>
+                    <li class="list-inline-item"><Link to='/privacypolicy'  class="clr-white">Privacy Policy</Link></li>
+                    <li class="list-inline-item"><Link to='/termsofuse' class="clr-white">Terms of Use</Link></li>
+                    <li class="list-inline-item"><Link to='/loyaltyprogram' class="clr-white">LC Loyalty-Program</Link></li>
+                    <li class="list-inline-item"><Link href="#" class="clr-white">Site Map</Link></li>
                 </ul>
             </div>
 

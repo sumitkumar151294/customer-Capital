@@ -32,6 +32,8 @@ import LoyaltyProgram from './Component/LoyaltyProgram/LoyaltyProgram';
 import Finalcart from './Component/Finalcart/Finalcart';
 import MyProfileContent from './Component/MyProfileContent/MyProfileContent';
 
+import DashboardHome from './Component/DashboardHome/DashboardHome';
+
 
 function App() {
   return (
@@ -48,11 +50,16 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/myprofile" element={<MyProfile />} />
-        <Route path="/myorders" element={<MyProfile />} />
-        <Route path="/myprofilecontent" element={<MyProfileContent />} />
+        <Route path="/myorder" element={<MyProfile />} />
         
 
-        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/myprofilecontent" element={<DashboardHome Component={MyProfileContent} />} />
+        
+        
+        
+        
+
+        <Route path="/privacypolicy" element={<PrivacyPolicy  />} />
         <Route path="/termsofuse" element={<TermsofUse />} />
         <Route path="/loyaltyprogram" element={<LoyaltyProgram />} />
         

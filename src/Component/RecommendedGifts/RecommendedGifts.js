@@ -95,7 +95,7 @@ export const RecommendedGifts = () => {
                         </div>
 
                         <div class="col-lg-2 col-3 text-center mt-25">
-                            <a href="productcart.html">
+                            <a >
                                 <div class="offer-box1">
                                     <img class="w-100" src="https://files.prezzee.uk/media/sku-theme-designs/prezzee-card-new-red-bd2e2a90-1d56-4742-b731-79eb42dea47f/prezzee-card-new-red.jpg" />
                                     <div class="bagde-flag-wrap2">
