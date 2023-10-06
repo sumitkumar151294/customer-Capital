@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Editor } from 'react-draft-wysiwyg'
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import './Email.css'
 
 const Email = () => {
+    const [editorState, setEditorState] = useState();
+
+    const onEditorStateChange = (newEditorState) => {
+        setEditorState(newEditorState);
+    };
     return (
         <div class="content-body">
             <div class="container-fluid">
@@ -16,7 +24,7 @@ const Email = () => {
                                     <div class="form-group mb-2">
 
                                         <select class="form-select" aria-label="Default select example">
-                                            <option selected>User List &nbsp;<i class="fa fa-angle-down"></i></option>
+                                            <option selected>Client List &nbsp;<i class="fa fa-angle-down"></i></option>
                                             <option value="About us">Jaswant Rawat</option>
                                             <option value="Privacy Policy">Manish Gautam</option>
                                             <option value="Terms and Conditions">Naveen Jha</option>
@@ -51,12 +59,19 @@ const Email = () => {
                             <div class="card-body ">
                                 <div class="form-group mb-2">
                                     <label for="name-f">Subject</label>
-                                    <input type="text" class="form-control" name="fname" id="name-f" placeholder="" required/>
+                                    <input type="text" class="form-control" name="fname" id="name-f" placeholder="" required />
                                 </div>
 
                                 <div class="form-group mb-2 if">
                                     <label for="name-f">Long Description</label>
-                                    <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder=""></textarea>
+                                    <Editor
+                                        editorState={editorState}
+                                        toolbarClassName="toolbarClassName"
+                                        wrapperClassName="wrapperClassName"
+                                        editorClassName="editorClassName"
+                                        onEditorStateChange={onEditorStateChange}
+                                    />
+                                    {/* <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder=""></textarea> */}
                                 </div>
 
                                 <div class="form-group mb-0 mt-2">
