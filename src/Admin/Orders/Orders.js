@@ -57,7 +57,7 @@ const Orders = () => {
                     <div class="col-xl-12 col-xxl-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
-                                <h4 class="card-title">Orders List</h4>
+                                <h4 class="card-title">Orders</h4>
                             </div>
 
                             <div class="card-body">

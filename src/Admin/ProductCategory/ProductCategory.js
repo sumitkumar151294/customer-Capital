@@ -38,7 +38,7 @@ const ProductCategory = () => {
 
                 <div class="row">
                     <div class="col-xl-12 col-xxl-12">
-                        <div class="card">
+                        <div class="card pb-4">
                             <div class="card-header">
                                 <h4 class="card-title">Product Categories</h4>
                             </div>
