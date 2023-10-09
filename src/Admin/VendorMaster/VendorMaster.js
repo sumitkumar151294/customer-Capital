@@ -34,6 +34,7 @@ const VendorMaster = () => {
         },
     ];
     const [vendorData, setVendorData] = useState({ name: '', secret: '', id: '', username: '', password: '', endPoint: '', code: '', status: '' });
+    const [isLoading, setIsLoading] = useState('true')
 
     const dispatch = useDispatch();
     const handleSubmit = (e) => {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../HomeAdmin/Admin.css'
 import { useDispatch } from 'react-redux';
 import { onClientMasterSubmit } from '../../redux/modules/Admin/clientMasterSlice';
+import Loader from '../Loader/Loader'
 
 const ClientMaster = () => {
     const clientMasterList = [
@@ -35,20 +36,21 @@ const ClientMaster = () => {
         },
     ];
 
+    const [isLoading, setIsLoading] = useState('true')
+
     const [clientData, setClientData] = useState({
         name: '',
         number: '',
         email: '',
-        domain: '',
-        dns: '',
         ipAddress: '',
-        domainProvider: '',
         color: '',
+        logoLink: '',
+        theme: '',
         stagingKey: '',
         stagingSecretKey: '',
         productionKey: '',
         productionSecretKey: '',
-        status:''
+        status: ''
     });
 
     const dispatch = useDispatch();
@@ -86,52 +88,16 @@ const ClientMaster = () => {
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2">
-                                                <label for="domain">Domain</label>
-                                                <input type="text" class="form-control" name="domain" id="domain" placeholder="" onChange={(e) => setClientData({ ...clientData, domain: e.target.value })} required />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2">
-                                                <label for="dns">DNS</label>
-                                                <input type="text" name="dns" class="form-control" id="dns" placeholder="" onChange={(e) => setClientData({ ...clientData, dns: e.target.value })} required />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2">
-                                                <label for="ipAddress">IP Address</label>
-                                                <input type="text" name="ipAddress" class="form-control" id="ipAddress" placeholder="" onChange={(e) => setClientData({ ...clientData, ipAddress: e.target.value })} required />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2">
-                                                <label for="domainProvider">Domain Provider</label>
-                                                <input type="text" name="domainProvider" class="form-control" id="domainPprovider" placeholder="" onChange={(e) => setClientData({ ...clientData, domainProvider: e.target.value })} required />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="db-link">DB Link</label>
-                                                <input type="text" name="dbLink" class="form-control" id="db-link" placeholder="" onChange={(e) => setClientData({ ...clientData, link: e.target.value })} />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="db-username">DB Username</label>
-                                                <input type="text" name="dbUsername" class="form-control" id="db-username" placeholder="" onChange={(e) => setClientData({ ...clientData, username: e.target.value })} />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="db-password">DB Password</label>
-                                                <input type="password" name="dbPassword" class="form-control" id="db-password" placeholder="" onChange={(e) => setClientData({ ...clientData, password: e.target.value })} />
-                                            </div>
-
-                                            <div class="col-sm-4 form-group mb-2 d-none">
-                                                <label for="db-type">DB Type</label>
-                                                <input type="text" name="dbType" class="form-control" id="db-type" placeholder="" onChange={(e) => setClientData({ ...clientData, type: e.target.value })} />
+                                                <label for="ipAddress">Database IP Address</label>
+                                                <input type="text" class="form-control" name="ipAddress" id="ipAddress" placeholder="" onChange={(e) => setClientData({ ...clientData, ipAddress: e.target.value })} required />
                                             </div>
 
                                             <div class="col-sm-4 form-group mb-2">
                                                 <label for="status">Status</label>
-                                                <select class="form-select" name="status" 
-                                                value={clientData.status}
-                                                onChange={(e) => setClientData({ ...clientData, status: e.target.value })}
-                                            
-                                                id="status" aria-label="Default select example">
+                                                <select class="form-select" name="status"
+                                                    value={clientData.status}
+                                                    onChange={(e) => setClientData({ ...clientData, status: e.target.value })}
+                                                    id="status" aria-label="Default select example">
                                                     <option selected>Select</option>
                                                     <option value="Active">Active</option>
                                                     <option value="Non-Active">Non-Active</option>
@@ -143,11 +109,23 @@ const ClientMaster = () => {
                                                 <input type="color" class="form-control" name="color" id="color" placeholder="" onChange={(e) => setClientData({ ...clientData, color: e.target.value })} required />
                                             </div>
 
-                                            <div class="col-sm-12 input-group mb-2 mt-2">
-                                                <div class="form-file">
-                                                    <input type="file" class="form-file-input form-control" />
-                                                </div>
-                                                <span class="input-group-text">Upload Logo</span>
+                                            <div class="col-sm-6 form-group mb-2">
+                                                <label for="logo">Logo Link</label>
+                                                <input type="text" class="form-control" name="logo" id="logo" placeholder="" onChange={(e) => setClientData({ ...clientData, logoLink: e.target.value })} required />
+                                            </div>
+
+                                            <div class="col-sm-6 form-group mb-2">
+                                                <label for="status">Select Theme</label>
+                                                <select class="form-select"
+                                                    value={clientData.theme}
+                                                    onChange={(e) => setClientData({ ...clientData, theme: e.target.value })}
+                                                    aria-label="Default select example">
+                                                    <option selected>Select Theme</option>
+                                                    <option value="Active">Theme 1</option>
+                                                    <option value="Non-Active">Theme 2</option>
+                                                    <option value="Non-Active">Theme 3</option>
+                                                    <option value="Non-Active">Theme 4</option>
+                                                </select>
                                             </div>
 
                                             <div class="row mt-2">
@@ -157,11 +135,11 @@ const ClientMaster = () => {
                                                     <div class="row p-0">
                                                         <h4>Staging</h4>
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="password" class="form-control" name="stagingKey" id="staging-key" placeholder="Key" onChange={(e) => setClientData({ ...clientData, stagingKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="stagingKey" id="staging-key" placeholder="Key" onChange={(e) => setClientData({ ...clientData, stagingKey: e.target.value })} required />
                                                         </div>
 
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="password" class="form-control" name="stagingSecretKey" id="staging-secret-key" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, stagingSecretKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="stagingSecretKey" id="staging-secret-key" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, stagingSecretKey: e.target.value })} required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -170,11 +148,11 @@ const ClientMaster = () => {
                                                     <div class="row p-0">
                                                         <h4>Production</h4>
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="password" class="form-control" name="productionKey" id="production-key" placeholder="Key" onChange={(e) => setClientData({ ...clientData, productionKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="productionKey" id="production-key" placeholder="Key" onChange={(e) => setClientData({ ...clientData, productionKey: e.target.value })} required />
                                                         </div>
 
                                                         <div class="col-sm-12 form-group mb-2">
-                                                            <input type="password" class="form-control" name="productionSecretKey" id="production-secret-key" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, productionSecretKey: e.target.value })} required />
+                                                            <input type="text" class="form-control" name="productionSecretKey" id="production-secret-key" placeholder="Secret Key" onChange={(e) => setClientData({ ...clientData, productionSecretKey: e.target.value })} required />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -217,37 +195,48 @@ const ClientMaster = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {clientMasterList.map((item, index) => (
-                                                <tr key={index}>
-                                                    <td>{item.contactName}</td>
-                                                    <td>{item.contactNumber}</td>
-                                                    <td>
-                                                        <span className="text-muted">{item.contactEmail}</span>
-                                                    </td>
-                                                    <td>{item.clientId}</td>
-                                                    <td>
-                                                        <span className={`badge ${item.status === 'Active' ? 'badge-success' : 'badge-danger'}`}>
-                                                            {item.status}
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <div className="d-flex">
-                                                            <a href="#" className="btn btn-primary shadow btn-xs sharp me-1">
-                                                                <i className="fas fa-pencil-alt"></i>
-                                                            </a>
-                                                            <a href="#" className="btn btn-danger shadow btn-xs sharp">
-                                                                <i className="fa fa-trash"></i>
-                                                            </a>
-                                                        </div>
+                                            {clientMasterList.length > 0 ? (
+                                                clientMasterList.map((item, index) => (
+                                                    <tr key={index}>
+                                                        <td>{item.contactName}</td>
+                                                        <td>{item.contactNumber}</td>
+                                                        <td>
+                                                            <span className="text-muted">{item.contactEmail}</span>
+                                                        </td>
+                                                        <td>{item.clientId}</td>
+                                                        <td>
+                                                            <span className={`badge ${item.status === 'Active' ? 'badge-success' : 'badge-danger'}`}>
+                                                                {item.status}
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <div className="d-flex">
+                                                                <a href="#" className="btn btn-primary shadow btn-xs sharp me-1">
+                                                                    <i className="fas fa-pencil-alt"></i>
+                                                                </a>
+                                                                <a href="#" className="btn btn-danger shadow btn-xs sharp">
+                                                                    <i className="fa fa-trash"></i>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                <tr>
+                                                    <td colSpan="6">
+                                                        {isLoading ? (
+                                                            <Loader />
+                                                        ) : (
+                                                            "No data found"
+                                                        )}
                                                     </td>
                                                 </tr>
-                                            ))}
+                                            )}
+
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            );
-}
                         </div>
                     </div>
 
