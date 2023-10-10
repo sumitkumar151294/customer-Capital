@@ -1,8 +1,8 @@
 import React from 'react'
-
-const Loader = () => {
+import './Loader.css'
+const Loader = ({classType}) => {
     return (
-        <div id="preloader">
+        <div className={classType} id="preloader">
             <div class="gooey">
                 <span class="dot"></span>
                 <div class="dots">

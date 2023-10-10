@@ -117,7 +117,7 @@ const Sidebar = () => {
                         </Link>
                     </li>
 
-                    <li className={location.pathname === '/LC-admin/emailtemplate' ? 'mm-active' : ''}>
+                    <li className={location.pathname === '/LC-admin/emailtemplates' ? 'mm-active' : ''}>
                         <Link to="/LC-admin/emailtemplates" class="ai-icon" aria-expanded="false">
                             <img class="w-20px" src={email} alt="file not exist" />
                             <span class="nav-text ps-1">Email Templates</span>
