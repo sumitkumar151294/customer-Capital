@@ -79,7 +79,7 @@ function App() {
         <Route path="/LC-admin/blog" element={<HomeAdmin Component={Blog}/>} />
         <Route path="/LC-admin/contactlist" element={<HomeAdmin Component={ContactListMaster}/>} />
         <Route path="/LC-admin/customerlist" element={<HomeAdmin Component={CustomerList}/>} />
-        <Route path="/LC-admin/emailtemplate" element={<HomeAdmin Component={Email}/>} />
+        <Route path="/LC-admin/emailtemplates" element={<HomeAdmin Component={Email}/>} />
       </Routes>
     </Router>
   );
