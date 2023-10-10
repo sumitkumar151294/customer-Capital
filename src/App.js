@@ -67,7 +67,7 @@ function App() {
         
 
         <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard}/>} />
-        <Route path="/LC-admin/vendornmaster" element={<HomeAdmin Component={VendorMaster}/>} />
+        <Route path="/LC-admin/vendormaster" element={<HomeAdmin Component={VendorMaster}/>} />
         <Route path="/LC-admin/allocationmaster" element={<HomeAdmin Component={AllocationMaster}/>} />
         <Route path="/LC-admin/rolemaster" element={<HomeAdmin Component={RoleMaster}/>} />
         <Route path="/LC-admin/cms" element={<HomeAdmin Component={CMS}/>} />

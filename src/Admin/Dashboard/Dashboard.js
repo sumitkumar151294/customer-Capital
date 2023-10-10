@@ -1,8 +1,8 @@
 import React from 'react'
 import '../HomeAdmin/Admin.css'
-import category from '../../assets/img/categories.png'
-import product from '../../assets/img/product.png'
-import customer from '../../assets/img/customer.png'
+import category from '../../assets/img/category.png'
+import product from '../../assets/img/product1.png'
+import customer from '../../assets/img/customer1.png'
 
 const Dashboard = () => {
     return (
@@ -22,7 +22,7 @@ const Dashboard = () => {
                                         <div className="d-inline-block position-relative donut-chart-sale">
                                             <span className="donut1" data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
                                             <small className="text-black">
-                                                <img className="w-35px" src={category} />
+                                                <img className="w-35px" src={category} alt="file not exist"/>
                                             </small>
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@ const Dashboard = () => {
                                         <div className="d-inline-block position-relative donut-chart-sale">
                                             <span className="donut1" data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'>5/6</span>
                                             <small className="text-black">
-                                                <img className="w-35px" src={product} />
+                                                <img className="w-35px" src={product} alt="file not exist"/>
                                             </small>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@ const Dashboard = () => {
                                         <div className="d-inline-block position-relative donut-chart-sale">
                                             <span className="donut1" data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
                                             <small className="text-black">
-                                                <img className="w-35px" src={customer} />
+                                                <img className="w-35px" src={customer} alt="file not exist"/>
                                             </small>
                                         </div>
                                     </div>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                                         <div className="d-inline-block position-relative donut-chart-sale">
                                             <span className="donut1" data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'>5/7</span>
                                             <small className="text-black">
-                                                <img className="w-35px" src={category} />
+                                                <img className="w-35px" src={category} alt="file not exist"/>
                                             </small>
                                         </div>
                                     </div>
