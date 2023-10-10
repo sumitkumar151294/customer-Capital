@@ -3,7 +3,7 @@ import '../HomeAdmin/Admin.css'
 import { useDispatch } from 'react-redux';
 import { onClientMasterSubmit } from '../../redux/modules/Admin/clientMasterSlice';
 import Loader from '../Loader/Loader'
-import './ClientMaster.css'
+// import './ClientMaster.css'
 
 const ClientMaster = () => {
     const clientMasterList = [
