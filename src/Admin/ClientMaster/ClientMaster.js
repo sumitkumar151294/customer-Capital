@@ -3,6 +3,7 @@ import '../HomeAdmin/Admin.css'
 import { useDispatch } from 'react-redux';
 import { onClientMasterSubmit } from '../../redux/modules/Admin/clientMasterSlice';
 import Loader from '../Loader/Loader'
+import './ClientMaster.css'
 
 const ClientMaster = () => {
     const clientMasterList = [
@@ -183,7 +184,7 @@ const ClientMaster = () => {
 
                             <div className="card-body">
                                 <div className="table-responsive">
-                                    <table className="table header-border table-responsive-sm">
+                                    <table className="table header-border table-responsive-sm clientData">
                                         <thead>
                                             <tr>
                                                 <th>Contact Name</th>
@@ -195,7 +196,7 @@ const ClientMaster = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {clientMasterList.length > 0 ? (
+                                            {clientMasterList.length < 0 ? (
                                                 clientMasterList.map((item, index) => (
                                                     <tr key={index}>
                                                         <td>{item.contactName}</td>
@@ -225,7 +226,7 @@ const ClientMaster = () => {
                                                 <tr>
                                                     <td colSpan="6">
                                                         {isLoading ? (
-                                                            <Loader />
+                                                            <Loader/>
                                                         ) : (
                                                             "No data found"
                                                         )}
