@@ -5,6 +5,7 @@ import clientMasterSaga from './Admin/clientMasterSaga';
 import cmsSaga from './Admin/cmsSaga';
 import blogSaga from './Admin/blogSaga';
 import faqsSaga from './Admin/faqsSaga';
+import couponSaga from './User/couponSaga'
 
 export default function* rootSaga() {
   yield all([
@@ -14,5 +15,7 @@ export default function* rootSaga() {
     cmsSaga(),
     blogSaga(),
     faqsSaga(),
+    couponSaga()
+
   ]);
 }

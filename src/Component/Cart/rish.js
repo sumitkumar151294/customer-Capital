@@ -9,14 +9,14 @@ import { onCouponSubmit } from "../../redux/modules/User/couponSlice";
 
 
 
-const  Cart = () => {
+const   Cart = () => {
 
   const dispatch = useDispatch();
 
   const [couponData, setCouponData]= useState({name:''})
 
   const handleSubmit = (e) =>{
-   
+    debugger
     e.preventDefault();
     dispatch(onCouponSubmit(couponData));
 
