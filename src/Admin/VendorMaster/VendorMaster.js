@@ -34,6 +34,7 @@ const VendorMaster = () => {
             status: 'Non-Active',
         },
     ];
+    console.log(vendorList);
     const [vendorData, setVendorData] = useState({ name: '', secret: '', id: '', username: '', password: '', endPoint: '', code: '', status: '' });
     const [isLoading, setIsLoading] = useState('true')
     const [isformLoading, setIsFormLoading] = useState('true')

@@ -7,7 +7,7 @@ const CartInfo =()=>{
     return(
         <>
         <Header />
-        {/* <NewHeader /> */}
+        
         <Cart />
         <Footer />
     </>
