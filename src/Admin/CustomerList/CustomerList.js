@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Loader from '../Loader/Loader'
 
 const CustomerList = () => {
     const customerList = [
@@ -39,9 +40,15 @@ const CustomerList = () => {
             lastSignIn: '28 Minutes Ago',
         },
     ];
+
+    const [isLoading, setIsLoading] = useState('true')
+
     return (
 
         <div class="content-body">
+            {!isLoading ? (
+                    <Loader />
+                ) : (
             <div class="container-fluid">
 
                 <div class="row">
@@ -87,6 +94,7 @@ const CustomerList = () => {
                     </div>
                 </div>
             </div>
+                )}
         </div>
     )
 }

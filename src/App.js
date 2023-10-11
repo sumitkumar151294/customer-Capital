@@ -67,7 +67,7 @@ function App() {
         
 
         <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard}/>} />
-        <Route path="/LC-admin/vendornmaster" element={<HomeAdmin Component={VendorMaster}/>} />
+        <Route path="/LC-admin/vendormaster" element={<HomeAdmin Component={VendorMaster}/>} />
         <Route path="/LC-admin/allocationmaster" element={<HomeAdmin Component={AllocationMaster}/>} />
         <Route path="/LC-admin/rolemaster" element={<HomeAdmin Component={RoleMaster}/>} />
         <Route path="/LC-admin/cms" element={<HomeAdmin Component={CMS}/>} />
@@ -79,7 +79,7 @@ function App() {
         <Route path="/LC-admin/blog" element={<HomeAdmin Component={Blog}/>} />
         <Route path="/LC-admin/contactlist" element={<HomeAdmin Component={ContactListMaster}/>} />
         <Route path="/LC-admin/customerlist" element={<HomeAdmin Component={CustomerList}/>} />
-        <Route path="/LC-admin/emailtemplate" element={<HomeAdmin Component={Email}/>} />
+        <Route path="/LC-admin/emailtemplates" element={<HomeAdmin Component={Email}/>} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { onBlogSubmit } from '../../redux/modules/Admin/blogSlice';
+import Loader from '../Loader/Loader'
 
 const Blog = () => {
     const [blogData, setBlogData] = useState({ name: '', date: '', heading: '', longDescription: '' });
@@ -9,58 +10,63 @@ const Blog = () => {
         e.preventDefault();
         dispatch(onBlogSubmit(blogData));
     };
+    const [isLoading, setIsLoading] = useState('true')
 
     return (
         <div class="content-body">
-            <div class="container-fluid">
+            {!isLoading ? (
+                <Loader />
+            ) : (
+                <div class="container-fluid">
 
-                <div class="row">
-                    <div class="col-xl-12 col-xxl-12">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between">
-                                <h4 class="card-title">Blog Master</h4>
-                            </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-xxl-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between">
+                                    <h4 class="card-title">Blog Master</h4>
+                                </div>
 
-                            <div class="card-body ">
-                                <form onSubmit={handleSubmit}>
-                                    <div class="row">
+                                <div class="card-body ">
+                                    <form onSubmit={handleSubmit}>
+                                        <div class="row">
 
-                                        <div class="col-sm-3 form-group mb-2">
-                                            <label for="name-f">Author Name</label>
-                                            <input type="text" class="form-control" name="fname" id="name-f" placeholder="" onChange={(e) => setBlogData({ ...blogData, name: e.target.value })} required />
-                                        </div>
-                                        <div class="col-sm-3 form-group mb-2">
-                                            <label for="name-l">Blog Date</label>
-                                            <input type="date" class="form-control" name="bdate" id="name-l" placeholder="" onChange={(e) => setBlogData({ ...blogData, date: e.target.value })} required />
-                                        </div>
-                                        <div class="col-sm-6 form-group mb-2">
-                                            <label for="heading">Heading 1 </label>
-                                            <input type="text" class="form-control" name="heading" id="heading" placeholder="" onChange={(e) => setBlogData({ ...blogData, heading: e.target.value })} required />
-                                        </div>
-
-                                        <div class="col-sm-12 input-group mb-2">
-                                            <div class="form-file">
-                                                <input type="file" class="form-file-input form-control" />
+                                            <div class="col-sm-3 form-group mb-2">
+                                                <label for="name-f">Author Name</label>
+                                                <input type="text" class="form-control" name="fname" id="name-f" placeholder="" onChange={(e) => setBlogData({ ...blogData, name: e.target.value })} required />
                                             </div>
-                                            <span class="input-group-text">Upload</span>
+                                            <div class="col-sm-3 form-group mb-2">
+                                                <label for="name-l">Blog Date</label>
+                                                <input type="date" class="form-control" name="bdate" id="name-l" placeholder="" onChange={(e) => setBlogData({ ...blogData, date: e.target.value })} required />
+                                            </div>
+                                            <div class="col-sm-6 form-group mb-2">
+                                                <label for="heading">Heading 1 </label>
+                                                <input type="text" class="form-control" name="heading" id="heading" placeholder="" onChange={(e) => setBlogData({ ...blogData, heading: e.target.value })} required />
+                                            </div>
+
+                                            <div class="col-sm-12 input-group mb-2">
+                                                <div class="form-file">
+                                                    <input type="file" class="form-file-input form-control" />
+                                                </div>
+                                                <span class="input-group-text">Upload</span>
+                                            </div>
                                         </div>
+                                    </form>
+
+                                    <div class="form-group mb-2 if">
+                                        <label for="name-f">Long Description</label>
+                                        <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => setBlogData({ ...blogData, longDescription: e.target.value })}></textarea>
                                     </div>
-                                </form>
 
-                                <div class="form-group mb-2 if">
-                                    <label for="name-f">Long Description</label>
-                                    <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => setBlogData({ ...blogData, longDescription: e.target.value })}></textarea>
+                                    <div class="form-group mb-0 mt-2">
+                                        <button type='submit' class="btn btn-primary float-right pad-aa" >Submit <i class="fa fa-arrow-right"></i></button>
+                                    </div>
+
                                 </div>
-
-                                <div class="form-group mb-0 mt-2">
-                                    <button type='submit' class="btn btn-primary float-right pad-aa" >Submit <i class="fa fa-arrow-right"></i></button>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     )
 }

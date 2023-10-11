@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import pizz1 from '../../assets/img/pizz1.jpg'
+import Loader from '../Loader/Loader'
 
 const Orders = () => {
     const productList = [
@@ -49,15 +50,19 @@ const Orders = () => {
             date: '09-13-2023',
         }
     ]
+    const [isLoading, setIsLoading] = useState('true')
     return (
         <div class="content-body">
+            {!isLoading ? (
+                <Loader />
+            ) : (
             <div class="container-fluid">
 
                 <div class="row">
                     <div class="col-xl-12 col-xxl-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
-                                <h4 class="card-title">Orders List</h4>
+                                <h4 class="card-title">Orders</h4>
                             </div>
 
                             <div class="card-body">
@@ -96,6 +101,7 @@ const Orders = () => {
                     </div>
                 </div>
             </div>
+            )}
         </div>
     )
 }
