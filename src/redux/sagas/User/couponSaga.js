@@ -4,7 +4,7 @@ import {onCouponSubmit ,onCouponSubmitSuccess , onCouponSubmitError} from '../..
 
 function* Coupon({payload}){
     try {
-        debugger
+        
         const couponResponse = yield call(callUserApi, payload);
       if (couponResponse.status_code === 200) {
             yield put(onCouponSubmitSuccess({ data: couponResponse, message: couponResponse.message}));

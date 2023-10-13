@@ -6,7 +6,7 @@ export const couponSlice = createSlice({
         isLoading: false,
         isError: false,
         data: {},
-        error:{},
+        error: {},
         message:''
     },
 

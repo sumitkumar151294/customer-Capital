@@ -6,6 +6,7 @@ import cmsSaga from './Admin/cmsSaga';
 import blogSaga from './Admin/blogSaga';
 import faqsSaga from './Admin/faqsSaga';
 import couponSaga from './User/couponSaga'
+import loginSaga from './loginSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -15,7 +16,8 @@ export default function* rootSaga() {
     cmsSaga(),
     blogSaga(),
     faqsSaga(),
-    couponSaga()
+    couponSaga(),
+    loginSaga(),
 
   ]);
 }
