@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './Header.css'
 import img from '../../Images/logo.png'
-import { useDispatch } from 'react-redux'
-import { onLoginSubmit } from '../../redux/modules/authenticationSlice';
+// import { useDispatch } from 'react-redux'
+// import { onLoginSubmit } from '../../redux/modules/authenticationSlice';
 const Header = () => {
-    const dispatch = useDispatch();
-    const [loginData, setLoginData] = useState({ email: 'hjak', password: 'jakljk' });
-    useEffect(() => {
-        dispatch(onLoginSubmit(loginData));
-    }, []);
+    // const dispatch = useDispatch();
+    // const [loginData, setLoginData] = useState({ email: '', password: '' });
+    // useEffect(() => {
+    //     dispatch(onLoginSubmit(loginData));
+    // }, []);
 
     return (
         <>

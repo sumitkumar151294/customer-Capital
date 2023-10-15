@@ -4,7 +4,8 @@ import clientReducer from './modules/Admin/clientMasterSlice';
 import blogReducer from './modules/Admin/blogSlice';
 import faqsReducer from './modules/Admin/faqsSlice';
 import authenticationReducer from './modules/authenticationSlice';
-import couponReducer from './modules/User/couponSlice'
+import couponReducer from './modules/User/couponSlice';
+import loginReducer from './modules/loginSlice'
 
 import { combineReducers } from 'redux';
 const reducers = combineReducers({
@@ -15,6 +16,7 @@ const reducers = combineReducers({
   blogReducer:blogReducer,
   faqsReducer:faqsReducer,
   couponReducer:couponReducer,
+  loginReducer:loginReducer,
 });
 
 export default reducers;

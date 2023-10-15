@@ -11,15 +11,34 @@ import { onCouponSubmit } from "../../redux/modules/User/couponSlice";
 
 const  Cart = () => {
 
+  const data = [
+    {
+      name:'abcd',
+      client:'xyz',
+      pass:'abcdxyz'
+    },
+    {
+      name:'efgh',
+      client:'pqr',
+      pass:'efghpqr'
+    },
+    {
+      name:'ijkl',
+      client:'uvw',
+      pass:'ijkluvw'
+    },
+    {
+      name:'mnop',
+      client:'stu',
+      pass:'mnopstu'
+    },
+  ];
+
   const dispatch = useDispatch();
-
   const [couponData, setCouponData]= useState({name:''})
-
-  const handleSubmit = (e) =>{
-   
+  const handleSubmit = (e) =>{  
     e.preventDefault();
     dispatch(onCouponSubmit(couponData));
-
   } 
   return (
     <>
@@ -380,6 +399,10 @@ const  Cart = () => {
           </div>
         </div>
       </section>
+
+      
+
+
     </>
   )
 }

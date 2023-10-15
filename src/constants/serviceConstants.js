@@ -1,5 +1,6 @@
 const API = {
-    loginApi: '/login'
+    loginApi: '/login',
+    signupApi:'/signupApi'
 }
 
 export default API;
