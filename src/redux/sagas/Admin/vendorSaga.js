@@ -8,7 +8,6 @@ import {
 
 function* Vendor({payload}) {
   try {
-    debugger
       const vendorResponse = yield call(callVendorApi, payload);
     if (vendorResponse.status_code === 200) {
           yield put(onVendorSubmitSuccess({ data: vendorResponse, message: vendorResponse.message}));

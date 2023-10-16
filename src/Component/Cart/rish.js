@@ -16,7 +16,6 @@ const   Cart = () => {
   const [couponData, setCouponData]= useState({name:''})
 
   const handleSubmit = (e) =>{
-    debugger
     e.preventDefault();
     dispatch(onCouponSubmit(couponData));
 

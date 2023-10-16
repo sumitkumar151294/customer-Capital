@@ -22012,7 +22012,7 @@ textarea {
   margin: 0 auto;
   transition: background 0.25s linear;
   -webkit-transition: background 0.25s linear;
-  z-index: 2;
+  z-index: 0;
 }
 
 .order-tracking .is-complete:after {

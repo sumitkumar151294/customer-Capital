@@ -12,13 +12,12 @@ export const couponSlice = createSlice({
 
     reducers:{
         onCouponSubmit: (state) => {
-            debugger
+            
             return {...state, isLoading: true, data: {}, error:{}, message:'', isError:false}
         },
 
         onCouponSubmitSuccess : (state , {payload}) =>{
             const { data ={} , message = '' , status_code =200} = payload;
-            debugger
             return{
                 ...state,
                 isLoading:false,

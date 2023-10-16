@@ -11,7 +11,6 @@ export const vendorSlice = createSlice({
   },
   reducers: {
     onVendorSubmit: (state) => {
-      debugger
       return { ...state, isLoading: true, data: {}, message: '', error: {}, isError: false };
     },
     onVendorSubmitSuccess: (state, { payload }) => {
