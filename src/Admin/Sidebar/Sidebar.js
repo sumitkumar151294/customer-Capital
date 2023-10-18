@@ -51,11 +51,23 @@ const Sidebar = () => {
                             <span class="nav-text ps-1">Client Master</span>
                         </Link>
                     </li>
+                    <li className={location.pathname === '/LC-admin/usermaster' ? 'mm-active' : ''}>
+                        <Link class="ai-icon" to="/LC-admin/usermaster" aria-expanded="false">
+                            <img class="w-20px" src={clientmaster} alt="file not exist" />
+                            <span class="nav-text ps-1">User Master</span>
+                        </Link>
+                    </li>
 
                     <li className={location.pathname === '/LC-admin/rolemaster' ? 'mm-active' : ''}>
                         <Link class="ai-icon" to="/LC-admin/rolemaster" aria-expanded="false">
                             <img class="w-20px" src={role} alt="file not exist" />
                             <span class="nav-text ps-1">Role Master</span>
+                        </Link>
+                    </li>
+                    <li className={location.pathname === '/LC-admin/createcategories' ? 'mm-active' : ''}>
+                        <Link class="ai-icon" to="/LC-admin/createcategories" aria-expanded="false">
+                            <img class="w-20px" src={productcate} alt="file not exist" />
+                            <span class="nav-text ps-1">Create Categories</span>
                         </Link>
                     </li>
 
@@ -65,7 +77,12 @@ const Sidebar = () => {
                             <span class="nav-text ps-1">Product Categories</span>
                         </Link>
                     </li>
-
+                    <li className={location.pathname === '/LC-admin/suppliercategory' ? 'mm-active' : ''}>
+                        <Link to="/LC-admin/suppliercategory" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src={productcate} alt="file not exist" />
+                            <span class="nav-text ps-1">Supplier Category List</span>
+                        </Link>
+                    </li>
                     <li className={location.pathname === '/LC-admin/productcatalouge' ? 'mm-active' : ''}>
                         <Link to="/LC-admin/productcatalouge" class="ai-icon" aria-expanded="false">
                             <img class="w-20px" src={product} alt="file not exist" />

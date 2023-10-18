@@ -33,6 +33,10 @@ import Finalcart from './Component/Finalcart/Finalcart';
 import MyProfileContent from './Component/MyProfileContent/MyProfileContent';
 
 import DashboardHome from './Component/DashboardHome/DashboardHome';
+import UserMaster from './Admin/UserMaster/userMaster';
+import CreateCategory from './Admin/CreateCategory/CreateCategory';
+import SupplierCategoryList from './Admin/SupplierCategory/SupplierCategory';
+import ProductDetail from './Admin/ProductCategory/ProductDetail';
 
 
 function App() {
@@ -80,6 +84,12 @@ function App() {
         <Route path="/LC-admin/contactlist" element={<HomeAdmin Component={ContactListMaster}/>} />
         <Route path="/LC-admin/customerlist" element={<HomeAdmin Component={CustomerList}/>} />
         <Route path="/LC-admin/emailtemplates" element={<HomeAdmin Component={Email}/>} />
+        <Route path="/LC-admin/usermaster" element={<HomeAdmin Component={UserMaster}/>} />
+        <Route path="/LC-admin/createcategories" element={<HomeAdmin Component={CreateCategory}/>} />
+        <Route path="/LC-admin/suppliercategory" element={<HomeAdmin Component={SupplierCategoryList}/>} />
+        <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail}/>} />
+
+    
       </Routes>
     </Router>
   );

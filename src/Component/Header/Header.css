@@ -18125,11 +18125,20 @@ input::-webkit-inner-spin-button {
 
 }
 
-.two {
+
+.two{
 
   font-size: 13px;
   margin-top: 5px;
-
+}
+.desc{
+  font-size: 13px;
+  margin-top: 5px;
+}
+.desc:hover{
+  font-size: 13px;
+  margin-top: 5px;
+  color:#ca5332
 }
 
 .hjik {
