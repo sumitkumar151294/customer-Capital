@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import tanisq from '../../Images/tanishq.png'
-import bata from '../../Images/bata.png'
-import bigBasket from '../../Images/bigbasket.png'
+// import bata from '../../Images/bata.png'
+// import bigBasket from '../../Images/bigbasket.png'
 import coin from '../../Images/coin.png'
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux'
@@ -15,24 +15,41 @@ const  Cart = () => {
     {
       name:'abcd',
       client:'xyz',
-      pass:'abcdxyz'
+      pass:'abcdxyz',
+      amount:10,
+      src:"../../Images/tanishq.png"
     },
     {
       name:'efgh',
       client:'pqr',
-      pass:'efghpqr'
+      pass:'efghpqr',
+      amount:20
     },
     {
       name:'ijkl',
       client:'uvw',
-      pass:'ijkluvw'
+      pass:'ijkluvw',
+      amount:30
     },
     {
       name:'mnop',
       client:'stu',
-      pass:'mnopstu'
+      pass:'mnopstu',
+      amount:40
     },
   ];
+
+  const [count,setcount]=useState(0);
+  
+  const addcount = () =>{
+    setcount(count + 1)
+  }
+
+  const subcount = ()=>{
+    if(count!==0){
+    setcount(count - 1)
+    }
+  }
 
   const dispatch = useDispatch();
   const [couponData, setCouponData]= useState({name:''})
@@ -79,33 +96,35 @@ const  Cart = () => {
                     </a>
                   </div>
                 </div>
+{data.map((cart)=>(
                 <div className="col-lg-9 col-12 mt-3">
+                  <div className="w-100"><img alt="Myntra" src={cart.src} /></div>
                   <div className="row justify-content-between pb-3">
-                    <div className="col-6 fs-12 pt-1 text-muted">5% Discount & 10 Reward Points</div>
+                    <div className="col-6 fs-12 pt-1 text-muted">{cart.name}</div>
                     <div className="col-6 col-md-auto lh-1 ps-0">
                       <div className="text-nowrap text-end">
                         <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><small className="text-muted pe-1 fs-12"></small> Earn <img src={coin} className="w-24px" /> <span className="fs-18 fw-500 the-greenrupee">10</span></div>
+                          <div className="d-flex no-flex align-items-center"><small className="text-muted pe-1 fs-12"></small> Earn <img src={coin} className="w-24px" /> <span className="fs-18 fw-500 the-greenrupee">{cart.amount}</span></div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="row justify-content-between pb-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Myntra</div>
+                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">{cart.name}</div>
                     <div className="col-12 fs-12 pt-1 text-muted">E-Gift Card (Instant Vouchers)</div>
                   </div>
                   <div className="row justify-content-between align-items-end">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">You Pay</div>
+                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">{cart.client}</div>
                     <div className="col-6 col-md-auto lh-1 ps-0">
                       <div className="text-nowrap text-end">
                         <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 the-greenrupee"><s className="font-blk">₹100</s> ₹85</span></div>
+                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 the-greenrupee"><s className="font-blk">₹100</s> {cart.amount}</span></div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="row justify-content-between mt-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Saving</div>
+                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">{cart.pass}</div>
                     <div className="col-6 col-md-auto lh-1 ps-0">
                       <div className="text-nowrap text-end">
                         <div className="d-flex align-items-center justify-content-end">
@@ -119,9 +138,9 @@ const  Cart = () => {
                       <ul className="list-inline mt-2">
                         <div className="mass">
                           <div className="input-group">
-                            <input type="button" value="-" className="button-minus" data-field="quantity" />
-                            <input type="number" step="1" max="" value="1" name="quantity" className="quantity-field" />
-                            <input type="button" value="+" className="button-plus" data-field="quantity" />
+                            <input type="button" onClick={subcount} value="-" className="button-minus" data-field="quantity" />
+                            <input type="number" step="1" max="" value={count} name="quantity" className="quantity-field" />
+                            <input type="button" onClick={addcount} value="+" className="button-plus" data-field="quantity" />
                           </div>
                         </div>
                       </ul>
@@ -129,8 +148,9 @@ const  Cart = () => {
                     <div className="col-md-auto text-end col-12 ps-0 pt-2"><button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
                   </div>
                 </div>
+))}
               </div>
-              <div className="row mx-0 border-bottom py-3 cartGrid bnn">
+              {/* <div className="row mx-0 border-bottom py-3 cartGrid bnn">
                 <div className="col-lg-3 pe-0 d-none d-lg-block">
                   <div className="d-flex w-100 h-100 align-items-center text-center">
                     <a href="/myntra" className="border">
@@ -178,9 +198,9 @@ const  Cart = () => {
                       <ul className="list-inline mt-2">
                         <div className="mass">
                           <div className="input-group">
-                            <input type="button" value="-" className="button-minus" data-field="quantity" />
-                            <input type="number" step="1" max="" value="1" name="quantity" className="quantity-field" />
-                            <input type="button" value="+" className="button-plus" data-field="quantity" />
+                            <input type="button" value="-" onClick={subcount} className="button-minus" data-field="quantity" />
+                            <input type="number" step="1" max="" value={count} name="quantity" className="quantity-field" />
+                            <input type="button" value="+" onClick={addcount} className="button-plus" data-field="quantity" />
                           </div>
                         </div>
                       </ul>
@@ -189,6 +209,7 @@ const  Cart = () => {
                   </div>
                 </div>
               </div>
+
               <div className="row mx-0 border-bottom py-3 cartGrid bnn">
                 <div className="col-lg-3 pe-0 d-none d-lg-block">
                   <div className="d-flex w-100 h-100 align-items-center text-center">
@@ -237,9 +258,9 @@ const  Cart = () => {
                       <ul className="list-inline mt-2">
                         <div className="mass">
                           <div className="input-group">
-                            <input type="button" value="-" className="button-minus" data-field="quantity" />
-                            <input type="number" step="1" max="" value="1" name="quantity" className="quantity-field" />
-                            <input type="button" value="+" className="button-plus" data-field="quantity" />
+                            <input type="button" onClick={subcount} value="-" className="button-minus" data-field="quantity" />
+                            <input type="number" step="1" max="" value={count} name="quantity" className="quantity-field" />
+                            <input onClick={addcount} type="button" value="+" className="button-plus" data-field="quantity" />
                           </div>
                         </div>
                       </ul>
@@ -247,7 +268,8 @@ const  Cart = () => {
                     <div className="col-md-auto text-end col-12 ps-0 pt-2"><button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
                   </div>
                 </div>
-              </div>
+              </div> */}
+
             </div>
 
             <div className="col-lg-4 mt-45px">

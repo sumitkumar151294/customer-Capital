@@ -7,7 +7,6 @@ const CartInfo =()=>{
     return(
         <>
         <Header />
-        
         <Cart />
         <Footer />
     </>
