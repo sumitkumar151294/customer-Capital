@@ -1,37 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
-import { useDispatch } from "react-redux";
-import { onLoginSubmit } from "../../redux/modules/authenticationSlice";
-import DashboardHome from "../DashboardHome/DashboardHome";
-import MyProfileContent from "../MyProfileContent/MyProfileContent";
-import NewHeader from "../NewHeader/NewHeader";
-import SectionHero from "../SectionHero/SectionHero";
-import Shop from "../Shop/Shop";
-import LetShop from "../LetShop/LetShop";
-import GiftCard from "../GiftCard/GiftCard";
-import Footer from "../Footer/Footer";
+// import { useDispatch } from 'react-redux'
+// import { onLoginSubmit } from '../../redux/modules/authenticationSlice';
 const Header = () => {
-  
-  const [account, setAccount] = useState(false);
-  const [wishList, setWIshList] = useState(false);
-  const [cart, setCart] = useState(false);
+  // const dispatch = useDispatch();
+  // const [loginData, setLoginData] = useState({ email: '', password: '' });
+  // useEffect(() => {
+  //     dispatch(onLoginSubmit(loginData));
+  // }, []);
 
-  const handleMyAccount = () => {
-    setAccount(true);
-    setWIshList(false);
-    setCart(false);
-  };
-  const handleWishList = () => {
-    setWIshList(true);
-    setAccount(false);
-    setCart(false);
-  };
-  const handleCart = () => {
-    setWIshList(false);
-    setAccount(false);
-    setCart(true);
-  };
   return (
     <>
       <header className="header1">
@@ -58,7 +36,6 @@ const Header = () => {
                     </a>
                   </div>
                 </div>
-
                 <div className="col-xl-3 col-lg-2 col-5 order-1 order-lg-2">
                   <div className="top-right clearfix">
                     <ul>
@@ -99,18 +76,10 @@ const Header = () => {
                           <div className="logindrop2">
                             <ul>
                               <li>
-                                <a
-                                  id="#"
-                                  href="#"
-                                  onClick={() => handleMyAccount()}
-                                >
-                                  My Account
-                                </a>
+                                <a id="#">My Account</a>
                               </li>
                               <li>
-                                <a id="#" href="#">
-                                  My Points
-                                </a>
+                                <a id="#">My Points</a>
                               </li>
                               <li>
                                 <a id="#" href="#">
@@ -123,7 +92,7 @@ const Header = () => {
                               </li>
 
                               <li>
-                                <a href="#">Logout </a>
+                                <a>Logout </a>
                               </li>
                             </ul>
                           </div>
@@ -131,18 +100,12 @@ const Header = () => {
                       </li>
                       <li className="d-none d-xl-inline-block">
                         <a id="#" href="#">
-                          <i
-                            className="lar la-heart"
-                            onClick={() => handleWishList()}
-                          ></i>
+                          <i className="lar la-heart"></i>
                         </a>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <a id="#">
-                          <i
-                            className="las la-shopping-bag"
-                            onClick={() => handleCart()}
-                          ></i>
+                        <a id="#" href="#">
+                          <i className="las la-shopping-bag"></i>
                           <span className="cartcounter">
                             <div id="#">0</div>
                           </span>
@@ -260,8 +223,7 @@ const Header = () => {
                 <a className="nav-link " href="#">
                   {/* <img width="25" src="img/profile.png"> */}
                   <div
-                    onClick={handleMyAccount}
-                    // style="color: black!important;"
+                  // style="color: black!important;"
                   >
                     My Account
                   </div>
@@ -270,19 +232,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-    
-        {account || wishList ? (
-          <MyProfileContent wishList={wishList} />
-        ) : (
-          <>
-            <NewHeader />
-            <SectionHero />
-            <Shop />
-            <LetShop />
-            <GiftCard />
-          </>
-        )}
-        <Footer />
       </header>
     </>
   );
