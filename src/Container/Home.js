@@ -6,13 +6,20 @@ import Shop from '../Component/Shop/Shop'
 import LetShop from '../Component/LetShop/LetShop'
 import GiftCard from '../Component/GiftCard/GiftCard'
 import Footer from '../Component/Footer/Footer'
-import Login from '../Component/Login/Login'
+// import Login from '../Component/Login/Login'
 
 const Home = () => {
     return (
         <>
             <Header />
-            <Login />
+            <NewHeader />
+            <SectionHero />
+            <Shop />
+            <LetShop />
+            <GiftCard />
+        <Footer />
+          
+            {/* <Login /> */}
         </>
     )
 }
