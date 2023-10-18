@@ -15,7 +15,7 @@ const SupplierCategoryList=()=> {
                   <h4 className="card-title">Supplier Category List</h4>
                 </div>
                 <div className="card-body position-relative">
-                {isLoading ? (
+                {!isLoading ? (
                                         <div style={{ height: '500px' }}>
                                             <Loader classType={'absoluteLoader'} />
                                         </div>

@@ -34,7 +34,7 @@ const Sidebar = () => {
                     <li className={location.pathname === '/LC-admin/vendormaster' ? 'mm-active' : ''}>
                         <Link class="ai-icon" to="/LC-admin/vendormaster" aria-expanded="false">
                             <img class="w-20px" src={vendor} alt="file not exist" />
-                            <span class="nav-text ps-1">Vendor Master</span>
+                            <span class="nav-text ps-1">Supplier Master</span>
                         </Link>
                     </li>
 
