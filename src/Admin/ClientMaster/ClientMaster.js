@@ -39,28 +39,50 @@ const ClientMaster = () => {
   const [isLoading, setIsLoading] = useState("true");
   const [isformLoading, setIsFormLoading] = useState("true");
 
-  const [clientData, setClientData] = useState({
-    name: "",
-    number: "",
-    email: "",
-    ipAddress: "",
-    color: "",
-    logoLink: "",
-    theme: "",
-    stagingKey: "",
-    stagingSecretKey: "",
-    productionKey: "",
-    productionSecretKey: "",
-    status: "",
-    password: "",
-    userName: "",
-  });
+  const [clientData, setClientData] = useState({ name: "", number: "", email: "", ipAddress: "", color: "", logoLink: "", theme: "", stagingKey: "", stagingSecretKey: "", productionKey: "", productionSecretKey: "", status: "", password: "", userName: "" });
+  const [errors, setErrors] = useState({ name: "", number: "", email: "", ipAddress: "", color: "", logoLink: "", theme: "", stagingKey: "", stagingSecretKey: "", productionKey: "", productionSecretKey: "", status: "", password: "", userName: "" });
 
   const dispatch = useDispatch();
+
+  const handleChange = (e, fieldName) => {
+    setClientData({
+      ...clientData,
+      [fieldName]: e.target.value,
+    });
+  
+    // Remove the error message when the user starts typing
+    setErrors({
+      ...errors,
+      [fieldName]: '',
+    });
+  };
+
   const handleSubmit = (e) => {
-    debugger;
     e.preventDefault();
-    dispatch(onClientMasterSubmit(clientData));
+    let isValid = true;
+    const newErrors = { ...errors };
+
+    // Check if fields are empty and set corresponding error messages
+    for (const key in clientData) {
+      if (clientData[key] === '') {
+        newErrors[key] = 'This field is required';
+        isValid = false;
+      } else {
+        newErrors[key] = '';
+      }
+    }
+
+    // Email validation using the regexEmail pattern
+    const regexEmail = /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zA-Z0-9]+(\.[a-zA-Z\.]+)/g;
+    if (!regexEmail.test(clientData.email)) {
+      newErrors.email = 'Invalid email format';
+      isValid = false;
+    }
+    setErrors(newErrors);
+
+    if (isValid) {
+      dispatch(onClientMasterSubmit(clientData));
+    }
   };
 
   return (
@@ -89,14 +111,9 @@ const ClientMaster = () => {
                             name="contactName"
                             id="contact-name"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                name: e.target.value,
-                              })
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'name')}
                           />
+                          <p className="text-danger">{errors.name}</p>
                         </div>
                         <div class="col-sm-4 form-group mb-2">
                           <label for="contact-number">Contact Number</label>
@@ -106,14 +123,9 @@ const ClientMaster = () => {
                             name="contactNumber"
                             id="contact-number"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                number: e.target.value,
-                              })
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'number')}
                           />
+                          <p className="text-danger">{errors.number}</p>
                         </div>
                         <div class="col-sm-4 form-group mb-2">
                           <label for="contact-email">Contact Email</label>
@@ -123,14 +135,9 @@ const ClientMaster = () => {
                             name="contactEmail"
                             id="contact-email"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                email: e.target.value,
-                              })
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'email')}
                           />
+                          <p className="text-danger">{errors.email}</p>
                         </div>
 
                         <div class="col-sm-4 form-group mb-2">
@@ -141,14 +148,9 @@ const ClientMaster = () => {
                             name="ipAddress"
                             id="ipAddress"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                ipAddress: e.target.value,
-                              })
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'ipAddress')}
                           />
+                          <p className="text-danger">{errors.ipAddress}</p>
                         </div>
                         <div class="col-sm-4 form-group mb-2">
                           <label for="contact-name">Username</label>
@@ -158,16 +160,9 @@ const ClientMaster = () => {
                             name="username"
                             id="user-name"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData(
-                                console.log({
-                                  ...clientData,
-                                  userName: e.target.value,
-                                })
-                              )
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'userName')}
                           />
+                          <p className="text-danger">{errors.userName}</p>
                         </div>
                         <div class="col-sm-4 form-group mb-2">
                           <label for="contact-name">Password</label>
@@ -177,16 +172,9 @@ const ClientMaster = () => {
                             name="password"
                             id="password"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData(
-                                console.log({
-                                  ...clientData,
-                                  password: e.target.value,
-                                })
-                              )
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'password')}
                           />
+                          <p className="text-danger">{errors.password}</p>
                         </div>
 
                         <div class="col-sm-4 form-group mb-2">
@@ -195,12 +183,7 @@ const ClientMaster = () => {
                             class="form-select"
                             name="status"
                             value={clientData?.status}
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                status: e.target.value,
-                              })
-                            }
+                            onChange={(e) => handleChange(e, 'status')}
                             id="status"
                             aria-label="Default select example"
                           >
@@ -208,6 +191,7 @@ const ClientMaster = () => {
                             <option value="Active">Active</option>
                             <option value="Non-Active">Non-Active</option>
                           </select>
+                          <p className="text-danger">{errors.status}</p>
                         </div>
 
                         <div class="col-sm-4 form-group mb-2">
@@ -218,14 +202,9 @@ const ClientMaster = () => {
                             name="color"
                             id="color"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                color: e.target.value,
-                              })
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'color')}
                           />
+                          <p className="text-danger">{errors.color}</p>
                         </div>
 
                         <div class="col-sm-6 form-group mb-2">
@@ -236,14 +215,9 @@ const ClientMaster = () => {
                             name="logo"
                             id="logo"
                             placeholder=""
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                logoLink: e.target.value,
-                              })
-                            }
-                            required
+                            onChange={(e) => handleChange(e, 'logoLink')}
                           />
+                          <p className="text-danger">{errors.logoLink}</p>
                         </div>
 
                         <div class="col-sm-6 form-group mb-2">
@@ -251,12 +225,7 @@ const ClientMaster = () => {
                           <select
                             class="form-select"
                             value={clientData?.theme}
-                            onChange={(e) =>
-                              setClientData({
-                                ...clientData,
-                                theme: e.target.value,
-                              })
-                            }
+                            onChange={(e) => handleChange(e, 'theme')}
                             aria-label="Default select example"
                           >
                             <option selected>Select Theme</option>
@@ -265,6 +234,7 @@ const ClientMaster = () => {
                             <option value="Non-Active">Theme 3</option>
                             <option value="Non-Active">Theme 4</option>
                           </select>
+                          <p className="text-danger">{errors.theme}</p>
                         </div>
 
                         <div class="row mt-2">
@@ -282,14 +252,9 @@ const ClientMaster = () => {
                                   name="stagingKey"
                                   id="staging-key"
                                   placeholder="Key"
-                                  onChange={(e) =>
-                                    setClientData({
-                                      ...clientData,
-                                      stagingKey: e.target.value,
-                                    })
-                                  }
-                                  required
+                                  onChange={(e) => handleChange(e, 'stagingKey')}
                                 />
+                                <p className="text-danger">{errors.stagingKey}</p>
                               </div>
 
                               <div class="col-sm-12 form-group mb-2">
@@ -299,14 +264,9 @@ const ClientMaster = () => {
                                   name="stagingSecretKey"
                                   id="staging-secret-key"
                                   placeholder="Secret Key"
-                                  onChange={(e) =>
-                                    setClientData({
-                                      ...clientData,
-                                      stagingSecretKey: e.target.value,
-                                    })
-                                  }
-                                  required
+                                  onChange={(e) => handleChange(e, 'stagingSecretKey')}
                                 />
+                                <p className="text-danger">{errors.stagingSecretKey}</p>
                               </div>
                             </div>
                           </div>
@@ -321,14 +281,9 @@ const ClientMaster = () => {
                                   name="productionKey"
                                   id="production-key"
                                   placeholder="Key"
-                                  onChange={(e) =>
-                                    setClientData({
-                                      ...clientData,
-                                      productionKey: e.target.value,
-                                    })
-                                  }
-                                  required
+                                  onChange={(e) => handleChange(e, 'productionKey')}
                                 />
+                                <p className="text-danger">{errors.productionKey}</p>
                               </div>
 
                               <div class="col-sm-12 form-group mb-2">
@@ -338,14 +293,9 @@ const ClientMaster = () => {
                                   name="productionSecretKey"
                                   id="production-secret-key"
                                   placeholder="Secret Key"
-                                  onChange={(e) =>
-                                    setClientData({
-                                      ...clientData,
-                                      productionSecretKey: e.target.value,
-                                    })
-                                  }
-                                  required
+                                  onChange={(e) => handleChange(e, 'productionSecretKey')}
                                 />
+                                <p className="text-danger">{errors.productionSecretKey}</p>
                               </div>
                             </div>
                           </div>
@@ -407,11 +357,10 @@ const ClientMaster = () => {
                               <td>{item.clientId}</td>
                               <td>
                                 <span
-                                  className={`badge ${
-                                    item.status === "Active"
-                                      ? "badge-success"
-                                      : "badge-danger"
-                                  }`}
+                                  className={`badge ${item.status === "Active"
+                                    ? "badge-success"
+                                    : "badge-danger"
+                                    }`}
                                 >
                                   {item.status}
                                 </span>
