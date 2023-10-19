@@ -4,9 +4,100 @@ import coin from '../../Images/coin.png';
 import flipkart from '../../Images/flipcart.png';
 import dominos from '../../Images/dominoz.png'; 
 import bata from '../../Images/bata.png';
-import coffeeday from '../../Images/cafecoffee.png';
+import cafecoffee from '../../Images/cafecoffee.png';
 import amazon from '../../Images/amazon.png'
 import { Link } from "react-router-dom";
+
+
+const data = [
+    {
+        
+        discount: '2.5% Off',
+        product: "Amazon",
+        img: amazon,
+        price:'₹780 - ₹2000',
+        reward:'0.5% Rewards Earned'
+        
+    },
+    {
+        
+        discount: '2.5% Off',
+        product: "Flipcart",
+        img: flipkart,
+        price:'₹80 - ₹200',
+        reward:''
+        
+    },
+    {
+        
+        discount: '',
+        product: "Dominoz",
+        img: dominos,
+        price:'₹180 - ₹700',
+        reward:'10% Rewards Earned'
+        
+    },
+    {
+        
+        discount: '',
+        product: "Bata",
+        img: bata,
+        price:'₹680 - ₹1200',
+        reward:''
+        
+    },
+    {
+       
+        discount: '',
+        product: "CafeCoffee",
+        img: cafecoffee,
+        price:'₹999 - ₹3999',
+        reward:'11.5% Rewards Earned'
+        
+    }
+]
+
+const giftCard = [
+    {
+        
+        product: "Amazon Gift Card",
+        sellingPrice:'₹4,850',
+        price:'₹ 5,000',
+        reward:'Discount Flat 5%',
+        saving:'₹150',
+        redirect:'/cartInfo'
+    },
+    {
+        
+        product: "Amazon Pay",
+        sellingPrice:'₹11,698',
+        price:'₹12,000',
+        reward:'Discount Flat 12%',
+        saving:'₹302',
+        redirect:''
+    },
+    {
+        
+        product: "Amazon Gift Card",
+        sellingPrice:'₹4,850',
+        price:'₹ 5,000',
+        reward:'Discount Flat 5%',
+        saving:'₹150',
+        redirect:''
+
+    },
+    {
+        
+        product: "Amazon Pay",
+        sellingPrice:'₹12,000',
+        price:'₹12,000',
+        reward:'Discount Flat 12%',
+        saving:'₹302',
+        redirect:''
+
+    },
+    
+]
 
 
 
@@ -66,11 +157,15 @@ const Productcard=()=>{
 
                     <div class="container">
                         <div class="row">
+{giftCard.map((cart)=>(
+
+
+
                             <div class="col-lg-6 col-12 d-flex justify-content-between pad mt-2">
                                 <div class="the-pricecard text-center">
-                                    <h6 class="grf">Amazon Gift Card</h6>
+                                    <h6 class="grf">{cart.product}</h6>
 
-                                    <p class="vouch99 mb-2">₹ 5,000</p>
+                                    <p class="vouch99 mb-2">{cart.price}</p>
 
 
 
@@ -82,7 +177,7 @@ const Productcard=()=>{
                                             <p>Selling Price</p>
                                         </div>
                                         <div class="font-grn">
-                                            <p class="fnt-15">₹4,850</p>
+                                            <p class="fnt-15">{cart.sellingPrice}</p>
 
                                         </div>
                                     </div>
@@ -91,13 +186,13 @@ const Productcard=()=>{
                                             <p>Saving</p>
                                         </div>
                                         <div class="font-blk">
-                                            <p class="fnt-15">₹150</p>
+                                            <p class="fnt-15">{cart.saving}</p>
 
                                         </div>
 
                                     </div>
                                     <div class="didi text-center mt-2">
-                                        <span class="price-rmn5">Discount Flat 5%</span>
+                                        <span class="price-rmn5">{cart.reward}</span>
                                     </div>
 
 
@@ -108,7 +203,7 @@ const Productcard=()=>{
                                 <div class="thebtncart text-center">
                                     <a href="#">
 
-                                        <Link to="/cartInfo" class="avail2 " >Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
+                                        <Link to={cart.redirect} class="avail2 " >Add &nbsp;<i class="fa fa-arrow-right"></i></Link>
 
 
                                     </a>
@@ -116,10 +211,10 @@ const Productcard=()=>{
 
                             </div>
 
+))}
 
 
-
-                            <div class="col-lg-6 col-12 d-flex justify-content-between pad mt-2">
+                            {/* <div class="col-lg-6 col-12 d-flex justify-content-between pad mt-2">
                                 <div class="the-pricecard text-center">
                                     <h6 class="grf">Amazon Pay</h6>
                                     <p class="vouch99 mb-2">₹ 12,000</p>
@@ -269,7 +364,9 @@ const Productcard=()=>{
                                     </a>
                                 </div>
 
-                            </div>
+                            </div> */}
+
+
                         </div>
                     </div>
 
@@ -401,27 +498,27 @@ const Productcard=()=>{
 
                         </div>
 
-
+{data.map((cart)=>( 
                         <div class="col-lg-2 col-4 mb-3">
                             <div class="box-coupen">
                                 <div class="img-sec">
                                     <div class="bagde-flag-wrap">
-                                        <a href="#" class="bagde-flag"> 2.5% Off</a>
+                                        <a href="#" class="bagde-flag"> {cart.discount} </a>
                                     </div>
-                                    <img class="w-144" src={amazon} />
+                                    <img class="w-144" src={cart.img} />
                                 </div>
 
 
                                 <div class="coupendis">
-                                    <div class="fnt-12px mb-1">Amazon</div>
-                                    <div class="price-rr mb-1 ">₹780 - ₹2000</div>
-                                    <div class="price-rmn"> <img src={coin} class="w-24px" />0.5% Rewards Earned</div>
+                                    <div class="fnt-12px mb-1">{cart.product}</div>
+                                    <div class="price-rr mb-1 ">{cart.price}</div>
+                                    <div class="price-rmn"> <img src={coin} class="w-24px" />{cart.reward}</div>
 
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-2 col-4 mb-3">
+))}
+                        {/* <div class="col-lg-2 col-4 mb-3">
                             <div class="box-coupen mb-3">
                                 <div class="img-sec">
                                     <div class="bagde-flag-wrap">
@@ -480,7 +577,7 @@ const Productcard=()=>{
 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
 
                     </div>
