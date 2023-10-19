@@ -7,7 +7,6 @@ const Finalcart = () => {
     return (
         <>
             <Header />
-
             <FinalCartContent />
             <Footer />
         </>

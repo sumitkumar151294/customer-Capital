@@ -7,39 +7,64 @@ import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { onCouponSubmit } from "../../redux/modules/User/couponSlice";
 
+const Cart = () => {
 
-
-const  Cart = () => {
-
-  const data = [
+  const cartData = [
     {
-      name:'abcd',
-      client:'xyz',
-      pass:'abcdxyz'
+      image: tanisq,
+      discountInfo: "5% Discount & 10 Reward Points",
+      storeName: "Myntra",
+      productType: "E-Gift Card (Instant Vouchers)",
+      discount: "100",
+      youPay: "85",
+      saving: "15",
+      coin: 10
     },
     {
-      name:'efgh',
-      client:'pqr',
-      pass:'efghpqr'
+      image: bigBasket,
+      discountInfo: "5% Discount & 10 Reward Points",
+      storeName: "Big Basket",
+      productType: "E-Gift Card (Instant Vouchers)",
+      discount: "200",
+      youPay: "186",
+      saving: "14",
+      coin: 13
     },
     {
-      name:'ijkl',
-      client:'uvw',
-      pass:'ijkluvw'
-    },
-    {
-      name:'mnop',
-      client:'stu',
-      pass:'mnopstu'
-    },
+      image: bata,
+      discountInfo: "4% Discount & 18 Reward Points",
+      storeName: "Bata",
+      productType: "E-Gift Card (Instant Vouchers)",
+      discount: "300",
+      youPay: "272",
+      saving: "22",
+      coin: 18
+    }
   ];
 
+  const [quantities, setQuantities] = useState(cartData.map(() => 1));
+
+  const incrementQuantity = (index) => {
+    const newQuantities = [...quantities];
+    newQuantities[index] += 1;
+    setQuantities(newQuantities);
+  };
+
+  const decrementQuantity = (index) => {
+    const newQuantities = [...quantities];
+    if (newQuantities[index] > 1) {
+      newQuantities[index] -= 1;
+      setQuantities(newQuantities);
+    }
+  };
+
   const dispatch = useDispatch();
-  const [couponData, setCouponData]= useState({name:''})
-  const handleSubmit = (e) =>{  
+  const [couponData, setCouponData] = useState({ name: '' })
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(onCouponSubmit(couponData));
-  } 
+  }
+
   return (
     <>
       <section className="hh-grayBox">
@@ -71,183 +96,67 @@ const  Cart = () => {
             <div className="col-lg-8">
               <h5 className="mt-1 mb-3">Please Review Your Order</h5>
 
-              <div className="row mx-0 border-bottom py-3 cartGrid bnn">
-                <div className="col-lg-3 pe-0 d-none d-lg-block">
-                  <div className="d-flex w-100 h-100 align-items-center text-center">
-                    <a href="/myntra" className="border">
-                      <div className="w-100"><img alt="Myntra" src={tanisq} /></div>
-                    </a>
-                  </div>
-                </div>
-                <div className="col-lg-9 col-12 mt-3">
-                  <div className="row justify-content-between pb-3">
-                    <div className="col-6 fs-12 pt-1 text-muted">5% Discount & 10 Reward Points</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><small className="text-muted pe-1 fs-12"></small> Earn <img src={coin} className="w-24px" /> <span className="fs-18 fw-500 the-greenrupee">10</span></div>
-                        </div>
-                      </div>
+              {cartData.map((cart, index) => (
+                <div className="row mx-0 border-bottom py-3 cartGrid bnn">
+                  <div className="col-lg-3 pe-0 d-none d-lg-block">
+                    <div className="d-flex w-100 h-100 align-items-center text-center">
+                      <a href="/myntra" className="border">
+                        <div className="w-100"><img alt="Myntra" src={cart.image} /></div>
+                      </a>
                     </div>
                   </div>
-                  <div className="row justify-content-between pb-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Myntra</div>
-                    <div className="col-12 fs-12 pt-1 text-muted">E-Gift Card (Instant Vouchers)</div>
-                  </div>
-                  <div className="row justify-content-between align-items-end">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">You Pay</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 the-greenrupee"><s className="font-blk">₹100</s> ₹85</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row justify-content-between mt-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Saving</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 ">₹14</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row justify-content-between align-items-end mt-2">
-                    <div className="col-md-auto col-12">
-                      <ul className="list-inline mt-2">
-                        <div className="mass">
-                          <div className="input-group">
-                            <input type="button" value="-" className="button-minus" data-field="quantity" />
-                            <input type="number" step="1" max="" value="1" name="quantity" className="quantity-field" />
-                            <input type="button" value="+" className="button-plus" data-field="quantity" />
+                  <div className="col-lg-9 col-12 mt-3">
+                    <div className="row justify-content-between pb-3">
+                      <div className="col-6 fs-12 pt-1 text-muted">{cart.discountInfo}</div>
+                      <div className="col-6 col-md-auto lh-1 ps-0">
+                        <div className="text-nowrap text-end">
+                          <div className="d-flex align-items-center justify-content-end">
+                            <div className="d-flex no-flex align-items-center"><small className="text-muted pe-1 fs-12"></small> Earn <img src={coin} className="w-24px" /> <span className="fs-18 fw-500 the-greenrupee">{cart.coin}</span></div>
                           </div>
                         </div>
-                      </ul>
-                    </div>
-                    <div className="col-md-auto text-end col-12 ps-0 pt-2"><button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
-                  </div>
-                </div>
-              </div>
-              <div className="row mx-0 border-bottom py-3 cartGrid bnn">
-                <div className="col-lg-3 pe-0 d-none d-lg-block">
-                  <div className="d-flex w-100 h-100 align-items-center text-center">
-                    <a href="/myntra" className="border">
-                      <div className="w-100"><img alt="bigBasket" src={bigBasket} /></div>
-                    </a>
-                  </div>
-                </div>
-                <div className="col-lg-9 col-12 mt-3">
-                  <div className="row justify-content-between pb-3">
-                    <div className="col-6 fs-12 pt-1 text-muted">3% Discount & 13 Reward Points</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><small className="text-muted pe-1 fs-12"></small> Earn <img src={coin} className="w-24px" /> <span className="fs-18 fw-500 the-greenrupee">13</span></div>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="row justify-content-between pb-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Myntra</div>
-                    <div className="col-12 fs-12 pt-1 text-muted">E-Gift Card (Instant Vouchers)</div>
-                  </div>
-                  <div className="row justify-content-between align-items-end">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">You Pay</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 the-greenrupee"><s className="font-blk">₹200</s> ₹186</span></div>
-                        </div>
-                      </div>
+                    <div className="row justify-content-between pb-2">
+                      <div className="col-6 col-md-auto lh-1 fs-6 fw-500">{cart.storeName}</div>
+                      <div className="col-12 fs-12 pt-1 text-muted">{cart.productType}</div>
                     </div>
-                  </div>
-                  <div className="row justify-content-between mt-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Saving</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 ">₹15</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row justify-content-between align-items-end mt-2">
-                    <div className="col-md-auto col-12">
-                      <ul className="list-inline mt-2">
-                        <div className="mass">
-                          <div className="input-group">
-                            <input type="button" value="-" className="button-minus" data-field="quantity" />
-                            <input type="number" step="1" max="" value="1" name="quantity" className="quantity-field" />
-                            <input type="button" value="+" className="button-plus" data-field="quantity" />
+                    <div className="row justify-content-between align-items-end">
+                      <div className="col-6 col-md-auto lh-1 fs-6 fw-500">You Pay</div>
+                      <div className="col-6 col-md-auto lh-1 ps-0">
+                        <div className="text-nowrap text-end">
+                          <div className="d-flex align-items-center justify-content-end">
+                            <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 the-greenrupee"><s className="font-blk">₹{cart.discount}</s> ₹{cart.youPay}</span></div>
                           </div>
                         </div>
-                      </ul>
-                    </div>
-                    <div className="col-md-auto text-end col-12 ps-0 pt-2"><button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
-                  </div>
-                </div>
-              </div>
-              <div className="row mx-0 border-bottom py-3 cartGrid bnn">
-                <div className="col-lg-3 pe-0 d-none d-lg-block">
-                  <div className="d-flex w-100 h-100 align-items-center text-center">
-                    <a href="/myntra" className="border">
-                      <div className="w-100"><img alt="Myntra" src={bata} /></div>
-                    </a>
-                  </div>
-                </div>
-                <div className="col-lg-9 col-12 mt-3">
-                  <div className="row justify-content-between pb-3">
-                    <div className="col-6 fs-12 pt-1 text-muted">4% Discount & 18 Reward Points</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><small className="text-muted pe-1 fs-12"></small> Earn <img src={coin} className="w-24px" /> <span className="fs-18 fw-500 the-greenrupee">18</span></div>
-                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="row justify-content-between pb-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Myntra</div>
-                    <div className="col-12 fs-12 pt-1 text-muted">E-Gift Card (Instant Vouchers)</div>
-                  </div>
-                  <div className="row justify-content-between align-items-end">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">You Pay</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 the-greenrupee"><s className="font-blk">₹300</s> ₹272</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row justify-content-between mt-2">
-                    <div className="col-6 col-md-auto lh-1 fs-18 fw-500">Saving</div>
-                    <div className="col-6 col-md-auto lh-1 ps-0">
-                      <div className="text-nowrap text-end">
-                        <div className="d-flex align-items-center justify-content-end">
-                          <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 ">₹22</span></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row justify-content-between align-items-end mt-2">
-                    <div className="col-md-auto col-12">
-                      <ul className="list-inline mt-2">
-                        <div className="mass">
-                          <div className="input-group">
-                            <input type="button" value="-" className="button-minus" data-field="quantity" />
-                            <input type="number" step="1" max="" value="1" name="quantity" className="quantity-field" />
-                            <input type="button" value="+" className="button-plus" data-field="quantity" />
+                    <div className="row justify-content-between mt-2">
+                      <div className="col-6 col-md-auto lh-1 fs-6 fw-500">Saving</div>
+                      <div className="col-6 col-md-auto lh-1 ps-0">
+                        <div className="text-nowrap text-end">
+                          <div className="d-flex align-items-center justify-content-end">
+                            <div className="d-flex no-flex align-items-center"><span className="fs-18 fw-500 ">₹{cart.saving}</span></div>
                           </div>
                         </div>
-                      </ul>
+                      </div>
                     </div>
-                    <div className="col-md-auto text-end col-12 ps-0 pt-2"><button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
+                    <div className="row justify-content-between align-items-end mt-2">
+                      <div className="col-md-auto col-12">
+                        <ul className="list-inline mt-2">
+                          <div className="mass">
+                            <div className="input-group">
+                              <input type="button" value="-" className="button-minus" data-field="quantity" onClick={() => decrementQuantity(index)} />
+                              <input type="number" step="1" max="" name="quantity" className="quantity-field" value={quantities[index]} />
+                              <input type="button" value="+" className="button-plus" data-field="quantity" onClick={() => incrementQuantity(index)} />
+                            </div>
+                          </div>
+                        </ul>
+                      </div>
+                      <div className="col-md-auto text-end col-12 ps-0 pt-2"><button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             <div className="col-lg-4 mt-45px">
@@ -268,7 +177,7 @@ const  Cart = () => {
                   </div>
                 </div>
 
-                <form  className="applyvc" onSubmit={handleSubmit} >
+                <form className="applyvc" onSubmit={handleSubmit} >
                   <div
                     className="couponsubmit"
                     style={{
@@ -354,7 +263,6 @@ const  Cart = () => {
 
                     <div className="d-flex justify-content-between jlkk">
                       <div>Email:</div>
-
                       <div
                         style={{
                           fontWeight: 700,
@@ -373,7 +281,7 @@ const  Cart = () => {
                           backgroundColor
                             :
                             '#0072fd'
-                        }}>            Proceed to Checkout &nbsp;
+                        }}>Proceed to Checkout &nbsp;
                         <i className="fa fa-arrow-right "></i>
                       </button>
                     </Link>
@@ -400,7 +308,7 @@ const  Cart = () => {
         </div>
       </section>
 
-      
+
 
 
     </>

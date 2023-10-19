@@ -2,9 +2,48 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 const FinalCartContent = () => {
-  return (
-    <>
-    <section className="hh-grayBox">
+    const cartData = [
+        {
+            product: "Amazon Gift Card",
+            amount: "₹ 5,000",
+            points: "Pts 120",
+            quantity: 2,
+            sellingPrice: "₹4,850",
+            saving: "₹150",
+            discount: "Discount Flat 5%"
+        },
+        {
+            product: "Amazon Pay",
+            amount: "₹ 12,000",
+            points: "Pts120",
+            quantity: 2,
+            sellingPrice: "₹11,698",
+            saving: "₹302",
+            discount: "Discount flat 12%"
+        },
+        {
+            product: "Amazon Gift Card",
+            amount: "₹ 5,000",
+            points: "Pts 120",
+            quantity: 2,
+            sellingPrice: "₹4,850",
+            saving: "₹150",
+            discount: "Discount Flat 5%"
+        },
+        {
+            product: "Amazon Pay",
+            amount: "₹ 12,000",
+            points: "Pts120",
+            quantity: 2,
+            sellingPrice: "₹11,698",
+            saving: "₹302",
+            discount: "Discount flat 12%"
+        }
+    ];
+
+    return (
+        <>
+            <section className="hh-grayBox">
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-12 hh-grayBox pb20">
@@ -41,231 +80,55 @@ const FinalCartContent = () => {
 
                                 <div className="container p-0">
                                     <div className="row">
-                                        {/* Repeat this block for each item */}
-                                        {/* Example */}
+                                        {cartData.map((product, index) => (
+                                            <div className="col-lg-12 col-12 d-flex justify-content-between pad mt-1" key={index}>
+                                                <div className="the-pricecard text-center">
+                                                    <h6 className="grf">{product.product}</h6>
+                                                    <p className="vouch99 mb-2">{product.amount}</p>
+                                                </div>
 
-                                        <div className="col-lg-12 col-12 d-flex justify-content-between pad mt-1">
-                                            <div className="the-pricecard text-center">
-                                                <h6 className="grf">Amazon Gift Card</h6>
-
-                                                <p className="vouch99 mb-2">₹ 5,000</p>
-                                            </div>
-
-                                            <div className="thebtncart2 text-center">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Points</p>
+                                                <div className="thebtncart2 text-center">
+                                                    <div className="d-flex justify-content-between text-center">
+                                                        <div className="font-blk mr-10">
+                                                            <p>Points</p>
+                                                        </div>
+                                                        <div className="font-blk">
+                                                            <p className="fnt-15">{product.points}</p>
+                                                        </div>
                                                     </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">Pts 120</p>
+                                                    <div className="d-flex justify-content-between">
+                                                        <div className="font-blk mr-10">
+                                                            <p>Quantity</p>
+                                                        </div>
+                                                        <div>
+                                                            <p className="fnt-15">{product.quantity}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Quantity</p>
+                                                <div className="thedetails2">
+                                                    <div className="d-flex justify-content-between text-center">
+                                                        <div className="font-blk mr-10">
+                                                            <p>Selling Price</p>
+                                                        </div>
+                                                        <div className="font-grn">
+                                                            <p className="fnt-15">{product.sellingPrice}</p>
+                                                        </div>
                                                     </div>
-
-                                                    <div className="">
-                                                        <p className="fnt-15">2</p>
+                                                    <div className="d-flex justify-content-between">
+                                                        <div className="font-blk mr-10">
+                                                            <p>Saving</p>
+                                                        </div>
+                                                        <div className="font-blk">
+                                                            <p className="fnt-15">{product.saving}</p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="thedetails2">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Selling Price</p>
-                                                    </div>
-
-                                                    <div className="font-grn">
-                                                        <p className="fnt-15">₹4,850</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Saving</p>
-                                                    </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">₹150</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="didi text-center mt-2">
-                                                    <span className="price-rmn5">Discount Flat 5%</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 col-12 d-flex justify-content-between pad mt-1">
-                                            <div className="the-pricecard text-center">
-                                                <h6 className="grf">Amazon Pay
-                                                </h6>
-
-                                                <p className="vouch99 mb-2">₹ 12000</p>
-                                            </div>
-
-                                            <div className="thebtncart2 text-center">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Points</p>
-                                                    </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">Pts120</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Quantity</p>
-                                                    </div>
-
-                                                    <div>
-                                                        <p className="fnt-15">2</p>
+                                                    <div className="didi text-center mt-2">
+                                                        <span className="price-rmn5">{product.discount}</span>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div className="thedetails2">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Selling Price</p>
-                                                    </div>
-
-                                                    <div className="font-grn">
-                                                        <p className="fnt-15">₹11,698</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Saving</p>
-                                                    </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">₹302</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="didi text-center mt-2">
-                                                    <span className="price-rmn5">Discount flat 12%</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 col-12 d-flex justify-content-between pad mt-1">
-                                            <div className="the-pricecard text-center">
-                                                <h6 className="grf">Amazon Gift Card</h6>
-
-                                                <p className="vouch99 mb-2">₹ 5,000</p>
-                                            </div>
-
-                                            <div className="thebtncart2 text-center">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Points</p>
-                                                    </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">Pts 120</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Quantity</p>
-                                                    </div>
-
-                                                    <div className="">
-                                                        <p className="fnt-15">2</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="thedetails2">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Selling Price</p>
-                                                    </div>
-
-                                                    <div className="font-grn">
-                                                        <p className="fnt-15">₹4,850</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Saving</p>
-                                                    </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">₹150</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="didi text-center mt-2">
-                                                    <span className="price-rmn5">Discount Flat 5%</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-12 col-12 d-flex justify-content-between pad mt-1">
-                                            <div className="the-pricecard text-center">
-                                                <h6 className="grf">Amazon Pay
-                                                </h6>
-
-                                                <p className="vouch99 mb-2">₹ 12000</p>
-                                            </div>
-
-                                            <div className="thebtncart2 text-center">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Points</p>
-                                                    </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">Pts120</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Quantity</p>
-                                                    </div>
-
-                                                    <div>
-                                                        <p className="fnt-15">2</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div className="thedetails2">
-                                                <div className="d-flex justify-content-between text-center">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Selling Price</p>
-                                                    </div>
-
-                                                    <div className="font-grn">
-                                                        <p className="fnt-15">₹11,698</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="font-blk mr-10">
-                                                        <p>Saving</p>
-                                                    </div>
-
-                                                    <div className="font-blk">
-                                                        <p className="fnt-15">₹302</p>
-                                                    </div>
-                                                </div>
-
-                                                <div className="didi text-center mt-2">
-                                                    <span className="price-rmn5">Discount flat 12%</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        ))};
                                     </div>
                                 </div>
                             </div>
@@ -410,13 +273,11 @@ const FinalCartContent = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </section>
-    </>
-  )
+        </>
+    )
 }
 
 export default FinalCartContent
