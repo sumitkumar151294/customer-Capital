@@ -5,12 +5,43 @@ import Loader from '../Loader/Loader'
 
 const CMS = () => {
     const [cmsData, setCmsData] = useState({ pageName: '', shortDescription: '', longDescription: '' });
+    const [errors, setErrors] = useState({ pageName: '', shortDescription: '', longDescription: '' });
+    const [isLoading, setIsLoading] = useState('true')
     const dispatch = useDispatch();
+
+    const handleChange = (e, fieldName) => {
+        setCmsData({
+            ...cmsData,
+            [fieldName]: e.target.value,
+        });
+
+        // Remove the error message when the user starts typing
+        setErrors({
+            ...errors,
+            [fieldName]: '',
+        });
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(onCmsSubmit(cmsData));
+        let isValid = true;
+        const newErrors = { ...errors };
+
+        // Check if fields are empty and set corresponding error messages
+        for (const key in cmsData) {
+            if (cmsData[key] === '') {
+                newErrors[key] = 'This field is required';
+                isValid = false;
+            } else {
+                newErrors[key] = '';
+            }
+        }
+        setErrors(newErrors);
+
+        if (isValid) {
+            dispatch(onCmsSubmit(cmsData));
+        }
     };
-    const [isLoading, setIsLoading] = useState('true')
 
     return (
         <>
@@ -31,7 +62,7 @@ const CMS = () => {
                                                 <select class="form-select"
                                                     name='pageName'
                                                     value={cmsData.pageName}
-                                                    onChange={(e) => setCmsData({ ...cmsData, pageName: e.target.value })}
+                                                    onChange={(e) => handleChange(e, "pageName")}
                                                     aria-label="Default select example">
                                                     <option selected>Select Page Name &nbsp;<i class="fa fa-angle-down"></i></option>
                                                     <option value="About us">About us</option>
@@ -40,6 +71,7 @@ const CMS = () => {
                                                     <option value="Contact us">Contact us</option>
                                                     <option value="LC Loyality Program">LC Loyality Program</option>
                                                 </select>
+                                                <p className="text-danger">{errors.pageName}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -47,12 +79,14 @@ const CMS = () => {
                                     <div class="card-body ">
                                         <div class="form-group mb-2">
                                             <label for="name-f">Short Description</label>
-                                            <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => setCmsData({ ...cmsData, shortDescription: e.target.value })}></textarea>
+                                            <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => handleChange(e, "shortDescription")}></textarea>
+                                            <p className="text-danger">{errors.shortDescription}</p>
                                         </div>
 
                                         <div class="form-group mb-2 if">
                                             <label for="name-f">Long Description</label>
-                                            <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => setCmsData({ ...cmsData, longDescription: e.target.value })}></textarea>
+                                            <textarea name="textarea" id="textarea" cols="60" rows="10" class="form-control bg-transparent" placeholder="" onChange={(e) => handleChange(e, "longDescription")}></textarea>
+                                            <p className="text-danger">{errors.longDescription}</p>
                                         </div>
 
                                         <div class="form-group mb-0 mt-2">
