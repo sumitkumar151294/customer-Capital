@@ -9,7 +9,6 @@ const ProductCategory = () => {
     const navigate=useNavigate();
     const [showProductDetail,setShowProductDetail]=useState(false)
         const handleClick=()=>{
-            debugger
             setShowProductDetail(true)
             navigate('/LC-admin/productdetail')
     }

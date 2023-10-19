@@ -4,19 +4,57 @@ import Loader from "../Loader/Loader";
 const UserMaster = () => {
   const [isLoading, setIsLoading] = useState("true");
   const [isformLoading, setIsFormLoading] = useState("true");
-  const [userData, setUserData] = useState({
-    userName:'',
-    password:'',
-    mobile:'',
-    email:''
-  })
-  const handleSubmit= (e)=>{
+  const [userData, setUserData] = useState({ userName: '', password: '', mobile: '', email: '' });
+  const [errors, setErrors] = useState({ userName: '', password: '', mobile: '', email: '' });
+
+  const handleChange = (e, fieldName) => {
+    setUserData({
+      ...userData,
+      [fieldName]: e.target.value,
+    });
+
+    // Remove the error message when the user starts typing
+    setErrors({
+      ...errors,
+      [fieldName]: '',
+    });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const data ={
-        userData
+    let isValid = true;
+    const newErrors = { ...errors };
+
+    // Check if fields are empty and set corresponding error messages
+    for (const key in userData) {
+      if (userData[key] === '') {
+        newErrors[key] = 'This field is required';
+        isValid = false;
+      } else {
+        newErrors[key] = '';
+      }
+    }
+
+    // Email and Phone validation using the regexEmail and regexPhone pattern
+    const regexEmail = /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zA-Z0-9]+(\.[a-zA-Z\.]+)/g;
+    const regexPhone = /^\(?([0-9]{3})\)?([0-9]{3})?([0-9]{4})$/g;
+
+    if (!regexEmail.test(userData.email)) {
+      newErrors.email = 'Invalid email format';
+      isValid = false;
+    }
+
+    if (!regexPhone.test(userData.mobile)) {
+      newErrors.mobile = 'Invalid phone number format';
+      isValid = false;
+    }
+    setErrors(newErrors);
+
+    if (isValid) {
+      // write the logic here
+    }
   }
-  console.log(data?.userData)
-}
+
   return (
     <>
       <div className="content-body">
@@ -42,15 +80,11 @@ const UserMaster = () => {
                               type="email"
                               class="form-control"
                               name="fname"
-                              onChange={(e) =>
-                                setUserData({
-                                  ...userData,
-                                  email: e.target.value,
-                                })
-                              }                              id="name-f"
+                              onChange={(e) => handleChange(e, 'email')}
+                              id="name-f"
                               placeholder=""
-                              required=""
                             />
+                          <p className="text-danger">{errors.email}</p>
                           </div>
 
                           <div class="col-sm-4 form-group mb-2">
@@ -60,15 +94,10 @@ const UserMaster = () => {
                               class="form-control"
                               name="fname"
                               id="name-f"
-                              onChange={(e) =>
-                                setUserData({
-                                  ...userData,
-                                  mobile: e.target.value,
-                                })
-                              }  
+                              onChange={(e) => handleChange(e, 'mobile')}
                               placeholder=""
-                              required=""
                             />
+                          <p className="text-danger">{errors.mobile}</p>
                           </div>
 
                           <div class="col-sm-4 form-group mb-2">
@@ -79,14 +108,9 @@ const UserMaster = () => {
                               name="fname"
                               id="name-f"
                               placeholder=""
-                              required=""
-                              onChange={(e) =>
-                                setUserData({
-                                  ...userData,
-                                  userName: e.target.value,
-                                })
-                              }
+                              onChange={(e) => handleChange(e, 'userName')}
                             />
+                          <p className="text-danger">{errors.userName}</p>
                           </div>
 
                           <div class="col-sm-4 form-group mb-2">
@@ -97,14 +121,9 @@ const UserMaster = () => {
                               name="fname"
                               id="name-f"
                               placeholder=""
-                              required=""
-                              onChange={(e) =>
-                                setUserData({
-                                  ...userData,
-                                  password: e.target.value,
-                                })
-                              }
+                              onChange={(e) => handleChange(e, 'password')}
                             />
+                          <p className="text-danger">{errors.password}</p>
                           </div>
 
                           <div class="col-lg-12 br pt-2">
@@ -138,7 +157,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault4"
                                 >
                                   Company 1
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -153,7 +172,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault"
                                 >
                                   Company 1
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -168,7 +187,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault5"
                                 >
                                   Company 1
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -183,7 +202,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault"
                                 >
                                   Company 1
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -198,7 +217,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault6"
                                 >
                                   Company 1
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -213,7 +232,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault7"
                                 >
                                   Company 1
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -228,7 +247,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault8"
                                 >
                                   Company 1
-                                </label>{" "}
+                                </label>
                               </div>
                             </div>
                           </div>
@@ -249,7 +268,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault3"
                                 >
                                   Role Module 1
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -264,7 +283,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault4"
                                 >
                                   Role Module 2
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -279,7 +298,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault"
                                 >
                                   Role Module 3
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -294,7 +313,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault5"
                                 >
                                   Role Module 4
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -309,7 +328,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault"
                                 >
                                   Role Module 4
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -324,7 +343,7 @@ const UserMaster = () => {
                                   for="flexCheckDefault6"
                                 >
                                   Role Module 4
-                                </label>{" "}
+                                </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
@@ -352,7 +371,7 @@ const UserMaster = () => {
                         </div>
                       </form>
                     </div>
-                  )}{" "}
+                  )}
                 </div>
               </div>
             </div>
@@ -515,7 +534,7 @@ const UserMaster = () => {
                         </tbody>
                       </table>
                     </div>
-                  )}{" "}
+                  )}
                 </div>
               </div>
             </div>
