@@ -11341,8 +11341,12 @@ ul {
 
 body {
   font-family: 'Inter', sans-serif;
-  color: #4a4a4a;
+  color: #212529 !important;
   font-weight: 400
+}
+
+.text-dark1 {
+  color: #212529 !important;
 }
 
 b,
@@ -15868,7 +15872,7 @@ button.close.modalclosebtn {
 }
 
 .container {
-  max-width: 1340px
+  max-width: 1340px !important
 }
 
 .xzoom-container:after {
