@@ -12042,6 +12042,10 @@
     box-shadow: 0rem 0.25rem 0.25rem rgba(0, 0, 0, 0.1) !important;
   }
   
+  .content-body{
+    min-height: 876px;
+  }
+  
   .content-body .container {
     margin-top: 2.5rem;
   }
