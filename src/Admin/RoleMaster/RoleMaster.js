@@ -5,6 +5,79 @@ const RoleMaster = () => {
   const [isLoading, setIsLoading] = useState("true");
   const [isformLoading, setIsFormLoading] = useState("true");
 
+  const roleData = [
+    {
+      roleName: 'Admin',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4'],
+    },
+    {
+      roleName: 'Data Analyst',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+    },
+    {
+      roleName: 'Accountant',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3'],
+    },
+    {
+      roleName: 'Manager',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+    },
+  ];
+
+  const [formData, setFormData] = useState({
+    roleName: '',
+    modules: {
+      vendorMaster: false,
+      allocatedMaster: false,
+      clientMaster: false,
+      userMaster: false,
+      productCategories: false,
+      productCatalogue: false,
+      orders: false,
+      cms: false,
+      blogMaster: false,
+      faqMaster: false,
+      contactedListMaster: false,
+      customerList: false,
+      emailTemplates: false,
+    },
+
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (name === 'selectAll') {
+      const updatedModules = { ...formData.modules };
+      for (const key in updatedModules) {
+        updatedModules[key] = checked;
+      }
+      setFormData({
+        ...formData,
+        modules: updatedModules,
+      });
+    } else if (type === 'checkbox') {
+      setFormData({
+        ...formData,
+        modules: {
+          ...formData.modules,
+          [name]: checked,
+        },
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+  };
+
+  const isSelectAllChecked = Object.values(formData.modules).every((module) => module);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
   return (
     <>
       <div class="content-body">
@@ -22,438 +95,66 @@ const RoleMaster = () => {
                     </div>
                   ) : (
                     <div class="container mt-3">
-                      <form>
-                        <div class="row">
-                          <div class="col-sm-4 form-group mb-2">
-                            <label for="name-f">Role Name</label>
+                      <form onSubmit={handleSubmit}>
+                        <div className="row">
+                          <div className="col-sm-4 form-group mb-2">
+                            <label htmlFor="name-f">Role Name</label>
                             <input
                               type="text"
-                              class="form-control"
-                              name="fname"
+                              className="form-control"
+                              name="roleName"
                               id="name-f"
                               placeholder=""
-                              required
+                              value={formData.roleName}
+                              onChange={handleInputChange}
                             />
                           </div>
-                          <div class="row top-top">
-                            <div class="col-lg-4">
-                              <div class="form-check  mb-2 padd">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault1"
-                                />
-                                <label
-                                  class="form-check-label fnt-17"
-                                  for="flexCheckDefault1"
-                                >
-                                  Select All{" "}
-                                </label>
-                              </div>
+                        </div>
+
+                        <div className="row top-top">
+                          <div className="col-lg-4">
+                            <div className="form-check mb-2 padd">
+                              <input
+                                className="form-check-input"
+                                type="checkbox"
+                                name="selectAll"
+                                value={formData.modules.selectAll}
+                                id="flexCheckDefault1"
+                                checked={isSelectAllChecked}
+                                onChange={handleInputChange}
+                              />
+                              <label className="form-check-label fnt-17" htmlFor="flexCheckDefault1">
+                                Select All
+                              </label>
                             </div>
                           </div>
 
-                          <div class="col-lg-12 br pt-2">
-                            <label for="name-f">Module Access</label>
-
-                            <div class="row ml-4">
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault3"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault3"
-                                >
-                                  Role Module 1
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault4"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault4"
-                                >
-                                  Role Module 2
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Role Module 3
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault5"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault5"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault6"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault6"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault7"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault7"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault8"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault8"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault9"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault9"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault10"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault10"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault11"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault11"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault12"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault12"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault13"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault13"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault14"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault14"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault15"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault15"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault16"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault16"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault17"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault17"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault18"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault18"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault19"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault19"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault20"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault20"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault21"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault21"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault22"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault22"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault23"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault23"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault24"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault24"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault25"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault25"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault26"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault26"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault27"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault27"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="col-sm-4 mt-2 mb-4">
-                                <button class="btn btn-primary float-right pad-aa">
-                                  Submit <i class="fa fa-arrow-right"></i>
-                                </button>
-                              </div>
+                          <div className="col-lg-12 br pt-2">
+                            <label htmlFor="name-f">Module Access</label>
+                            <div className="row ml-4">
+                              {Object.entries(formData.modules).map(([module, checked]) => (
+                                <div className="form-check mt-2 col-lg-3" key={module}>
+                                  <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    name={module}
+                                    value={checked}
+                                    id={`flexCheckDefault-${module}`}
+                                    checked={checked}
+                                    onChange={handleInputChange}
+                                  />
+                                  <label className="form-check-label" htmlFor={`flexCheckDefault-${module}`}>
+                                    {module
+                                      .replace(/([A-Z])/g, ' $1')
+                                      .split(' ')
+                                      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                                      .join(' ')}
+                                  </label>
+                                </div>
+                              ))}
+                            </div>
+                            <div className="col-sm-4 mt-4 mb-4">
+                              <button className="btn btn-primary float-right pad-aa">Submit</button>
                             </div>
                           </div>
                         </div>
@@ -488,161 +189,20 @@ const RoleMaster = () => {
                             <th>Modules</th>
                           </tr>
                         </thead>
-
                         <tbody>
-                          <tr>
-                            <td>
-                              Admin<a href="javascript:void();"></a>
-                            </td>
-
-                            <td>
-                              <div class="d-flex"></div>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              Data Analyst<a href="javascript:void();"></a>
-                            </td>
-                            <td>
-                              <div class="d-flex"> </div>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>{" "}
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              Accountant<a href="javascript:void();"></a>
-                            </td>
-
-                            <td>
-                              <div class="d-flex"></div>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              Manager<a href="javascript:void();"></a>
-                            </td>
-                            <td>
-                              <div class="d-flex"></div>{" "}
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                          </tr>
+                          {roleData.map((row, index) => (
+                            <tr key={index}>
+                              <td>{row.roleName}</td>
+                              <td>
+                                <div className="d-flex"></div>
+                              </td>
+                              {row.modules.map((module, moduleIndex) => (
+                                <td key={moduleIndex}>
+                                  <span className="badge badge-success">{module}</span>
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
                         </tbody>
                       </table>
                     </div>
