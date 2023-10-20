@@ -53,7 +53,7 @@ const Header = () => {
                             <h5>Hi,</h5>
                             <p>Instant access to your orders and account</p>
                             <ul>
-                              <li id="" className="loginbtnmenu">
+                              <li id="" className="loginbtnmenu mr-2">
                                 <a
                                   data-bs-toggle="modal"
                                   data-bs-target="#loginmodal"

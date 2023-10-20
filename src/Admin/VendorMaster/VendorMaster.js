@@ -34,17 +34,54 @@ const VendorMaster = () => {
             status: 'Non-Active',
         },
     ];
-    console.log(vendorList , vendorList.length);
-    
+    console.log(vendorList, vendorList.length);
+
     const [vendorData, setVendorData] = useState({ name: '', secret: '', id: '', username: '', password: '', endPoint: '', code: '', status: '' });
+    const [errors, setErrors] = useState({ name: '', secret: '', id: '', username: '', password: '', endPoint: '', code: '', status: '' });
     const [isLoading, setIsLoading] = useState('true')
     const [isformLoading, setIsFormLoading] = useState('true')
 
     const dispatch = useDispatch();
+
+    const handleChange = (e, fieldName) => {
+        setVendorData({
+            ...vendorData,
+            [fieldName]: e.target.value,
+        });
+
+        // Remove the error message when the user starts typing
+        setErrors({
+            ...errors,
+            [fieldName]: '',
+        });
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(onVendorSubmit(vendorData));
+        let isValid = true;
+        const newErrors = { ...errors };
+
+        // Check if fields are empty and set corresponding error messages
+        for (const key in vendorData) {
+            if (vendorData[key] === '') {
+                newErrors[key] = 'This field is ';
+                isValid = false;
+            } else {
+                newErrors[key] = '';
+            }
+        }
+        // Email validation using the regexEmail pattern
+        const regexEmail = /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zA-Z0-9]+(\.[a-zA-Z\.]+)/g;
+        if (!regexEmail.test(vendorData.secret)) {
+            newErrors.secret = 'Invalid email format';
+            isValid = false;
+        }
+        setErrors(newErrors);
+
+        if (isValid) {
+            dispatch(onVendorSubmit(vendorData));
+        }
     };
+
     return (
         <>
             <div class="content-body">
@@ -64,60 +101,63 @@ const VendorMaster = () => {
                                     ) : (
                                         <div class="container mt-3">
                                             <form onSubmit={handleSubmit}>
-                                                <div class="row">
-
-                                                    <div class="col-sm-4 form-group mb-2">
-                                                        <label for="name-f">Vendor Name</label>
-                                                        <input type="text" class="form-control" name="fname" id="name-f" placeholder="" onChange={(e) => setVendorData({ ...vendorData, name: e.target.value })} required />
-                                                    </div>
-                                                    <div class="col-sm-4 form-group mb-2">
-                                                        <label for="name-l">Client ID</label>
-                                                        <input type="text" class="form-control" name="lname" id="name-l" placeholder="" onChange={(e) => setVendorData({ ...vendorData, id: e.target.value })} required />
-                                                    </div>
-                                                    <div class="col-sm-4 form-group mb-2">
-                                                        <label for="email">Client Secret</label>
-                                                        <input type="email" class="form-control" name="email" id="email" placeholder="" onChange={(e) => setVendorData({ ...vendorData, secret: e.target.value })} required />
+                                                <div className="row">
+                                                    <div className="col-sm-4 form-group mb-2">
+                                                        <label htmlFor="name-f">Vendor Name</label>
+                                                        <input type="text" className="form-control" name="fname" id="name-f" placeholder="" onChange={(e) => handleChange(e, "name")} />
+                                                        <p className="text-danger">{errors.name}</p>
                                                     </div>
 
-                                                    <div class="col-sm-4 form-group mb-2">
-                                                        <label for="email">Username</label>
-                                                        <input type="email" class="form-control" name="email" id="email" placeholder="" onChange={(e) => setVendorData({ ...vendorData, username: e.target.value })} required />
+                                                    <div className="col-sm-4 form-group mb-2">
+                                                        <label htmlFor="name-l">Client ID</label>
+                                                        <input type="text" className="form-control" name="lname" id="name-l" placeholder="" onChange={(e) => handleChange(e, "id")} />
+                                                        <p className="text-danger">{errors.id}</p>
                                                     </div>
 
-                                                    <div class="col-sm-4 form-group mb-2">
-                                                        <label for="pass">Password</label>
-                                                        <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setVendorData({ ...vendorData, password: e.target.value })} required />
+                                                    <div className="col-sm-4 form-group mb-2">
+                                                        <label htmlFor="email">Client Secret</label>
+                                                        <input type="email" className="form-control" name="email" id="email" placeholder="" onChange={(e) => handleChange(e, "secret")} />
+                                                        <p className="text-danger">{errors.secret}</p>
                                                     </div>
 
-                                                    <div class="col-sm-4 form-group mb-2">
-                                                        <label for="status">Status</label>
-                                                        <select
-                                                            class="form-select"
-                                                            aria-label="Default select example"
-                                                            name="status"
-                                                            value={vendorData.status}
-                                                            onChange={(e) => setVendorData({ ...vendorData, status: e.target.value })} // Update the vendorData
-                                                        >
+                                                    <div className="col-sm-4 form-group mb-2">
+                                                        <label htmlFor="email">Username</label>
+                                                        <input type="email" className="form-control" name="email" id="email" placeholder="" onChange={(e) => handleChange(e, "username")} />
+                                                        <p className="text-danger">{errors.username}</p>
+                                                    </div>
+
+                                                    <div className="col-sm-4 form-group mb-2">
+                                                        <label htmlFor="pass">Password</label>
+                                                        <input type="password" name="password" className="form-control" id="pass" placeholder="" onChange={(e) => handleChange(e, "password")}
+                                                        />
+                                                        <p className="text-danger">{errors.password}</p>
+                                                    </div>
+
+                                                    <div className="col-sm-4 form-group mb-2">
+                                                        <label htmlFor="status">Status</label>
+                                                        <select className="form-select" aria-label="Default select example" name="status" value={vendorData.status} onChange={(e) => handleChange(e, "status")} >
                                                             <option value="" disabled>Select</option>
                                                             <option value="Active">Active</option>
                                                             <option value="Non-Active">Non-Active</option>
                                                         </select>
+                                                        <p className="text-danger">{errors.status}</p>
                                                     </div>
 
-                                                    <div class="col-sm-6 form-group mb-2">
-                                                        <label for="zip">End Point</label>
-                                                        <input type="zip" class="form-control" name="Zip" id="zip" placeholder="" onChange={(e) => setVendorData({ ...vendorData, endPoint: e.target.value })} required />
+                                                    <div className="col-sm-6 form-group mb-2">
+                                                        <label htmlFor="zip">End Point</label>
+                                                        <input type="text" className="form-control" name="Zip" id="zip" placeholder="" onChange={(e) => handleChange(e, "endPoint")} />
+                                                        <p className="text-danger">{errors.endPoint}</p>
                                                     </div>
 
-                                                    <div class="col-sm-6 form-group mb-2">
-                                                        <label for="pass">Authorization Code</label>
-                                                        <input type="Password" name="password" class="form-control" id="pass" placeholder="" onChange={(e) => setVendorData({ ...vendorData, code: e.target.value })} required />
+                                                    <div className="col-sm-6 form-group mb-2">
+                                                        <label htmlFor="pass">Authorization Code</label>
+                                                        <input type="password" name="password" className="form-control" id="pass" placeholder="" onChange={(e) => handleChange(e, "code")} />
+                                                        <p className="text-danger">{errors.code}</p>
                                                     </div>
 
-                                                    <div class="col-sm-12 form-group mb-0 mt-2">
-                                                        <button type="submit" class="btn btn-primary float-right pad-aa">Submit <i class="fa fa-arrow-right"></i></button>
+                                                    <div className="col-sm-12 form-group mb-0 mt-2">
+                                                        <button type="submit" className="btn btn-primary float-right pad-aa">Submit <i className="fa fa-arrow-right"></i></button>
                                                     </div>
-
                                                 </div>
                                             </form>
                                         </div>
