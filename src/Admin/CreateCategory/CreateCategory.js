@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import Loader from '../Loader/Loader';
+import { useDispatch } from 'react-redux'
+import { onCategorySubmit } from '../../redux/modules/Admin/categorySlice';
 
 const CreateCategory = () => {
   const [isLoading, setIsLoading] = useState('true')
   const [isformLoading, setIsFormLoading] = useState('true')
   const [createCategory, setCreateCategory] = useState({ categoryName: '', vendorCategory: '', status: '' });
   const [errors, setErrors] = useState({ categoryName: '', vendorCategory: '', status: '' });
+
+  const dispatch = useDispatch();
+
 
   const handleChange = (e, fieldName) => {
     setCreateCategory({
@@ -14,31 +19,34 @@ const CreateCategory = () => {
     });
 
     // Remove the error message when the user starts typing
-    setErrors({
-      ...errors,
-      [fieldName]: '',
-    });
+    // setErrors({
+    //   ...errors,
+    //   [fieldName]: '',
+    // });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let isValid = true;
-    const newErrors = { ...errors };
+    dispatch(onCategorySubmit(createCategory))
+
+
+    // let isValid = true;
+    // const newErrors = { ...errors };
 
     // Check if fields are empty and set corresponding error messages
-    for (const key in createCategory) {
-      if (createCategory[key] === '') {
-        newErrors[key] = 'This field is required';
-        isValid = false;
-      } else {
-        newErrors[key] = '';
-      }
-    }
-    setErrors(newErrors);
+    // for (const key in createCategory) {
+    //   if (createCategory[key] === '') {
+    //     newErrors[key] = 'This field is required';
+    //     isValid = false;
+    //   } else {
+    //     newErrors[key] = '';
+    //   }
+    // }
+    // setErrors(newErrors);
 
-    if (isValid) {
-      // write the logic here
-    }
+    // if (isValid) {
+    //   // write the logic here
+    // }
   };
 
   return (
@@ -118,7 +126,7 @@ const CreateCategory = () => {
         </div>
       </div>
 
-      <div className="container-fluid pt-0">
+      {/* <div className="container-fluid pt-0">
         <div className="row">
           <div className="col-lg-12">
             <div className="card">
@@ -204,7 +212,108 @@ const CreateCategory = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+<div class="container-fluid pt-0">
+            <div class="row">
+        <div class="col-lg-12">
+                        <div class="card">
+                             
+                             <div class="container mt-2 mb-2">
+
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
+    <div class="card-header">
+                                <h4 class="card-title">Category List</h4>
+                            </div>
+            <div class="customer-search mb-sm-0 mb-3">
+                <div class="input-group search-area">
+                    <input type="text" class="form-control only-high" placeholder="Search here......"/>
+                    <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center flex-wrap">
+                <a href="javascript:void(0);" class="btn btn-primary btn-rounded me-3 mb-2"><i class="fa fa-file-excel me-2"></i>Export</a>
+              
+            </div>
+        </div>
+    </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table header-border table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Category Name</th>
+                                                <th>Supplier Name</th>
+                                              
+                                               
+                                                <th>Supplier Brand</th>
+                                                <th>Action</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>E-Commerce</td>
+                                                <td>Qucksilver<a href="javascript:void();"></a>
+                                                </td>
+                                                <td>Amazon</td>
+                                              
+                                                
+                                                <td><div class="d-flex">
+                                                     
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div></td>
+                                                   
+                                            </tr>
+                                            <tr>
+                                                <td>E-Commerce</td>
+                                                <td>Supplier 2<a href="javascript:void();"></a>
+                                                </td>
+                                                <td>Flipcart</td>
+                                                
+                                                
+                                                <td><div class="d-flex">
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div></td>
+                                                    
+
+                                            </tr>
+                                            <tr>
+                                                <td>Shopping</td>
+                                                <td>Supplier 3<a href="javascript:void();"></a>
+                                                </td>
+                                                <td>Nykaa</td>
+                                                
+                                                
+                                                <td><div class="d-flex">
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div></td>
+                                                   
+
+                                            </tr>
+                                            <tr>
+                                                <td>Food</td>
+                                                <td>Supplier 4<a href="javascript:void();"></a>
+                                                </td>
+                                                <td>KFC</td>
+                                               
+                                                
+                                                <td><div class="d-flex">
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div></td>
+                                                  
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+        </div>
+    </div>
+
+
     </div>
   );
 }

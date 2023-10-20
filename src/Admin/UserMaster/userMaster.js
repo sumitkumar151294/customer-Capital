@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import Loader from "../Loader/Loader";
+import { onUserSubmit } from "../../redux/modules/Admin/userSlice";
+import { useDispatch } from 'react-redux'
 
 const UserMaster = () => {
+
+
   const [isLoading, setIsLoading] = useState("true");
   const [isformLoading, setIsFormLoading] = useState("true");
   const [userData, setUserData] = useState({ userName: '', password: '', mobile: '', email: '' });
   const [errors, setErrors] = useState({ userName: '', password: '', mobile: '', email: '' });
+
+  const dispatch = useDispatch();
 
   const handleChange = (e, fieldName) => {
     setUserData({
@@ -14,16 +20,21 @@ const UserMaster = () => {
     });
 
     // Remove the error message when the user starts typing
-    setErrors({
-      ...errors,
-      [fieldName]: '',
-    });
+    // setErrors({
+    //   ...errors,
+    //   [fieldName]: '',
+    // });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(userData);
+    
+
     let isValid = true;
     const newErrors = { ...errors };
+
+    
 
     // Check if fields are empty and set corresponding error messages
     for (const key in userData) {
@@ -51,8 +62,11 @@ const UserMaster = () => {
     setErrors(newErrors);
 
     if (isValid) {
-      // write the logic here
+      dispatch(onUserSubmit(userData))
+     
     }
+
+
   }
 
   return (
@@ -72,7 +86,7 @@ const UserMaster = () => {
                     </div>
                   ) : (
                     <div className="container mt-3">
-                      <form>
+                      <form onSubmit={handleSubmit} >
                         <div class="row">
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Email</label>
@@ -362,7 +376,7 @@ const UserMaster = () => {
                               </div>
 
                               <div class="col-sm-4 mt-2 mb-4">
-                                <button class="btn btn-primary float-right pad-aa" onClick={handleSubmit}>
+                                <button class="btn btn-primary float-right pad-aa" >
                                   Submit <i class="fa fa-arrow-right"></i>
                                 </button>
                               </div>
