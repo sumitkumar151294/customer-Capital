@@ -6,7 +6,7 @@ import { onCategorySubmit } from '../../redux/modules/Admin/categorySlice';
 const CreateCategory = () => {
   const [isLoading, setIsLoading] = useState('true')
   const [isformLoading, setIsFormLoading] = useState('true')
-  const [createCategory, setCreateCategory] = useState({ categoryName: '', vendorCategory: '', status: '' });
+  const [createCategory, setCreateCategory] = useState({ categoryName: '', vendorCategory: '', status: '' ,brand:''});
   const [errors, setErrors] = useState({ categoryName: '', vendorCategory: '', status: '' });
 
   const dispatch = useDispatch();
@@ -54,7 +54,7 @@ const CreateCategory = () => {
           <div className="col-xl-12 col-xxl-12">
             <div className="card">
               <div className="card-header">
-                <h4 className="card-title">Create Category</h4>
+                <h4 className="card-title">Create And Update & Brand Mapping</h4>
               </div>
               <div className="card-body position-relative">
                 {!isLoading ? (
@@ -65,7 +65,7 @@ const CreateCategory = () => {
                   <div className="container mt-3">
                     <form onSubmit={handleSubmit}>
                       <div className="row">
-                        <div className="col-sm-4 form-group mb-2">
+                        <div className="col-sm-3 form-group mb-2">
                           <label htmlFor="name-f">Category Name</label>
                           <input
                             type="text"
@@ -77,8 +77,8 @@ const CreateCategory = () => {
                           />
                           <p className="text-danger">{errors.categoryName}</p>
                         </div>
-                        <div className="col-sm-4 form-group mb-2">
-                          <label htmlFor="vendor-category">Select Vendor Category</label>
+                        <div className="col-sm-3 form-group mb-2">
+                          <label htmlFor="vendor-category">Supplier Name</label>
                           <select
                             className="form-select"
                             id="vendor-category"
@@ -95,7 +95,25 @@ const CreateCategory = () => {
                           </select>
                           <p className="text-danger">{errors.vendorCategory}</p>
                         </div>
-                        <div className="col-sm-4 form-group mb-2">
+                        <div className="col-sm-3 form-group mb-2">
+                          <label htmlFor="vendor-category">Supplier Brand</label>
+                          <select
+                            className="form-select"
+                            id="vendor-category"
+                            name="vendorCategory"
+                            onChange={(e) => handleChange(e, "brand")}
+                            aria-label="Default select example"
+                          >
+                            <option value="">Select</option>
+                            <option value="E-Commerce">E-Commerce</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Kitchen Appliances">Kitchen Appliances</option>
+                            <option value="Health">Health</option>
+                            <option value="Insurance">Insurance</option>
+                          </select>
+                          <p className="text-danger">{errors.vendorCategory}</p>
+                        </div>
+                        <div className="col-sm-3 form-group mb-2">
                           <label htmlFor="status">Select Status</label>
                           <select
                             className="form-select"
@@ -137,15 +155,15 @@ const CreateCategory = () => {
                     <h4 class="card-title">Category List</h4>
                   </div>
                   <div class="customer-search mb-sm-0 mb-3">
-                    <div class="input-group search-area">
-                      <input type="text" class="form-control only-high" placeholder="Search here......" />
-                      <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-                    </div>
-                  </div>
+                <div class="input-group search-area">
+                    <input type="text" class="form-control only-high" placeholder="Search here......"/>
+                    <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
+                </div>
+            </div>
                   <div class="d-flex align-items-center flex-wrap">
-                    <a href="javascript:void(0);" class="btn btn-primary btn-rounded me-3 mb-2"><i class="fa fa-file-excel me-2"></i>Export</a>
-
-                  </div>
+                <a href="javascript:void(0);" class="btn btn-primary btn-sm btn-rounded me-3 mb-2"><i class="fa fa-file-excel me-2"></i>Export</a>
+              
+            </div>
                 </div>
               </div>
               <div class="card-body">

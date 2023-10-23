@@ -3969,9 +3969,8 @@
   
   .btn-sm,
   .btn-group-sm>.btn {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.765625rem;
-    border-radius: 0.2rem;
+    font-size: 0.813rem !important;
+    padding: 0.625rem 1rem !important;
   }
   
   .fade {
@@ -34527,6 +34526,8 @@
   
   .btn-rounded {
     border-radius: 2.5rem !important;
+    padding: 0.625rem 1rem;
+
   }
   
   .btn-icon-end {
@@ -40008,7 +40009,7 @@
   }
   
   .customer-search .search-area .form-control {
-    border: 0.0625rem solid #EEEEEE;
+    border: 0.0625rem solid #EEEEEE !important;
     border-top-left-radius: 3.125rem;
     border-bottom-left-radius: 3.125rem;
     border-right: 0;
