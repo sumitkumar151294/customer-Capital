@@ -1,31 +1,54 @@
 import React, { useState } from "react";
 import Loader from "../Loader/Loader";
+import { onRoleMasterSubmit } from "../../redux/modules/Admin/roleMasterSlice";
+import { useDispatch } from "react-redux";
 
 const RoleMaster = () => {
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState("true");
   const [isformLoading, setIsFormLoading] = useState("true");
 
   const roleData = [
     {
-      roleName: 'Admin',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4'],
+      roleName: "Admin",
+      modules: [
+        "Module Access 1",
+        "Module Access 2",
+        "Module Access 3",
+        "Module Access 4",
+      ],
     },
     {
-      roleName: 'Data Analyst',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+      roleName: "Data Analyst",
+      modules: [
+        "Module Access 1",
+        "Module Access 2",
+        "Module Access 3",
+        "Module Access 4",
+        "Module Access 4",
+        "Module Access 4",
+      ],
     },
     {
-      roleName: 'Accountant',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3'],
+      roleName: "Accountant",
+      modules: ["Module Access 1", "Module Access 2", "Module Access 3"],
     },
     {
-      roleName: 'Manager',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+      roleName: "Manager",
+      modules: [
+        "Module Access 1",
+        "Module Access 2",
+        "Module Access 3",
+        "Module Access 4",
+        "Module Access 4",
+        "Module Access 4",
+        "Module Access 4",
+      ],
     },
   ];
 
   const [formData, setFormData] = useState({
-    roleName: '',
+    roleName: "",
     modules: {
       vendorMaster: false,
       allocatedMaster: false,
@@ -41,12 +64,11 @@ const RoleMaster = () => {
       customerList: false,
       emailTemplates: false,
     },
-
   });
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (name === 'selectAll') {
+    if (name === "selectAll") {
       const updatedModules = { ...formData.modules };
       for (const key in updatedModules) {
         updatedModules[key] = checked;
@@ -55,7 +77,7 @@ const RoleMaster = () => {
         ...formData,
         modules: updatedModules,
       });
-    } else if (type === 'checkbox') {
+    } else if (type === "checkbox") {
       setFormData({
         ...formData,
         modules: {
@@ -71,11 +93,14 @@ const RoleMaster = () => {
     }
   };
 
-  const isSelectAllChecked = Object.values(formData.modules).every((module) => module);
+  const isSelectAllChecked = Object.values(formData.modules).every(
+    (module) => module
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    dispatch(onRoleMasterSubmit(formData));
   };
 
   return (
@@ -123,7 +148,10 @@ const RoleMaster = () => {
                                 checked={isSelectAllChecked}
                                 onChange={handleInputChange}
                               />
-                              <label className="form-check-label fnt-17" htmlFor="flexCheckDefault1">
+                              <label
+                                className="form-check-label fnt-17"
+                                htmlFor="flexCheckDefault1"
+                              >
                                 Select All
                               </label>
                             </div>
@@ -132,29 +160,43 @@ const RoleMaster = () => {
                           <div className="col-lg-12 br pt-2">
                             <label htmlFor="name-f">Module Access</label>
                             <div className="row ml-4">
-                              {Object.entries(formData.modules).map(([module, checked]) => (
-                                <div className="form-check mt-2 col-lg-3" key={module}>
-                                  <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    name={module}
-                                    value={checked}
-                                    id={`flexCheckDefault-${module}`}
-                                    checked={checked}
-                                    onChange={handleInputChange}
-                                  />
-                                  <label className="form-check-label" htmlFor={`flexCheckDefault-${module}`}>
-                                    {module
-                                      .replace(/([A-Z])/g, ' $1')
-                                      .split(' ')
-                                      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                                      .join(' ')}
-                                  </label>
-                                </div>
-                              ))}
+                              {Object.entries(formData.modules).map(
+                                ([module, checked]) => (
+                                  <div
+                                    className="form-check mt-2 col-lg-3"
+                                    key={module}
+                                  >
+                                    <input
+                                      className="form-check-input"
+                                      type="checkbox"
+                                      name={module}
+                                      value={checked}
+                                      id={`flexCheckDefault-${module}`}
+                                      checked={checked}
+                                      onChange={handleInputChange}
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      htmlFor={`flexCheckDefault-${module}`}
+                                    >
+                                      {module
+                                        .replace(/([A-Z])/g, " $1")
+                                        .split(" ")
+                                        .map(
+                                          (word) =>
+                                            word.charAt(0).toUpperCase() +
+                                            word.slice(1).toLowerCase()
+                                        )
+                                        .join(" ")}
+                                    </label>
+                                  </div>
+                                )
+                              )}
                             </div>
                             <div className="col-sm-4 mt-4 mb-4">
-                              <button className="btn btn-primary float-right pad-aa">Submit</button>
+                              <button className="btn btn-primary float-right pad-aa">
+                                Submit
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -198,7 +240,9 @@ const RoleMaster = () => {
                               </td>
                               {row.modules.map((module, moduleIndex) => (
                                 <td key={moduleIndex}>
-                                  <span className="badge badge-success">{module}</span>
+                                  <span className="badge badge-success">
+                                    {module}
+                                  </span>
                                 </td>
                               ))}
                             </tr>
