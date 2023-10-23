@@ -90,11 +90,11 @@ const Cart = () => {
         </div>
       </section>
 
-      <section className="letshop3 mt-2">
-        <div className="container big-rr mb-2">
-          <div className="row">
-            <div className="col-lg-8">
-              <h5 className="mt-1 mb-3">Please Review Your Order</h5>
+      <section class="letshop3 mt-2">
+        <div class="container   big-rr mb-2">
+          <div class="row">
+            <div class="col-lg-8">
+              <h5 class="mt-1 mb-3 fs-3 fw-normal">Please Review Your Order</h5>
 
               {cartData.map((cart, index) => (
                 <div className="row mx-0 border-bottom py-3 cartGrid bnn">
@@ -152,7 +152,8 @@ const Cart = () => {
                           </div>
                         </ul>
                       </div>
-                      <div className="col-md-auto text-end col-12 ps-0 pt-2"><button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
+                      <div className="col-md-auto text-end col-12 ps-0 pt-2">
+                        <button className="text-danger fs-12 btn p-0 border-0"><i className="fa fa-trash" aria-hidden="true"></i> Remove</button></div>
                     </div>
                   </div>
                 </div>
@@ -307,10 +308,6 @@ const Cart = () => {
           </div>
         </div>
       </section>
-
-
-
-
     </>
   )
 }
