@@ -13,6 +13,88 @@ import img11 from '../../Images/coin.png'
 
 
 const LetShop = () => {
+    const giftCardData = [
+        {
+            id: 1,
+            imageSrc: img1,
+            name: 'Amazon',
+            priceRange: '₹300 - ₹600',
+            discount: '',
+            rewardsEarned: '',
+        },
+        {
+            id: 2,
+            imageSrc: img2,
+            name: "Domino's",
+            priceRange: '₹1050 - ₹2300',
+            discount: '2.5% Off',
+            rewardsEarned: '0.5% Rewards Earned',
+        },
+        {
+            id: 3,
+            imageSrc: img3,
+            name: 'Big Basket',
+            priceRange: '₹990 - ₹1599',
+            discount: '0.5% Off',
+            rewardsEarned: '',
+        },
+        {
+            id: 4,
+            imageSrc: img4,
+            name: 'Pantaloons',
+            priceRange: '₹3000 - ₹4500',
+            discount: '',
+            rewardsEarned: '11% Rewards Earned',
+        },
+        {
+            id: 5,
+            imageSrc: img5,
+            name: 'Flipcart',
+            priceRange: '₹670 - ₹1500',
+            discount: '10.5% Off',
+            rewardsEarned: '11.5% Rewards Earned',
+        },
+        {
+            id: 6,
+            imageSrc: img6,
+            name: 'CafeCoffee',
+            priceRange: '₹199 - ₹500',
+            discount: '',
+            rewardsEarned: '',
+        },
+        {
+            id: 7,
+            imageSrc: img7,
+            name: 'Bata',
+            priceRange: '₹450 - ₹950',
+            discount: '',
+            rewardsEarned: '11.5% Rewards Earned',
+        },
+        {
+            id: 8,
+            imageSrc: img8,
+            name: 'Amazon',
+            priceRange: '₹890 - ₹2000',
+            discount: '8% Off',
+            rewardsEarned: '',
+        },
+        {
+            id: 9,
+            imageSrc: img9,
+            name: 'Prestige',
+            priceRange: '₹890 - ₹1200',
+            discount: '15% Off',
+            rewardsEarned: '11.5% Rewards Earned',
+        },
+        {
+            id: 10,
+            imageSrc: img10,
+            name: 'Trollbads',
+            priceRange: '₹590 - ₹2600',
+            discount: '5.5% Off',
+            rewardsEarned: '',
+        },
+    ];
     return (
         <>
             <section className="letshop">
@@ -23,179 +105,53 @@ const LetShop = () => {
                         <span className="big-head2 mt-2">Buy, Send & Claim Gift Cards. Chip in with Friends. Store & Manage Gift Cards.</span>
                     </div>
                     <div className="row ">
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="img-sec">
-                                    <img src={img1} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">Amazon</div>
-                                    <div className="price-rr">₹300 - ₹600 </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="img-sec">
-                                    <div className="bagde-flag-wrap">
-                                        <a href="#" className="bagde-flag"> 2.5% Off</a>
+                        {giftCardData.slice(0, 5).map((card) => (
+                            <div className="col-lg-2 col-6 mb-3">
+                                <div className="box-coupen3">
+                                    <div className="img-sec">
+                                        {card.discount &&
+                                            <div className="bagde-flag-wrap">
+                                                <a href="#" className="bagde-flag"> {card.discount}</a>
+                                            </div>
+                                        }
+                                        <img className="w-144" src={card.imageSrc} />
                                     </div>
-                                    <img className="w-144" src={img2} />
 
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">Domino's</div>
-                                    <div className="price-rr mb-1">₹1050 - ₹2300 </div>
-                                    <div className="price-rmn"><img src={img11} className="w-24px" /> 0.5% Rewards Earned</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="bagde-flag-wrap">
-                                    <a href="#" className="bagde-flag"> 0.5% Off</a>
-                                </div>
-                                <div className="img-sec">
-                                    <img className="w-144" src={img3} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">Big Basket </div>
-                                    <div className="price-rr">₹990 - ₹1599  </div>
-
+                                    <div className="coupendis">
+                                        <div className="fnt-12px mb-1">{card.name}</div>
+                                        <div className="price-rr mb-1">{card.priceRange} </div>
+                                        {card.rewardsEarned &&
+                                            <div className="price-rmn"><img src={img11} className="w-24px" /> {card.rewardsEarned}</div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="img-sec">
-                                    <img className="w-144" src={img4} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">Pantaloons</div>
-                                    <div className="price-rr mb-1">₹3000 - ₹4500</div>
-                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11% Rewards Earned</div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="bagde-flag-wrap">
-                                    <a href="#" className="bagde-flag"> 10.5% Off</a>
-                                </div>
-                                <div className="img-sec">
-                                    <img className="w-144" src={img5} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">Flipcart </div>
-                                    <div className="price-rr mb-1">₹670 - ₹1500</div>
-                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11.5% Rewards Earned</div>
-
-                                </div>
-                            </div>
-                        </div>
-
+                        ))}
                     </div>
 
-                    <div className="row mt-2 mobile-hide " style={{display:'flex'}} >
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="img-sec">
-                                    <img className="w-144" src={img6} />
-                                </div>
+                    <div className="row mt-2 mobile-hide " style={{ display: 'flex' }} >
+                        {giftCardData.slice(5, 10).map((card) => (
+                            <div className="col-lg-2 col-6 mb-3">
+                                <div className="box-coupen3">
+                                    <div className="img-sec">
+                                        {card.discount &&
+                                            <div className="bagde-flag-wrap">
+                                                <a href="#" className="bagde-flag"> {card.discount}</a>
+                                            </div>
+                                        }
+                                        <img className="w-144" src={card.imageSrc} />
+                                    </div>
 
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">CafeCoffee</div>
-                                    <div className="price-rr">₹199 - ₹500 </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="img-sec">
-                                    <img className="w-144" src={img7} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">Bata </div>
-                                    <div className="price-rr mb-1">₹450 - ₹950 </div>
-                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11.5% Rewards Earned</div>
-
-
+                                    <div className="coupendis">
+                                        <div className="fnt-12px mb-1">{card.name}</div>
+                                        <div className="price-rr mb-1">{card.priceRange} </div>
+                                        {card.rewardsEarned &&
+                                            <div className="price-rmn"><img src={img11} className="w-24px" /> {card.rewardsEarned}</div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="bagde-flag-wrap">
-                                    <a href="#" className="bagde-flag"> 8% Off</a>
-                                </div>
-                                <div className="img-sec">
-                                    <img className="w-144" src={img8} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1">Amazon </div>
-                                    <div className="price-rr">₹890 - ₹2000 </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="bagde-flag-wrap">
-                                    <a href="#" className="bagde-flag"> 15% Off</a>
-                                </div>
-                                <div className="img-sec">
-                                    <img className="w-144" src={img9} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1 ">Prestige</div>
-                                    <div className="price-rr mb-1">₹890 - ₹1200 </div>
-                                    <div className="price-rmn"> <img src={img11} className="w-24px" />11.5% Rewards Earned</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-2 col-6 mb-3">
-                            <div className="box-coupen3">
-                                <div className="bagde-flag-wrap">
-                                    <a href="#" className="bagde-flag"> 5.5% Off</a>
-                                </div>
-                                <div className="img-sec">
-                                    <img className="w-144" src={img10} />
-                                </div>
-
-                                <div className="coupendis">
-                                    <div className="fnt-12px mb-1 ">Trollbads</div>
-                                    <div className="price-rr">₹590 - ₹2600 </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
+                        ))}
                     </div>
 
                     <div className=" text-center pt-4rem mb-4 mt-4">
