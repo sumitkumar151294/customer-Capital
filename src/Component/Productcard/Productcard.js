@@ -11,49 +11,39 @@ import { Link } from "react-router-dom";
 
 const data = [
     {
-
         discount: '2.5% Off',
         product: "Amazon",
         img: amazon,
         price: '₹780 - ₹2000',
         reward: '0.5% Rewards Earned'
-
     },
     {
-
         discount: '2.5% Off',
         product: "Flipcart",
         img: flipkart,
         price: '₹80 - ₹200',
         reward: ''
-
     },
     {
-
         discount: '',
         product: "Dominoz",
         img: dominos,
         price: '₹180 - ₹700',
         reward: '10% Rewards Earned'
-
     },
     {
-
         discount: '',
         product: "Bata",
         img: bata,
         price: '₹680 - ₹1200',
         reward: ''
-
     },
     {
-
         discount: '',
         product: "CafeCoffee",
         img: cafecoffee,
         price: '₹999 - ₹3999',
         reward: '11.5% Rewards Earned'
-
     }
 ]
 
