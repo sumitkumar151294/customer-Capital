@@ -30461,10 +30461,14 @@
     border: 3px solid #616161 !important;
     padding: 0.3125rem 1.25rem !important;
     color: #6e6e6e !important;
-    height: 2.5rem !important;
+    height: 3rem !important;
     border-radius: 1rem !important;
   }
-  
+  #vendor-category{
+    height: 2.5rem !important;
+
+  }
+ 
   @media only screen and (max-width: 1400px) {
     .form-control {
       height: 3rem;
@@ -33922,8 +33926,8 @@
   .btn-primary:active,
   .btn-primary:focus,
   .btn-primary:hover {
-    border-color: var(--primary-hover);
-    background-color: var(--primary-hover);
+    background-color: #FD683E !important;
+    background-color: #FD683E;
   }
   
   .btn-primary:focus {
@@ -35025,7 +35029,7 @@
   }
   
   .card-body {
-    padding: 1.875rem;
+    padding: 0.875rem;
   }
   
   @media only screen and (max-width: 575px) {

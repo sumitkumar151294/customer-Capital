@@ -5,7 +5,9 @@ const AdminAPI = {
     blogApi: '/blog',
     faqsApi: '/faqs',
     userApi: '/user',
-    categoryApi:'/category'
+    categoryApi:'/category',
+    roleMasterApi:'/roleMaster'
+
 }
 
 export default AdminAPI;
