@@ -1,11 +1,33 @@
 import React, { useState } from "react";
 import Loader from "../Loader/Loader";
+import { onUserSubmit } from "../../redux/modules/Admin/userSlice";
+import { useDispatch } from 'react-redux'
 
 const UserMaster = () => {
   const [isLoading, setIsLoading] = useState("true");
   const [isformLoading, setIsFormLoading] = useState("true");
   const [userData, setUserData] = useState({ userName: '', password: '', mobile: '', email: '' });
   const [errors, setErrors] = useState({ userName: '', password: '', mobile: '', email: '' });
+
+  const roleData = [
+    {
+      roleName: 'Admin',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4'],
+    },
+    {
+      roleName: 'Data Analyst',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+    },
+    {
+      roleName: 'Accountant',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3'],
+    },
+    {
+      roleName: 'Manager',
+      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+    },
+  ];
+  const dispatch = useDispatch();
 
   const handleChange = (e, fieldName) => {
     setUserData({
@@ -51,7 +73,7 @@ const UserMaster = () => {
     setErrors(newErrors);
 
     if (isValid) {
-      // write the logic here
+      dispatch(onUserSubmit(userData));
     }
   }
 
@@ -72,7 +94,7 @@ const UserMaster = () => {
                     </div>
                   ) : (
                     <div className="container mt-3">
-                      <form>
+                      <form onSubmit={handleSubmit} >
                         <div class="row">
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Email</label>
@@ -84,7 +106,7 @@ const UserMaster = () => {
                               id="name-f"
                               placeholder=""
                             />
-                          <p className="text-danger">{errors.email}</p>
+                            <p className="text-danger">{errors.email}</p>
                           </div>
 
                           <div class="col-sm-4 form-group mb-2">
@@ -97,7 +119,7 @@ const UserMaster = () => {
                               onChange={(e) => handleChange(e, 'mobile')}
                               placeholder=""
                             />
-                          <p className="text-danger">{errors.mobile}</p>
+                            <p className="text-danger">{errors.mobile}</p>
                           </div>
 
                           <div class="col-sm-4 form-group mb-2">
@@ -110,7 +132,7 @@ const UserMaster = () => {
                               placeholder=""
                               onChange={(e) => handleChange(e, 'userName')}
                             />
-                          <p className="text-danger">{errors.userName}</p>
+                            <p className="text-danger">{errors.userName}</p>
                           </div>
 
                           <div class="col-sm-4 form-group mb-2">
@@ -123,7 +145,7 @@ const UserMaster = () => {
                               placeholder=""
                               onChange={(e) => handleChange(e, 'password')}
                             />
-                          <p className="text-danger">{errors.password}</p>
+                            <p className="text-danger">{errors.password}</p>
                           </div>
 
                           <div class="col-lg-12 br pt-2">
@@ -362,7 +384,7 @@ const UserMaster = () => {
                               </div>
 
                               <div class="col-sm-4 mt-2 mb-4">
-                                <button class="btn btn-primary float-right pad-aa" onClick={handleSubmit}>
+                                <button class="btn btn-primary float-right pad-aa" >
                                   Submit <i class="fa fa-arrow-right"></i>
                                 </button>
                               </div>
@@ -398,139 +420,19 @@ const UserMaster = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              Admin<a href="javascript:void();"></a>
-                            </td>
-
-                            <td>
-                              <div class="d-flex"></div>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Data Analyst<a href="javascript:void();"></a>
-                            </td>
-                            <td>
-                              <div class="d-flex"></div>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Accountant<a href="javascript:void();"></a>
-                            </td>
-                            <td>
-                              <div class="d-flex"></div>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              Manager<a href="javascript:void();"></a>
-                            </td>
-                            <td>
-                              <div class="d-flex"></div>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 1
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 2
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 3
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                            <td>
-                              <span class="badge badge-success">
-                                Module Access 4
-                              </span>
-                            </td>
-                          </tr>
+                          {roleData.map((row, index) => (
+                            <tr key={index}>
+                              <td>{row.roleName}</td>
+                              <td>
+                                <div className="d-flex"></div>
+                              </td>
+                              {row.modules.map((module, moduleIndex) => (
+                                <td key={moduleIndex}>
+                                  <span className="badge badge-success">{module}</span>
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
                         </tbody>
                       </table>
                     </div>

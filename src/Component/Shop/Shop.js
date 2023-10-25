@@ -7,105 +7,85 @@ import img5 from '../../Images/john-lewis-partners-uk-1120.jpg'
 import { Link } from 'react-router-dom'
 
 const Shop = () => {
+  const cardData = [
+    {
+      id: 1,
+      img: img1,
+      isNew: true,
+      discount: 'Upto 15% Discount',
+      name: "Domino's Shopping Voucher",
+    },
+    {
+      id: 2,
+      img: img2,
+      isNew: false,
+      discount: 'Upto 15% Discount',
+      name: "Domino's Shopping Voucher",
+    },
+    {
+      id: 3,
+      img: img3,
+      isNew: false,
+      discount: 'Upto 15% Discount',
+      name: "Domino's Shopping Voucher",
+    },
+    {
+      id: 4,
+      img: img4,
+      isNew: true,
+      discount: 'Upto 15% Discount',
+      name: "Domino's Shopping Voucher",
+    },
+    {
+      id: 5,
+      img: img5,
+      isNew: true,
+      discount: 'Upto 15% Discount',
+      name: "Domino's Shopping Voucher",
+    },
+  ];
   return (
-<>
-<section class="letshop pt-4rem">
-<div class="container   big-rr mb-2">
-  
-  <div class="row ">
-    <div class="d-flex justify-content-between mb-4">
-        <div class="first w-70">
-            <h5 
-            style={{fontWeight:700}}
-            >You Choose the gift card They choose where to spend it!</h5>
-    <p class="the-para-magic2 mobile-hide">Just your kind of shopping – your go-to brands, your wish-list products, all with irresistible offers.</p>
-  
-</div>
+    <>
+      <section class="letshop pt-4rem">
+        <div class="container   big-rr mb-2">
+          <div class="row ">
+            <div class="d-flex justify-content-between mb-4">
+              <div class="first w-70">
+                <h5
+                  style={{ fontWeight: 700 }}
+                >You Choose the gift card They choose where to spend it!</h5>
+                <p class="the-para-magic2 mobile-hide">Just your kind of shopping – your go-to brands, your wish-list products, all with irresistible offers.</p>
+              </div>
+              <div class="second">
+                <a class="avail2  mt-4" href="#">View All &nbsp;<i class="fa fa-arrow-right"></i></a>
+              </div>
+            </div>
 
+            {cardData.map((card) => (
+              <div className="col-lg-2 col-3 text-center" key={card.id}>
+                <Link to="/productcart">
+                  <div className="offer-box1">
+                    <img className="w-100" src={card.img} />
+                    {card.isNew && (
+                      <div className="bagde-flag-wrap2">
+                        <a href="#" className="bagde-flag2">
+                          New
+                        </a>
+                      </div>
+                    )}
 
-<div class="second">
-<a class="avail2  mt-4" href="#">View All &nbsp;<i class="fa fa-arrow-right"></i></a>
-    </div>
-
-</div>
-
-<div class="col-lg-2 col-3 text-center">
-    <Link to="/productcart" >
-    <div class="offer-box1">
-    <img class="w-100" src={img1} />
-
-    <div class="bagde-flag-wrap2">
-      <a href="#" class="bagde-flag2">New</a>
-    </div>
- <div class="coupendis mt-4">
-    <div class="fnt-12px text-dark ">Upto 15% Discount&nbsp;</div>
-        <div class="fnt-12px text-muted mb-1 ">Domino's Shopping Voucher</div>
-       
-      </div>
-</div>
-</Link>
-</div>
-
-
-<div class="col-lg-2 col-3 text-center">
-    <div class="offer-box1">
-    <img class="w-100" src={img2} />
-
- <div class="coupendis mt-4">
-    <div class="fnt-12px text-dark ">Upto 15% Discount&nbsp;</div>
-        <div class="fnt-12px text-muted mb-1 ">Domino's Shopping Voucher</div>
-       
-      </div>
-</div>
-</div>
-
-<div class="col-lg-2 col-3 text-center">
-    <div class="offer-box1">
-    <img class="w-100" src={img3} />
- <div class="coupendis mt-4">
-    <div class="fnt-12px text-dark ">Upto 15% Discount&nbsp;</div>
-        <div class="fnt-12px text-muted mb-1 ">Domino's Shopping Voucher</div>
-       
-      </div>
-</div>
-</div>
-
-
-<div class="col-lg-2 col-3 text-center">
-    <div class="offer-box1">
-    <img class="w-100" src={img4} />
-    <div class="bagde-flag-wrap2">
-      <a href="#" class="bagde-flag2">New</a>
-    </div>
- <div class="coupendis mt-4">
-    <div class="fnt-12px text-dark ">Upto 15% Discount&nbsp;</div>
-        <div class="fnt-12px text-muted mb-1 ">Domino's Shopping Voucher</div>
-       
-      </div>
-</div>
-</div>
-<div class="col-lg-2 col-3 text-center">
-    <div class="offer-box1">
-    <img class="w-100" src={img5} />
-    <div class="bagde-flag-wrap2">
-      <a href="#" class="bagde-flag2">New</a>
-    </div>
- <div class="coupendis mt-4">
-    <div class="fnt-12px text-dark ">Upto 15% Discount&nbsp;</div>
-        <div class="fnt-12px text-muted mb-1  ">Domino's Shopping Voucher</div>
-       
-      </div>
-</div>
-</div>
-
-
-
-
-  </div>
-</div>
-</section>
-
-</>
+                    <div className="coupendis mt-4">
+                      <div className="fnt-12px text-dark">{card.discount}&nbsp;</div>
+                      <div className="fnt-12px text-muted mb-1">{card.name}</div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
 

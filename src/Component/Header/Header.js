@@ -2,21 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
 import { Link } from "react-router-dom";
-// import { useDispatch } from 'react-redux'
-// import { onLoginSubmit } from '../../redux/modules/authenticationSlice';
-const Header = () => {
-  // const dispatch = useDispatch();
-  // const [loginData, setLoginData] = useState({ email: '', password: '' });
-  // useEffect(() => {
-  //     dispatch(onLoginSubmit(loginData));
-  // }, []);
 
+const Header = () => {
   return (
     <>
       <header className="header1">
         <div className="fixheader">
           <div className="botheader top-hh mobile-hide">
-            {" "}
             <div className="top-menu">
               <p className="promo">Get upto 10X Rewards on Gift Cards</p>
             </div>
@@ -32,7 +24,7 @@ const Header = () => {
                     <div className="mobile-menu-trigger">
                       <span></span>
                     </div>
-                    <Link to='/' >
+                    <Link to='/'>
                       <img src={img} />
                     </Link>
                   </div>
