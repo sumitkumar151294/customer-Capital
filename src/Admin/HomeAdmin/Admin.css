@@ -40014,9 +40014,9 @@
   
   .customer-search .search-area .form-control {
     border: 0.0625rem solid #EEEEEE !important;
-    border-top-left-radius: 3.125rem;
-    border-bottom-left-radius: 3.125rem;
-    border-right: 0;
+    border-top-left-radius: 3.125rem !important;
+    border-bottom-left-radius: 3.125rem !important;
+    border-right: 0 !important;
   }
   
   .shadow-hover tr td {
