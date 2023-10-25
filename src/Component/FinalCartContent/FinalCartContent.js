@@ -245,9 +245,9 @@ const FinalCartContent = () => {
                                         </div>
                                     </div>
 
-                                    <div class="p-md-2 d-grid mt-4"><a href="orderconfirm.html" class="cnt-shop-blue"><button
+                                    <div class="p-md-2 d-grid mt-4"><Link to="/orderconfirm" class="cnt-shop-blue"><button
                                         class="btn py-3 py-md-2 btss2">Confirm & Pay Now &nbsp; <i
-                                            class="fa fa-arrow-right "></i></button></a></div>
+                                            class="fa fa-arrow-right "></i></button></Link></div>
                                 </div>
                             </div>
                         </div>

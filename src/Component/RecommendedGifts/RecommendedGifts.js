@@ -19,78 +19,66 @@ const data = [
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
         img: img1,
-        redirect:'/productcart'
-        
     },
     {
         productType: '',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
         img: img2,
-        redirect:''
     },
     {
         productType: '',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
         img: img3,
-        redirect:''
     },
     {
         productType: 'New',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img4,
-        redirect:''
+        img: img4
     },
     {
         productType: 'New',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img5,
-        redirect:''
+        img: img5
     },
     {
         productType: '',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img6,
-        redirect:''
+        img: img6
     },
     {
         productType: 'New',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img7,
-        redirect:''
+        img: img7
     },
     {
         productType: '',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img8,
-        redirect:''
+        img: img8
     },
     {
         productType: '',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img9,
-        redirect:''
+        img: img9
     },
     {
         productType: 'New',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img10,
-        redirect:''
+        img: img10
     },
     {
         productType: '',
         discount: 'Upto 15% Discount',
         product: "Domino's Shopping Voucher",
-        img: img11,
-        redirect:''
+        img: img11
     },
     
 ];
@@ -100,17 +88,14 @@ export const RecommendedGifts = () => {
         <>
             <section class="letshop pt-4rem">
                 <div class="container   big-rr mb-2 pt-0">
-
                     <div class="row text-center mb-4">
-
                         <span class="big-head text-center">Recommended Gifts for you</span>
                         <span class="big-head2 mt-2">Buy, Send &amp; Claim Gift Cards. Chip in with Friends. Store &amp; Manage Gift Cards.</span>
                     </div>
                     <div class="row ">
-
                         {data.map((cart) => (
                             <div class="col-lg-2 col-3 text-center mb-4">
-                                <Link to={cart.redirect}>
+                                <Link to='/productcart'>
                                     <div class="offer-box1">
                                         <img class="w-100" src={cart.img} />
                                         <div class="bagde-flag-wrap2">
@@ -119,12 +104,10 @@ export const RecommendedGifts = () => {
                                         <div class="coupendis mt-4">
                                             <div class="fnt-12px text-dark1 ">{cart.discount}&nbsp;</div>
                                             <div class="fnt-12px text-muted mb-1 ">{cart.product}</div>
-
                                         </div>
                                     </div>
                                 </Link>
                             </div>
-
                         ))}
                     </div>
                 </div >
