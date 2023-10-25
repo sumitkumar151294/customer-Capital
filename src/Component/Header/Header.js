@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
+import { Link } from "react-router-dom";
 // import { useDispatch } from 'react-redux'
 // import { onLoginSubmit } from '../../redux/modules/authenticationSlice';
 const Header = () => {
@@ -31,9 +32,9 @@ const Header = () => {
                     <div className="mobile-menu-trigger">
                       <span></span>
                     </div>
-                    <a>
+                    <Link to='/' >
                       <img src={img} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-2 col-5 order-1 order-lg-2">
@@ -76,10 +77,10 @@ const Header = () => {
                           <div className="logindrop2">
                             <ul>
                               <li>
-                                <a id="#">My Account</a>
+                                <Link to='/myprofile'  id="#">My Account</Link>
                               </li>
                               <li>
-                                <a id="#">My Points</a>
+                              <Link to='/myprofile' id="#">My Points</Link>
                               </li>
                               <li>
                                 <a id="#" href="#">
@@ -99,9 +100,9 @@ const Header = () => {
                         </div>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <a id="#" href="#">
+                        <Link to='/myprofilecontent'  id="#" href="#">
                           <i className="lar la-heart"></i>
-                        </a>
+                        </Link>
                       </li>
                       <li className="d-none d-xl-inline-block">
                         <a id="#" href="#">
