@@ -197,11 +197,9 @@ const Productcard = () => {
                     </div>
                     <div class="modal fade" id="instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
+                            <div class="modal-content rounded-3">
                                 <div class="modal-header">
-
                                     <span class="" data-bs-dismiss="modal" aria-label="Close"><i class="fa-regular fa-circle-xmark fa-2x cross-icon"></i></span>
-
                                 </div>
                                 <div class="modal-body">
                                     <div class="">

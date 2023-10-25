@@ -21248,6 +21248,10 @@ input::-webkit-inner-spin-button {
   border-radius: 50%;
 }
 
+.rounded-3{
+  border-radius: 0.3rem;
+}
+
 .input-rounded {
   border-radius: 50px;
 }
