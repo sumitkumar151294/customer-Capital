@@ -1,13 +1,12 @@
 import React, { useDebugValue, useEffect, useState } from "react";
 import pizz1 from "../../assets/img/pizz1.jpg";
 import Loader from "../Loader/Loader";
-import { onOrderSubmit } from "../../redux/modules/Admin/orderSlice";
 import { useDispatch } from "react-redux";
 
 const Orders = () => {
-    const dispatch=useDispatch();
-    const [supplier,setSupplier]=useState();
-    const [client,setClient]=useState();
+  const dispatch = useDispatch();
+  const [supplier, setSupplier] = useState();
+  const [client, setClient] = useState();
   const productList = [
     {
       brand: "Amazon",
@@ -41,13 +40,12 @@ const Orders = () => {
     },
   ];
   const [isLoading, setIsLoading] = useState("true");
-  useEffect(()=>{
-    const data={
-        supplier,client
+  useEffect(() => {
+    const data = {
+      supplier, client
     }
-    debugger
-    dispatch(onOrderSubmit(data))
-  },[])
+  }, [])
+
   return (
     <div class="content-body">
       {!isLoading ? (
@@ -94,7 +92,7 @@ const Orders = () => {
                         class="form-select"
                         aria-label="Default select example"
                         value={supplier}
-                        onChange={(e)=>setSupplier(e.target.value)}
+                        onChange={(e) => setSupplier(e.target.value)}
                       >
                         <option selected>Select</option>
                         <option value="First Client">Quicksilver</option>
@@ -109,7 +107,7 @@ const Orders = () => {
                         class="form-select"
                         aria-label="Default select example"
                         value={client}
-                        onChange={(e)=>setClient(e.target.value)}
+                        onChange={(e) => setClient(e.target.value)}
                       >
                         <option selected>Select</option>
                         <option value="First Client">Client 1</option>
@@ -144,27 +142,21 @@ const Orders = () => {
                           <th>Total Margin Value</th>
                         </tr>
                       </thead>
-                      {
-                        productList.map((item)=>(
+                      {productList.map((item) => (
+                        <tbody>
+                          <tr>
+                            <td>
 
-                       
-                      <tbody>
-                        <tr>
-                          <td>
-                           
-                            {item.brand}
-                            <a href="javascript:void();"></a>
-                          </td>
-                          <td>{item.TotalNoVouchers}</td>
-                          <td> {item.TotalFaceValue}</td>
-                          <td>{item.Margin}</td>
-                          <td>{item?.TotalMarginValue}</td>
-                        </tr>
-                        
-                       
-                      </tbody>
-                        ))
-                    }
+                              {item.brand}
+                              <a href="javascript:void();"></a>
+                            </td>
+                            <td>{item.TotalNoVouchers}</td>
+                            <td> {item.TotalFaceValue}</td>
+                            <td>{item.Margin}</td>
+                            <td>{item?.TotalMarginValue}</td>
+                          </tr>
+                        </tbody>
+                      ))}
                     </table>
                   </div>
                 </div>
