@@ -1,8 +1,75 @@
 import React, { useState } from 'react'
 import Loader from '../Loader/Loader'
+import { useDispatch } from 'react-redux';
+import { onAllocateMasterSubmit } from '../../redux/modules/Admin/allocateMasterSlice';
 
 const AllocationMaster = () => {
+    const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState('true')
+    const [formData, setFormData] = useState({
+        modules: {
+            Amazon: false,
+            Flipcart: false,
+            Myntra: false,
+            Ajio: false,
+            UrbanMonkey: false,
+            Bewakoof: false,
+            Adidas: false,
+            Snapdeal: false,
+            FirstCry: false,
+            IndiaMart: false,
+            BigBasket: false,
+            Nykaa: false,
+            TataCliq: false,
+            Shopclues: false,
+            Croma: false,
+            Pepperfry: false,
+            Dukaan: false,
+            Decathlon: false,
+            Urbanic: false,
+            Zivame: false,
+            VishalMegaMart: false,
+
+        },
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        if (name === "selectAll") {
+            const updatedModules = { ...formData.modules };
+            for (const key in updatedModules) {
+                updatedModules[key] = checked;
+            }
+            setFormData({
+                ...formData,
+                modules: updatedModules,
+            });
+        } else if (type === "checkbox") {
+            setFormData({
+                ...formData,
+                modules: {
+                    ...formData.modules,
+                    [name]: checked,
+                },
+            });
+        } else {
+            setFormData({
+                ...formData,
+                [name]: value,
+            });
+        }
+    };
+
+    const isSelectAllChecked = Object.values(formData.modules).every(
+        (module) => module
+    );
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+        dispatch(onAllocateMasterSubmit(formData));
+    };
+
     return (
         <div class="content-body">
             {!isLoading ? (
@@ -18,28 +85,36 @@ const AllocationMaster = () => {
                                 <div class="card-body ">
                                     <form>
                                         <div class="row">
-
                                             <div class="col-sm-4 form-group mb-2">
                                                 <label for="name-f">Select Allocation</label>
                                                 <select class="form-select" aria-label="Default select example">
                                                     <option selected>Select</option>
-                                                  <option value="First Client">First Client</option>
+                                                    <option value="First Client">First Client</option>
                                                     <option value="Second Client">Second Client</option>
                                                     <option value="Third Client">Third Client</option>
                                                 </select>
                                             </div>
-
                                         </div>
-
-
                                     </form>
 
                                     <div class="row top-top">
                                         <div class="col-lg-4">
                                             <div class="form-check mt-2 padd">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" />
-                                                <label class="form-check-label fnt-17" for="flexCheckDefault1">
-                                                    Select All  </label>
+                                                <input
+                                                    className="form-check-input"
+                                                    type="checkbox"
+                                                    name="selectAll"
+                                                    value={formData.modules.selectAll}
+                                                    id="flexCheckDefault1"
+                                                    checked={isSelectAllChecked}
+                                                    onChange={handleInputChange}
+                                                />
+                                                <label
+                                                    className="form-check-label fnt-17"
+                                                    htmlFor="flexCheckDefault1"
+                                                >
+                                                    Select All
+                                                </label>
                                             </div>
                                         </div>
 
@@ -47,175 +122,45 @@ const AllocationMaster = () => {
                                             <div class="form-check mt-2 bm-b">
                                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" />
                                                 <label class="form-check-label" for="flexCheckDefault2">
-                                                E-Commerce</label>
+                                                    E-Commerce</label>
                                             </div>
 
-
-
-                                            <div class="row ml-4">
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
-                                                    <label class="form-check-label" for="flexCheckDefault3">
-                                                    Amazon</label>
-                                                </div>
-
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" />
-                                                    <label class="form-check-label" for="flexCheckDefault4">
-                                                        Flipcart</label>
-                                                </div>
-
-
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                        Myntra</label>
-                                                </div>
-
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" />
-                                                    <label class="form-check-label" for="flexCheckDefault5">
-                                                        Ajio</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                    Urban Monkey</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" />
-                                                    <label class="form-check-label" for="flexCheckDefault6">
-                                                    Bewakoof.com
-</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7" />
-                                                    <label class="form-check-label" for="flexCheckDefault7">
-                                                    Adidas</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8" />
-                                                    <label class="form-check-label" for="flexCheckDefault8">
-                                                    Snapdeal</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault9" />
-                                                    <label class="form-check-label" for="flexCheckDefault9">
-                                                    Snapdeal</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault10" />
-                                                    <label class="form-check-label" for="flexCheckDefault10">
-                                                    Snapdeal</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault11" />
-                                                    <label class="form-check-label" for="flexCheckDefault11">
-                                                    First Cry
-</label>
-                                                </div>
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault12" />
-                                                    <label class="form-check-label" for="flexCheckDefault12">
-                                                    India Mart
-</label>
-                                                </div>
-
-
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault13" />
-                                                    <label class="form-check-label" for="flexCheckDefault13">
-                                                    BigBasket</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault14" />
-                                                    <label class="form-check-label" for="flexCheckDefault14">
-                                                    BigBasket</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault15" />
-                                                    <label class="form-check-label" for="flexCheckDefault15">
-                                                    BigBasket</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault16" />
-                                                    <label class="form-check-label" for="flexCheckDefault16">
-                                                    Nykaa
-</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault17" />
-                                                    <label class="form-check-label" for="flexCheckDefault17">
-                                                    Tata Cliq
-</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault18" />
-                                                    <label class="form-check-label" for="flexCheckDefault18">
-                                                    Shopclues</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault19" />
-                                                    <label class="form-check-label" for="flexCheckDefault19">
-                                                    Croma</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault20" />
-                                                    <label class="form-check-label" for="flexCheckDefault20">
-                                                    Pepperfry
-</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault21" />
-                                                    <label class="form-check-label" for="flexCheckDefault21">
-                                                    Dukaan</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault22" />
-                                                    <label class="form-check-label" for="flexCheckDefault22">
-                                                    Decathlon</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault23" />
-                                                    <label class="form-check-label" for="flexCheckDefault23">
-                                                    Decathlon</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault24" />
-                                                    <label class="form-check-label" for="flexCheckDefault24">
-                                                    Urbanic</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault25" />
-                                                    <label class="form-check-label" for="flexCheckDefault25">
-                                                    Zivame</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault26" />
-                                                    <label class="form-check-label" for="flexCheckDefault26">
-                                                    Vishal Mega Mart
-</label>
-                                                </div>
-                                                <div class="form-check mt-2 col-lg-3">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault27" />
-                                                    <label class="form-check-label" for="flexCheckDefault27">
-                                                    Croma</label>
-                                                </div>
-
-                                                <div class="col-sm-4 mt-2 mb-4">
-                                                    <button class="btn btn-primary float-right pad-aa">Add <i class="fa fa-arrow-right"></i></button>
-                                                </div>
+                                            <div className="row ml-4">
+                                                {Object.entries(formData.modules).map(
+                                                    ([module, checked]) => (
+                                                        <div
+                                                            className="form-check mt-2 col-lg-3"
+                                                            key={module}
+                                                        >
+                                                            <input
+                                                                className="form-check-input"
+                                                                type="checkbox"
+                                                                name={module}
+                                                                value={checked}
+                                                                id={`flexCheckDefault-${module}`}
+                                                                checked={checked}
+                                                                onChange={handleInputChange}
+                                                            />
+                                                            <label
+                                                                className="form-check-label"
+                                                                htmlFor={`flexCheckDefault-${module}`}
+                                                            >
+                                                                {module
+                                                                    .replace(/([A-Z])/g, " $1")
+                                                                    .split(" ")
+                                                                    .map(
+                                                                        (word) =>
+                                                                            word.charAt(0).toUpperCase() +
+                                                                            word.slice(1).toLowerCase()
+                                                                    )
+                                                                    .join(" ")}
+                                                            </label>
+                                                        </div>
+                                                    )
+                                                )}
+                                            </div>
+                                            <div class="col-sm-4 mt-2 mb-4">
+                                                <button type='submit' class="btn btn-primary float-right pad-aa" onClick={handleSubmit}>Add <i class="fa fa-arrow-right"></i></button>
                                             </div>
                                         </div>
                                     </div>
