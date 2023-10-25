@@ -3,9 +3,6 @@ import image1 from '../../Images/more.png'
 import image2 from '../../Images/mid2.png'
 import image3 from '../../Images/more3.png'
 
-
-
-
 const GiftCard = () => {
     return (
         <>
