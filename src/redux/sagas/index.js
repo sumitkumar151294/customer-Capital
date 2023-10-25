@@ -9,6 +9,7 @@ import couponSaga from './User/couponSaga'
 import loginSaga from './loginSaga';
 import userSaga from './Admin/userSaga';
 import categorySaga from './Admin/categorySaga';
+import roleMasterSaga from './Admin/roleMasterSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -22,7 +23,7 @@ export default function* rootSaga() {
     loginSaga(),
     userSaga(),
     categorySaga(),
-
+    roleMasterSaga(),
 
   ]);
 }

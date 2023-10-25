@@ -8,6 +8,7 @@ import couponReducer from './modules/User/couponSlice';
 import loginReducer from './modules/loginSlice';
 import userReducer from './modules/Admin/userSlice'
 import categoryReducer from './modules/Admin/categorySlice' 
+import roleMasterReducer from './modules/Admin/roleMasterSlice';
 
 import { combineReducers } from 'redux';
 const reducers = combineReducers({
@@ -21,6 +22,7 @@ const reducers = combineReducers({
   loginReducer:loginReducer,
   userReducer:userReducer,
   categoryReducer:categoryReducer,
+  roleMasterReducer: roleMasterReducer
 });
 
 export default reducers;
