@@ -4,6 +4,10 @@ import img from "../../Images/logo.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const toggleMenu = () => {
+    // Add 'true' in sessionStorage
+    sessionStorage.setItem('mobileMenuActive', 'true');
+  };
   return (
     <>
       <header className="header1">
@@ -21,7 +25,7 @@ const Header = () => {
                   <div className="button d-none"></div>
 
                   <div className="logo d-flex">
-                    <div className="mobile-menu-trigger">
+                    <div className="mobile-menu-trigger" onClick={toggleMenu}>
                       <span></span>
                     </div>
                     <Link to='/'>
