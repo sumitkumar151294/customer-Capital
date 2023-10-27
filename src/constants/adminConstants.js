@@ -6,7 +6,8 @@ const AdminAPI = {
     faqsApi: '/faqs',
     userApi: '/user',
     categoryApi:'/category',
-    roleMasterApi:'/roleMaster'
+    roleMasterApi:'/roleMaster',
+    allocateMasterApi:'/allocateMaster'
 
 }
 
