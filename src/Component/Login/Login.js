@@ -25,7 +25,7 @@ const Login = () => {
         <>
             <div class="modal fade" id="loginmodal">
                 <div class="modal-dialog loginmodalsize modal-dialog-centered">
-                    <div class="modal-content rounded-0">
+                    <div class="modal-content rounded-3">
                         <div class="loginpop">
                             <button type="button" class="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
                             <div class="login-form2">
@@ -110,7 +110,7 @@ const Login = () => {
 
             <div class="modal fade" id="otpmodal">
                 <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content rounded-0">
+                    <div class="modal-content rounded-3">
                         <div class="loginpop">
                             <button id="ctl00_btncloseotpmodel" type="button" class="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
 
@@ -223,7 +223,7 @@ const Login = () => {
             </div>
             <div class="modal fade" id="signupmodal">
                 <div class="modal-dialog modal-dialog-centered loginmodalsize">
-                    <div class="modal-content rounded-0">
+                    <div class="modal-content rounded-3">
                         <div class="loginpop">
                             <button type="button" class="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
                             <div class="login-form">
@@ -385,7 +385,7 @@ const Login = () => {
             </div>
             <div class="modal fade" id="forgotmodal">
                 <div class="modal-dialog modal-dialog-centered loginmodalsize">
-                    <div class="modal-content rounded-0">
+                    <div class="modal-content rounded-3">
                         <div class="loginpop">
                             <button type="button" class="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
                             <div class="login-form">
