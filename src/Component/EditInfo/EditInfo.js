@@ -25,7 +25,7 @@ const EditInfo = () => {
     }
 
     const handleSubmit = (e) => {
-        
+
         e.preventDefault()
         // console.log(userData)
         // dispatch(onUpdateSubmit(userData))
@@ -45,7 +45,7 @@ const EditInfo = () => {
         }
         // Email validation using the regexEmail pattern
         const regexEmail = /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zA-Z0-9]+(\.[a-zA-Z\.]+)/g;
-        if (!regexEmail.test(userData.secret)) {
+        if (!regexEmail.test(userData.email)) {
             newErrors.secret = 'Invalid email format';
             isValid = false;
 
@@ -122,14 +122,33 @@ const EditInfo = () => {
                                             <div class="radiobtnlist signupgender">
                                                 <table id="ctl00_rbtnlist" border="0">
                                                     <tr>
-                                                        <td><input id="ctl00_rbtnlist_0" type="radio" name="gender" value={userData.gender} onChange={(e) => handleChange(e, "gender")}  /><label for="ctl00_rbtnlist_0">Male</label></td><td><input id="ctl00_rbtnlist_1" type="radio" name="ctl00$rbtnlist" value="Female" /><label for="ctl00_rbtnlist_1">Female</label></td>
+                                                        <td>
+                                                            <input
+                                                                id="ctl00_rbtnlist_0"
+                                                                type="radio"
+                                                                name="gender"
+                                                                value="Male"
+                                                                checked={userData.gender === "Male"}
+                                                                onChange={(e) => handleChange(e, "gender")}
+                                                            />
+                                                            <label for="ctl00_rbtnlist_0">Male</label>
+                                                        </td>
+                                                        <td>
+                                                            <input
+                                                                id="ctl00_rbtnlist_1"
+                                                                type="radio"
+                                                                name="gender"
+                                                                value="Female"
+                                                                checked={userData.gender === "Female"}
+                                                                onChange={(e) => handleChange(e, "gender")}
+                                                            />
+                                                            <label for="ctl00_rbtnlist_1">Female</label>
+                                                        </td>
                                                     </tr>
                                                 </table>
-
                                             </div>
-                                            
+                                            <p className="text-danger">{errors.gender}</p>
                                         </div>
-
 
                                         <div class="col-md-12 input-main">
 
