@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
 import { Link } from "react-router-dom";
+import { toggleNavbar } from "../../redux/modules/User/toggleSlice";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
   const toggleMenu = () => {
-    // Add 'true' in sessionStorage
-    sessionStorage.setItem('mobileMenuActive', 'true');
+    dispatch(toggleNavbar());
   };
+
   return (
     <>
       <header className="header1">
