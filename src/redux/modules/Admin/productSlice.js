@@ -14,7 +14,6 @@ export const ProductSlice = createSlice({
       return { ...state, isLoading: true, data: {}, message: '', error: {}, isError: false };
     },
     onProductSubmitSuccess: (state, { payload }) => {
-      debugger
       const { data = {}, message = '', status_code = 200 } = payload;
       return {
         ...state,

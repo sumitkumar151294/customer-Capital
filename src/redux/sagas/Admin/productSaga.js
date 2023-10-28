@@ -6,7 +6,6 @@ import {
   onProductSubmitSuccess} from '../../modules/Admin/productSlice';
 
 function* ProductApi() {
-  debugger
   try {
       const productResponse = yield call(callProductApi);
     if (productResponse.status_code === 200) {
