@@ -1,12 +1,9 @@
-import React, { useDebugValue, useEffect, useState } from "react";
-import pizz1 from "../../assets/img/pizz1.jpg";
+import React, { useState } from "react";
 import Loader from "../Loader/Loader";
 import { useDispatch } from "react-redux";
-import dayjs from "dayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { DateRangePicker } from "@mui/x-date-pickers-pro";
 const Orders = () => {
   const dispatch = useDispatch();
