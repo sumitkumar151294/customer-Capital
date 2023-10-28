@@ -1,5 +1,8 @@
 import React from "react";
-import imageAmazon from '../../Images/amazon.com.png'
+import imageAmazon from '../../Images/amazon.com.png';
+import step1 from '../../assets/img/step1.png';
+import step2 from '../../assets/img/step2.png';
+import step3 from '../../assets/img/step3.png';
 import coin from '../../Images/coin.png';
 import flipkart from '../../Images/flipcart.png';
 import dominos from '../../Images/dominoz.png';
@@ -7,53 +10,44 @@ import bata from '../../Images/bata.png';
 import cafecoffee from '../../Images/cafecoffee.png';
 import amazon from '../../Images/amazon.png'
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 const data = [
     {
-
         discount: '2.5% Off',
         product: "Amazon",
         img: amazon,
         price: '₹780 - ₹2000',
         reward: '0.5% Rewards Earned'
-
     },
     {
-
         discount: '2.5% Off',
         product: "Flipcart",
         img: flipkart,
         price: '₹80 - ₹200',
         reward: ''
-
     },
     {
-
         discount: '',
         product: "Dominoz",
         img: dominos,
         price: '₹180 - ₹700',
         reward: '10% Rewards Earned'
-
     },
     {
-
         discount: '',
         product: "Bata",
         img: bata,
         price: '₹680 - ₹1200',
         reward: ''
-
     },
     {
-
         discount: '',
         product: "CafeCoffee",
         img: cafecoffee,
         price: '₹999 - ₹3999',
         reward: '11.5% Rewards Earned'
-
     }
 ]
 
@@ -90,10 +84,44 @@ const giftCard = [
         saving: '₹302',
         redirect: ''
     },
-
 ]
+const tabContent = {
+    Instructions: [
+        "This Voucher can be redeemed at all company authorized TITAN WORLD Stores.",
+        "Multiple vouchers (up to 5) can be used against a single transaction.",
+        "Gift Vouchers CANNOT be used Online.",
+        "Voucher partial redemption is not allowed, single-time usage only.",
+        "Voucher is not applicable on discounted products and cannot be clubbed with any other offer in the store.",
+        "Voucher cannot be redeemed for Titan Nebula collection of Watches.",
+        "Multiple vouchers (up to 5) can be used against a single transaction.",
+        "Gift Vouchers CANNOT be used Online.",
+    ],
+    TermsAndConditions: [
+        "The holder of the voucher is deemed to be the beneficiary.",
+        "Beneficiary should announce the intent of using the voucher before making a purchase.",
+        "Only valid vouchers at the sole discretion of TITAN shall be accepted for redemption.",
+        "Multiple vouchers (upto 5) can be used against single transaction.",
+        "Voucher partial redemption is not allowed, single time usage only",
+        "No refund or credit note would be issued against unused or partially used voucher.",
+        "Voucher is not applicable on discounted products and cannot be clubbed with any other offer in the store.",
+        "Voucher cannot be redeemed for Titan Nebula collection of Watches",
+        "Validity of the voucher is for a maximum of 6 months from the date of issuance.",
+        "This Voucher can be redeemed at all company authorized TITAN WORLD Stores",
+        "Voucher cannot be revalidated once expired.",
+        "TITAN/ affiliates are not responsible on account of the beneficiary sharing the voucher number and the voucher getting redeemed on that account.",
+        "The Brand may ask for a valid Government identity proof at the time of redeeming the voucher.",
+        "Vouchers will be accepted across all at all company authorized TITAN WORLD Stores mentioned but TITAN at its sole discretion may add or remove an outlet from the list without giving any prior notice.",
+        "TITAN makes full efforts to accept voucher but on account of any technical / administrative reasons an outlet may refuse to accept a voucher.",
+        "This voucher cannot be redeemed on specific block out dates TITAN may add or delete any date on its sole discretion.",
+        "For any queries / issues related to GV / GC, raise a request at www.dummydomain.com",
+    ]
+};
 
 const Productcard = () => {
+    const [activeTab, setActiveTab] = useState("");
+    const handleTabClick = (tabName) => {
+        setActiveTab(tabName);
+    };
     return (
 
         <><section class="letshop mt-4">
@@ -121,17 +149,138 @@ const Productcard = () => {
                                             <p style={{ textAlign: "justify" }}>India’s largest fashion hub for all things trendy, Amazon Gift Card is the one-stop shop for all your fashion needs. Enjoy the best of the season’s fashion fest with thousands of items for you to pick from. Revamp your wardrobe with
                                                 a Amazon Gift Card d Gift Voucher from GyFTR that lets you shop on Amazon Gift Card and save money by availing discounts.</p>
                                         </div>
-                                        <div class="d-grid gap-2 imp-btns d-flex justify-content-end mt-4">
-                                            <a href="" data-bs-toggle="modal" data-bs-target="#instruction"><span class="fnt-12px" style={{ borderBottom: "1px solid" }}>** Instructions</span></a>
-                                            <a href="" data-bs-toggle="modal" data-bs-target="#instruction"><span class="fnt-12px" style={{ borderBottom: "1px solid" }}>Terms & Conditions</span></a>
-                                            <a href="" data-bs-toggle="modal" data-bs-target="#instruction"><span class="fnt-12px" style={{ borderBottom: "1px solid" }}>How to Redeem?</span></a>
+                                        <div className="d-grid gap-2 imp-btns d-flex justify-content-end mt-4">
+                                            <a
+                                                href=""
+                                                onClick={() => handleTabClick('Instructions')}
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#instruction"
+                                            >
+                                                <span
+                                                    className={`fnt-12px ${activeTab === 'Instructions' ? 'active-tab' : ''}`}
+                                                    style={{ borderBottom: "1px solid", color: "#0d6efd" }}
+                                                >
+                                                    ** Instructions
+                                                </span>
+                                            </a>
+                                            <a
+                                                href=""
+                                                onClick={() => handleTabClick('TermsAndConditions')}
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#instruction"
+                                            >
+                                                <span
+                                                    className={`fnt-12px ${activeTab === 'TermsAndConditions' ? 'active-tab' : ''}`}
+                                                    style={{ borderBottom: "1px solid", color: "#0d6efd" }}
+                                                >
+                                                    Terms & Conditions
+                                                </span>
+                                            </a>
+                                            <a
+                                                href=""
+                                                onClick={() => handleTabClick('Redeem')}
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#instruction"
+                                            >
+                                                <span
+                                                    className={`fnt-12px ${activeTab === 'Redeem' ? 'active-tab' : ''}`}
+                                                    style={{ borderBottom: "1px solid", color: "#0d6efd" }}
+                                                >
+                                                    How to Redeem?
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="modal fade" id="instruction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content rounded-3">
+                                <div class="modal-header">
+                                    <span class="" data-bs-dismiss="modal" aria-label="Close"><i class="fa-regular fa-circle-xmark fa-2x cross-icon"></i></span>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="">
+                                        <div class="">
+                                            <nav className="text-center">
+                                                <div className="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                                                    <button
+                                                        className={`nav-link ${activeTab === 'Instructions' ? 'active' : ''}`}
+                                                        onClick={() => handleTabClick('Instructions')}
+                                                    >
+                                                        <i className="fa-solid fa-book-open"></i> &nbsp;Instructions
+                                                    </button>
+                                                    <button
+                                                        className={`nav-link ${activeTab === 'TermsAndConditions' ? 'active' : ''}`}
+                                                        onClick={() => handleTabClick('TermsAndConditions')}
+                                                    >
+                                                        <i className="fa-solid fa-book-open-reader"></i> &nbsp;Terms & Conditions
+                                                    </button>
+                                                    <button
+                                                        className={`nav-link ${activeTab === 'Redeem' ? 'active' : ''}`}
+                                                        onClick={() => handleTabClick('Redeem')}
+                                                    >
+                                                        <i className="fa-solid fa-share-nodes"></i> &nbsp;How to Redeem?
+                                                    </button>
+                                                </div>
+                                            </nav>
+                                            <div class="tab-content p-3" id="nav-tabContent">
+                                                {activeTab === 'Instructions' && (
+                                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                        <h5 class="fnt-bold">Important Instructions</h5>
+                                                        <ul>
+                                                            {tabContent.Instructions.map((item, index) => (
+                                                                <li key={index} className="list-style">
+                                                                    {item}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>)}
+                                                {activeTab === 'TermsAndConditions' && (
+                                                    <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                        <h5>Terms and Conditions</h5>
+                                                        <ul>
+                                                            {tabContent.TermsAndConditions.map((item, index) => (
+                                                                <li key={index} className="list-style">
+                                                                    {item}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
+                                                {activeTab === 'Redeem' && (
+                                                    <div class="tab-pane fade show active" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                                        <h5 class="fnt-bold">How to Redeem?</h5>
+                                                        <div class="row">
+                                                            <div class="col-lg-4">
+                                                                <img class="w-100" src={step1} />
 
+                                                                <h6>Go to Store or online platform</h6>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <img class="w-100" src={step2} />
+                                                                <h6>Select your choice of product</h6>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <img class="w-100" src={step3} />
+
+                                                                <h6>Share your coupen code or apply your code</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                     <div class="container">
                         <div class="row">
                             {giftCard.map((cart) => (

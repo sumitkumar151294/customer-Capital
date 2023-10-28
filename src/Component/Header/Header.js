@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
-// import { useDispatch } from 'react-redux'
-// import { onLoginSubmit } from '../../redux/modules/authenticationSlice';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
-  // const [loginData, setLoginData] = useState({ email: '', password: '' });
-  // useEffect(() => {
-  //     dispatch(onLoginSubmit(loginData));
-  // }, []);
   const handleMyAccount = () => {
     sessionStorage.clear();
     navigate("/myprofilecontent");
@@ -24,7 +17,6 @@ const Header = () => {
       <header className="header1">
         <div className="fixheader">
           <div className="botheader top-hh mobile-hide">
-            {" "}
             <div className="top-menu">
               <p className="promo">Get upto 10X Rewards on Gift Cards</p>
             </div>
@@ -40,9 +32,9 @@ const Header = () => {
                     <div className="mobile-menu-trigger">
                       <span></span>
                     </div>
-                    <a>
+                    <Link to='/'>
                       <img src={img} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-2 col-5 order-1 order-lg-2">

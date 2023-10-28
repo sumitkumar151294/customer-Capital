@@ -7,7 +7,7 @@ const AdminAPI = {
     userApi: '/user',
     categoryApi:'/category',
     roleMasterApi:'/roleMaster',
-
+    allocateMasterApi:'/allocateMaster'
 
 }
 

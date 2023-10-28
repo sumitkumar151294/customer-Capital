@@ -11,6 +11,7 @@ import userSaga from './Admin/userSaga';
 import categorySaga from './Admin/categorySaga';
 import roleMasterSaga from './Admin/roleMasterSaga';
 import productSaga from './Admin/productSaga';
+import allocateMasterSaga from './Admin/allocateMasterSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -25,7 +26,8 @@ export default function* rootSaga() {
     userSaga(),
     categorySaga(),
     roleMasterSaga(),
-    productSaga()
+    productSaga(),
+    allocateMasterSaga(),
 
   ]);
 }
