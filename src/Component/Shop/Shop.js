@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import img1 from '../../Images/prezzee-card-new-red.png'
 import img2 from '../../Images/airbnb-uk-approved-nov21.png'
 import img3 from '../../Images/prezzee-uk-themes-0-copy-ad2f252.png'
 import img4 from '../../Images/asos.png'
 import img5 from '../../Images/john-lewis-partners-uk-1120.jpg'
 import { Link } from 'react-router-dom'
+import { onProductSubmit } from '../../redux/modules/Admin/productSlice'
+import { useDispatch } from 'react-redux'
 
 const Shop = () => {
+  const dispatch=useDispatch();
+  useEffect(()=>{
+    debugger
+    dispatch(onProductSubmit());
+  },[])
   return (
 <>
 <section class="letshop pt-4rem">

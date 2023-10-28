@@ -1,30 +1,60 @@
 import React, { useState } from "react";
 import Loader from "../Loader/Loader";
 import { onUserSubmit } from "../../redux/modules/Admin/userSlice";
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
 
 const UserMaster = () => {
   const [isLoading, setIsLoading] = useState("true");
   const [isformLoading, setIsFormLoading] = useState("true");
-  const [userData, setUserData] = useState({ userName: '', password: '', mobile: '', email: '' });
-  const [errors, setErrors] = useState({ userName: '', password: '', mobile: '', email: '' });
+  const [userData, setUserData] = useState({
+    userName: "",
+    password: "",
+    mobile: "",
+    email: "",
+  });
+  const [errors, setErrors] = useState({
+    userName: "",
+    password: "",
+    mobile: "",
+    email: "",
+  });
 
   const roleData = [
     {
-      roleName: 'Admin',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4'],
+      roleName: "Admin",
+      modules: [
+        "Module Access 1",
+        "Module Access 2",
+        "Module Access 3",
+        "Module Access 4",
+      ],
     },
     {
-      roleName: 'Data Analyst',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+      roleName: "Data Analyst",
+      modules: [
+        "Module Access 1",
+        "Module Access 2",
+        "Module Access 3",
+        "Module Access 4",
+        "Module Access 4",
+        "Module Access 4",
+      ],
     },
     {
-      roleName: 'Accountant',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3'],
+      roleName: "Accountant",
+      modules: ["Module Access 1", "Module Access 2", "Module Access 3"],
     },
     {
-      roleName: 'Manager',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
+      roleName: "Manager",
+      modules: [
+        "Module Access 1",
+        "Module Access 2",
+        "Module Access 3",
+        "Module Access 4",
+        "Module Access 4",
+        "Module Access 4",
+        "Module Access 4",
+      ],
     },
   ];
   const dispatch = useDispatch();
@@ -38,7 +68,7 @@ const UserMaster = () => {
     // Remove the error message when the user starts typing
     setErrors({
       ...errors,
-      [fieldName]: '',
+      [fieldName]: "",
     });
   };
 
@@ -49,25 +79,26 @@ const UserMaster = () => {
 
     // Check if fields are empty and set corresponding error messages
     for (const key in userData) {
-      if (userData[key] === '') {
-        newErrors[key] = 'This field is required';
+      if (userData[key] === "") {
+        newErrors[key] = "This field is required";
         isValid = false;
       } else {
-        newErrors[key] = '';
+        newErrors[key] = "";
       }
     }
 
     // Email and Phone validation using the regexEmail and regexPhone pattern
-    const regexEmail = /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zA-Z0-9]+(\.[a-zA-Z\.]+)/g;
+    const regexEmail =
+      /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zA-Z0-9]+(\.[a-zA-Z\.]+)/g;
     const regexPhone = /^\(?([0-9]{3})\)?([0-9]{3})?([0-9]{4})$/g;
 
     if (!regexEmail.test(userData.email)) {
-      newErrors.email = 'Invalid email format';
+      newErrors.email = "Invalid email format";
       isValid = false;
     }
 
     if (!regexPhone.test(userData.mobile)) {
-      newErrors.mobile = 'Invalid phone number format';
+      newErrors.mobile = "Invalid phone number format";
       isValid = false;
     }
     setErrors(newErrors);
@@ -75,7 +106,7 @@ const UserMaster = () => {
     if (isValid) {
       dispatch(onUserSubmit(userData));
     }
-  }
+  };
 
   return (
     <>
@@ -94,7 +125,7 @@ const UserMaster = () => {
                     </div>
                   ) : (
                     <div className="container mt-3">
-                      <form onSubmit={handleSubmit} >
+                      <form onSubmit={handleSubmit}>
                         <div class="row">
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Email</label>
@@ -102,13 +133,12 @@ const UserMaster = () => {
                               type="email"
                               class="form-control"
                               name="fname"
-                              onChange={(e) => handleChange(e, 'email')}
+                              onChange={(e) => handleChange(e, "email")}
                               id="name-f"
                               placeholder=""
                             />
                             <p className="text-danger">{errors.email}</p>
                           </div>
-
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Mobile</label>
                             <input
@@ -116,12 +146,11 @@ const UserMaster = () => {
                               class="form-control"
                               name="fname"
                               id="name-f"
-                              onChange={(e) => handleChange(e, 'mobile')}
+                              onChange={(e) => handleChange(e, "mobile")}
                               placeholder=""
                             />
                             <p className="text-danger">{errors.mobile}</p>
                           </div>
-
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Username</label>
                             <input
@@ -130,11 +159,10 @@ const UserMaster = () => {
                               name="fname"
                               id="name-f"
                               placeholder=""
-                              onChange={(e) => handleChange(e, 'userName')}
+                              onChange={(e) => handleChange(e, "userName")}
                             />
                             <p className="text-danger">{errors.userName}</p>
                           </div>
-
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Password</label>
                             <input
@@ -143,11 +171,10 @@ const UserMaster = () => {
                               name="fname"
                               id="name-f"
                               placeholder=""
-                              onChange={(e) => handleChange(e, 'password')}
+                              onChange={(e) => handleChange(e, "password")}
                             />
                             <p className="text-danger">{errors.password}</p>
                           </div>
-
                           <div class="col-lg-12 br pt-2">
                             <label for="name-f">Client</label>
 
@@ -273,7 +300,6 @@ const UserMaster = () => {
                               </div>
                             </div>
                           </div>
-
                           <div class="col-lg-12 br pt-2">
                             <label for="name-f">Role</label>
 
@@ -281,115 +307,58 @@ const UserMaster = () => {
                               <div class="form-check mt-2 col-lg-3">
                                 <input
                                   class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault3"
+                                  type="radio"
+                                  name="gridRadios"
+                                  value="option1"
+                                  checked=""
                                 />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault3"
-                                >
-                                  Role Module 1
+                                <label class="form-check-label">Admin</label>
+                              </div>
+
+                              <div class="form-check mt-2 col-lg-3">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="gridRadios"
+                                  value="option1"
+                                  checked=""
+                                />
+                                <label class="form-check-label">
+                                  Data Analyst
                                 </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
                                 <input
                                   class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault4"
+                                  type="radio"
+                                  name="gridRadios"
+                                  value="option1"
+                                  checked=""
                                 />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault4"
-                                >
-                                  Role Module 2
+                                <label class="form-check-label">
+                                  Accountant
                                 </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
                                 <input
                                   class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
+                                  type="radio"
+                                  name="gridRadios"
+                                  value="option1"
+                                  checked=""
                                 />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Role Module 3
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault5"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault5"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault6"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault6"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault7"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault7"
-                                >
-                                  Role Module 4
-                                </label>
+                                <label class="form-check-label">Manager</label>
                               </div>
 
                               <div class="col-sm-4 mt-2 mb-4">
-                                <button class="btn btn-primary float-right pad-aa" >
+                                <button class="btn btn-primary float-right pad-aa">
                                   Submit <i class="fa fa-arrow-right"></i>
                                 </button>
                               </div>
                             </div>
-                          </div>
+                          </div>{" "}
                         </div>
                       </form>
                     </div>
@@ -428,7 +397,9 @@ const UserMaster = () => {
                               </td>
                               {row.modules.map((module, moduleIndex) => (
                                 <td key={moduleIndex}>
-                                  <span className="badge badge-success">{module}</span>
+                                  <span className="badge badge-success">
+                                    {module}
+                                  </span>
                                 </td>
                               ))}
                             </tr>

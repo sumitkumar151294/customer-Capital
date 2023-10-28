@@ -2,7 +2,12 @@ import React, { useDebugValue, useEffect, useState } from "react";
 import pizz1 from "../../assets/img/pizz1.jpg";
 import Loader from "../Loader/Loader";
 import { useDispatch } from "react-redux";
-
+import dayjs from "dayjs";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { DateRangePicker } from "@mui/x-date-pickers-pro";
 const Orders = () => {
   const dispatch = useDispatch();
   const [supplier, setSupplier] = useState();
@@ -40,11 +45,6 @@ const Orders = () => {
     },
   ];
   const [isLoading, setIsLoading] = useState("true");
-  useEffect(() => {
-    const data = {
-      supplier, client
-    }
-  }, [])
 
   return (
     <div class="content-body">
@@ -116,16 +116,16 @@ const Orders = () => {
                       </select>
                     </div>
 
-                    <div class="col-xl-3">
-                      <div class="example">
-                        <p class="mb-1">Date Range With Time</p>
-                        <input
-                          type="text"
-                          class="form-control input-daterange-timepicker"
-                          name="daterange"
-                          value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM"
-                        />
-                      </div>
+                    <div class="col-sm-3 form-group mb-2">
+                      <label for="name-f">Date Range With Time</label>
+
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DemoContainer components={["DateRangePicker"]}>
+                          <DateRangePicker
+                            localeText={{ start: "Check-in", end: "Check-out" }}
+                          />
+                        </DemoContainer>
+                      </LocalizationProvider>
                     </div>
                   </div>
                 </div>
@@ -146,7 +146,6 @@ const Orders = () => {
                         <tbody>
                           <tr>
                             <td>
-
                               {item.brand}
                               <a href="javascript:void();"></a>
                             </td>

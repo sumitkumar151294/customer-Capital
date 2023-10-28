@@ -3,13 +3,22 @@ import "./Header.css";
 import img from "../../Images/logo.png";
 // import { useDispatch } from 'react-redux'
 // import { onLoginSubmit } from '../../redux/modules/authenticationSlice';
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
   // const dispatch = useDispatch();
   // const [loginData, setLoginData] = useState({ email: '', password: '' });
   // useEffect(() => {
   //     dispatch(onLoginSubmit(loginData));
   // }, []);
-
+  const handleMyAccount = () => {
+    sessionStorage.clear();
+    navigate("/myprofilecontent");
+  };
+  const handleWishList = () => {
+    navigate("/myprofilecontent");
+    const wishList = sessionStorage.setItem(true, "true");
+  };
   return (
     <>
       <header className="header1">
@@ -76,7 +85,9 @@ const Header = () => {
                           <div className="logindrop2">
                             <ul>
                               <li>
-                                <a id="#">My Account</a>
+                                <a id="#" onClick={handleMyAccount}>
+                                  My Account
+                                </a>
                               </li>
                               <li>
                                 <a id="#">My Points</a>
@@ -99,7 +110,7 @@ const Header = () => {
                         </div>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <a id="#" href="#">
+                        <a id="#" onClick={handleWishList}>
                           <i className="lar la-heart"></i>
                         </a>
                       </li>
