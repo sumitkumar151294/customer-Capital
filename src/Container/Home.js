@@ -7,6 +7,7 @@ import LetShop from '../Component/LetShop/LetShop'
 import GiftCard from '../Component/GiftCard/GiftCard'
 import Footer from '../Component/Footer/Footer'
 import Login from '../Component/Login/Login'
+import EditInfo from '../Component/EditInfo/EditInfo'
 
 const Home = () => {
     return (
@@ -19,6 +20,8 @@ const Home = () => {
             <GiftCard />
             <Footer />
             <Login />
+            
+
         </>
     )
 }
