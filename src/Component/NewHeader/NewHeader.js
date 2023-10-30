@@ -70,22 +70,24 @@ const NewHeader = () => {
   }, [isNavbarOpen]);
 
   const handleSubMenu = (index) => {
-  const subMenus = document.querySelectorAll('.sub-menu');
-  document.querySelector('.mobile-menu-head').classList.add('active');
+    const subMenus = document.querySelectorAll('.sub-menu');
+    document.querySelector('.mobile-menu-head').classList.add('active');
 
-  subMenus.forEach((element, i) => {
-    if (i === index) {
-      element.classList.add('active');
-    } else {
-      element.classList.remove('active');
-    }
-  });
-};
+    subMenus.forEach((element, i) => {
+      if (i === index) {
+        element.classList.add('active');
+      } 
+      // else {
+      //   element.classList.remove('active');
+      //   document.querySelector('.mobile-menu-head').classList.remove('active');
+      // }
+    });
+  };
 
-  
+
   const handleCloseSubMenu = () => {
-    document.querySelector('.mobile-menu-head').classList.remove('active');
     document.querySelector('.sub-menu').classList.remove('active');
+    document.querySelector('.mobile-menu-head').classList.remove('active');
   }
 
   return (
