@@ -77,10 +77,10 @@ const Header = () => {
                           <div className="logindrop2">
                             <ul>
                               <li>
-                                <a id="#">My Account</a>
+                                <Link to='/myprofile'  id="#">My Account</Link>
                               </li>
                               <li>
-                                <a id="#">My Points</a>
+                              <Link to='/myprofile' id="#">My Points</Link>
                               </li>
                               <li>
                                 <a id="#" href="#">
@@ -100,9 +100,9 @@ const Header = () => {
                         </div>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <a id="#" href="#">
+                        <Link to='/myprofilecontent'  id="#" href="#">
                           <i className="lar la-heart"></i>
-                        </a>
+                        </Link>
                       </li>
                       <li className="d-none d-xl-inline-block">
                         <a id="#" href="#">
