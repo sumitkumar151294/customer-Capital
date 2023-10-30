@@ -153,123 +153,51 @@ const UserMaster = () => {
 
                             <div class="row ml-4">
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault3"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault3"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
+                                <label class="form-check-label" for="flexCheckDefault3">
+                                  Client 1</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault4"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault4"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" />
+                                <label class="form-check-label" for="flexCheckDefault4">
+                                  Client 1</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Client 1</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault5"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault5"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" />
+                                <label class="form-check-label" for="flexCheckDefault5">
+                                  Client 1</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Client 1</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault6"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault6"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" />
+                                <label class="form-check-label" for="flexCheckDefault6">
+                                  Client 1</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault7"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault7"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7" />
+                                <label class="form-check-label" for="flexCheckDefault7">
+                                  Client 1</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault8"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault8"
-                                >
-                                  Company 1
-                                </label>
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8" />
+                                <label class="form-check-label" for="flexCheckDefault8">
+                                  Client 1</label>
                               </div>
                             </div>
                           </div>
@@ -279,110 +207,33 @@ const UserMaster = () => {
 
                             <div class="row ml-4">
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault3"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault3"
-                                >
-                                  Role Module 1
+                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
+                                <label class="form-check-label">
+                                  Admin
+                                </label>
+                              </div>
+
+
+                              <div class="form-check mt-2 col-lg-3">
+                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
+                                <label class="form-check-label">
+                                  Data Analyst
                                 </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault4"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault4"
-                                >
-                                  Role Module 2
+                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
+                                <label class="form-check-label">
+                                  Accountant
                                 </label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Role Module 3
+                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
+                                <label class="form-check-label">
+                                  Manager
                                 </label>
                               </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault5"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault5"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault6"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault6"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input
-                                  class="form-check-input"
-                                  type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault7"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault7"
-                                >
-                                  Role Module 4
-                                </label>
-                              </div>
-
                               <div class="col-sm-4 mt-2 mb-4">
                                 <button class="btn btn-primary float-right pad-aa" >
                                   Submit <i class="fa fa-arrow-right"></i>
@@ -400,46 +251,85 @@ const UserMaster = () => {
           </div>
         </div>
 
-        <div className="container-fluid pt-0">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="card">
-                <div className="card-header">
-                  <h4 className="card-title">Role Module Access List</h4>
+        <div class="container-fluid pt-0">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">User List</h4>
                 </div>
-                <div className="card-body position-relative">
-                  {!isLoading ? (
-                    <Loader classType={"absoluteLoader"} />
-                  ) : (
-                    <div className="table-responsive">
-                      <table className="table header-border table-responsive-sm">
-                        <thead>
-                          <tr>
-                            <th>Role Name</th>
-                            <th style={{ textAlign: "center" }}>Modules</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {roleData.map((row, index) => (
-                            <tr key={index}>
-                              <td>{row.roleName}</td>
-                              <td>
-                                <div className="d-flex"></div>
-                              </td>
-                              {row.modules.map((module, moduleIndex) => (
-                                <td key={moduleIndex}>
-                                  <span className="badge badge-success">{module}</span>
-                                </td>
-                              ))}
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  )}
+
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table header-border table-responsive-sm">
+                      <thead>
+                        <tr>
+                          <th>Role Name</th>
+                          <th>Email</th>
+                          <th>Mobile</th>
+                          <th>Username</th>
+                          <th>Clients</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Admin<a href="javascript:void();"></a>
+                          </td>
+                          <td>thisisdummy@gmail.com</td>
+                          <td>9876543210</td>
+                          <td>Dummy User</td>
+                          <td><div class="d-flex">
+                            <span class="badge badge-secondary mr-10">Client 1</span>
+                            <span class="badge badge-secondary mr-10">Client 2</span>
+                          </div></td>
+                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td>Data Analyst<a href="javascript:void();"></a>
+                          </td>
+                          <td>thisisdummy@gmail.com</td>
+                          <td>9876543210</td>
+                          <td>Dummy User</td>
+                          <td><div class="d-flex">
+                            <span class="badge badge-secondary mr-10">Client 1</span>
+                            <span class="badge badge-secondary mr-10">Client 2</span>
+                          </div></td>
+                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td>Accountant<a href="javascript:void();"></a>
+                          </td>
+                          <td>thisisdummy@gmail.com</td>
+                          <td>9876543210</td>
+                          <td>Dummy User</td>
+                          <td><div class="d-flex">
+                            <span class="badge badge-secondary mr-10">Client 1</span>
+                            <span class="badge badge-secondary mr-10">Client 2</span>
+                          </div></td>
+                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td>Manager<a href="javascript:void();"></a>
+                          </td>
+                          <td>thisisdummy@gmail.com</td>
+                          <td>9876543210</td>
+                          <td>Dummy User</td>
+
+                          <td><div class="d-flex">
+                            <span class="badge badge-secondary mr-10">Client 1</span>
+                            <span class="badge badge-secondary mr-10">Client 2</span>
+
+                          </div></td>
+                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
