@@ -2,8 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
 import { Link } from "react-router-dom";
+import { toggleNavbar } from "../../redux/modules/User/toggleSlice";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenu = () => {
+    dispatch(toggleNavbar());
+  };
+
   return (
     <>
       <header className="header1">
@@ -21,7 +29,7 @@ const Header = () => {
                   <div className="button d-none"></div>
 
                   <div className="logo d-flex">
-                    <div className="mobile-menu-trigger">
+                    <div className="mobile-menu-trigger" onClick={toggleMenu}>
                       <span></span>
                     </div>
                     <Link to='/'>
