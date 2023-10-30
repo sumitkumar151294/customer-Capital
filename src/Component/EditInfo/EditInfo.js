@@ -35,7 +35,7 @@ const EditInfo = () => {
 
         // Check if fields are empty and set corresponding error messages
         for (const key in userData) {
-            debugger
+            // debugger
             if (userData[key] === '') {
                 newErrors[key] = 'This field is ';
                 isValid = false;
@@ -51,9 +51,9 @@ const EditInfo = () => {
 
         }
         setErrors(newErrors);
-        debugger
+        // debugger
         if (isValid) {
-            debugger
+            // debugger
             dispatch(onUpdateSubmit(userData))
         }
 
@@ -61,65 +61,65 @@ const EditInfo = () => {
 
     return (
         <>
-            <div class="modal fade" id="signupmodal">
-                <div class="modal-dialog modal-dialog-centered loginmodalsize">
-                    <div class="modal-content">
-                        <div class="loginpop">
-                            <button type="button" class="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
+            <div className="modal fade" id="signupmodal">
+                <div className="modal-dialog modal-dialog-centered loginmodalsize">
+                    <div className="modal-content">
+                        <div className="loginpopp">
+                            <button type="button" className="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
                             <form onSubmit={handleSubmit} >
-                                <div class="login-form">
-                                    <div class="row marginrow">
-                                        <div class="col-md-12 input-main">
+                                <div className="login-form">
+                                    <div className="roww marginrow">
+                                        <div className="col-md-12 input-main">
                                             <h3>Change Your Information</h3>
 
                                         </div>
-                                        <div class="col-md-6 input-main">
-                                            <div class="floating-box ">
-                                                <input name="fname" type="text" id="ctl00_txtname" class="floating-input" placeholder="First Name"
+                                        <div className="col-md-6 input-main">
+                                            <div className="floating-box ">
+                                                <input name="fname" type="text" id="ctl00_txtname" className="floating-input" placeholder="First Name"
                                                     onChange={(e) => handleChange(e, 'fname')} />
                                                 <span id="ctl00_RequiredFieldValidator3" style={{ display: 'none', color: 'red' }}
 
                                                 >*</span>
-                                                <p className="text-danger">{errors.fname}</p>
+                                                <p classNameName="text-danger">{errors.fname}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 input-main">
-                                            <div class="floating-box ">
-                                                <input name="lname" type="text" id="ctl00_txtlastname" class="floating-input" placeholder="Last Name"
+                                        <div className="col-md-6 input-main">
+                                            <div className="floating-box ">
+                                                <input name="lname" type="text" id="ctl00_txtlastname" className="floating-input" placeholder="Last Name"
                                                     onChange={(e) => handleChange(e, 'lname')} />
                                                 <span id="ctl00_RequiredFieldValidator6" style={{ display: 'none', color: 'red' }}>*</span>
-                                                <p className="text-danger">{errors.lname}</p>
+                                                <p classNameName="text-danger">{errors.lname}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-12 input-main">
-                                            <div class="floating-box ">
-                                                <input name="mobile" type="text" id="ctl00_txtmobile" class="floating-input" placeholder="Enter 10 digit mobile number"
+                                        <div className="col-md-12 input-main">
+                                            <div className="floating-box ">
+                                                <input name="mobile" type="text" id="ctl00_txtmobile" className="floating-input" placeholder="Enter 10 digit mobile number"
                                                     onChange={(e) => handleChange(e, 'mobile')} />
                                                 <span id="ctl00_RequiredFieldValidator4" style={{ display: 'none', color: 'red' }}>*</span>
-                                                <p className="text-danger">{errors.mobile}</p>
+                                                <p classNameName="text-danger">{errors.mobile}</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-12 input-main">
-                                            <div class="floating-box ">
-                                                <input name="email" type="text" id="ctl00_txtemail2" class="floating-input" placeholder="Enter Email"
+                                        <div className="col-md-12 input-main">
+                                            <div className="floating-box ">
+                                                <input name="email" type="text" id="ctl00_txtemail2" className="floating-input" placeholder="Enter Email"
                                                     onChange={(e) => handleChange(e, 'email')} />
                                                 <span id="ctl00_RequiredFieldValidator5" style={{ display: 'none', color: 'red' }}>*</span>
-                                                <p className="text-danger">{errors.email}</p>
+                                                <p classNameName="text-danger">{errors.email}</p>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12 input-main">
-                                            <div class="floating-box ">
-                                                <input name="password" type="password" id="ctl00_txtconfirmpassword" class="floating-input" placeholder="Confirm Password"
+                                        <div className="col-md-12 input-main">
+                                            <div className="floating-box ">
+                                                <input name="password" type="password" id="ctl00_txtconfirmpassword" className="floating-input" placeholder="Confirm Password"
                                                     onChange={(e) => handleChange(e, 'password')} />
-                                                <div class="showpassbtn"><i id="showpass2" class="fas fa-eye-slash"></i></div>
+                                                <div className="showpassbtn"><i id="showpass2" className="fas fa-eye-slash"></i></div>
                                                 <span id="ctl00_RequiredFieldValidator7" style={{ display: 'none', color: 'red' }}>*</span>
-                                                <p className="text-danger">{errors.password}</p>
+                                                <p classNameName="text-danger">{errors.password}</p>
 
                                             </div>
                                         </div>
-                                        <div class="col-md-12 input-main">
-                                            <div class="radiobtnlist signupgender">
+                                        <div className="col-md-12 input-main">
+                                            <div className="radiobtnlist signupgender">
                                                 <table id="ctl00_rbtnlist" border="0">
                                                     <tr>
                                                         <td>
@@ -147,19 +147,19 @@ const EditInfo = () => {
                                                     </tr>
                                                 </table>
                                             </div>
-                                            <p className="text-danger">{errors.gender}</p>
+                                            <p classNameName="text-danger">{errors.gender}</p>
                                         </div>
 
-                                        <div class="col-md-12 input-main">
+                                        <div className="col-md-12 input-main">
 
                                         </div>
 
-                                        <div class="hide">
+                                        <div className="hide">
 
                                         </div>
-                                        <div class="col-md-12 input-main">
-                                            <div class="floating-box ">
-                                                <input type="submit" name="ctl00$btnsignup" value="Update" id="ctl00_btnsignup" class="loginbtn" />
+                                        <div className="col-md-12 input-main">
+                                            <div className="floating-box ">
+                                                <input type="submit" name="ctl00$btnsignup" value="Update" id="ctl00_btnsignup" className="loginbtn" />
                                             </div>
                                         </div>
 
@@ -181,30 +181,30 @@ const EditInfo = () => {
 
 
 
-            <div class="modal fade" id="forgetpassword">
-                <div class="modal-dialog modal-dialog-centered loginmodalsize">
-                    <div class="modal-content">
-                        <div class="loginpop">
-                            <button type="button" class="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
-                            <div class="login-form">
-                                <div class="row marginrow">
-                                    <div class="col-md-12 input-main">
+            <div className="modal fade" id="forgetpassword">
+                <div className="modal-dialog modal-dialog-centered loginmodalsize">
+                    <div className="modal-content">
+                        <div className="loginpop">
+                            <button type="button" className="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
+                            <div className="login-form">
+                                <div className="row marginrow">
+                                    <div className="col-md-12 input-main">
                                         <h3>Change Your Password</h3>
 
                                     </div>
-                                    <div class="col-md-6 input-main">
-                                        <div class="floating-box ">
-                                            <input name="ctl00$txtconfirmpassword" type="password" id="ctl00_txtconfirmpassword" class="floating-input" placeholder="Old Password" />
+                                    <div className="col-md-6 input-main">
+                                        <div className="floating-box ">
+                                            <input name="ctl00$txtconfirmpassword" type="password" id="ctl00_txtconfirmpassword" className="floating-input" placeholder="Old Password" />
 
                                             <span id="ctl00_RequiredFieldValidator7" style={{ display: 'none', color: 'red' }}>*</span>
 
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 input-main">
-                                        <div class="floating-box ">
-                                            <input name="#" type="password" id="ctl00_txtconfirmpassword" class="floating-input" placeholder="New Password" />
-                                            <div class="showpassbtn"><i id="showpass2" class="fas fa-eye-slash"></i></div>
+                                    <div className="col-md-6 input-main">
+                                        <div className="floating-box ">
+                                            <input name="#" type="password" id="ctl00_txtconfirmpassword" className="floating-input" placeholder="New Password" />
+                                            <div className="showpassbtn"><i id="showpass2" className="fas fa-eye-slash"></i></div>
                                             <span id="ctl00_RequiredFieldValidator7" style={{ display: 'none', color: 'red' }}>*</span>
 
                                         </div>
@@ -212,10 +212,10 @@ const EditInfo = () => {
 
 
 
-                                    <div class="col-md-12 input-main">
-                                        <div class="floating-box ">
-                                            <input name="#" type="password" id="ctl00_txtconfirmpassword" class="floating-input" placeholder="Confirm New Password" />
-                                            <div class="showpassbtn"><i id="showpass2" class="fas fa-eye-slash"></i></div>
+                                    <div className="col-md-12 input-main">
+                                        <div className="floating-box ">
+                                            <input name="#" type="password" id="ctl00_txtconfirmpassword" className="floating-input" placeholder="Confirm New Password" />
+                                            <div className="showpassbtn"><i id="showpass2" className="fas fa-eye-slash"></i></div>
                                             <span id="ctl00_RequiredFieldValidator7" style={{ display: 'none', color: 'red' }}>*</span>
 
                                         </div>
@@ -225,16 +225,16 @@ const EditInfo = () => {
                                     </div>
 
 
-                                    <div class="col-md-12 input-main">
+                                    <div className="col-md-12 input-main">
 
                                     </div>
 
-                                    <div class="hide">
+                                    <div className="hide">
 
                                     </div>
-                                    <div class="col-md-12 input-main">
-                                        <div class="floating-box ">
-                                            <input type="submit" name="ctl00$btnsignup" value="Update" id="ctl00_btnsignup" class="loginbtn" />
+                                    <div className="col-md-12 input-main">
+                                        <div className="floating-box ">
+                                            <input type="submit" name="ctl00$btnsignup" value="Update" id="ctl00_btnsignup" className="loginbtn" />
                                         </div>
                                     </div>
 
