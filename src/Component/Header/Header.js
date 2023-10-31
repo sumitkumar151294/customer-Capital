@@ -4,12 +4,23 @@ import img from "../../Images/logo.png";
 import { Link } from "react-router-dom";
 import { toggleNavbar } from "../../redux/modules/User/toggleSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleMenu = () => {
     dispatch(toggleNavbar());
+  };
+  // }, []);
+  const handleMyAccount = () => {
+    sessionStorage.clear();
+    navigate("/myprofilecontent");
+  };
+  const handleWishList = () => {
+    navigate("/myprofilecontent");
+    const wishList = sessionStorage.setItem(true, "true");
   };
 
   return (
@@ -32,7 +43,7 @@ const Header = () => {
                     <div className="mobile-menu-trigger" onClick={toggleMenu}>
                       <span></span>
                     </div>
-                    <Link to='/'>
+                    <Link to="/">
                       <img src={img} />
                     </Link>
                   </div>
@@ -77,10 +88,14 @@ const Header = () => {
                           <div className="logindrop2">
                             <ul>
                               <li>
-                                <Link to='/myprofile'  id="#">My Account</Link>
+                                <a id="#" onClick={handleMyAccount}>
+                                  My Account
+                                </a>{" "}
                               </li>
                               <li>
-                              <Link to='/myprofile' id="#">My Points</Link>
+                                <Link to="/myprofile" id="#">
+                                  My Points
+                                </Link>
                               </li>
                               <li>
                                 <a id="#" href="#">
@@ -100,8 +115,13 @@ const Header = () => {
                         </div>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <Link to='/myprofilecontent'  id="#" href="#">
-                          <i className="lar la-heart"></i>
+                        <Link to="/myprofilecontent" id="#" href="#">
+                          <i
+                            className="lar la-heart"
+                            a
+                            id="#"
+                            onClick={handleWishList}
+                          ></i>
                         </Link>
                       </li>
                       <li className="d-none d-xl-inline-block">
