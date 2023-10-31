@@ -4,9 +4,111 @@ import category from '../../assets/img/category.png'
 import product from '../../assets/img/product1.png'
 import customer from '../../assets/img/customer1.png'
 import Loader from '../Loader/Loader'
+import ReactApexChart from 'react-apexcharts';
 
 const Dashboard = () => {
     const [isLoading, setIsLoading] = useState('false')
+
+    const revenueChartOptions = {
+        chart: {
+            type: 'area',
+            height: 230,
+            toolbar: {
+                show: false,
+            },
+
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded'
+            },
+        },
+        colors: ['var(--primary)'],
+        dataLabels: {
+            enabled: false,
+        },
+        markers: {
+            shape: "circle",
+        },
+
+        legend: {
+            show: false,
+        },
+        stroke: {
+            show: true,
+            width: 4,
+            curve: 'smooth',
+            colors: ['var(--primary)'],
+        },
+
+        grid: {
+            borderColor: '#eee',
+            xaxis: {
+                lines: {
+                    show: true
+                }
+            },
+            yaxis: {
+                lines: {
+                    show: false
+                }
+            },
+        },
+        xaxis: {
+
+            categories: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
+            labels: {
+                style: {
+                    colors: '#7E7F80',
+                    fontSize: '13px',
+                    fontFamily: 'Poppins',
+                    fontWeight: 100,
+                    cssClass: 'apexcharts-xaxis-label',
+                },
+            },
+            crosshairs: {
+                show: false,
+            }
+        },
+        yaxis: {
+            show: true,
+            labels: {
+                offsetX: -15,
+                style: {
+                    colors: '#7E7F80',
+                    fontSize: '14px',
+                    fontFamily: 'Poppins',
+                    fontWeight: 100,
+
+                },
+                formatter: function (y) {
+                    return y.toFixed(0) + "";
+                }
+            },
+        },
+        fill: {
+            type: "solid",
+            opacity: 1,
+            colors: 'var(--primary)'
+        },
+        tooltip: {
+            y: {
+                formatter: function (val) {
+                    return "$ " + val + " thousands"
+                }
+            }
+        }
+    };
+    const revenueChartSeries = [
+        {
+            name: 'Net Profit',
+            data: [20, 30, 20, 30, 20, 30, 20, 30],
+            //radius: 12,	
+        },
+    ]
+
     return (
         <div className="content-body">
             {!isLoading ? (
@@ -96,7 +198,8 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                                 <div className="card-body py-0">
-                                    <div id="revenueChart" className="revenueChart"></div>
+                                    {/* <div id="revenueChart"></div> */}
+                                    <ReactApexChart options={revenueChartOptions} series={revenueChartSeries} className="revenueChart" height={250} />
                                 </div>
                             </div>
                         </div>

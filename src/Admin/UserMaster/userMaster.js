@@ -1,32 +1,56 @@
 import React, { useState } from "react";
 import Loader from "../Loader/Loader";
 import { onUserSubmit } from "../../redux/modules/Admin/userSlice";
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
 
 const UserMaster = () => {
-  const [isLoading, setIsLoading] = useState("true");
-  const [isformLoading, setIsFormLoading] = useState("true");
-  const [userData, setUserData] = useState({ userName: '', password: '', mobile: '', email: '' });
-  const [errors, setErrors] = useState({ userName: '', password: '', mobile: '', email: '' });
+  const [isLoading, setIsLoading] = useState(true);
+  const [isformLoading, setIsFormLoading] = useState(true);
+  const [userData, setUserData] = useState({ userName: '', password: '', mobile: '', email: '', role: 'Admin' });
+  const [errors, setErrors] = useState({ userName: '', password: '', mobile: '', email: '', role: '' }); // Initialize 'role' error state
+  const [formData, setFormData] = useState({
+    modules: {
+      client1: false,
+      client2: false,
+      client3: false,
+      client4: false,
+      client5: false,
+      client6: false,
+      client7: false,
+      client8: false,
+    },
+  });
 
-  const roleData = [
+  const userList = [
     {
       roleName: 'Admin',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4'],
+      email: 'thisisdummy@gmail.com',
+      mobile: '9876543210',
+      username: 'Dummy User',
+      clients: ['Client 1', 'Client 2'],
     },
-    {
-      roleName: 'Data Analyst',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
-    },
-    {
-      roleName: 'Accountant',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3'],
-    },
-    {
-      roleName: 'Manager',
-      modules: ['Module Access 1', 'Module Access 2', 'Module Access 3', 'Module Access 4', 'Module Access 4', 'Module Access 4', 'Module Access 4'],
-    },
+    // ... other user data
   ];
+
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      setFormData({
+        ...formData,
+        modules: {
+          ...formData.modules,
+          [name]: checked,
+        },
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+  };
+
   const dispatch = useDispatch();
 
   const handleChange = (e, fieldName) => {
@@ -58,7 +82,7 @@ const UserMaster = () => {
     }
 
     // Email and Phone validation using the regexEmail and regexPhone pattern
-    const regexEmail = /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zA-Z0-9]+(\.[a-zA-Z\.]+)/g;
+    const regexEmail = /[a-zA-Z0-9]+([\_\.\-{1}])?[a-zA-Z0-9]+\@[a-zAZ0-9]+(\.[a-zA-Z\.]+)/g;
     const regexPhone = /^\(?([0-9]{3})\)?([0-9]{3})?([0-9]{4})$/g;
 
     if (!regexEmail.test(userData.email)) {
@@ -70,10 +94,27 @@ const UserMaster = () => {
       newErrors.mobile = 'Invalid phone number format';
       isValid = false;
     }
+
+    // Check if a role has been selected
+    if (userData.role === '') {
+      newErrors.role = 'Please select a role';
+      isValid = false;
+    } else {
+      newErrors.role = ''; // Clear the role error if a role is selected
+    }
+
     setErrors(newErrors);
 
     if (isValid) {
-      dispatch(onUserSubmit(userData));
+      const submissionData = {
+        formData: userData,
+        checkboxData: formData.modules,
+      };
+
+      // Print the combined data to the console
+      console.log('Submission Data:', submissionData);
+
+      dispatch(onUserSubmit(submissionData));
     }
   }
 
@@ -152,53 +193,38 @@ const UserMaster = () => {
                             <label for="name-f">Client</label>
 
                             <div class="row ml-4">
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" />
-                                <label class="form-check-label" for="flexCheckDefault3">
-                                  Client 1</label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" />
-                                <label class="form-check-label" for="flexCheckDefault4">
-                                  Client 1</label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  Client 1</label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" />
-                                <label class="form-check-label" for="flexCheckDefault5">
-                                  Client 1</label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  Client 1</label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" />
-                                <label class="form-check-label" for="flexCheckDefault6">
-                                  Client 1</label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault7" />
-                                <label class="form-check-label" for="flexCheckDefault7">
-                                  Client 1</label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault8" />
-                                <label class="form-check-label" for="flexCheckDefault8">
-                                  Client 1</label>
-                              </div>
+                              {Object.entries(formData.modules).map(
+                                ([module, checked]) => (
+                                  <div
+                                    className="form-check mt-2 col-lg-3"
+                                    key={module}
+                                  >
+                                    <input
+                                      className="form-check-input"
+                                      type="checkbox"
+                                      name={module}
+                                      value={checked}
+                                      id={`flexCheckDefault-${module}`}
+                                      checked={checked}
+                                      onChange={handleInputChange}
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      htmlFor={`flexCheckDefault-${module}`}
+                                    >
+                                      {module
+                                        .replace(/([A-Z])/g, " $1")
+                                        .split(" ")
+                                        .map(
+                                          (word) =>
+                                            word.charAt(0).toUpperCase() +
+                                            word.slice(1).toLowerCase()
+                                        )
+                                        .join(" ")}
+                                    </label>
+                                  </div>
+                                )
+                              )}
                             </div>
                           </div>
 
@@ -207,38 +233,61 @@ const UserMaster = () => {
 
                             <div class="row ml-4">
                               <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
-                                <label class="form-check-label">
-                                  Admin
-                                </label>
-                              </div>
-
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
-                                <label class="form-check-label">
-                                  Data Analyst
-                                </label>
-                              </div>
-
-                              <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
-                                <label class="form-check-label">
-                                  Accountant
-                                </label>
+                                <input
+                                  id="ctl00_rbtnlist_0"
+                                  type="radio"
+                                  class="form-check-input"
+                                  name="role"
+                                  value="Admin"
+                                  checked={userData.role === "Admin"}
+                                  onChange={(e) => handleChange(e, "role")}
+                                />
+                                <label class="form-check-label" for="ctl00_rbtnlist_0">Admin</label>
                               </div>
 
                               <div class="form-check mt-2 col-lg-3">
-                                <input class="form-check-input" type="radio" name="gridRadios" value="option1" checked="" />
-                                <label class="form-check-label">
-                                  Manager
-                                </label>
+                                <input
+                                  id="ctl00_rbtnlist_0"
+                                  type="radio"
+                                  class="form-check-input"
+                                  name="role"
+                                  value="Data Analyst"
+                                  checked={userData.role === "Data Analyst"}
+                                  onChange={(e) => handleChange(e, "role")}
+                                />
+                                <label class="form-check-label" for="ctl00_rbtnlist_0">Data Analyst</label>
                               </div>
-                              <div class="col-sm-4 mt-2 mb-4">
-                                <button class="btn btn-primary float-right pad-aa" >
-                                  Submit <i class="fa fa-arrow-right"></i>
-                                </button>
+
+                              <div class="form-check mt-2 col-lg-3">
+                                <input
+                                  id="ctl00_rbtnlist_0"
+                                  type="radio"
+                                  class="form-check-input"
+                                  name="role"
+                                  value="Accountant"
+                                  checked={userData.role === "Accountant"}
+                                  onChange={(e) => handleChange(e, "role")}
+                                />
+                                <label class="form-check-label" for="ctl00_rbtnlist_0">Accountant</label>
                               </div>
+                              <div class="form-check mt-2 col-lg-3">
+                                <input
+                                  id="ctl00_rbtnlist_0"
+                                  type="radio"
+                                  class="form-check-input"
+                                  name="role"
+                                  value="Manager"
+                                  checked={userData.role === "Manager"}
+                                  onChange={(e) => handleChange(e, "role")}
+                                />
+                                <label class="form-check-label" for="ctl00_rbtnlist_0">Manager</label>
+                              </div>
+                            </div>
+                            <p className="text-danger">{errors.role}</p>
+                            <div class="col-sm-4 mt-2 mb-4">
+                              <button class="btn btn-primary float-right pad-aa" >
+                                Submit <i class="fa fa-arrow-right"></i>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -273,63 +322,34 @@ const UserMaster = () => {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Admin<a href="javascript:void();"></a>
-                          </td>
-                          <td>thisisdummy@gmail.com</td>
-                          <td>9876543210</td>
-                          <td>Dummy User</td>
-                          <td><div class="d-flex">
-                            <span class="badge badge-secondary mr-10">Client 1</span>
-                            <span class="badge badge-secondary mr-10">Client 2</span>
-                          </div></td>
-                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>Data Analyst<a href="javascript:void();"></a>
-                          </td>
-                          <td>thisisdummy@gmail.com</td>
-                          <td>9876543210</td>
-                          <td>Dummy User</td>
-                          <td><div class="d-flex">
-                            <span class="badge badge-secondary mr-10">Client 1</span>
-                            <span class="badge badge-secondary mr-10">Client 2</span>
-                          </div></td>
-                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>Accountant<a href="javascript:void();"></a>
-                          </td>
-                          <td>thisisdummy@gmail.com</td>
-                          <td>9876543210</td>
-                          <td>Dummy User</td>
-                          <td><div class="d-flex">
-                            <span class="badge badge-secondary mr-10">Client 1</span>
-                            <span class="badge badge-secondary mr-10">Client 2</span>
-                          </div></td>
-                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
-                        </tr>
-                        <tr>
-                          <td>Manager<a href="javascript:void();"></a>
-                          </td>
-                          <td>thisisdummy@gmail.com</td>
-                          <td>9876543210</td>
-                          <td>Dummy User</td>
-
-                          <td><div class="d-flex">
-                            <span class="badge badge-secondary mr-10">Client 1</span>
-                            <span class="badge badge-secondary mr-10">Client 2</span>
-
-                          </div></td>
-                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
-                        </tr>
+                        {userList.map((item, index) => (
+                          <tr key={index}>
+                            <td>{item.roleName}</td>
+                            <td>{item.email}</td>
+                            <td>{item.mobile}</td>
+                            <td>{item.username}</td>
+                            <td>
+                              <div className="d-flex">
+                                {item.clients.map((client, idx) => (
+                                  <span key={idx} className="badge badge-secondary mr-10">
+                                    {client}
+                                  </span>
+                                ))}
+                              </div>
+                            </td>
+                            <td>
+                              <Link to='/LC-admin/usermaster' className="btn btn-primary shadow btn-xs sharp me-1">
+                                <i className="fas fa-pencil-alt"></i>
+                              </Link>
+                            </td>
+                          </tr>
+                        ))}
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
