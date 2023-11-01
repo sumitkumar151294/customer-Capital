@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { toggleNavbar } from "../../redux/modules/User/toggleSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const toggleMenu = () => {
+    dispatch(toggleNavbar());
+  };
+  // }, []);
   const handleMyAccount = () => {
     sessionStorage.clear();
     navigate("/myprofilecontent");
@@ -29,10 +39,10 @@ const Header = () => {
                   <div className="button d-none"></div>
 
                   <div className="logo d-flex">
-                    <div className="mobile-menu-trigger">
+                    <div className="mobile-menu-trigger" onClick={toggleMenu}>
                       <span></span>
                     </div>
-                    <Link to='/'>
+                    <Link to="/">
                       <img src={img} />
                     </Link>
                   </div>
@@ -82,7 +92,9 @@ const Header = () => {
                                 </a>
                               </li>
                               <li>
-                                <a id="#">My Points</a>
+                                <Link to="/myprofile" id="#">
+                                  My Points
+                                </Link>
                               </li>
                               <li>
                                 <a id="#" href="#">

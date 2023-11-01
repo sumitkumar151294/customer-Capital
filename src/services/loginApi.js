@@ -11,3 +11,8 @@ export const callSignUpApi = async (payload) => {
   const { data = {} } = await axiosInstance.post(API.signupApi, { payload });
   return data;
 };
+
+export const callUpdateApi = async (payload) => {
+  const { data = {} } = await axiosInstance.post(API.updateApi, { payload });
+  return data;
+};

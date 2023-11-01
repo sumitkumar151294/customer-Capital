@@ -72,10 +72,41 @@ export const loginSlice = createSlice({
                 isError:true,
                 error:{}
             }
+        },
+
+        onUpdateSubmit: (state)=>{
+            return{...state , isError:false , isLoading:true , data:{} , error:{} , message:''}
+        },
+
+        onUpdateSubmitSuccess: (state , {payload})=>{
+            const {data={},message='',status_code=200}=payload;
+            return {
+                ...state,
+                data,
+                message,
+                status_code,
+                isLoading:false,
+                isError:false,
+                error:{}
+            }
+        },
+
+        onUpdateSubmitError : (state , {payload})=>{
+            const {data={},message="",status_code=400}=payload;
+            return{
+                ...state,
+                data,
+                message,
+                status_code,
+                isLoading:false,
+                isError:true,
+                error:{}
+            }
         }
+        
     }
 })
-        export const {onLoginSubmit , onLoginSubmitError , onLoginSubmitSuccess , onSignUpSubmit , onSignUpSubmitSuccess, onSignUpSubmitError}= loginSlice.actions;
+        export const {onLoginSubmit , onLoginSubmitError , onLoginSubmitSuccess , onSignUpSubmit , onSignUpSubmitSuccess, onSignUpSubmitError , onUpdateSubmit,onUpdateSubmitSuccess, onUpdateSubmitError}= loginSlice.actions;
 
         export default loginSlice.reducer;
 

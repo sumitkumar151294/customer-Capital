@@ -59,7 +59,9 @@ const Shop = () => {
           <div class="row ">
             <div class="d-flex justify-content-between mb-4">
               <div class="first w-70">
-                <h5 style={{ fontWeight: 700 }} >You Choose the gift card They choose where to spend it!</h5>
+                <h5
+                  style={{ fontWeight: 700, fontSize:'1.5rem' }}
+                >You Choose the gift card They choose where to spend it!</h5>
                 <p class="the-para-magic2 mobile-hide">Just your kind of shopping – your go-to brands, your wish-list products, all with irresistible offers.</p>
               </div>
               <div class="second">

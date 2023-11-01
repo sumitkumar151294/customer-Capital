@@ -11,8 +11,9 @@ import categoryReducer from './modules/Admin/categorySlice'
 import roleMasterReducer from './modules/Admin/roleMasterSlice';
 import ProductReducer from './modules/Admin/productSlice';
 import allocateMasterReducer from './modules/Admin/allocateMasterSlice';
-
+import toogleReducer from './modules/User/toggleSlice';
 import { combineReducers } from 'redux';
+
 const reducers = combineReducers({
   authenticationReducer: authenticationReducer,
   vendorReducer: vendorReducer,
@@ -27,6 +28,7 @@ const reducers = combineReducers({
   roleMasterReducer: roleMasterReducer,
   ProductReducer:ProductReducer,
   allocateMasterReducer: allocateMasterReducer,
+  toggleReducer:toogleReducer
 });
 
 export default reducers;
