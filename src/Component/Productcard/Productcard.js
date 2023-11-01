@@ -421,7 +421,7 @@ const Productcard = () => {
                     <div class="row ">
                         <div class="d-flex justify-content-between mb-4">
                             <div class="first">
-                                <h5 style={{ fontSize: "26px", fontWeight: "700" }}>Handpicked For You</h5>
+                                <span className="first-heading" >Handpicked For You</span>
                                 <p class="the-para-magic2">More and more suggestions for you</p>
                             </div>
                             <div class="second mt-4">

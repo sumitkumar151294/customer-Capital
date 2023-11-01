@@ -40,7 +40,7 @@ const GiftCard = () => {
                         </div>
                         <div class="col-lg-7">
                             <h1 class="heading-primary2">Give the Gift of Choice</h1>
-                            <p class="hero-description2">Gift them what they really want!</p>
+                            <p class="hero-description3">Gift them what they really want!</p>
                             <p>With the eGifter Choice Card you can give the Choice of Hundreds of Gift Cards.</p>
                             <br />
                             <a href="#" class="vouch mt-2">Know More &nbsp;<i class="fa fa-arrow-right"></i></a>

@@ -21,21 +21,17 @@ const EditInfo = () => {
             ...errors,
             [fieldname]: '',
         });
-
     }
 
     const handleSubmit = (e) => {
 
         e.preventDefault()
-        // console.log(userData)
-        // dispatch(onUpdateSubmit(userData))
-
         let isValid = true;
         const newErrors = { ...errors };
 
         // Check if fields are empty and set corresponding error messages
         for (const key in userData) {
-            // debugger
+            
             if (userData[key] === '') {
                 newErrors[key] = 'This field is ';
                 isValid = false;
@@ -51,12 +47,11 @@ const EditInfo = () => {
 
         }
         setErrors(newErrors);
-        // debugger
+       
         if (isValid) {
-            // debugger
+            
             dispatch(onUpdateSubmit(userData))
         }
-
     }
 
     return (
@@ -149,55 +144,37 @@ const EditInfo = () => {
                                             </div>
                                             <p classNameName="text-danger">{errors.gender}</p>
                                         </div>
-
-                                        <div className="col-md-12 input-main">
-
+                                        <div class="col-md-12 input-main">
                                         </div>
-
-                                        <div className="hide">
-
+                                        <div class="hide">
                                         </div>
                                         <div className="col-md-12 input-main">
                                             <div className="floating-box ">
                                                 <input type="submit" name="ctl00$btnsignup" value="Update" id="ctl00_btnsignup" className="loginbtn" />
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
             </div>
 
-
-
-
-
-
-
-
-            <div className="modal fade" id="forgetpassword">
-                <div className="modal-dialog modal-dialog-centered loginmodalsize">
-                    <div className="modal-content">
-                        <div className="loginpop">
-                            <button type="button" className="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
-                            <div className="login-form">
-                                <div className="row marginrow">
-                                    <div className="col-md-12 input-main">
+            <div class="modal fade" id="forgetpassword">
+                <div class="modal-dialog modal-dialog-centered loginmodalsize">
+                    <div class="modal-content">
+                        <div class="loginpop">
+                            <button type="button" class="close modalclosebtn" data-bs-dismiss="modal">&times;</button>
+                            <div class="login-form">
+                                <div class="row marginrow">
+                                    <div class="col-md-12 input-main">
                                         <h3>Change Your Password</h3>
-
                                     </div>
-                                    <div className="col-md-6 input-main">
-                                        <div className="floating-box ">
-                                            <input name="ctl00$txtconfirmpassword" type="password" id="ctl00_txtconfirmpassword" className="floating-input" placeholder="Old Password" />
-
+                                    <div class="col-md-6 input-main">
+                                        <div class="floating-box ">
+                                            <input name="ctl00$txtconfirmpassword" type="password" id="ctl00_txtconfirmpassword" class="floating-input" placeholder="Old Password" />
                                             <span id="ctl00_RequiredFieldValidator7" style={{ display: 'none', color: 'red' }}>*</span>
-
                                         </div>
                                     </div>
 
@@ -210,36 +187,22 @@ const EditInfo = () => {
                                         </div>
                                     </div>
 
-
-
-                                    <div className="col-md-12 input-main">
-                                        <div className="floating-box ">
-                                            <input name="#" type="password" id="ctl00_txtconfirmpassword" className="floating-input" placeholder="Confirm New Password" />
-                                            <div className="showpassbtn"><i id="showpass2" className="fas fa-eye-slash"></i></div>
+                                    <div class="col-md-12 input-main">
+                                        <div class="floating-box ">
+                                            <input name="#" type="password" id="ctl00_txtconfirmpassword" class="floating-input" placeholder="Confirm New Password" />
+                                            <div class="showpassbtn"><i id="showpass2" class="fas fa-eye-slash"></i></div>
                                             <span id="ctl00_RequiredFieldValidator7" style={{ display: 'none', color: 'red' }}>*</span>
-
                                         </div>
-
-
-
                                     </div>
-
-
-                                    <div className="col-md-12 input-main">
-
+                                    <div class="col-md-12 input-main">
                                     </div>
-
-                                    <div className="hide">
-
+                                    <div class="hide">
                                     </div>
                                     <div className="col-md-12 input-main">
                                         <div className="floating-box ">
                                             <input type="submit" name="ctl00$btnsignup" value="Update" id="ctl00_btnsignup" className="loginbtn" />
                                         </div>
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>

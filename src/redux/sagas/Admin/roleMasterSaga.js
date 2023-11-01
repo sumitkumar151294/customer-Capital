@@ -8,19 +8,19 @@ import {
 
 function* roleMaster({ payload }) {
   try {
-    const clientMasterResponse = yield call(callRoleMasterApi, payload.modules);
-    if (clientMasterResponse.status_code === 200) {
+    const roleMasterResponse = yield call(callRoleMasterApi, payload.modules);
+    if (roleMasterResponse.status_code === 200) {
       yield put(
         onRoleMasterSubmitSuccess({
-          data: clientMasterResponse,
-          message: clientMasterResponse.message,
+          data: roleMasterResponse,
+          message: roleMasterResponse.message,
         })
       );
     } else {
       yield put(
         onRoleMasterSubmitError({
-          data: clientMasterResponse.data,
-          message: clientMasterResponse.message,
+          data: roleMasterResponse.data,
+          message: roleMasterResponse.message,
         })
       );
     }

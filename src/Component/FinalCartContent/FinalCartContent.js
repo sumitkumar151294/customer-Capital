@@ -156,7 +156,7 @@ const FinalCartContent = () => {
                         <div class="col-lg-5 mt-37px ">
                             <div class="thepoints mb-4">
                                 <div class="d-flex justify-content-between the-bd points-div">
-                                    <h6 class="">Redeem Your </h6>
+                                    <span class="points-heading">Redeem Your </span>
                                     <span class="thelcpts">480 Pts</span>
                                 </div>
 
