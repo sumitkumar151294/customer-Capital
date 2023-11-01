@@ -22,7 +22,7 @@ const Cart = () => {
     },
     {
       image: bigBasket,
-      discountInfo: "5% Discount & 10 Reward Points",
+      discountInfo: "3% Discount & 13 Reward Points",
       storeName: "Big Basket",
       productType: "E-Gift Card (Instant Vouchers)",
       discount: "200",
@@ -107,7 +107,7 @@ const Cart = () => {
                   </div>
                   <div className="col-lg-9 col-12 mt-3">
                     <div className="row justify-content-between pb-3">
-                      <div className="col-6 fs-12 pt-1 text-muted">{cart.discountInfo}</div>
+                      <div className="col-6  pt-1 text-muted">{cart.discountInfo}</div>
                       <div className="col-6 col-md-auto lh-1 ps-0">
                         <div className="text-nowrap text-end">
                           <div className="d-flex align-items-center justify-content-end">
@@ -290,7 +290,7 @@ const Cart = () => {
 
                   <div className="p-md-2 d-grid ">
                     <Link to='/productcart' className="cnt-shop">
-                      <button className="btn py-3 py-md-2 btss "
+                      <button className="btn ss py-3 py-md-2 btss "
                         style={{
                           backgroundColor
                             :
@@ -303,7 +303,7 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-            </div>;
+            </div>
 
           </div>
         </div>

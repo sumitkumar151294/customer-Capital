@@ -2,16 +2,16 @@ import React from 'react'
 
 const OrderSummary = () => {
   return (
-    <section class="letshop">
-<div class="container   big-rr mb-2">
+    <section className="letshop">
+<div className="container   big-rr mb-2">
   
-  <div class="row justify-content-center">
-    <div class="col-lg-5 col-12">
-        <div class="text-center">
-            <h1 style={{fontWeight:"700", color:'black'}}>THANK YOU</h1>
-    <h4 class="the-para-magic2">Your order has been placed successfully</h4>
-    <h6>Order Number - <strong>Z15254</strong></h6>
-    <h6>Total Amount - <strong>₹5122</strong></h6>
+  <div className="row justify-content-center">
+    <div className="col-lg-5 col-12">
+        <div className="text-center">
+            <h1 className='point-heading' >THANK YOU</h1>
+    <h4 style={{marginBottom:'5px',fontWeight:'400',color:'#8b8a8a',lineHeight:'1.2',fontSize:'calc(1.275rem + .3vw)'}} >Your order has been placed successfully</h4>
+    <h6 style={{fontSize:'1rem'}} >Order Number - <strong>Z15254</strong></h6>
+    <h6 style={{fontSize:'1rem'}} >Total Amount - <strong>₹5122</strong></h6>
 </div>
 </div>
 </div>

@@ -41,7 +41,7 @@ const OrderContainer = () => {
 
     return (
         <div className="container">
-            <h4 className="font-italic mb-4">Order Summary</h4>
+            <h4 style={{fontSize:'calc(1.275rem + .3vw)'}} className="font-italic mb-4">Order Summary</h4>
             <div className="row bnn ">
                 <div className="col-lg-8 border">
                     {orderItems.map((order) => (
@@ -84,7 +84,7 @@ const OrderContainer = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <span className="klg">{order.code}</span>
+                                    <span style={{float:'left',textAlign:'left'}} className="klg">{order.code}</span>
                                 </div>
                                 {/* <div className="text-success pb-3 fs-14">5% OFF</div> */}
                             </div>
@@ -153,7 +153,7 @@ const OrderContainer = () => {
                             </Link></div>
                         <div className="p-md-2 d-grid ">
                             <a className="cnt-shop">
-                                <button className="btn py-3 py-md-2 btss" style={{ backgroundColor: 'white' }}>Continue Shopping &nbsp; <i className="fa fa-arrow-right"></i></button>
+                                <button className="btn py-3 ss py-md-2 btss" style={{ backgroundColor: 'white' }}>Continue Shopping &nbsp; <i className="fa fa-arrow-right"></i></button>
                             </a>
                         </div>
                     </div>
