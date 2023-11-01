@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Loader from "../Loader/Loader";
 import { useDispatch } from "react-redux";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DateRangePicker } from "@mui/x-date-pickers-pro";
+import { LocalizationProvider } from "@mui/x-date-pickers-pro";
+import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
+import { DateRangePicker } from "@mui/x-date-pickers-pro/DateRangePicker";
 const Orders = () => {
   const dispatch = useDispatch();
   const [supplier, setSupplier] = useState();
@@ -112,21 +112,16 @@ const Orders = () => {
                         <option value="Third Client">Client 3</option>
                       </select>
                     </div>
-
                     <div class="col-sm-3 form-group mb-2">
                       <label for="name-f">Date Range With Time</label>
-
                       <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DemoContainer components={["DateRangePicker"]}>
-                          <DateRangePicker
-                            localeText={{ start: "Check-in", end: "Check-out" }}
-                          />
+                          <DateRangePicker />
                         </DemoContainer>
                       </LocalizationProvider>
                     </div>
                   </div>
                 </div>
-
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table header-border table-responsive-sm">
