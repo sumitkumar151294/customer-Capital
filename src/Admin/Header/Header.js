@@ -1,7 +1,6 @@
 import React from "react";
 import "../HomeAdmin/Admin.css";
 import user from "../../assets/img/user-profile.png";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (

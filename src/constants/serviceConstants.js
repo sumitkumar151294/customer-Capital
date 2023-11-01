@@ -1,6 +1,7 @@
 const API = {
     loginApi: '/login',
-    signupApi:'/signup',
+    signupApi:'/signupApi',
+    ProductApi:'/products/all',
     updateApi:'/update'
 }
 

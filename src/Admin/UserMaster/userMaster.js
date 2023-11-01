@@ -30,7 +30,6 @@ const UserMaster = () => {
       username: 'Dummy User',
       clients: ['Client 1', 'Client 2'],
     },
-    // ... other user data
   ];
 
   const handleInputChange = (e) => {
@@ -62,7 +61,7 @@ const UserMaster = () => {
     // Remove the error message when the user starts typing
     setErrors({
       ...errors,
-      [fieldName]: '',
+      [fieldName]: "",
     });
   };
 
@@ -73,11 +72,11 @@ const UserMaster = () => {
 
     // Check if fields are empty and set corresponding error messages
     for (const key in userData) {
-      if (userData[key] === '') {
-        newErrors[key] = 'This field is required';
+      if (userData[key] === "") {
+        newErrors[key] = "This field is required";
         isValid = false;
       } else {
-        newErrors[key] = '';
+        newErrors[key] = "";
       }
     }
 
@@ -86,12 +85,12 @@ const UserMaster = () => {
     const regexPhone = /^\(?([0-9]{3})\)?([0-9]{3})?([0-9]{4})$/g;
 
     if (!regexEmail.test(userData.email)) {
-      newErrors.email = 'Invalid email format';
+      newErrors.email = "Invalid email format";
       isValid = false;
     }
 
     if (!regexPhone.test(userData.mobile)) {
-      newErrors.mobile = 'Invalid phone number format';
+      newErrors.mobile = "Invalid phone number format";
       isValid = false;
     }
 
@@ -116,7 +115,7 @@ const UserMaster = () => {
 
       dispatch(onUserSubmit(submissionData));
     }
-  }
+  };
 
   return (
     <>
@@ -135,7 +134,7 @@ const UserMaster = () => {
                     </div>
                   ) : (
                     <div className="container mt-3">
-                      <form onSubmit={handleSubmit} >
+                      <form onSubmit={handleSubmit}>
                         <div class="row">
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Email</label>
@@ -143,13 +142,12 @@ const UserMaster = () => {
                               type="email"
                               class="form-control"
                               name="fname"
-                              onChange={(e) => handleChange(e, 'email')}
+                              onChange={(e) => handleChange(e, "email")}
                               id="name-f"
                               placeholder=""
                             />
                             <p className="text-danger">{errors.email}</p>
                           </div>
-
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Mobile</label>
                             <input
@@ -157,12 +155,11 @@ const UserMaster = () => {
                               class="form-control"
                               name="fname"
                               id="name-f"
-                              onChange={(e) => handleChange(e, 'mobile')}
+                              onChange={(e) => handleChange(e, "mobile")}
                               placeholder=""
                             />
                             <p className="text-danger">{errors.mobile}</p>
                           </div>
-
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Username</label>
                             <input
@@ -171,11 +168,10 @@ const UserMaster = () => {
                               name="fname"
                               id="name-f"
                               placeholder=""
-                              onChange={(e) => handleChange(e, 'userName')}
+                              onChange={(e) => handleChange(e, "userName")}
                             />
                             <p className="text-danger">{errors.userName}</p>
                           </div>
-
                           <div class="col-sm-4 form-group mb-2">
                             <label for="name-f">Password</label>
                             <input
@@ -184,11 +180,10 @@ const UserMaster = () => {
                               name="fname"
                               id="name-f"
                               placeholder=""
-                              onChange={(e) => handleChange(e, 'password')}
+                              onChange={(e) => handleChange(e, "password")}
                             />
                             <p className="text-danger">{errors.password}</p>
                           </div>
-
                           <div class="col-lg-12 br pt-2">
                             <label for="name-f">Client</label>
 
@@ -227,7 +222,6 @@ const UserMaster = () => {
                               )}
                             </div>
                           </div>
-
                           <div class="col-lg-12 br pt-2">
                             <label for="name-f">Role</label>
 

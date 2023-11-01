@@ -16,6 +16,7 @@ const CreateCategory = () => {
     categoryName: "",
     vendorCategory: "",
     status: "",
+    brand: "",
   });
 
   const dispatch = useDispatch();
@@ -127,7 +128,7 @@ const CreateCategory = () => {
                             <option value="Health">Health</option>
                             <option value="Insurance">Insurance</option>
                           </select>
-                          <p className="text-danger">{errors.vendorCategory}</p>
+                          <p className="text-danger">{errors.brand}</p>
                         </div>
                         <div className="col-sm-3 form-group mb-2">
                           <label htmlFor="status">Select Status</label>

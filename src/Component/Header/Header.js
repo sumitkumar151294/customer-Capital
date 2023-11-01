@@ -22,7 +22,6 @@ const Header = () => {
     navigate("/myprofilecontent");
     const wishList = sessionStorage.setItem(true, "true");
   };
-
   return (
     <>
       <header className="header1">
@@ -90,7 +89,7 @@ const Header = () => {
                               <li>
                                 <a id="#" onClick={handleMyAccount}>
                                   My Account
-                                </a>{" "}
+                                </a>
                               </li>
                               <li>
                                 <Link to="/myprofile" id="#">
@@ -115,14 +114,9 @@ const Header = () => {
                         </div>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <Link to="/myprofilecontent" id="#" href="#">
-                          <i
-                            className="lar la-heart"
-                            a
-                            id="#"
-                            onClick={handleWishList}
-                          ></i>
-                        </Link>
+                        <a id="#" onClick={handleWishList}>
+                          <i className="lar la-heart"></i>
+                        </a>
                       </li>
                       <li className="d-none d-xl-inline-block">
                         <a id="#" href="#">
