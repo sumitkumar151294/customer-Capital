@@ -35,7 +35,7 @@ const EditInfo = () => {
 
         // Check if fields are empty and set corresponding error messages
         for (const key in userData) {
-            debugger
+            
             if (userData[key] === '') {
                 newErrors[key] = 'This field is ';
                 isValid = false;
@@ -51,9 +51,9 @@ const EditInfo = () => {
 
         }
         setErrors(newErrors);
-        debugger
+       
         if (isValid) {
-            debugger
+            
             dispatch(onUpdateSubmit(userData))
         }
 

@@ -19757,11 +19757,7 @@ textarea {
   background: #0072fd;
 }
 
-.the-para-magic2 {
-  margin-bottom: 5px;
-  font-weight: 400;
-  color: #8b8a8a;
-}
+
 
 .letshop1 .col-lg-2 {
   width: 20% !important;
@@ -20827,7 +20823,7 @@ input::-webkit-inner-spin-button {
 .note-pts {
   font-size: 9px;
   margin-bottom: 10px;
-  text-align: ;
+ 
 }
 
 .sixthing {
@@ -22114,4 +22110,189 @@ textarea {
 .mobile-hide {
   /* display: flex; */
   display: block;
+}
+
+
+.heading-primary {
+  @media (max-width: 767px) {
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.4em;
+  margin-bottom: 10px;
+}
+}
+
+.hero-description{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+}
+
+
+.vouch{
+
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    background: #0072fd;
+    padding: 12px 38px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 1px 1px 6px 3px rgb(0 0 0 / 27%);
+    text-transform: uppercase;
+    
+}
+}
+
+.mobileMenu{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    overflow: hidden;
+    overflow-x: scroll;
+    background: gainsboro;
+    text-align: center;
+    width: 100%;
+}
+}
+
+.pt-4rem{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    padding-top: 1rem;
+}
+}
+
+h5 {
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    font-size: 1rem!important;
+}
+}
+
+.heading-letshop{
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.heading-letshop{
+  @media screen and (max-width: 767px) and (min-width: 320px)
+   {
+      font-size: 1rem;
+      font-weight: 700;
+  }
+  }
+
+.big-head{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    font-size: 16px;
+    font-weight: 700;
+}
+}
+
+.big-head2 {
+@media screen and (max-width: 767px) and (min-width: 320px)
+{
+    font-size: 12px;
+    font-weight: 500;
+}
+}
+
+
+.heading-primary2{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+}
+}
+
+
+.hero-description2{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+}
+
+.hero-description3{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+}
+
+.vouch99{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    background: #cae6ff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 1px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.15);
+    text-align: center;
+}
+}
+
+
+.first-heading{
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.first-heading{
+  @media screen and (max-width: 767px) and (min-width: 320px)
+{
+    font-size: 1rem!important;
+    /* font-size: 26px; */
+    font-weight: 700;
+}
+}
+
+.ss{
+  color: #212529 !important; 
+}
+
+.the-para-magic2{
+  margin-bottom: 5px;
+    font-weight: 400;
+    color: #8b8a8a;
+    line-height: 1.2;
+  font-size: calc(1.275rem + .3vw);
+}
+
+.point-heading{
+font-weight: 700;
+/* font-size: calc(1.375rem + 1.5vw); */
+}
+
+
+.cnt-shop-blue{
+@media screen and (max-width: 767px) and (min-width: 320px)
+ {
+    background: #0072fd;
+    text-align: center;
+    box-shadow: 1px 1px 3px 2px rgb(0 0 0 / 14%);
+    border-radius: 4px!important;
+    padding: 4px;
+    margin-bottom: 10px;
+}
 }

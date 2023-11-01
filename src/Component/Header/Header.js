@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
+import img2 from '../../Images/tb.png';
+import img3 from '../../Images/cate.png';
+import img4 from '../../Images/offers.png';
+import img5 from '../../Images/profile.png';
 import { Link } from "react-router-dom";
 import { toggleNavbar } from "../../redux/modules/User/toggleSlice";
 import { useDispatch } from "react-redux";
@@ -190,7 +194,7 @@ const Header = () => {
             <div className="mobileMenu d-inline-flex justify-content-center">
               <span className="menu-seperator">
                 <a className="nav-link " href="/brand-gift-cards">
-                  {/* <img width="25" src="img/tb.png"> */}
+                  <img width="25" src={img2} />
                   <div
                   // style="color: black!important;"
                   >
@@ -200,7 +204,7 @@ const Header = () => {
               </span>
               <span className="menu-seperator">
                 <a className="nav-link " href="/menu/topMenu/1">
-                  {/* <img width="25" src="img/cate.png"> */}
+                  <img width="25" src={img3}  />
                   <div
                   // style="color: black!important;"
                   >
@@ -211,7 +215,7 @@ const Header = () => {
 
               <span className="menu-seperator">
                 <a className="nav-link " href="#">
-                  {/* <img width="25" src="img/offers.png"> */}
+                  <img width="25" src={img4} />
                   <div
                   //  style="color: black!important;"
                   >
@@ -222,7 +226,7 @@ const Header = () => {
 
               <span className="menu-seperator">
                 <a className="nav-link " href="#">
-                  {/* <img width="25" src="img/profile.png"> */}
+                  <img width="25" src={img5} />
                   <div
                   // style="color: black!important;"
                   >

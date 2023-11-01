@@ -14,6 +14,7 @@ const Shop = () => {
       isNew: true,
       discount: 'Upto 15% Discount',
       name: "Domino's Shopping Voucher",
+      redirect:'/productcart'
     },
     {
       id: 2,
@@ -21,6 +22,7 @@ const Shop = () => {
       isNew: false,
       discount: 'Upto 15% Discount',
       name: "Domino's Shopping Voucher",
+      redirect:''
     },
     {
       id: 3,
@@ -28,6 +30,7 @@ const Shop = () => {
       isNew: false,
       discount: 'Upto 15% Discount',
       name: "Domino's Shopping Voucher",
+      redirect:''
     },
     {
       id: 4,
@@ -35,6 +38,7 @@ const Shop = () => {
       isNew: true,
       discount: 'Upto 15% Discount',
       name: "Domino's Shopping Voucher",
+      redirect:''
     },
     {
       id: 5,
@@ -42,6 +46,7 @@ const Shop = () => {
       isNew: true,
       discount: 'Upto 15% Discount',
       name: "Domino's Shopping Voucher",
+      redirect:''
     },
   ];
   return (
@@ -51,9 +56,7 @@ const Shop = () => {
           <div class="row ">
             <div class="d-flex justify-content-between mb-4">
               <div class="first w-70">
-                <h5
-                  style={{ fontWeight: 700, fontSize:'1.5rem' }}
-                >You Choose the gift card They choose where to spend it!</h5>
+                <span className='heading-letshop' >You Choose the gift card They choose where to spend it!</span>
                 <p class="the-para-magic2 mobile-hide">Just your kind of shopping – your go-to brands, your wish-list products, all with irresistible offers.</p>
               </div>
               <div class="second">
@@ -63,7 +66,7 @@ const Shop = () => {
 
             {cardData.map((card) => (
               <div className="col-lg-2 col-3 text-center" key={card.id}>
-                <Link to="/productcart">
+                <Link to= {card.redirect} >
                   <div className="offer-box1">
                     <img className="w-100" src={card.img} />
                     {card.isNew && (
