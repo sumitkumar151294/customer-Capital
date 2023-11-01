@@ -44,12 +44,15 @@ function Footer() {
             <div class="col-5 col-md-4 pb-3 mb-3 border-bottom">
                 <ul class="list-inline mb-0 text-start text-md-end">
                     <li class="list-inline-item d-none d-md-inline-block clr-white">Social Media:</li>
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noreferrer" aria-label="facebook-logo" href="#"><i class="lab la-facebook-f clr-white"></i></a>
-                    </li>
+
                     <li class="list-inline-item">
                         <a target="_blank" rel="noreferrer" aria-label="instagram-logo" href="#"><i class="fab fa-instagram clr-white"></i></a>
                     </li>
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noreferrer" aria-label="facebook-logo" href="#"><i class="lab la-facebook-f clr-white"></i></a>
+                    </li>
+                    
                     
                     <li class="list-inline-item">
                         <a target="_blank" rel="noreferrer" aria-label="twitter-logo" href="#"><i class="lab la-twitter clr-white" ></i></a>
