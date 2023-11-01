@@ -1,7 +1,7 @@
 import React from "react";
 import img1 from "../../Images/amazon.png";
 import img2 from "../../Images/amazon.com.png";
-const MyProfileContent = ({}) => {
+const MyProfileContent = ({ }) => {
   const wishList = sessionStorage.getItem("true");
   return (
     <>
