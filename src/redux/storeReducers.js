@@ -12,10 +12,16 @@ import roleMasterReducer from './modules/Admin/roleMasterSlice';
 import ProductReducer from './modules/Admin/productSlice';
 import allocateMasterReducer from './modules/Admin/allocateMasterSlice';
 import toogleReducer from './modules/User/toggleSlice';
+import addSpecialReducer from './modules/UserAdmin/addSpecialSlice';
 import { combineReducers } from 'redux';
+import AbandonedCartReducer from './modules/UserAdmin/AbandonedCartSlice';
+import  ClientCommissionReducer  from './modules/UserAdmin/ClientCommissionSlice';
+
 
 const reducers = combineReducers({
   authenticationReducer: authenticationReducer,
+  ClientCommissionReducer:ClientCommissionReducer,
+  AbandonedCartReducer:AbandonedCartReducer,
   vendorReducer: vendorReducer,
   clientReducer: clientReducer,
   cmsReducer:cmsReducer,
@@ -28,7 +34,9 @@ const reducers = combineReducers({
   roleMasterReducer: roleMasterReducer,
   ProductReducer:ProductReducer,
   allocateMasterReducer: allocateMasterReducer,
-  toggleReducer:toogleReducer
+  toggleReducer:toogleReducer,
+  addSpecialReducer:addSpecialReducer,
+
 });
 
 export default reducers;

@@ -223,6 +223,27 @@ const Dashboard = () => {
     ],
   };
 
+  const donutChartData = [5, 3];
+  const productDonutChartData =[5, 1];
+  const customerDonutChartData =[5, 3];
+  const orderDonutChartData =[5, 2];
+  const donutChartOptions = {
+    labels: ['Progress', 'Remaining'],
+    plotOptions: {
+      pie: {
+        customScale: 1.0,
+        innerRadius: 35, // Set the inner radius
+        radius: 10
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false, // Hide legend
+    },
+    colors: ['rgb(0, 114, 253)', 'rgb(247, 245, 255)'], // Set colors
+  };
 
   return (
     <div className="content-body">
@@ -241,12 +262,11 @@ const Dashboard = () => {
                         <h2>45</h2>
                       </div>
                       <div className="d-inline-block position-relative donut-chart-sale">
-                        <span
-                          className="donut1"
-                          data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'
-                        >
-                          5/8
-                        </span>
+                        <ReactApexChart
+                          options={donutChartOptions}
+                          series={donutChartData}
+                          type="donut"
+                        />
                         <small className="text-black">
                           <img
                             className="w-35px"
@@ -262,18 +282,15 @@ const Dashboard = () => {
                   <div className="card">
                     <div className="card-body d-flex align-items-center justify-content-between">
                       <div className="menu">
-                        <span className="font-w500 fs-16 d-block mb-2">
-                          Products
-                        </span>
+                        <span className="font-w500 fs-16 d-block mb-2">Products</span>
                         <h2>85</h2>
                       </div>
                       <div className="d-inline-block position-relative donut-chart-sale">
-                        <span
-                          className="donut1"
-                          data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'
-                        >
-                          5/6
-                        </span>
+                        <ReactApexChart
+                          options={donutChartOptions}
+                          series={productDonutChartData}
+                          type="donut"
+                        />
                         <small className="text-black">
                           <img
                             className="w-35px"
@@ -285,6 +302,7 @@ const Dashboard = () => {
                     </div>
                   </div>
                 </div>
+                
                 <div className="col-xl-6 col-sm-6">
                   <div className="card">
                     <div className="card-body d-flex align-items-center justify-content-between">
@@ -295,12 +313,11 @@ const Dashboard = () => {
                         <h2>247</h2>
                       </div>
                       <div className="d-inline-block position-relative donut-chart-sale">
-                        <span
-                          className="donut1"
-                          data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'
-                        >
-                          5/8
-                        </span>
+                      <ReactApexChart
+                          options={donutChartOptions}
+                          series={customerDonutChartData}
+                          type="donut"
+                        />
                         <small className="text-black">
                           <img
                             className="w-35px"
@@ -322,12 +339,11 @@ const Dashboard = () => {
                         <h2>872</h2>
                       </div>
                       <div className="d-inline-block position-relative donut-chart-sale">
-                        <span
-                          className="donut1"
-                          data-peity='{ "fill": ["rgb(0, 114, 253)", "rgba(247, 245, 255)"],   "innerRadius": 35, "radius": 10}'
-                        >
-                          5/7
-                        </span>
+                      <ReactApexChart
+                          options={donutChartOptions}
+                          series={donutChartData}
+                          type="donut"
+                        />
                         <small className="text-black">
                           <img
                             className="w-35px"
