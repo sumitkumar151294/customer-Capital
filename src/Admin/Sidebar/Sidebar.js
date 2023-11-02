@@ -141,6 +141,13 @@ const Sidebar = () => {
                         </Link>
                     </li>
 
+                    <li className={location.pathname === '/LC-user-admin/addspecial' ? 'mm-active' : ''}>
+                        <Link to="/LC-user-admin/addspecial" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src={email} alt="file not exist" />
+                            <span class="nav-text ps-1">Add Special</span>
+                        </Link>
+                    </li>
+
                 </ul>
 
             </div>

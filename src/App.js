@@ -36,6 +36,7 @@ import UserMaster from './Admin/UserMaster/userMaster';
 import CreateCategory from './Admin/CreateCategory/CreateCategory';
 import SupplierCategoryList from './Admin/SupplierCategory/SupplierCategory';
 import ProductDetail from './Admin/ProductCategory/ProductDetail';
+import AddSpecial from './admin-user/AddSpecial/AddSpecial';
 
 function App() {
   return (
@@ -79,6 +80,8 @@ function App() {
         <Route path="/LC-admin/suppliercategory" element={<HomeAdmin Component={SupplierCategoryList} />} />
         <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail} />} />
 
+        {/* User Admin Section */}
+        <Route path="/LC-user-admin/addspecial" element={<HomeAdmin Component={AddSpecial} />} />
 
       </Routes>
     </Router>

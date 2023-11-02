@@ -33967,6 +33967,8 @@
   }
   
   .sharp.btn-xs {
+    border-radius: 12px;
+    font-size: x-small;
     padding: 0.1875rem;
     width: 3.625rem;
     height: 1.7rem;
@@ -34486,7 +34488,7 @@
   }
   
   .btn-xs {
-    font-size: 0.75rem;
+    font-size: 0.75rem !important;
     padding: 0.438rem 1rem;
     font-weight: 600;
   }
