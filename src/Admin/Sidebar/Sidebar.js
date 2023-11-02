@@ -8,7 +8,6 @@ import productcate from "../../assets/img/product-cate.png";
 import product from "../../assets/img/product.png";
 import orders from "../../assets/img/orders.png";
 import clists from "../../assets/img/orders.png";
-
 import CMS from "../../assets/img/CMS.png";
 import blog from "../../assets/img/blog.png";
 import FAQ from "../../assets/img/faq.png";
@@ -262,6 +261,21 @@ const Sidebar = () => {
               <span class="nav-text ps-1">Email Templates</span>
             </Link>
           </li>
+
+          <li className={location.pathname === '/LC-admin/supplierbrandlist' ? 'mm-active' : ''}>
+            <Link to="/LC-admin/supplierbrandlist" class="ai-icon" aria-expanded="false">
+              <img class="w-20px" src={email} alt="file not exist" />
+              <span class="nav-text ps-1">Supplier Brand List</span>
+            </Link>
+          </li>
+
+          <li className={location.pathname === '/LC-admin/brandcatalogue' ? 'mm-active' : ''}>
+            <Link to="/LC-admin/brandcatalogue" class="ai-icon" aria-expanded="false">
+              <img class="w-20px" src={email} alt="file not exist" />
+              <span class="nav-text ps-1">Brand Catalogue</span>
+            </Link>
+          </li>
+
 
 
           {/* UserAdmin Sidebar */}

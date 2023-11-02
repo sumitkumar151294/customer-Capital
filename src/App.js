@@ -41,6 +41,8 @@ import AbandonedCartReport from "./admin-user/AbandonedCart/abandonedCart";
 import Customerlist from "./admin-user/customerList/customerlist";
 import OfferMasterComponent from "./admin-user/Offermaster/offerMaster";
 import AddSpecial from './admin-user/AddSpecial/AddSpecial';
+import SupplierBrandList from './Admin/SupplierBrandList/SupplierBrandList';
+import BrandCatalogue from './Admin/BrandCatalogue/BrandCatalogue';
 
 function App() {
   return (
@@ -98,6 +100,10 @@ function App() {
           path="/LC-admin/orders"
           element={<HomeAdmin Component={Orders} />}
         />
+        <Route path="/LC-admin/supplierbrandlist" element={<HomeAdmin Component={SupplierBrandList} />} />
+        <Route path="/LC-admin/brandcatalogue" element={<HomeAdmin Component={BrandCatalogue} />} />
+        {/* <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail} />} /> */}
+        <Route path="/LC-admin/productdetail" element={<ProductDetail />} />
 
         {/* User Admin Section */}
         <Route path="/LC-user-admin/addspecial" element={<HomeAdmin Component={AddSpecial} />} />
