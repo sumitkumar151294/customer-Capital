@@ -14,6 +14,7 @@ import contact from '../../assets/img/contact.png'
 import customer from '../../assets/img/customer.png'
 import email from '../../assets/img/email.png'
 
+
 import { Link, useLocation } from 'react-router-dom'
 
 
@@ -140,6 +141,21 @@ const Sidebar = () => {
                             <span class="nav-text ps-1">Email Templates</span>
                         </Link>
                     </li>
+
+                    <li className={location.pathname === '/LC-admin/supplierbrandlist' ? 'mm-active' : ''}>
+                        <Link to="/LC-admin/supplierbrandlist" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src={email} alt="file not exist" />
+                            <span class="nav-text ps-1">Supplier Brand List</span>
+                        </Link>
+                    </li>
+
+                    <li className={location.pathname === '/LC-admin/brandcatalogue' ? 'mm-active' : ''}>
+                        <Link to="/LC-admin/brandcatalogue" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src={email} alt="file not exist" />
+                            <span class="nav-text ps-1">Brand Catalogue</span>
+                        </Link>
+                    </li>
+
 
                 </ul>
 

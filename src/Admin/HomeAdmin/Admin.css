@@ -45097,3 +45097,66 @@
     background: aliceblue;
     margin-bottom: 10px;
   }
+
+  .w-11 {
+    width: 11em;
+}
+
+.group-btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 3px solid #000000;
+  padding: 0.6em !important ;
+  background: #1947e1 !important;
+  color: white;
+}
+
+.input-group .btn {
+  position: relative !important;
+  z-index: 2  !important;
+}
+
+.htt {
+  height: auto !important;
+}
+
+
+
+.btn-outline-primary:hover {
+  border-color: var(--primary-hover) !important;
+  background-color: var(--primary-hover) !important;
+}
+
+.can-toggle {
+  position: relative;
+}
+
+.can-toggle input[type="checkbox"]:checked ~ label .can-toggle__switch {
+  background-color: #70c767;
+}
+
+.can-toggle label .can-toggle__switch {
+  height: 36px;
+  flex: 0 0 134px;
+  border-radius: 4px;
+}
+
+.can-toggle label .can-toggle__switch {
+  transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
+  background: #ff0438;
+}
+
+.can-toggle label .can-toggle__switch {
+  position: relative;
+}
+
+.can-toggle *, .can-toggle *:before, .can-toggle *:after {  
+  box-sizing: border-box;
+}
+
+.bttn{
+   
+    font-size: 0.813rem !important;
+    padding: 0.625rem 1rem !important;
+    border-radius: 1.125rem !important ;
+}

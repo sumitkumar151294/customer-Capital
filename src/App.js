@@ -35,6 +35,8 @@ import DashboardHome from './Component/DashboardHome/DashboardHome';
 import UserMaster from './Admin/UserMaster/userMaster';
 import CreateCategory from './Admin/CreateCategory/CreateCategory';
 import SupplierCategoryList from './Admin/SupplierCategory/SupplierCategory';
+import SupplierBrandList from './Admin/SupplierBrandList/SupplierBrandList';
+import BrandCatalogue from './Admin/BrandCatalogue/BrandCatalogue';
 import ProductDetail from './Admin/ProductCategory/ProductDetail';
 
 function App() {
@@ -78,6 +80,10 @@ function App() {
         <Route path="/LC-admin/createcategories" element={<HomeAdmin Component={CreateCategory} />} />
         <Route path="/LC-admin/suppliercategory" element={<HomeAdmin Component={SupplierCategoryList} />} />
         <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail} />} />
+        <Route path="/LC-admin/supplierbrandlist" element={<HomeAdmin Component={SupplierBrandList} />} />
+        <Route path="/LC-admin/brandcatalogue" element={<HomeAdmin Component={BrandCatalogue} />} />
+        {/* <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail} />} /> */}
+        <Route path="/LC-admin/productdetail" element={<ProductDetail />} />
 
 
       </Routes>

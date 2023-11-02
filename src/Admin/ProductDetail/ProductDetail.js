@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const ProductDetail = () => {
   return (
-    <>
-    <div class="content-body">
+   <>
+   <div class="content-body">
            <div class="container-fluid">
        
         <div class="row">
@@ -72,7 +72,7 @@ const ProductDetail = () => {
            
             
             
-           
+            
             <div class="modal fade" id="reviewModal">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -88,7 +88,7 @@ const ProductDetail = () => {
                                 </div>
                                 <div class="mb-3">
                                     <div class="rating-widget mb-4 text-center">
-                                       
+                                        
                                         <div class="rating-stars">
                                             <ul id="stars">
                                                 <li class="star" title="Poor" data-value="1">
@@ -126,8 +126,11 @@ const ProductDetail = () => {
 
 
         </div>
-    </>
-  );
+
+
+      
+   </>
+  )
 }
 
-export default ProductDetail;
+export default ProductDetail

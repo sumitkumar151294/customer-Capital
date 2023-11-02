@@ -13,6 +13,7 @@ const HomeAdmin = (props) => {
                 <Sidebar />
                 <Component />
                 <Footer />
+                
             </div>
         </>
     )
