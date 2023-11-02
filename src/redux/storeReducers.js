@@ -13,9 +13,14 @@ import ProductReducer from './modules/Admin/productSlice';
 import allocateMasterReducer from './modules/Admin/allocateMasterSlice';
 import toogleReducer from './modules/User/toggleSlice';
 import { combineReducers } from 'redux';
+import AbandonedCartReducer from './modules/UserAdmin/AbandonedCartSlice';
+import  ClientCommissionReducer  from './modules/UserAdmin/ClientCommissionSlice';
+
 
 const reducers = combineReducers({
   authenticationReducer: authenticationReducer,
+  ClientCommissionReducer:ClientCommissionReducer,
+  AbandonedCartReducer:AbandonedCartReducer,
   vendorReducer: vendorReducer,
   clientReducer: clientReducer,
   cmsReducer:cmsReducer,
