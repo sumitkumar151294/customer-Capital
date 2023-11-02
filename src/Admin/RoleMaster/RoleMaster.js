@@ -99,7 +99,6 @@ const RoleMaster = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     dispatch(onRoleMasterSubmit(formData));
   };
 

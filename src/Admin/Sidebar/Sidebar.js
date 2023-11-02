@@ -263,8 +263,8 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          {/* UserAdmin Sidebar */}
 
+          {/* UserAdmin Sidebar */}
           <li
             className={
               location.pathname === "/LC-user-admin/commissionreport"
@@ -328,6 +328,13 @@ const Sidebar = () => {
               <img class="w-20px" src={clists} alt="file not exist" />
               <span class="nav-text ps-1">Offer Master</span>
             </Link>
+
+            <li className={location.pathname === '/LC-user-admin/addspecial' ? 'mm-active' : ''}>
+              <Link to="/LC-user-admin/addspecial" class="ai-icon" aria-expanded="false">
+                <img class="w-20px" src={email} alt="file not exist" />
+                <span class="nav-text ps-1">Add Special</span>
+              </Link>
+            </li>
           </li>
         </ul>
       </div>

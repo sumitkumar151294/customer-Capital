@@ -40,6 +40,7 @@ import ClientCommissionReport from "./admin-user/commissionReport/clientCommissi
 import AbandonedCartReport from "./admin-user/AbandonedCart/abandonedCart";
 import Customerlist from "./admin-user/customerList/customerlist";
 import OfferMasterComponent from "./admin-user/Offermaster/offerMaster";
+import AddSpecial from './admin-user/AddSpecial/AddSpecial';
 
 function App() {
   return (
@@ -97,6 +98,9 @@ function App() {
           path="/LC-admin/orders"
           element={<HomeAdmin Component={Orders} />}
         />
+
+        {/* User Admin Section */}
+        <Route path="/LC-user-admin/addspecial" element={<HomeAdmin Component={AddSpecial} />} />
         <Route
           path="/LC-user-admin/commissionreport"
           element={<HomeAdmin Component={ClientCommissionReport} />}
@@ -113,7 +117,6 @@ function App() {
           path="/LC-user-admin/offermaster"
           element={<HomeAdmin Component={OfferMasterComponent} />}
         />
-
         <Route
           path="/LC-user-admin/faqs"
           element={<HomeAdmin Component={Faqs} />}
