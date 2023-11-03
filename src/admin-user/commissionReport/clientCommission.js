@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { onClientCommissionSubmit } from "../../redux/modules/UserAdmin/ClientCommissionSlice";
 import Loader from "../../Admin/Loader/Loader";
+import { DateRangePicker, LocalizationProvider } from "@mui/x-date-pickers-pro";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 
 const ClientCommissionReport = () => {
   const [isLoading, setIsLoading] = useState("true");
@@ -89,14 +92,16 @@ const ClientCommissionReport = () => {
                         <option value="Third Client">Nykaa</option>
                       </select>
                     </div>
-                    <div className="example">
-                      <input
-                        type="text"
-                        className="form-control input-daterange-timepicker"
-                        name="daterange"
-                        defaultValue="01/01/2015 1:30 PM - 01/01/2015 2:00 PM"
-                      />
-                    </div>
+                    {/* <div className="example">
+                      <label for="name-f">Date Range With Time</label>
+
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DemoContainer components={["DateRangePicker"]}>
+                          <DateRangePicker />
+                        </DemoContainer>
+                      </LocalizationProvider>
+                    </div> */}
+
                     <div className="d-flex align-items-center flex-wrap">
                       <a
                         href="javascript:void(0);"
@@ -104,6 +109,14 @@ const ClientCommissionReport = () => {
                       >
                         <i className="fa fa-file-excel me-2"></i>Export
                       </a>
+                    </div>
+                    <div className="example">
+
+                      <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DemoContainer components={["DateRangePicker"]}>
+                          <DateRangePicker />
+                        </DemoContainer>
+                      </LocalizationProvider>
                     </div>
                   </div>
                 </div>
