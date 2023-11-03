@@ -45162,3 +45162,42 @@
     padding: 0.625rem 1rem !important;
     border-radius: 1.125rem !important ;
 }
+
+.tc {
+    height: 150px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid #ededed;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.only-right {
+  display: flex;
+  justify-content: end;
+}
+
+
+.on-link {
+  text-decoration: underline;
+  color: blue;
+}
+
+.head-style{
+
+  font-weight: bolder !important;
+  font-size: 1.2rem !important;
+
+}
+
+.txt{
+font-size: 1rem !important;
+}
+
+.range-font{
+font-size: 1.125rem !important;
+}
+
+.mrr {
+  margin-right: 10px;
+}

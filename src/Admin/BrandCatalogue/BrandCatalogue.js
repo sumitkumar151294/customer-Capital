@@ -94,7 +94,7 @@ const BrandCatalogue = () => {
                                                     <td>₹ 600</td>
                                                     <td>Range</td>
 
-                                                    <td> <Link to='/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
+                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
                                                     </td>                                            </tr>
                                                 <tr>
                                                     <td><img src={img}
@@ -109,7 +109,7 @@ const BrandCatalogue = () => {
                                                     <td>₹ 600</td>
                                                     <td>Range</td>
 
-                                                    <td> <Link to='/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
+                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
                                                     </td>                                            </tr>
                                                 <tr>
                                                     <td><img src={img}  
@@ -124,7 +124,7 @@ const BrandCatalogue = () => {
                                                     <td>₹ 600</td>
                                                     <td>Range</td>
 
-                                                    <td> <Link to='/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
+                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
                                                     </td>                                            </tr>
                                                 <tr>
                                                     <td><img src={img} 
@@ -139,7 +139,7 @@ const BrandCatalogue = () => {
                                                     <td>₹ 600</td>
                                                     <td>Range</td>
 
-                                                    <td> <Link to='/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
+                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
                                                     </td>                                            </tr>
                                             </tbody>
                                         </table>

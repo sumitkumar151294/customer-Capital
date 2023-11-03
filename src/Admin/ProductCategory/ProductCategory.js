@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import pizz1 from '../../assets/img/pizz1.jpg'
 import Loader from '../Loader/Loader'
-import ProductDetail from './ProductDetail'
+import ProductDetail from '../ProductDetail/ProductDetail' 
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
