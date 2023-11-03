@@ -433,9 +433,11 @@ const Productcard = () => {
                             <div class="col-lg-2 col-4 mb-3">
                                 <div class="box-coupen">
                                     <div class="img-sec">
+                                        {cart.discount && 
                                         <div class="bagde-flag-wrap">
-                                            <a href="#" class="bagde-flag"> {cart.discount} </a>
+                                            <Link  class="bagde-flag"> {cart.discount} </Link>
                                         </div>
+                        }
                                         <img class="w-144" src={cart.img} />
                                     </div>
                                     <div class="coupendis">
