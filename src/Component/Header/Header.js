@@ -17,14 +17,13 @@ const Header = () => {
   const toggleMenu = () => {
     dispatch(toggleNavbar());
   };
-  // }, []);
   const handleMyAccount = () => {
     sessionStorage.clear();
     navigate("/myprofilecontent");
   };
   const handleWishList = () => {
+    sessionStorage.setItem("activeTab", "wishlist");
     navigate("/myprofilecontent");
-    const wishList = sessionStorage.setItem(true, "true");
   };
   return (
     <>
