@@ -322,7 +322,7 @@ const MyProfileContent = ({ }) => {
                 </div>
 
                 <div
-                  class={`tab-pane fade shadow rounded bg-white p-5 ${wishlist === "wishlist" ? "show active" : ""}`}
+                  class={`tab-pane fade shadow rounded bg-white p-5 ${wishlist === "order" ? "show active" : ""}`}
                   id="v-pills-profile"
                   role="tabpanel"
                   aria-labelledby="v-pills-profile-tab"
