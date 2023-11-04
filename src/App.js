@@ -43,6 +43,7 @@ import OfferMasterComponent from "./admin-user/Offermaster/offerMaster";
 import AddSpecial from './admin-user/AddSpecial/AddSpecial';
 import SupplierBrandList from './Admin/SupplierBrandList/SupplierBrandList';
 import BrandCatalogue from './Admin/BrandCatalogue/BrandCatalogue';
+import BannerList from "./admin-user/bannerMaster/bannerMaster";
 
 function App() {
   return (
@@ -126,6 +127,10 @@ function App() {
         <Route
           path="/LC-user-admin/faqs"
           element={<HomeAdmin Component={Faqs} />}
+        />
+        <Route
+          path="/LC-user-admin/bannermaster"
+          element={<HomeAdmin Component={BannerList} />}
         />
         <Route path="/LC-admin/blog" element={<HomeAdmin Component={Blog} />} />
         <Route

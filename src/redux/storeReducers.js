@@ -16,10 +16,14 @@ import addSpecialReducer from './modules/UserAdmin/addSpecialSlice';
 import { combineReducers } from 'redux';
 import AbandonedCartReducer from './modules/UserAdmin/AbandonedCartSlice';
 import  ClientCommissionReducer  from './modules/UserAdmin/ClientCommissionSlice';
+import offerMasterReducer from './modules/UserAdmin/offerMasterSlice';
+import BannerMasterReducer from './modules/UserAdmin/BannerMasterSlice';
 
 
 const reducers = combineReducers({
   authenticationReducer: authenticationReducer,
+  BannerMasterReducer:BannerMasterReducer,
+  offerMasterReducer:offerMasterReducer,
   ClientCommissionReducer:ClientCommissionReducer,
   AbandonedCartReducer:AbandonedCartReducer,
   vendorReducer: vendorReducer,

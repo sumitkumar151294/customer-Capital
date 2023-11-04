@@ -15,10 +15,14 @@ import allocateMasterSaga from './Admin/allocateMasterSaga';
 import addSpecialSaga from './UserAdmin/addSpecialSaga';
 import AbandonedSaga from './UserAdmin/AbandonedCartSaga';
 import ClientCommissionSaga from './UserAdmin/ClientCommissionSaga';
+import offerMasterSaga from './UserAdmin/offerMasterSaga';
+import BannerMasterSaga from './UserAdmin/BannerMasterSaga';
 
 export default function* rootSaga() {
   yield all([
     authenticationSaga(),
+    BannerMasterSaga(),
+    offerMasterSaga(),
     ClientCommissionSaga(),
     AbandonedSaga(),
     vendorSaga(),

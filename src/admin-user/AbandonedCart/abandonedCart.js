@@ -9,6 +9,58 @@ const AbandonedCartReport = () => {
   useEffect(() => {
     dispatch(onAbandonedSubmit());
   }, []);
+  const customerDetail = [
+    {
+      name: "Rinkal@codeztechnolabs.com",
+      email: "jaswantjojo21@gmail.com ",
+      mobile: "9876543210  ",
+      cartValue: "₹5000",
+      status: "Pending",
+      action: "Notify",
+    },
+  ];
+  const productDetail = [
+    {
+      sno: "1",
+      brandName: "Amazon",
+      faceValue: " ₹2000  ",
+      qty: "3",
+      sku: "#45555    ",
+      disAmt: "₹250",
+    },
+    {
+      sno: "1",
+      brandName: "Amazon",
+      faceValue: " ₹2000  ",
+      qty: "3",
+      sku: "#45555    ",
+      disAmt: "₹250",
+    },
+    {
+      sno: "1",
+      brandName: "Amazon",
+      faceValue: " ₹2000  ",
+      qty: "3",
+      sku: "#45555    ",
+      disAmt: "₹250",
+    },
+    {
+      sno: "1",
+      brandName: "Amazon",
+      faceValue: " ₹2000  ",
+      qty: "3",
+      sku: "#45555    ",
+      disAmt: "₹250",
+    },
+    {
+      sno: "1",
+      brandName: "Amazon",
+      faceValue: " ₹2000  ",
+      qty: "3",
+      sku: "#45555    ",
+      disAmt: "₹250",
+    },
+  ];
   return (
     <div className="content-body">
       {!isLoading ? (
@@ -57,168 +109,90 @@ const AbandonedCartReport = () => {
                 </div>
 
                 <div className="card-body p-0">
-                  <div className="d-flex justify-content-between weak">
-                    <div className="1st">
-                      <h6>Name</h6>
-                      <p>Jaswant Rawat</p>
-                    </div>
+                  {customerDetail.map((item) => (
+                    <div className="d-flex justify-content-between weak">
+                      <div className="1st">
+                        <h6>Name</h6>
+                        <p>{item.name}</p>
+                      </div>
 
-                    <div className="1st">
-                      <h6>Email</h6>
-                      <p>jaswantjojo21@gmail.com</p>
-                    </div>
+                      <div className="1st">
+                        <h6>Email</h6>
+                        <p>{item.email}</p>
+                      </div>
 
-                    <div className="1st">
-                      <h6>Mobile</h6>
-                      <p>9876543210</p>
-                    </div>
+                      <div className="1st">
+                        <h6>Mobile</h6>
+                        <p>{item.mobile}</p>
+                      </div>
 
-                    <div className="1st">
-                      <h6>Total Cart Value</h6>
-                      <p>₹5000</p>
-                    </div>
+                      <div className="1st">
+                        <h6>Total Cart Value</h6>
+                        <p>{item.cartValue}</p>
+                      </div>
 
-                    <div className="1st">
-                      <h6>Status</h6>
-                      <span className="btn btn-danger btn-xxs">Pending</span>
-                    </div>
+                      <div className="1st">
+                        <h6>Status</h6>
+                        <span className="btn btn-danger btn-xxs">
+                          {item.status}
+                        </span>
+                      </div>
 
-                    <div className="1st">
-                      <h6>Action</h6>
-                      <button
-                        type="button"
-                        className="btn btn-rounded btn-secondary btn-xxs"
-                      >
-                        <i className="fa fa-info"></i> &nbsp;Notify
-                      </button>
+                      <div className="1st">
+                        <h6>Action</h6>
+                        <button
+                          type="button"
+                          className="btn btn-rounded btn-secondary btn-xxs"
+                        >
+                          <i className="fa fa-info"></i> &nbsp;{item.action}
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
-                <div className="card-body theorder">
-                  <div class="row">
-                    <div class="col-lg-1">
-                      <h5>S.NO</h5>
-                      <p>1</p>
-                    </div>
+                {productDetail.length > 0 ? (
+                  <div className="card-body theorder">
+                    {productDetail.map((item) => (
+                      <div class="row">
+                        <div class="col-lg-1">
+                          <h5>S.NO</h5>
+                          <p>{item.sno}</p>
+                        </div>
 
-                    <div class="col-lg-3">
-                      <h5>Brand Name</h5>
-                      <p>Amazon</p>
-                    </div>
+                        <div class="col-lg-3">
+                          <h5>Brand Name</h5>
+                          <p>{item.brandName}</p>
+                        </div>
 
-                    <div class="col-lg-3">
-                      <h5>Face Value</h5>
-                      <p>₹2000</p>
-                    </div>
+                        <div class="col-lg-3">
+                          <h5>Face Value</h5>
+                          <p>{item.faceValue}</p>
+                        </div>
 
-                    <div class="col-lg-1">
-                      <h5>QTY</h5>
-                      <p>3</p>
-                    </div>
+                        <div class="col-lg-1">
+                          <h5>QTY</h5>
+                          <p>{item.qty}</p>
+                        </div>
 
-                    <div class="col-lg-2">
-                      <h5>SKU</h5>
-                      <p>#45555</p>
-                    </div>
+                        <div class="col-lg-2">
+                          <h5>SKU</h5>
+                          <p>{item.sku}</p>
+                        </div>
 
-                    <div class="col-lg-2">
-                      <h5>Discounted Amt.</h5>
-                      <p>₹250</p>
-                    </div>
+                        <div class="col-lg-2">
+                          <h5>Discounted Amt.</h5>
+                          <p>{item.disAmt}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div class="row">
-                    <div class="col-lg-1">
-                      <h5>S.NO</h5>
-                      <p>2</p>
-                    </div>
-
-                    <div class="col-lg-3">
-                      <h5>Brand Name</h5>
-                      <p>Amazon</p>
-                    </div>
-
-                    <div class="col-lg-3">
-                      <h5>Face Value</h5>
-                      <p>₹5000</p>
-                    </div>
-
-                    <div class="col-lg-1">
-                      <h5>QTY</h5>
-                      <p>1</p>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h5>SKU</h5>
-                      <p>#45555</p>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h5>Discounted Amt.</h5>
-                      <p>₹500</p>
-                    </div>
-                  </div>
-                  <div class="row weak justify-content-end pb-0">
-                    <div class="col-lg-2">
-                      <h4>Subtotal</h4>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h4>QTY</h4>
-                      <p>6</p>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h4>Amount</h4>
-                      <p>₹6000</p>
-                    </div>
-                  </div>
-                  <div class="row mt-2">
-                    <div class="col-lg-1">
-                      <h5>S.NO</h5>
-                      <p>3</p>
-                    </div>
-
-                    <div class="col-lg-3">
-                      <h5>Brand Name</h5>
-                      <p>Flipcart</p>
-                    </div>
-
-                    <div class="col-lg-3">
-                      <h5>Face Value</h5>
-                      <p>₹2000</p>
-                    </div>
-
-                    <div class="col-lg-1">
-                      <h5>QTY</h5>
-                      <p>3</p>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h5>SKU</h5>
-                      <p>#45555</p>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h5>Discounted Amt.</h5>
-                      <p>₹250</p>
-                    </div>
-                  </div>
-                  <div class="row weak justify-content-end pb-0">
-                    <div class="col-lg-2">
-                      <h4>Subtotal</h4>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h4>QTY</h4>
-                      <p>3</p>
-                    </div>
-
-                    <div class="col-lg-2">
-                      <h4>Amount</h4>
-                      <p>₹2000</p>
-                    </div>
-                  </div>{" "}
-                </div>
+                ) : (
+                  <tr>
+                    <td colSpan="6" className="text-center">
+                      No data found
+                    </td>
+                  </tr>
+                )}
               </div>
             </div>
           </div>
