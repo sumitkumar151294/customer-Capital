@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import img1 from "../../Images/amazon.png";
 import img2 from "../../Images/amazon.com.png";
 const MyProfileContent = ({ }) => {
-  const wishList = sessionStorage.getItem("true");
+  const wishlist = sessionStorage.getItem("activeTab");
+
   return (
     <>
       <section class="py-3 header1">
@@ -15,37 +16,20 @@ const MyProfileContent = ({ }) => {
                 role="tablist"
                 aria-orientation="vertical"
               >
-                {wishList ? (
-                  <a
-                    class="nav-link1 mb-3 p-3 shadow mr-2"
-                    id="v-pills-wish-tab"
-                    data-toggle="pill"
-                    href="#v-pills-home"
-                    role="tab"
-                    aria-controls="v-pills-home"
-                    aria-selected="false"
-                  >
-                    <i class="fa-solid fa-heart"></i>
-                    <span class="font-weight-bold small text-uppercase">
-                      Dashboard
-                    </span>
-                  </a>
-                ) : (
-                  <a
-                    class="nav-link1 mb-3 p-3 shadow active mr-2"
-                    id="v-pills-home-tab"
-                    data-toggle="pill"
-                    href="#v-pills-home"
-                    role="tab"
-                    aria-controls="v-pills-home"
-                    aria-selected="true"
-                  >
-                    <i class="fa fa-user "></i>
-                    <span class="font-weight-bold small text-uppercase">
-                      Dashboard
-                    </span>
-                  </a>
-                )}
+                <a
+                  class={`nav-link1 mb-3 p-3 shadow mr-2 ${wishlist === "wishlist" ? "" : "show active"}`}
+                  id="v-pills-home-tab"
+                  data-toggle="pill"
+                  href="#v-pills-home"
+                  role="tab"
+                  aria-controls="v-pills-home"
+                  aria-selected="true"
+                >
+                  <i class="fa fa-user "></i>
+                  <span class="font-weight-bold small text-uppercase">
+                    Dashboard
+                  </span>
+                </a>
                 <a
                   class="nav-link1 mb-3 p-3 shadow mr-2"
                   id="v-pills-profile-tab"
@@ -60,38 +44,20 @@ const MyProfileContent = ({ }) => {
                     My Orders
                   </span>
                 </a>
-                {wishList ? (
-                  <a
-                    class="nav-link1 mb-3 p-3 shadow active mr-2"
-                    id="v-pills-wish-tab"
-                    data-toggle="pill"
-                    href="#wishlist"
-                    role="tab"
-                    aria-controls="v-wish-profile"
-                    aria-selected="true"
-                  >
-                    <i class="fa fa-user "></i>
-                    <span class="font-weight-bold small text-uppercase">
-                      Wishlist
-                    </span>
-                  </a>
-                ) : (
-                  <a
-                    class="nav-link1 mb-3 p-3 shadow mr-2"
-                    id="v-pills-wish-tab"
-                    data-toggle="pill"
-                    href="#wishlist"
-                    role="tab"
-                    aria-controls="v-wish-profile"
-                    aria-selected="false"
-                  >
-                    <i class="fa-solid fa-heart"></i>
-                    <span class="font-weight-bold small text-uppercase">
-                      Wishlist
-                    </span>
-                  </a>
-                )}
-
+                <a
+                  class={`nav-link1 mb-3 p-3 shadow mr-2 ${wishlist === "wishlist" ? "show active" : ""}`}
+                  id="v-pills-wish-tab"
+                  data-toggle="pill"
+                  href="#wishlist"
+                  role="tab"
+                  aria-controls="v-wish-profile"
+                  aria-selected="false"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                  <span class="font-weight-bold small text-uppercase">
+                    Wishlist
+                  </span>
+                </a>
                 <a
                   class="nav-link1 mb-3 p-3 shadow mr-2"
                   id="v-pills-settings-tab"
@@ -122,7 +88,7 @@ const MyProfileContent = ({ }) => {
             <div class="col-md-9">
               <div class="tab-content" id="v-pills-tabContent">
                 <div
-                  class="tab-pane fade shadow rounded bg-white show active p-5"
+                  className={`tab-pane fade shadow rounded bg-white ${wishlist === "wishlist" ? "" : "show active"} p-5`}
                   id="v-pills-home"
                   role="tabpanel"
                   aria-labelledby="v-pills-home-tab"
@@ -213,7 +179,7 @@ const MyProfileContent = ({ }) => {
                   </div>
                 </div>
                 <div
-                  class="tab-pane fade shadow rounded bg-white p-5"
+                  className={`tab-pane fade shadow rounded bg-white ${wishlist === "wishlist" ? "show active" : ""} p-5`}
                   id="wishlist"
                   role="tabpanel"
                   aria-labelledby="v-pills-wish-tab"
