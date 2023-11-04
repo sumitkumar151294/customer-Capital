@@ -18,7 +18,6 @@ const MyProfileContent = ({ }) => {
               >
                 <a
                   class={`nav-link1 mb-3 p-3 shadow mr-2 ${wishlist === "wishlist" ? "" : "show active"}`}
-                  // class="nav-link1 mb-3 p-3 shadow active mr-2"
                   id="v-pills-home-tab"
                   data-toggle="pill"
                   href="#v-pills-home"
@@ -90,8 +89,6 @@ const MyProfileContent = ({ }) => {
               <div class="tab-content" id="v-pills-tabContent">
                 <div
                   className={`tab-pane fade shadow rounded bg-white ${wishlist === "wishlist" ? "" : "show active"} p-5`}
-
-                  // class="tab-pane fade shadow rounded bg-white show active p-5"
                   id="v-pills-home"
                   role="tabpanel"
                   aria-labelledby="v-pills-home-tab"
@@ -183,7 +180,6 @@ const MyProfileContent = ({ }) => {
                 </div>
                 <div
                   className={`tab-pane fade shadow rounded bg-white ${wishlist === "wishlist" ? "show active" : ""} p-5`}
-                  // class="tab-pane fade shadow rounded bg-white p-5"
                   id="wishlist"
                   role="tabpanel"
                   aria-labelledby="v-pills-wish-tab"
