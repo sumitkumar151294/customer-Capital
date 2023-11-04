@@ -30,8 +30,6 @@ import PrivacyPolicy from "./Component/PrivacyPolicy/PrivacyPolicy";
 import TermsofUse from "./Component/TermsofUse/TermsofUse";
 import LoyaltyProgram from "./Component/LoyaltyProgram/LoyaltyProgram";
 import Finalcart from "./Component/Finalcart/Finalcart";
-import MyProfileContent from "./Component/MyProfileContent/MyProfileContent";
-import DashboardHome from "./Component/DashboardHome/DashboardHome";
 import UserMaster from "./Admin/UserMaster/userMaster";
 import CreateCategory from "./Admin/CreateCategory/CreateCategory";
 import SupplierCategoryList from "./Admin/SupplierCategory/SupplierCategory";
@@ -61,105 +59,41 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/myprofile" element={<MyProfile />} />
-        <Route path="/myorder" element={<MyProfile />} />
-        <Route
-          path="/myprofilecontent"
-          element={<DashboardHome Component={MyProfileContent} />}
-        />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/termsofuse" element={<TermsofUse />} />
         <Route path="/loyaltyprogram" element={<LoyaltyProgram />} />
-        
+
 
         {/* Admin Section */}
         <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard} />} />
-        <Route
-          path="/LC-admin/vendormaster"
-          element={<HomeAdmin Component={VendorMaster} />}
-        />
-        <Route
-          path="/LC-admin/allocationmaster"
-          element={<HomeAdmin Component={AllocationMaster} />}
-        />
-        <Route
-          path="/LC-admin/rolemaster"
-          element={<HomeAdmin Component={RoleMaster} />}
-        />
+        <Route path="/LC-admin/vendormaster" element={<HomeAdmin Component={VendorMaster} />} />
+        <Route path="/LC-admin/allocationmaster" element={<HomeAdmin Component={AllocationMaster} />} />
+        <Route path="/LC-admin/rolemaster" element={<HomeAdmin Component={RoleMaster} />} />
         <Route path="/LC-admin/cms" element={<HomeAdmin Component={CMS} />} />
-        <Route
-          path="/LC-admin/clientmaster"
-          element={<HomeAdmin Component={ClientMaster} />}
-        />
-        <Route
-          path="/LC-admin/productcategory"
-          element={<HomeAdmin Component={ProductCategory} />}
-        />
-        <Route
-          path="/LC-admin/productcatalouge"
-          element={<HomeAdmin Component={ProductCatalouge} />}
-        />
-        <Route
-          path="/LC-admin/orders"
-          element={<HomeAdmin Component={Orders} />}
-        />
+        <Route path="/LC-admin/clientmaster" element={<HomeAdmin Component={ClientMaster} />} />
+        <Route path="/LC-admin/productcategory" element={<HomeAdmin Component={ProductCategory} />} />
+        <Route path="/LC-admin/productcatalouge" element={<HomeAdmin Component={ProductCatalouge} />} />
+        <Route path="/LC-admin/orders" element={<HomeAdmin Component={Orders} />} />
         <Route path="/LC-admin/supplierbrandlist" element={<HomeAdmin Component={SupplierBrandList} />} />
         <Route path="/LC-admin/brandcatalogue" element={<HomeAdmin Component={BrandCatalogue} />} />
-        
         <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail} />} />
+
 
         {/* User Admin Section */}
         <Route path="/LC-user-admin/addspecial" element={<HomeAdmin Component={AddSpecial} />} />
-        <Route
-          path="/LC-user-admin/commissionreport"
-          element={<HomeAdmin Component={ClientCommissionReport} />}
-        />
-        <Route
-          path="/LC-user-admin/abandonedcart"
-          element={<HomeAdmin Component={AbandonedCartReport} />}
-        />
-        <Route
-          path="/LC-user-admin/customerlist"
-          element={<HomeAdmin Component={Customerlist} />}
-        />
-        <Route
-          path="/LC-user-admin/offermaster"
-          element={<HomeAdmin Component={OfferMasterComponent} />}
-        />
-        <Route
-          path="/LC-user-admin/faqs"
-          element={<HomeAdmin Component={Faqs} />}
-        />
-        <Route
-          path="/LC-user-admin/bannermaster"
-          element={<HomeAdmin Component={BannerList} />}
-        />
+        <Route path="/LC-user-admin/commissionreport" element={<HomeAdmin Component={ClientCommissionReport} />} />
+        <Route path="/LC-user-admin/abandonedcart" element={<HomeAdmin Component={AbandonedCartReport} />} />
+        <Route path="/LC-user-admin/customerlist" element={<HomeAdmin Component={Customerlist} />} />
+        <Route path="/LC-user-admin/offermaster" element={<HomeAdmin Component={OfferMasterComponent} />} />
+        <Route path="/LC-user-admin/faqs" element={<HomeAdmin Component={Faqs} />} />
+        <Route path="/LC-user-admin/bannermaster" element={<HomeAdmin Component={BannerList} />} />
         <Route path="/LC-admin/blog" element={<HomeAdmin Component={Blog} />} />
-        <Route
-          path="/LC-admin/contactlist"
-          element={<HomeAdmin Component={ContactListMaster} />}
-        />
-        <Route
-          path="/LC-admin/customerlist"
-          element={<HomeAdmin Component={CustomerList} />}
-        />
-        <Route
-          path="/LC-admin/emailtemplates"
-          element={<HomeAdmin Component={Email} />}
-        />
-        <Route
-          path="/LC-admin/usermaster"
-          element={<HomeAdmin Component={UserMaster} />}
-        />
-        <Route
-          path="/LC-admin/createcategories"
-          element={<HomeAdmin Component={CreateCategory} />}
-        />
-        <Route
-          path="/LC-admin/suppliercategory"
-          element={<HomeAdmin Component={SupplierCategoryList} />}
-        />
-        
-        
+        <Route path="/LC-admin/contactlist" element={<HomeAdmin Component={ContactListMaster} />} />
+        <Route path="/LC-admin/customerlist" element={<HomeAdmin Component={CustomerList} />} />
+        <Route path="/LC-admin/emailtemplates" element={<HomeAdmin Component={Email} />} />
+        <Route path="/LC-admin/usermaster" element={<HomeAdmin Component={UserMaster} />} />
+        <Route path="/LC-admin/createcategories" element={<HomeAdmin Component={CreateCategory} />} />
+        <Route path="/LC-admin/suppliercategory" element={<HomeAdmin Component={SupplierCategoryList} />} />
       </Routes>
     </Router>
   );
