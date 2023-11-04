@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import pizz1 from "../../assets/img/pizz1.jpg";
-import { onofferMasterSubmit } from "../../redux/modules/UserAdmin/offerMasterSlice";
 import { useDispatch } from "react-redux";
+import { onBannerMasterSubmit } from "../../redux/modules/UserAdmin/BannerMasterSlice";
 import Loader from "../../Admin/Loader/Loader";
 
-const OfferMasterComponent = () => {
+const BannerList = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState("true");
-
   const [formData, setFormData] = useState({
     placement: "",
     image: "",
@@ -58,8 +57,7 @@ const OfferMasterComponent = () => {
     setErrors(newErrors);
 
     if (isValid) {
-      debugger;
-      dispatch(onofferMasterSubmit(formData));
+      dispatch(onBannerMasterSubmit(formData));
     }
   };
 
@@ -108,14 +106,14 @@ const OfferMasterComponent = () => {
             <div className="col-xl-12 col-xxl-12">
               <div className="card">
                 <div className="card-header">
-                  <h4 className="card-title">Offer Master</h4>
+                  <h4 className="card-title">Banner Master</h4>
                 </div>
                 <div className="card-body ">
                   <div className="container-fluid">
                     <form onSubmit={handleSubmit}>
                       <div className="row">
                         <div className="col-sm-3 form-group mb-2">
-                          <label htmlFor="status">Placement</label>
+                          <label htmlFor="status">Banner Placement</label>
                           <select
                             className="form-select"
                             aria-label="Default select example"
@@ -125,13 +123,12 @@ const OfferMasterComponent = () => {
                           >
                             <option value="">Select</option>
                             <option value="Active">Top</option>
-                            <option value="Active">Middle</option>
                             <option value="Non-Active">Bottom</option>
                           </select>
                           <p className="text-danger">{errors.placement}</p>
                         </div>
                         <div className="col-sm-5 form-group mb-2">
-                          <label htmlFor="name-f">Title</label>
+                          <label htmlFor="name-f">Banner Title</label>
                           <input
                             type="text"
                             className="form-control"
@@ -145,7 +142,7 @@ const OfferMasterComponent = () => {
                           <p className="text-danger">{errors.title}</p>
                         </div>
                         <div className="col-sm-4 form-group mb-2">
-                          <label htmlFor="name-l">Subtitle</label>
+                          <label htmlFor="name-l">Banner Subtitle</label>
                           <input
                             type="text"
                             className="form-control"
@@ -159,7 +156,7 @@ const OfferMasterComponent = () => {
                           <p className="text-danger">{errors.subtitle}</p>
                         </div>
                         <div className="col-sm-5 form-group mb-2">
-                          <label htmlFor="email">Link</label>
+                          <label htmlFor="email">Banner Link</label>
                           <input
                             type="email"
                             className="form-control"
@@ -240,7 +237,7 @@ const OfferMasterComponent = () => {
               <div className="container-fluid">
                 <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap">
                   <div className="card-header">
-                    <h4 className="card-title">Offer List</h4>
+                    <h4 className="card-title">Banner List</h4>
                   </div>
                 </div>
                 <div className="card-body">
@@ -317,4 +314,4 @@ const OfferMasterComponent = () => {
   );
 };
 
-export default OfferMasterComponent;
+export default BannerList;
