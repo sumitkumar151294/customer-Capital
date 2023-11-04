@@ -35,7 +35,6 @@ import DashboardHome from "./Component/DashboardHome/DashboardHome";
 import UserMaster from "./Admin/UserMaster/userMaster";
 import CreateCategory from "./Admin/CreateCategory/CreateCategory";
 import SupplierCategoryList from "./Admin/SupplierCategory/SupplierCategory";
-import ProductDetail from "./Admin/ProductCategory/ProductDetail";
 import ClientCommissionReport from "./admin-user/commissionReport/clientCommission";
 import AbandonedCartReport from "./admin-user/AbandonedCart/abandonedCart";
 import Customerlist from "./admin-user/customerList/customerlist";
@@ -43,6 +42,7 @@ import OfferMasterComponent from "./admin-user/Offermaster/offerMaster";
 import AddSpecial from './admin-user/AddSpecial/AddSpecial';
 import SupplierBrandList from './Admin/SupplierBrandList/SupplierBrandList';
 import BrandCatalogue from './Admin/BrandCatalogue/BrandCatalogue';
+import ProductDetail from "./Admin/ProductDetail/ProductDetail";
 import BannerList from "./admin-user/bannerMaster/bannerMaster";
 
 function App() {
@@ -69,6 +69,7 @@ function App() {
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         <Route path="/termsofuse" element={<TermsofUse />} />
         <Route path="/loyaltyprogram" element={<LoyaltyProgram />} />
+        
 
         {/* Admin Section */}
         <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard} />} />
@@ -90,7 +91,7 @@ function App() {
           element={<HomeAdmin Component={ClientMaster} />}
         />
         <Route
-          path="/LC-admin/productcata"
+          path="/LC-admin/productcategory"
           element={<HomeAdmin Component={ProductCategory} />}
         />
         <Route
@@ -103,8 +104,8 @@ function App() {
         />
         <Route path="/LC-admin/supplierbrandlist" element={<HomeAdmin Component={SupplierBrandList} />} />
         <Route path="/LC-admin/brandcatalogue" element={<HomeAdmin Component={BrandCatalogue} />} />
-        {/* <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail} />} /> */}
-        <Route path="/LC-admin/productdetail" element={<ProductDetail />} />
+        
+        <Route path="/LC-admin/productdetail" element={<HomeAdmin Component={ProductDetail} />} />
 
         {/* User Admin Section */}
         <Route path="/LC-user-admin/addspecial" element={<HomeAdmin Component={AddSpecial} />} />
@@ -157,10 +158,8 @@ function App() {
           path="/LC-admin/suppliercategory"
           element={<HomeAdmin Component={SupplierCategoryList} />}
         />
-        <Route
-          path="/LC-admin/productdetail"
-          element={<HomeAdmin Component={ProductDetail} />}
-        />
+        
+        
       </Routes>
     </Router>
   );

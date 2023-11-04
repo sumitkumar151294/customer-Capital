@@ -59,16 +59,16 @@ const Shop = () => {
   
   return (
     <>
-      <section class="letshop pt-4rem">
-        <div class="container big-rr mb-2">
-          <div class="row ">
-            <div class="d-flex justify-content-between mb-4">
-              <div class="first w-70">
+      <section className="letshop pt-4rem">
+        <div className="container big-rr mb-2">
+          <div className="row ">
+            <div className="d-flex justify-content-between mb-4">
+              <div className="first w-70">
                 <span className='heading-letshop' >You Choose the gift card They choose where to spend it!</span>
-                <p class="the-para-magic2 mobile-hide">Just your kind of shopping – your go-to brands, your wish-list products, all with irresistible offers.</p>
+                <p className="the-para-magic para mobile-hide">Just your kind of shopping – your go-to brands, your wish-list products, all with irresistible offers.</p>
               </div>
-              <div class="second">
-                <a class="avail2  mt-4" href="#">View All &nbsp;<i class="fa fa-arrow-right"></i></a>
+              <div className="second">
+                <a className="avail2  mt-4" href="#">View All &nbsp;<i className="fa fa-arrow-right"></i></a>
               </div>
             </div>
 
