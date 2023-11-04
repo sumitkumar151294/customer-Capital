@@ -2,9 +2,14 @@ import React from 'react'
 import img1 from '../../Images/amazon.png'
 import img2 from '../../Images/amazon.com.png'
 import img3 from '../../Images/coin.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const OrderContainer = () => {
+    const navigate = useNavigate();
+    const handleMyAccount = () => {
+        sessionStorage.setItem("activeTab", "order");
+        navigate("/myprofile");
+    };
     const orderItems = [
         {
             img: img1,
@@ -32,16 +37,16 @@ const OrderContainer = () => {
             price: "700",
             saving: "120",
             code: "Z15254 - 3",
-          },  
+        },
     ];
-    
+
     const points = 500;
     const subtotal = orderItems.reduce((acc, item) => acc + parseFloat(item.price), 0);
-    const grandtotla = subtotal-points;
+    const grandtotla = subtotal - points;
 
     return (
         <div className="container">
-            <h4 style={{fontSize:'calc(1.275rem + .3vw)'}} className="font-italic mb-4">Order Summary</h4>
+            <h4 style={{ fontSize: 'calc(1.275rem + .3vw)' }} className="font-italic mb-4">Order Summary</h4>
             <div className="row bnn ">
                 <div className="col-lg-8 border">
                     {orderItems.map((order) => (
@@ -84,7 +89,7 @@ const OrderContainer = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <span style={{float:'left',textAlign:'left'}} className="klg">{order.code}</span>
+                                    <span style={{ float: 'left', textAlign: 'left' }} className="klg">{order.code}</span>
                                 </div>
                                 {/* <div className="text-success pb-3 fs-14">5% OFF</div> */}
                             </div>
@@ -146,11 +151,12 @@ const OrderContainer = () => {
                         </div>
 
                         <div className="p-md-2 d-grid ">
-                            <Link to='/myprofilecontent' className="cnt-shop-blue">
+                            <a onClick={handleMyAccount} className="cnt-shop-blue">
                                 <button className="btn py-md-2 btss2" style={{ backgroundColor: '#0072fd' }}>
                                     Go to My Order &nbsp; <i className="fa fa-arrow-right "></i>
                                 </button>
-                            </Link></div>
+                            </a>
+                        </div>
                         <div className="p-md-2 d-grid ">
                             <a className="cnt-shop">
                                 <button className="btn py-3 ss py-md-2 btss" style={{ backgroundColor: 'white' }}>Continue Shopping &nbsp; <i className="fa fa-arrow-right"></i></button>

@@ -135,6 +135,11 @@ const NewHeader = () => {
   const dispatch = useDispatch();
   console.log(isNavbarOpen);
   const handleMobileMenuClose = () => {
+    const subMenu = document.querySelector(".sub-menu.active");
+    document.querySelector(".mobile-menu-head").classList.remove("active");
+    if (subMenu) {
+      subMenu.classList.remove("active");
+    }
     dispatch(toggleNavbar());
   };
 
@@ -156,20 +161,12 @@ const NewHeader = () => {
       if (i === index) {
         element.classList.add("active");
       }
-      // else {
-      //   element.classList.remove('active');
-      //   document.querySelector('.mobile-menu-head').classList.remove('active');
-      // }
     });
   };
 
-  const handleCloseSubMenu = () => {
-    document.querySelector(".sub-menu").classList.remove("active");
-    document.querySelector(".mobile-menu-head").classList.remove("active");
-  };
   const handleCloseSub = () => {
     const subMenu = document.querySelector(".sub-menu.active");
-
+    document.querySelector(".mobile-menu-head").classList.remove("active");
     if (subMenu) {
       subMenu.classList.remove("active");
     }
@@ -185,7 +182,6 @@ const NewHeader = () => {
               <nav className="menu">
                 <div
                   class="mobile-menu-head"
-                  onClick={() => handleCloseSubMenu()}
                 >
                   <div class="go-back" onClick={() => handleCloseSub()}>
                     <i class="fa fa-angle-left"></i>

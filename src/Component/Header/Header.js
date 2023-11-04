@@ -19,11 +19,11 @@ const Header = () => {
   };
   const handleMyAccount = () => {
     sessionStorage.clear();
-    navigate("/myprofilecontent");
+    navigate("/myprofile");
   };
   const handleWishList = () => {
     sessionStorage.setItem("activeTab", "wishlist");
-    navigate("/myprofilecontent");
+    navigate("/myprofile");
   };
   return (
     <>
@@ -90,17 +90,17 @@ const Header = () => {
                           <div className="logindrop2">
                             <ul>
                               <li>
-                                <a id="#" onClick={handleMyAccount}>
+                                <a onClick={handleMyAccount}>
                                   My Account
                                 </a>
                               </li>
                               <li>
-                                <Link to="/myprofile" id="#">
+                                <a onClick={handleMyAccount}>
                                   My Points
-                                </Link>
+                                </a>
                               </li>
                               <li>
-                                <a id="#" href="#">
+                                <a href="#">
                                   Use Points
                                 </a>
                               </li>
@@ -117,15 +117,15 @@ const Header = () => {
                         </div>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <a id="#" onClick={handleWishList}>
+                        <a onClick={handleWishList}>
                           <i className="lar la-heart"></i>
                         </a>
                       </li>
                       <li className="d-none d-xl-inline-block">
-                        <a id="#" href="#">
+                        <a href="#">
                           <i className="las la-shopping-bag"></i>
                           <span className="cartcounter">
-                            <div id="#">0</div>
+                            <div>0</div>
                           </span>
                         </a>
                         <div id="ctl00_upd">
@@ -168,7 +168,7 @@ const Header = () => {
                                   </div>
                                 </div>
 
-                                <div id="#" className="popcarteligb">
+                                <div className="popcarteligb">
                                   Add Rs.500 for free shipping
                                 </div>
                               </div>
@@ -181,7 +181,7 @@ const Header = () => {
                 </div>
                 <div className="col-xl-6 col-lg-6 col-12 order-2 order-lg-1">
                   <div className="searchboxmaindiv">
-                    <div id="#">
+                    <div>
                       <div className="searchbox big">
                         <input
                           name="search"
