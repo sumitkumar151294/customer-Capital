@@ -1,5 +1,5 @@
-import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
+import { HashRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Home from "./Container/Home";
 import ProductCard from "./Container/ProductCard";
@@ -43,9 +43,20 @@ import BrandCatalogue from './Admin/BrandCatalogue/BrandCatalogue';
 import ProductDetail from "./Admin/ProductDetail/ProductDetail";
 import BannerList from "./admin-user/bannerMaster/bannerMaster";
 
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    return window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         {/* User Section */}
         <Route path="/" element={<Home />} />
