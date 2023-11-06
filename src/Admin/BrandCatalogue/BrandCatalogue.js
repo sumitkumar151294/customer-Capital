@@ -2,9 +2,49 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import img from '../../Images/pizz1.jpg'
 
+const brandData = [
+    {
+        image: '../../Images/pizz1.jpg',
+        sku: '51246',
+        name: 'Amazon Pay1',
+        minprice: '₹ 100',
+        maxprice: '₹ 600',
+        price: 'Range1',
+        action: '/LC-admin/productdetail'
+    },
+    {
+        image: '../../Images/pizz1.jpg',
+        sku: '51247',
+        name: 'Amazon Pay2',
+        minprice: '₹ 200',
+        maxprice: '₹ 700',
+        price: 'Range2',
+        action: '/LC-admin/productdetail'
+    },
+    {
+        image: '../../Images/pizz1.jpg',
+        sku: '51248',
+        name: 'Amazon Pay3',
+        minprice: '₹ 300',
+        maxprice: '₹ 800',
+        price: 'Range3',
+        action: '/LC-admin/productdetail'
+    },
+    {
+        image: '../../Images/pizz1.jpg',
+        sku: '51249',
+        name: 'Amazon Pay4',
+        minprice: '₹ 400',
+        maxprice: '₹ 900',
+        price: 'Range4',
+        action: '/LC-admin/productdetail'
+    }
+]
 const BrandCatalogue = () => {
     return (
         <>
+
+
             <div class="content-body">
                 <div class="container-fluid">
 
@@ -64,6 +104,7 @@ const BrandCatalogue = () => {
                                 </div>
 
                                 <div class="card-body">
+                                   
                                     <div class="table-responsive">
                                         <table class="table header-border table-responsive-sm">
                                             <thead>
@@ -80,67 +121,25 @@ const BrandCatalogue = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><img src={img} 
-                                                     
-                                                    style={{width:'50px'}}
-                                                    /><br />
-                                                    </td>
-                                                    <td>51246<a href="javascript:void();"></a>
-                                                    </td>
-                                                    <td>Amazon Pay</td>
-                                                    <td>₹ 200
-                                                    </td>
-                                                    <td>₹ 600</td>
-                                                    <td>Range</td>
+{brandData.map((data)=>(
+                                            <tr>
+                                                        <td><img src={img}
 
-                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
-                                                    </td>                                            </tr>
-                                                <tr>
-                                                    <td><img src={img}
-                                                    style={{width:'50px'}}
-                                                    /><br />
-                                                    </td>
-                                                    <td>51246<a href="javascript:void();"></a>
-                                                    </td>
-                                                    <td>Amazon Pay</td>
-                                                    <td>₹ 200
-                                                    </td>
-                                                    <td>₹ 600</td>
-                                                    <td>Range</td>
+                                                            style={{ width: '50px' }}
+                                                        /><br />
+                                                        </td>
+                                                        <td>{data.sku}<a href="javascript:void();"></a>
+                                                        </td>
+                                                        <td>{data.name}</td>
+                                                        <td>{data.minprice}
+                                                        </td>
+                                                        <td>{data.maxprice}</td>
+                                                        <td>{data.price}</td>
 
-                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
-                                                    </td>                                            </tr>
-                                                <tr>
-                                                    <td><img src={img}  
-                                                    style={{width:'50px'}}
-                                                    /><br />
-                                                    </td>
-                                                    <td>51246<a href="javascript:void();"></a>
-                                                    </td>
-                                                    <td>Amazon Pay</td>
-                                                    <td>₹ 200
-                                                    </td>
-                                                    <td>₹ 600</td>
-                                                    <td>Range</td>
-
-                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
-                                                    </td>                                            </tr>
-                                                <tr>
-                                                    <td><img src={img} 
-                                                    style={{width:'50px'}}
-                                                    /><br />
-                                                    </td>
-                                                    <td>51246<a href="javascript:void();"></a>
-                                                    </td>
-                                                    <td>Amazon Pay</td>
-                                                    <td>₹ 200
-                                                    </td>
-                                                    <td>₹ 600</td>
-                                                    <td>Range</td>
-
-                                                    <td> <Link to='/LC-admin/productdetail' href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
-                                                    </td>                                            </tr>
+                                                        <td> <Link to={data.action} href="productdetail.html" class="btn btn-primary btn-sm bttn float-right"><i class="fa fa-info"></i>&nbsp;Brand Detail</Link>
+                                                        </td>
+                                                    </tr>
+))}
                                             </tbody>
                                         </table>
                                     </div>
@@ -157,11 +156,11 @@ const BrandCatalogue = () => {
 
                         </div>
                     </div>
+
+
+
                 </div>
             </div>
-
-
-
 
         </>
     )
