@@ -1,5 +1,44 @@
 import React from 'react'
 
+const brandData = [
+    {
+        id: '1',
+        brands: 'Havells',
+        suppliermargin: '2%',
+        Status: 'Active',
+        statuscolor:'badge badge-success',
+        Action: '',
+
+    },
+    {
+        id: '2',
+        brands: 'Zara',
+        suppliermargin: '3%',
+        Status: 'Non-Active',
+        statuscolor:'badge badge-danger',
+        Action: '',
+
+    },
+    {
+        id: '3',
+        brands: 'Behrouz',
+        suppliermargin: '4%',
+        Status: 'Active',
+        statuscolor:'badge badge-success',
+        Action: '',
+
+    },
+    {
+        id: '4',
+        brands: 'Apollo Pharmacy',
+        suppliermargin: '5%',
+        Status: 'Non-active',
+        statuscolor:'badge badge-danger',
+        Action: '',
+
+    },
+]
+
 const SupplierBrandList = () => {
     return (
         <>
@@ -112,89 +151,22 @@ const SupplierBrandList = () => {
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+
+{brandData.map((data)=>(
                                                                 <tr>
-                                                                    <td>1<a href="javascript:void();"></a>
+                                                                    <td>{data.id}<a href="javascript:void();"></a>
                                                                     </td>
 
-                                                                    <td>Havells
+                                                                    <td>{data.brands}
                                                                     </td>
                                                                     <td><div className="input-group mb-2 w-11">
-                                                                        <input type="number" className="form-control htt " placeholder="2%" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" />
+                                                                        <input type="number" className="form-control htt" placeholder={data.suppliermargin} pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" />
                                                                         <div className="input-group-append">
                                                                             <button className="btn btn-outline-primary btn-sm group-btn" type="button">Update</button>
                                                                         </div>
                                                                     </div></td>
 
-                                                                    <td><span className="badge badge-success">Active</span>
-                                                                    </td>
-
-                                                                    <td> <div className="can-toggle">
-                                                                        <input id="a" type="checkbox" />
-                                                                        <label for="a">
-                                                                            <div className="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
-                                                                        </label>
-                                                                    </div></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>2<a href="javascript:void();"></a>
-                                                                    </td>
-
-                                                                    <td>Zara
-                                                                    </td>
-                                                                    <td><div className="input-group mb-2 w-11">
-                                                                        <input type="number" className="form-control htt " placeholder="2%" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" />
-                                                                        <div className="input-group-append">
-                                                                            <button className="btn btn-outline-primary btn-sm group-btn" type="button">Update</button>
-                                                                        </div>
-                                                                    </div></td>
-
-
-                                                                    <td><span className="badge badge-danger">Non-Active</span></td>
-
-                                                                    <td> <div className="can-toggle">
-                                                                        <input id="b" type="checkbox" />
-                                                                        <label for="b">
-                                                                            <div className="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
-                                                                        </label>
-                                                                    </div></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>3<a href="javascript:void();"></a>
-                                                                    </td>
-
-                                                                    <td>Behrouz
-                                                                    </td>
-                                                                    <td><div className="input-group mb-2 w-11">
-                                                                        <input type="number" className="form-control htt " placeholder="2%" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" />
-                                                                        <div className="input-group-append">
-                                                                            <button className="btn btn-outline-primary btn-sm group-btn" type="button">Update</button>
-                                                                        </div>
-                                                                    </div></td>
-
-
-                                                                    <td><span className="badge badge-success">Active</span>
-                                                                    </td>
-                                                                    <td> <div className="can-toggle">
-                                                                        <input id="c" type="checkbox" />
-                                                                        <label for="c">
-                                                                            <div className="can-toggle__switch" data-checked="On" data-unchecked="Off"></div>
-                                                                        </label>
-                                                                    </div></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>4<a href="javascript:void();"></a>
-                                                                    </td>
-
-                                                                    <td>Apollo Pharmacy
-                                                                    </td>
-                                                                    <td><div className="input-group mb-2 w-11">
-                                                                        <input type="number" className="form-control htt" placeholder="2%" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" />
-                                                                        <div className="input-group-append">
-                                                                            <button className="btn btn-outline-primary btn-sm group-btn" type="button">Update</button>
-                                                                        </div>
-                                                                    </div></td>
-
-                                                                    <td><span className="badge badge-danger">Non-Active</span></td>
+                                                                    <td><span className={data.statuscolor}>{data.Status}</span></td>
 
 
                                                                     <td> <div className="can-toggle">
@@ -204,6 +176,8 @@ const SupplierBrandList = () => {
                                                                         </label>
                                                                     </div></td>
                                                                 </tr>
+))}
+
                                                             </tbody>
                                                         </table>
                                                     </div>
