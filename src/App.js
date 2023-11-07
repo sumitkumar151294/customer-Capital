@@ -48,6 +48,10 @@ import BrandCatalogue from "./Admin/BrandCatalogue/BrandCatalogue";
 import ProductDetail from "./Admin/ProductDetail/ProductDetail";
 import BannerList from "./admin-user/bannerMaster/bannerMaster";
 import EmailEventMaster from "./admin-user/EmailEventMaster/emailEventMaster";
+import Order from "./admin-user/Order/Order";
+import FailedOrders from "./admin-user/FailedOrders/FailedOrders";
+
+
 
 function ScrollToTop() {
   const location = useLocation();
@@ -186,6 +190,9 @@ function App() {
           path="/LC-user-admin/emaileventmaster"
           element={<HomeAdmin Component={EmailEventMaster} />}
         />
+        <Route path="/LC-user-admin/orders" element={<HomeAdmin Component={Order} />} />
+        <Route path="/LC-user-admin/failedorders" element={<HomeAdmin Component={FailedOrders} />} />
+
       </Routes>
     </Router>
   );

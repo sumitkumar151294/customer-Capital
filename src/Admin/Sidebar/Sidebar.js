@@ -281,6 +281,10 @@ const Sidebar = () => {
             </Link>
           </li>
 
+          
+
+          {/* UserAdmin Sidebar */}
+
           <li
             className={
               location.pathname === "/LC-admin/brandcatalogue"
@@ -298,7 +302,23 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          {/* UserAdmin Sidebar */}
+          <li
+            className={
+              location.pathname === "/LC-user-admin/orders"
+                ? "mm-active"
+                : ""
+            }
+          >
+            <Link
+              to="/LC-user-admin/orders"
+              class="ai-icon"
+              aria-expanded="false"
+            >
+              <img class="w-20px" src={email} alt="file not exist" />
+              <span class="nav-text ps-1">Orders</span>
+            </Link>
+          </li>
+
           <li
             className={
               location.pathname === "/LC-user-admin/commissionreport"
@@ -315,6 +335,7 @@ const Sidebar = () => {
               <span class="nav-text ps-1">Client Commission Report</span>
             </Link>
           </li>
+
           <li
             className={
               location.pathname === "/LC-user-admin/abandonedcart  "
@@ -331,6 +352,25 @@ const Sidebar = () => {
               <span class="nav-text ps-1">Abandoned Cart Report</span>
             </Link>
           </li>
+
+
+          <li
+            className={
+              location.pathname === "/LC-user-admin/failedorders"
+                ? "mm-active"
+                : ""
+            }
+          >
+            <Link
+              to="/LC-user-admin/failedorders"
+              class="ai-icon"
+              aria-expanded="false"
+            >
+              <img class="w-20px" src={clists} alt="file not exist" />
+              <span class="nav-text ps-1">Failed Orders</span>
+            </Link>
+          </li>
+
           <li
             className={
               location.pathname === "/LC-user-admin/customerlist  "
@@ -380,20 +420,21 @@ const Sidebar = () => {
               <span class="nav-text ps-1">Add Special</span>
             </Link>
           </li>
+
           <li
             className={
-              location.pathname === "/LC-user-admin/bannermaster"
+              location.pathname === "/LC-user-admin/orders"
                 ? "mm-active"
                 : ""
             }
           >
             <Link
-              to="/LC-user-admin/bannermaster"
+              to="/LC-user-admin/orders"
               class="ai-icon"
               aria-expanded="false"
             >
               <img class="w-20px" src={clists} alt="file not exist" />
-              <span class="nav-text ps-1">Banner Master</span>
+              <span class="nav-text ps-1">Orders</span>
             </Link>
           </li>
 

@@ -23,6 +23,12 @@
 	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 	<!-- Style css -->
     <link href="css/style.css" rel="stylesheet">
+       
+
+ <link href="vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+
+                    <link href="vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" type="text/css"/>
+
 	
 </head>
 
@@ -47,8 +53,7 @@ display:none!important;
 <body>
 
    
-    
-       <!--**********************************
+   <!--**********************************
         Main wrapper start
     ***********************************-->
     <div id="main-wrapper">
@@ -103,209 +108,747 @@ display:none!important;
             Header end ti-comment-alt
         ***********************************-->
 
-
-        
-        <!--**********************************
+                                     <!--**********************************
             Sidebar start
         ***********************************-->
      <div class="deznav">
             <div class="deznav-scroll">
-                <ul class="metismenu" id="menu">
+              <ul class="metismenu" id="menu">
 
                      <li><a class="ai-icon" href="index.html" aria-expanded="false">
-                            <img class="w-20px" src="img/dashboard.png">
+                            <img class="w-20px" src="img/vendor.png">
                             <span class="nav-text">Dashbaord</span>
                         </a>
                        
                     </li>
-                    <li><a class="ai-icon" href="suppliermaster.html" aria-expanded="false">
-                            <img class="w-20px" src="img/vendor.png">
-                            <span class="nav-text">Supplier Master</span>
-                        </a>
-                       
-                    </li>
-                    <li><a href="supplierbrandlist.html" class="ai-icon" aria-expanded="false">
-                            <img class="w-20px" src="img/product-cate.png">
-                            <span class="nav-text">Supplier Brand List</span>
-                        </a>
-                    </li>
-
-                    <li><a href="createcata.html" class="ai-icon" aria-expanded="false">
-                            <img class="w-20px" src="img/product-cate.png">
-                            <span class="nav-text">Create Categories</span>
-                        </a>
-                    </li>
-
-                     <li><a class="ai-icon" href="rolemaster.html" aria-expanded="false">
-                            <img class="w-20px" src="img/role.png">
-                            <span class="nav-text">Role Master</span>
-                        </a>
-                       
-                    </li>
-
-                    <li><a class="ai-icon" href="clientmaster.html" aria-expanded="false">
-                            <img class="w-20px" src="img/clientmaster.png">
-                            <span class="nav-text">Client Master</span>
-                        </a>
-                       
-                    </li>
                    
-                     <li><a class="ai-icon" href="usermaster.html" aria-expanded="false">
-                            <img class="w-20px" src="img/clientmaster.png">
-                            <span class="nav-text">User Master</span>
-                        </a>
-                       
-                    </li>
+                 
+
 
                      <li><a href="brandcatalouge.html" class="ai-icon" aria-expanded="false">
-                            <img class="w-20px" src="img/product.png">
-                            <span class="nav-text">Brand Catalogue</span>
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">Brand Catalouge</span>
                         </a>
                     </li>
 
-                    <li><a href="orders.html" class="ai-icon" aria-expanded="false">
-                            <img class="w-20px" src="img/orders.png">
+                <li><a href="orders.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
                             <span class="nav-text">Orders</span>
                         </a>
                     </li>
 
+                     <li><a href="clientcommisionreport.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">Client Commission Report</span>
+                        </a>
+                    </li>
 
-                  
+
+                     <li><a href="abandonedcartreport.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">Abandoned Cart Report</span>
+                        </a>
+                    </li>
+                    
+                     <li><a href="failedorders.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">Failed Orders</span>
+                        </a>
+                    </li>
+
+
+
+
+                    
+                     <li><a href="customerlist.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/cnlist.png">
+                            <span class="nav-text">Customer List</span>
+                        </a>
+                    </li>
+                    
+                     <li><a href="emaileventmaster.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/cnlist.png">
+                            <span class="nav-text">Email Event Master</span>
+                        </a>
+                    </li>
+
+                    <li><a href="CMS.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">CMS</span>
+                        </a>
+                    </li>
+
+                   
+
+
+                     <li><a href="faq.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/faq.png">
+                            <span class="nav-text">FAQ'S Master</span>
+                        </a>
+                    </li>
+
+
+                     <li><a href="bannermaster.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">Banner Master</span>
+                        </a>
+                    </li>
+
+
+
+                     <li><a href="offermaster.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">Offer Master</span>
+                        </a>
+                    </li>
+
+
+
+                     <li><a href="addspecial.html" class="ai-icon" aria-expanded="false">
+                            <img class="w-20px" src="img/clists.png">
+                            <span class="nav-text">Add Special</span>
+                        </a>
+                    </li>
                   
                    
                    
                 </ul>
-                
             </div>
         </div>
         <!--**********************************
             Sidebar end
         ***********************************-->
         
-		
-		<!--**********************************
-            Content body start
-        ***********************************-->
        
 			  <div class="content-body">
-           <div class="container-fluid">
-       
-        <div class="row">
-            <div class="col-lg-12 col-xl-12">
-                <div class="card">
-                    <div class="card-body pt-4" >
-                        <div class="menu-product d-flex">
-                            <img src="img/pizz1.jpg">
-                            <div class="content-detail-wrap">   
-                                <div>
-                                    <h4><strong>Amazon Shopping</strong></h4>
-                                    <span>SKU ID - 5621335</span>
-                                </div>
-                                <p class="mt-1 clr-blk">An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms. An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms.</p>
+            <div class="container-fluid">
+				
+                <!-- row -->
+                <div class="row">
+                    <div class="col-xl-12 col-xxl-12">
+                        <div class="card">
+                           <div class="container-fluid">
 
-                                        <h5 class="mb-0"><span class="fs-14 me-2">Type - </span><strong class="text-danger">DIGITAL</strong></h5>
-                                    <div class="d-flex justify-content-between mt-2">
-                            <div class="prange mt-3">
-                                <h6>Price Range</h6>
-                                <h4>₹10 - ₹10000</h4>
+<div class="d-flex justify-content-between align-items-center flex-wrap">
+    <div class="card-header">
+                                <h4 class="card-title">Failed Orders</h4>
+
+
+                             
+
                             </div>
 
-                            <div class="pdeno">
-                                  <h6>Price Denominations</h6>
-                                <div class="d-flex justify-content-between">
-                                    <button type="button" class="btn btn-rounded btn-secondary btn-sm mr-10">₹100</button>
-                                    <button type="button" class="btn btn-rounded btn-secondary btn-sm mr-10">₹200</button>
-                                    <button type="button" class="btn btn-rounded btn-secondary btn-sm  mr-10">₹300</button>
-                                    <button type="button" class="btn btn-rounded btn-secondary btn-sm mr-10">₹400</button>
-                                    <button type="button" class="btn btn-rounded btn-secondary btn-sm mr-10">₹500</button>
-                                   </div> 
-                            </div>
 
-                         </div>
 
-                         <div class="tc mt-2">
-                            <h6>Terms and Conditions</h6>
-                            <p>An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms. An AmaAn Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms. An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms.zon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms.An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms. An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms.An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms. An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms.</p>
-                         </div>
-
-                         <div class=" tc mt-2">
-                             <h6>Redemption Terms</h6>
-
-                             <h6><strong>1 - Redemption Information</strong></h6>
-                            <p>An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms.</p>
-
-                            <h6><strong>2 - In Store Information</strong></h6>
-                            <p>An Amazon Shopping Voucher is a prepaid payment instrument that can be used to purchase physical products from Amazon. An Amazon Shopping Voucher has an expiry of 12 months from the date of activation, subject to applicable terms.</p>
-                         </div>
-
-                         <div class="only-right mt-2">
-                            <a href="" class="mr-10 on-link">*Terms and Conditions</a>
-                            <a href="" class="mr-10 on-link">*Store Locator</a>
-
-                         </div>
-                                
-                            </div>  
-                        </div>
-
-                        
-                    </div>
+           <div class="customer-search mb-sm-0 mb-3">
+                <div class="input-group search-area">
+                    <input type="text" class="form-control only-high" placeholder="Mobile/Email/Name">
+                    <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
                 </div>
             </div>
-           
-            
-           
-            
-            
-            <!-- review -->
-            <div class="modal fade" id="reviewModal">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Review</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal">
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="text-center mb-4">
-                                    <img class="img-fluid rounded" width="78" src="https://lezato.w3itexpert.com/laravel/demo/images/avatar/1.jpg" alt="DexignZone">
+
+
+            <div class="example">
+                                  
+                                    <input type="text" class="form-control input-daterange-timepicker" name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM">
                                 </div>
-                                <div class="mb-3">
-                                    <div class="rating-widget mb-4 text-center">
-                                        <!-- Rating Stars Box -->
-                                        <div class="rating-stars">
-                                            <ul id="stars">
-                                                <li class="star" title="Poor" data-value="1">
-                                                    <i class="fa fa-star fa-fw"></i>
-                                                </li>
-                                                <li class="star" title="Fair" data-value="2">
-                                                    <i class="fa fa-star fa-fw"></i>
-                                                </li>
-                                                <li class="star" title="Good" data-value="3">
-                                                    <i class="fa fa-star fa-fw"></i>
-                                                </li>
-                                                <li class="star" title="Excellent" data-value="4">
-                                                    <i class="fa fa-star fa-fw"></i>
-                                                </li>
-                                                <li class="star" title="WOW!!!" data-value="5">
-                                                    <i class="fa fa-star fa-fw"></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <textarea class="form-control" placeholder="Comment" rows="5"></textarea>
-                                </div>
-                                <button class="btn btn-success btn-block">RATE</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+
+
+            <div class="d-flex align-items-center flex-wrap">
+                <a href="javascript:void(0);" class="btn btn-primary btn-sm btn-rounded me-3 mb-2"><i class="fa fa-file-excel me-2"></i>Export</a>
+              
             </div>
         </div>
+
+    
+   
+                                <div class="card-body p-0 main">
+                            <div class="d-flex justify-content-between weak1">
+                                <div class="1st">
+                                   <h6>Order ID</h6>
+                                   <p>ALP4525</p>
+                                </div>
+                                <div class="1st">
+                                   <h6>Name</h6>
+                                   <p>Jaswant Rawat</p>
+                                </div>
+
+                                <div class="1st">
+                                    <h6>Email</h6>
+                                    <p>jaswantjojo21@gmail.com</p>
+                                </div>
+
+
+                                <div class="1st">
+                                    <h6>Mobile</h6>
+                                    <p>9876543210</p>
+                                </div>
+
+
+
+                                <div class="1st">
+                                    <h6>Total Cart Value</h6>
+                                    <p>₹5000</p>
+                                </div>
+
+
+
+                                <div class="1st">
+                                    <h6>Order Status</h6>
+                                    <span class="btn btn-danger btn-xxs">Partial Complete</span>
+                                </div>
+
+                                <div class="1st">
+                                    
+                            </div>
+
+                </div>
+                 <div class="d-flex justify-content-between weak1">
+                                <div class="1st">
+                                   <h6>Date of Order</h6>
+                                   <p>12-09-2023</p>
+                                </div>
+                                <div class="1st">
+                                   <h6>Total Order Amount</h6>
+                                   <p>₹5000</p>
+                                </div>
+
+                                <div class="1st">
+                                    <h6>Payment ID</h6>
+                                    <p>PAY_4566</p>
+                                </div>
+
+
+                                <div class="1st">
+                                    <h6>Points Reedmed</h6>
+                                    <p>Pts 1200</p>
+                                </div>
+
+
+
+                                <div class="1st">
+                                    <h6>Paid Amount</h6>
+                                    <p>₹3800</p>
+                                </div>
+
+
+
+                             
+
+                            </div>
+
+
+     <div class="card-body theorder">
+ <div class="row">
+    <div class="col-lg-1">
+        <h5>S.NO</h5>
+        <p>1</p>
+
     </div>
 
+    <div class="col-lg-3">
+        <h5>Brand Name</h5>
+        <p>Amazon</p>
+
+    </div>
+
+
+    <div class="col-lg-3">
+        <h5>Face Value</h5>
+        <p>₹2000</p>
+
+    </div>
+
+
+    <div class="col-lg-1">
+        <h5>QTY</h5>
+        <p>3</p>
+    </div>
+
+    <div class="col-lg-2">
+        <h5>SKU</h5>
+        <p>#45555</p>
+
+    </div>
+
+
+    <div class="col-lg-2">
+        <h5>Discounted Amt.</h5>
+        <p>₹250</p>
+
+    </div>
+
+ </div>
+
+  <div class="row">
+    <div class="col-lg-1">
+        <h5>S.NO</h5>
+        <p>2</p>
+
+    </div>
+
+    <div class="col-lg-3">
+        <h5>Brand Name</h5>
+        <p>Amazon</p>
+
+    </div>
+
+
+    <div class="col-lg-3">
+        <h5>Face Value</h5>
+        <p>₹5000</p>
+
+    </div>
+
+
+    <div class="col-lg-1">
+        <h5>QTY</h5>
+        <p>1</p>
+    </div>
+
+    <div class="col-lg-2">
+        <h5>SKU</h5>
+        <p>#45555</p>
+
+    </div>
+
+
+    <div class="col-lg-2">
+        <h5>Discounted Amt.</h5>
+        <p>₹500</p>
+
+    </div>
+
+ </div>
+
+ <div class="row weak justify-content-end pb-0">
+    <div class="col-lg-2">
+        <h4>Suborder ID</h4>
+        <p>LOP455</p>
+
+    </div>
+
+    <div class="col-lg-2">
+        <h4>Reference ID</h4>
+        <p>Ref-125</p>
+
+    </div>
+
+
+
+    <div class="col-lg-2">
+        <h4>Sub-Order Status</h4>
+                                    <span class="btn btn-success btn-xxs">Completed</span>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>QTY</h4>
+        <p>4</p>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>Amount</h4>
+        <p>₹6000</p>
+
+    </div>
+ <div class="col-lg-2">
+     
+    </div>
+   
+
+ </div>
+ 
+
+ <div class="row mt-3">
+    <div class="col-lg-1">
+        <h5>S.NO</h5>
+        <p>3</p>
+
+    </div>
+
+    <div class="col-lg-3">
+        <h5>Brand Name</h5>
+        <p>Flipcart</p>
+
+    </div>
+
+
+    <div class="col-lg-3">
+        <h5>Face Value</h5>
+        <p>₹2000</p>
+
+    </div>
+
+
+    <div class="col-lg-1">
+        <h5>QTY</h5>
+        <p>3</p>
+    </div>
+
+    <div class="col-lg-2">
+        <h5>SKU</h5>
+        <p>#45555</p>
+
+    </div>
+
+
+    <div class="col-lg-2">
+        <h5>Discounted Amt.</h5>
+        <p>₹250</p>
+
+    </div>
+
+ </div>
+
+
+ <div class="row weak justify-content-end pb-0">
+    <div class="col-lg-2">
+        <h4>Suborder ID</h4>
+        <p>LOP455</p>
+
+    </div>
+
+    <div class="col-lg-2">
+        <h4>Reference ID</h4>
+        <p>-</p>
+
+    </div>
+
+    <div class="col-lg-2">
+        <h4>Sub-Order Status</h4>
+  <span class="btn btn-danger btn-xxs">Pending</span>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>QTY</h4>
+        <p>6</p>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>Amount</h4>
+        <p>₹6000</p>
+
+    </div>
+
+
+     <div class="col-lg-2">
+    <a href="#" class="btn btn-primary btn-sm float-right">Re-Process</a>
+     
+    </div>
+
+
+
+ </div>
+
+                            </div>
+</div>
+
+
+
+                                                            <div class="card-body p-0 main">
+                            <div class="d-flex justify-content-between weak">
+                                <div class="1st">
+                                   <h6>Order ID</h6>
+                                   <p>ALP4525</p>
+                                </div>
+                                <div class="1st">
+                                   <h6>Name</h6>
+                                   <p>Jaswant Rawat</p>
+                                </div>
+
+                                <div class="1st">
+                                    <h6>Email</h6>
+                                    <p>jaswantjojo21@gmail.com</p>
+                                </div>
+
+
+                                <div class="1st">
+                                    <h6>Mobile</h6>
+                                    <p>9876543210</p>
+                                </div>
+
+
+
+                                <div class="1st">
+                                    <h6>Total Cart Value</h6>
+                                    <p>₹5000</p>
+                                </div>
+
+
+
+                                <div class="1st">
+                                    <h6>Order Status</h6>
+                                    <span class="btn btn-danger btn-xxs">Pending</span>
+                                </div>
+
+                               <div class="1st">
+    <a href="#" class="btn btn-primary btn-sm float-right">Re-Process</a>
+     
+    </div>
+
+                            </div>
+
+                             <div class="d-flex justify-content-between weak1">
+                                <div class="1st">
+                                   <h6>Date of Order</h6>
+                                   <p>12-09-2023</p>
+                                </div>
+                                <div class="1st">
+                                   <h6>Total Order Amount</h6>
+                                   <p>₹5000</p>
+                                </div>
+
+                                <div class="1st">
+                                    <h6>Payment ID</h6>
+                                    <p>PAY_4566</p>
+                                </div>
+
+
+                                <div class="1st">
+                                    <h6>Points Reedmed</h6>
+                                    <p>Pts 1200</p>
+                                </div>
+
+
+
+                                <div class="1st">
+                                    <h6>Paid Amount</h6>
+                                    <p>₹3800</p>
+                                </div>
+
+
+
+                             
+
+                            </div>
+
+               
+
+     <div class="card-body theorder">
+ <div class="row">
+    <div class="col-lg-1">
+        <h5>S.NO</h5>
+        <p>1</p>
+
+    </div>
+
+    <div class="col-lg-3">
+        <h5>Brand Name</h5>
+        <p>Amazon</p>
+
+    </div>
+
+
+    <div class="col-lg-3">
+        <h5>Face Value</h5>
+        <p>₹2000</p>
+
+    </div>
+
+
+    <div class="col-lg-1">
+        <h5>QTY</h5>
+        <p>3</p>
+    </div>
+
+    <div class="col-lg-2">
+        <h5>SKU</h5>
+        <p>#45555</p>
+
+    </div>
+
+
+    <div class="col-lg-2">
+        <h5>Discounted Amt.</h5>
+        <p>₹250</p>
+
+    </div>
+
+ </div>
+
+  <div class="row">
+    <div class="col-lg-1">
+        <h5>S.NO</h5>
+        <p>2</p>
+
+    </div>
+
+    <div class="col-lg-3">
+        <h5>Brand Name</h5>
+        <p>Amazon</p>
+
+    </div>
+
+
+    <div class="col-lg-3">
+        <h5>Face Value</h5>
+        <p>₹5000</p>
+
+    </div>
+
+
+    <div class="col-lg-1">
+        <h5>QTY</h5>
+        <p>1</p>
+    </div>
+
+    <div class="col-lg-2">
+        <h5>SKU</h5>
+        <p>#45555</p>
+
+    </div>
+
+
+    <div class="col-lg-2">
+        <h5>Discounted Amt.</h5>
+        <p>₹500</p>
+
+    </div>
+
+ </div>
+
+ <div class="row weak justify-content-end pb-0">
+    <div class="col-lg-2">
+        <h4>Suborder ID</h4>
+        <p>LOP455</p>
+
+    </div>
+
+    <div class="col-lg-2">
+        <h4>Reference ID</h4>
+        <p>-</p>
+    </div>
+
+
+
+    <div class="col-lg-2">
+        <h4>Sub-Order Status</h4>
+                                    <span class="btn btn-danger btn-xxs">Pending</span>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>QTY</h4>
+        <p>6</p>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>Amount</h4>
+        <p>₹6000</p>
+
+    </div>
+ <div class="col-lg-2">
+     
+    </div>
+   
+
+ </div>
+ 
+
+ <div class="row mt-3">
+    <div class="col-lg-1">
+        <h5>S.NO</h5>
+        <p>3</p>
+
+    </div>
+
+    <div class="col-lg-3">
+        <h5>Brand Name</h5>
+        <p>Flipcart</p>
+
+    </div>
+
+
+    <div class="col-lg-3">
+        <h5>Face Value</h5>
+        <p>₹2000</p>
+
+    </div>
+
+
+    <div class="col-lg-1">
+        <h5>QTY</h5>
+        <p>3</p>
+    </div>
+
+    <div class="col-lg-2">
+        <h5>SKU</h5>
+        <p>#45555</p>
+
+    </div>
+
+
+    <div class="col-lg-2">
+        <h5>Discounted Amt.</h5>
+        <p>₹250</p>
+
+    </div>
+
+ </div>
+
+
+ <div class="row weak justify-content-end pb-0">
+    <div class="col-lg-2">
+        <h4>Suborder ID</h4>
+        <p>LOP455</p>
+
+    </div>
+
+    <div class="col-lg-2">
+        <h4>Reference ID</h4>
+        <p>-</p>
+
+    </div>
+
+    <div class="col-lg-2">
+        <h4>Sub-Order Status</h4>
+  <span class="btn btn-danger btn-xxs">Pending</span>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>QTY</h4>
+        <p>6</p>
+
+    </div>
+
+      <div class="col-lg-2">
+        <h4>Amount</h4>
+        <p>₹6000</p>
+
+    </div>
+
+ <div class="col-lg-2">
+       
+
+    </div>
+   
+
+
+
+ </div>
+
+                            </div>
+</div>
+
+                            </div>
+							
+						                                
+
+
+    
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -343,22 +886,31 @@ display:none!important;
         Scripts
     ***********************************-->
     <!-- Required vendors -->
+
+
+
     <script src="vendor/global/global.min.js"></script>
-	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
-	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	
-	
-	<!-- Apex Chart -->
-	<script src="vendor/apexchart/apexchart.js"></script>
-	
-	<!-- Chart piety plugin files -->
+    <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    
+    
+    <!-- Apex Chart -->
+                       
+    <script src="vendor/apexchart/apexchart.js"></script>
+    
+    <!-- Chart piety plugin files -->
     <script src="vendor/peity/jquery.peity.min.js"></script>
-	
-	<!-- Dashboard 1 -->
-	<script src="js/dashboard/dashboard-1.js"></script>
+    
+    <!-- Dashboard 1 -->
+    <script src="js/dashboard/dashboard-1.js"></script>
 
     <script src="js/custom.min.js"></script>
-	<script src="js/deznav-init.js"></script>
+    <script src="js/deznav-init.js"></script>
+
+    <script src="vendor/moment/moment.min.js" type="text/javascript"></script>
+    <script src="vendor/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+                        
+    <script src="js/plugins-init/bs-daterange-picker-init.js" type="text/javascript"></script>
 </body>
 
 </html>
