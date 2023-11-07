@@ -1,10 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { callCmsApi} from '../../../services/Admin/cmsApi';
+import { callCmsApi } from '../../../services/UserAdmin/cmsApi';
 import {
   onCmsSubmit,
   onCmsSubmitError,
   onCmsSubmitSuccess,
-} from '../../modules/Admin/cmsSlice';
+} from '../../modules/UserAdmin/cmsSlice';
 
 function* Cms({payload}) {
   try {

@@ -5,12 +5,14 @@ import Header from '../Header/Header'
 import NewHeader from '../NewHeader/NewHeader'
 import OrderContainer from '../OrderContainer/OrderContainer'
 import OrderSummary from '../OrderSummary/OrderSummary'
+import Login from '../Login/Login'
 
 
 const OrderPlaced = () => {
     return (
         <>
             <Header />
+            <Login/>
             <GrayBox />
             <NewHeader />
             <OrderSummary />

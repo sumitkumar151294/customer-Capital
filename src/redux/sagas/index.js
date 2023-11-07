@@ -2,9 +2,8 @@ import { all } from 'redux-saga/effects';
 import authenticationSaga from './authenticationSaga';
 import vendorSaga from './Admin/vendorSaga';
 import clientMasterSaga from './Admin/clientMasterSaga';
-import cmsSaga from './Admin/cmsSaga';
+import cmsSaga from './UserAdmin/cmsSaga';
 import blogSaga from './Admin/blogSaga';
-import faqsSaga from './Admin/faqsSaga';
 import couponSaga from './User/couponSaga'
 import loginSaga from './loginSaga';
 import userSaga from './Admin/userSaga';
@@ -17,10 +16,13 @@ import AbandonedSaga from './UserAdmin/AbandonedCartSaga';
 import ClientCommissionSaga from './UserAdmin/ClientCommissionSaga';
 import offerMasterSaga from './UserAdmin/offerMasterSaga';
 import BannerMasterSaga from './UserAdmin/BannerMasterSaga';
+import faqsSaga from './UserAdmin/faqsSaga';
+import emailEventSaga from './UserAdmin/emailEventSaga';
 
 export default function* rootSaga() {
   yield all([
     authenticationSaga(),
+    emailEventSaga(),
     BannerMasterSaga(),
     offerMasterSaga(),
     ClientCommissionSaga(),

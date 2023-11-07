@@ -1,17 +1,18 @@
-import React from 'react'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-import LoyaltyProgramContent from '../LoyaltyProgramContent/LoyaltyProgramContent'
+import React from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import LoyaltyProgramContent from "../LoyaltyProgramContent/LoyaltyProgramContent";
+import Login from "../Login/Login";
 
 const LoyaltyProgram = () => {
   return (
-   <>
-   <Header />
-   <LoyaltyProgramContent />
-   <Footer />
-   
-   </>
-  )
-}
+    <>
+      <Header />
+      <Login />
+      <LoyaltyProgramContent />
+      <Footer />
+    </>
+  );
+};
 
-export default LoyaltyProgram
+export default LoyaltyProgram;

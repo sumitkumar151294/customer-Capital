@@ -1,8 +1,8 @@
-import cmsReducer from './modules/Admin/cmsSlice';
+import cmsReducer from './modules/UserAdmin/cmsSlice';
 import vendorReducer from './modules/Admin/vendorSlice';
 import clientReducer from './modules/Admin/clientMasterSlice';
 import blogReducer from './modules/Admin/blogSlice';
-import faqsReducer from './modules/Admin/faqsSlice';
+import faqsReducer from './modules/UserAdmin/faqsSlice';
 import authenticationReducer from './modules/authenticationSlice';
 import couponReducer from './modules/User/couponSlice';
 import loginReducer from './modules/loginSlice';
@@ -18,10 +18,12 @@ import AbandonedCartReducer from './modules/UserAdmin/AbandonedCartSlice';
 import  ClientCommissionReducer  from './modules/UserAdmin/ClientCommissionSlice';
 import offerMasterReducer from './modules/UserAdmin/offerMasterSlice';
 import BannerMasterReducer from './modules/UserAdmin/BannerMasterSlice';
+import emailEventReducer from './modules/UserAdmin/emailEventSlice';
 
 
 const reducers = combineReducers({
   authenticationReducer: authenticationReducer,
+  emailEventReducer:emailEventReducer,
   BannerMasterReducer:BannerMasterReducer,
   offerMasterReducer:offerMasterReducer,
   ClientCommissionReducer:ClientCommissionReducer,

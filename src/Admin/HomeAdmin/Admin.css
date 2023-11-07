@@ -5075,6 +5075,24 @@
       /* rtl:ignore */
     ;
   }
+  .klaa {
+    height: 380px !important;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.bootstrap-tagsinput {
+  width: 100%;
+  height: 85px;
+  border: 4px solid #616161 !important;
+  padding: 3px 5px;
+  -ms-overflow-style: none;
+  outline: none;
+  border-radius: 13px;
+  box-shadow: 0 0 0;
+  white-space: nowrap;
+  overflow: auto;
+  overflow-y: hidden;
+}
   
   .card-header {
     padding: 0.5rem 0.4rem !important;
