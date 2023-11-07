@@ -6,21 +6,47 @@ import Loader from "../../Admin/Loader/Loader";
 const EmailEventMaster = () => {
   const [isLoading, setIsLoading] = useState("true");
 
-  const [eventName, seteventName] = useState();
-  const [smsBody, setSmsBody] = useState();
-  const [subject, setSubject] = useState();
-  const [mailBody, setMailBody] = useState();
+  const [name, setName] = useState({
+    eventName: "",
+    smsBody: "",
+    subject: "",
+    mailBody: "",
+  });
 
+  const [errors, setErrors] = useState({
+    eventName: "",
+    smsBody: "",
+    subject: "",
+    mailBody: "",
+  });
+  const handleChange = (e, fieldName) => {
+    setName({
+      ...name,
+      [fieldName]: e.target.value,
+    });
+
+    setErrors({
+      ...errors,
+      [fieldName]: "",
+    });
+  };
   const dispatch = useDispatch();
-  const handleSubmit = () => {
-    debugger;
-    const data = {
-      eventName,
-      smsBody,
-      subject,
-      mailBody,
-    };
-    dispatch(onEmailEventSubmit(data));
+  const handleSubmit = (e) => {
+    e?.preventDefault();
+    let isValid = true;
+    const newErrors = { ...errors };
+
+    for (const key in name) {
+      if (name[key] === "") {
+        newErrors[key] = "This field is required";
+        isValid = false;
+      } else {
+        newErrors[key] = "";
+      }
+    }
+    setErrors(newErrors);
+
+    if (isValid) dispatch(onEmailEventSubmit(name));
   };
 
   const tableData = [
@@ -129,23 +155,23 @@ const EmailEventMaster = () => {
                             type="text"
                             className="form-control"
                             name="fname"
-                            value={eventName}
-                            onChange={(e) => seteventName(e.target.value)}
+                            onChange={(e) => handleChange(e, "eventName")}
                             id="name-f"
                             placeholder=""
                             required=""
                           />
+                          <p className="text-danger">{errors.eventName}</p>
                         </div>
                         <div className=" form-group mb-2">
                           <label htmlFor="name-f">SMS Body</label>
                           <div className=" bootstrap-tagsinput">
                             <input
                               className=""
-                              value={smsBody}
-                              onChange={(e) => setSmsBody(e.target.value)}
+                              onChange={(e) => handleChange(e, "smsBody")}
                               type="text"
                               data-role="tagsinput"
                             />
+                            <p className="text-danger">{errors.smsBody}</p>
                           </div>
                         </div>
                         <div className="form-group mb-2">
@@ -154,10 +180,10 @@ const EmailEventMaster = () => {
                             <input
                               className="input-tags"
                               type="text"
-                              value={subject}
-                              onChange={(e) => setSubject(e.target.value)}
+                              onChange={(e) => handleChange(e, "subject")}
                               data-role="tagsinput"
                             />
+                            <p className="text-danger">{errors.subject}</p>
                           </div>
                         </div>
                         <div className="form-group mb-2">
@@ -165,11 +191,11 @@ const EmailEventMaster = () => {
                           <div className=" bootstrap-tagsinput">
                             <input
                               className="input-tags"
-                              value={mailBody}
-                              onChange={(e) => setMailBody(e.target.value)}
+                              onChange={(e) => handleChange(e, "mailBody")}
                               type="text"
                               data-role="tagsinput"
                             />
+                            <p className="text-danger">{errors.mailBody}</p>
                           </div>
                         </div>
                         <div className="form-group mb-0 mt-2">

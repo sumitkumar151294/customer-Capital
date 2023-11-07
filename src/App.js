@@ -83,6 +83,11 @@ function App() {
         {/* Admin Section */}
         <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard} />} />
         <Route
+          path="/LC-user-admin"
+          element={<HomeAdmin Component={Dashboard} />}
+        />
+
+        <Route
           path="/LC-admin/vendormaster"
           element={<HomeAdmin Component={VendorMaster} />}
         />
