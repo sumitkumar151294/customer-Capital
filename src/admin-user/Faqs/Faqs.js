@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { onFaqsSubmit } from "../../redux/modules/Admin/faqsSlice";
-import Loader from "../Loader/Loader";
+import { onFaqsSubmit } from "../../redux/modules/UserAdmin/faqsSlice";
+import Loader from "../../Admin/Loader/Loader";
 
 const Faqs = () => {
   const [faqData, setFaqData] = useState({

@@ -181,9 +181,11 @@ const Sidebar = () => {
           </li>
 
           <li
-            className={location.pathname === "/LC-admin/CMS" ? "mm-active" : ""}
+            className={
+              location.pathname === "/LC-user-admin/CMS" ? "mm-active" : ""
+            }
           >
-            <Link to="/LC-admin/CMS" class="ai-icon" aria-expanded="false">
+            <Link to="/LC-user-admin/CMS" class="ai-icon" aria-expanded="false">
               <img class="w-20px" src={CMS} alt="file not exist" />
               <span class="nav-text ps-1">CMS</span>
             </Link>
@@ -262,21 +264,39 @@ const Sidebar = () => {
             </Link>
           </li>
 
-          <li className={location.pathname === '/LC-admin/supplierbrandlist' ? 'mm-active' : ''}>
-            <Link to="/LC-admin/supplierbrandlist" class="ai-icon" aria-expanded="false">
+          <li
+            className={
+              location.pathname === "/LC-admin/supplierbrandlist"
+                ? "mm-active"
+                : ""
+            }
+          >
+            <Link
+              to="/LC-admin/supplierbrandlist"
+              class="ai-icon"
+              aria-expanded="false"
+            >
               <img class="w-20px" src={email} alt="file not exist" />
               <span class="nav-text ps-1">Supplier Brand List</span>
             </Link>
           </li>
 
-          <li className={location.pathname === '/LC-admin/brandcatalogue' ? 'mm-active' : ''}>
-            <Link to="/LC-admin/brandcatalogue" class="ai-icon" aria-expanded="false">
+          <li
+            className={
+              location.pathname === "/LC-admin/brandcatalogue"
+                ? "mm-active"
+                : ""
+            }
+          >
+            <Link
+              to="/LC-admin/brandcatalogue"
+              class="ai-icon"
+              aria-expanded="false"
+            >
               <img class="w-20px" src={email} alt="file not exist" />
               <span class="nav-text ps-1">Brand Catalogue</span>
             </Link>
           </li>
-
-
 
           {/* UserAdmin Sidebar */}
           <li
@@ -342,28 +362,22 @@ const Sidebar = () => {
               <img class="w-20px" src={clists} alt="file not exist" />
               <span class="nav-text ps-1">Offer Master</span>
             </Link>
-            </li>
+          </li>
 
-            <li className={location.pathname === '/LC-user-admin/addspecial' ? 'mm-active' : ''}>
-              <Link to="/LC-user-admin/addspecial" class="ai-icon" aria-expanded="false">
-                <img class="w-20px" src={email} alt="file not exist" />
-                <span class="nav-text ps-1">Add Special</span>
-              </Link>
-            </li>
           <li
             className={
-              location.pathname === "/LC-user-admin/bannermaster"
+              location.pathname === "/LC-user-admin/addspecial"
                 ? "mm-active"
                 : ""
             }
           >
             <Link
-              to="/LC-user-admin/bannermaster"
+              to="/LC-user-admin/addspecial"
               class="ai-icon"
               aria-expanded="false"
             >
-              <img class="w-20px" src={clists} alt="file not exist" />
-              <span class="nav-text ps-1">Banner Master</span>
+              <img class="w-20px" src={email} alt="file not exist" />
+              <span class="nav-text ps-1">Add Special</span>
             </Link>
           </li>
           <li
@@ -380,6 +394,23 @@ const Sidebar = () => {
             >
               <img class="w-20px" src={clists} alt="file not exist" />
               <span class="nav-text ps-1">Banner Master</span>
+            </Link>
+          </li>
+
+          <li
+            className={
+              location.pathname === "/LC-user-admin/emaileventmaster  "
+                ? "mm-active"
+                : ""
+            }
+          >
+            <Link
+              to="/LC-user-admin/emaileventmaster  "
+              class="ai-icon"
+              aria-expanded="false"
+            >
+              <img class="w-20px" src={clists} alt="file not exist" />
+              <span class="nav-text ps-1">Email Event Master</span>
             </Link>
           </li>
         </ul>

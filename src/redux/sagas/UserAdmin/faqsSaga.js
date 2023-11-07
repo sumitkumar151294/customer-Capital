@@ -1,10 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { callFaqsApi} from '../../../services/Admin/faqsApi';
+import { callFaqsApi } from '../../../services/UserAdmin/faqsApi';
 import {
   onFaqsSubmit,
   onFaqsSubmitError,
   onFaqsSubmitSuccess,
-} from '../../modules/Admin/faqsSlice';
+} from '../../modules/UserAdmin/faqsSlice';
 
 function* Faqs({payload}) {
   try {

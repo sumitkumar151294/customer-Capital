@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 import img from "../../Images/logo.png";
-import img2 from '../../Images/tb.png';
-import img3 from '../../Images/cate.png';
-import img4 from '../../Images/offers.png';
-import img5 from '../../Images/profile.png';
+import img2 from "../../Images/tb.png";
+import img3 from "../../Images/cate.png";
+import img4 from "../../Images/offers.png";
+import img5 from "../../Images/profile.png";
 import { Link } from "react-router-dom";
 import { toggleNavbar } from "../../redux/modules/User/toggleSlice";
 import { useDispatch } from "react-redux";
@@ -90,19 +90,13 @@ const Header = () => {
                           <div className="logindrop2">
                             <ul>
                               <li>
-                                <a onClick={handleMyAccount}>
-                                  My Account
-                                </a>
+                                <a onClick={handleMyAccount}>My Account</a>
                               </li>
                               <li>
-                                <a onClick={handleMyAccount}>
-                                  My Points
-                                </a>
+                                <a onClick={handleMyAccount}>My Points</a>
                               </li>
                               <li>
-                                <a href="#">
-                                  Use Points
-                                </a>
+                                <a href="#">Use Points</a>
                               </li>
 
                               <li>
@@ -217,7 +211,7 @@ const Header = () => {
               </span>
               <span className="menu-seperator">
                 <a className="nav-link " href="/menu/topMenu/1">
-                  <img width="25" src={img3}  />
+                  <img width="25" src={img3} />
                   <div
                   // style="color: black!important;"
                   >

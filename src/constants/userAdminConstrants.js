@@ -3,7 +3,12 @@
     ClientCommission: '/ClientCommission',
     addSpecialApi:'/addspecial',
     offerMasterApi:'/offerMasterApi',
-    bannerMasterApi:'/bannerMasterApi'
+    bannerMasterApi:'/bannerMasterApi',
+    faqsApi: '/faqs',
+    cmsApi: '/cms',
+    emailEventApi:'/emailEvent'
+
+
 
 
 }
