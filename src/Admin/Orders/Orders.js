@@ -82,7 +82,7 @@ const Orders = () => {
                     <div class="d-flex align-items-center flex-wrap">
                       <CSVLink data={productList} headers={headers}>
                         <button className="btn btn-primary btn-sm btn-rounded me-3 mb-2">
-                          <i className="fa fa-file-excel me-2"></i>Export
+                          <i className="fa fa-file-excel me-2"></i>export
                         </button>
                       </CSVLink>
                     </div>
