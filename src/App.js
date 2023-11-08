@@ -14,7 +14,7 @@ import OrderPlaced from "../src/Component/OrderPlaced/OrderPlaced";
 import CartInfo from "../src/Container/CartInfo";
 import Dashboard from "./Admin/Dashboard/Dashboard";
 import HomeAdmin from "./Admin/HomeAdmin/HomeAdmin";
-import VendorMaster from "./Admin/VendorMaster/VendorMaster";
+import SupplyMaster from "./Admin/VendorMaster/supplyMaster";
 import RoleMaster from "./Admin/RoleMaster/RoleMaster";
 import CMS from "./admin-user/CMS/CMS";
 import ClientMaster from "./Admin/ClientMaster/ClientMaster";
@@ -83,8 +83,13 @@ function App() {
         {/* Admin Section */}
         <Route path="/LC-admin" element={<HomeAdmin Component={Dashboard} />} />
         <Route
-          path="/LC-admin/vendormaster"
-          element={<HomeAdmin Component={VendorMaster} />}
+          path="/LC-user-admin"
+          element={<HomeAdmin Component={Dashboard} />}
+        />
+
+        <Route
+          path="/LC-admin/supplymaster"
+          element={<HomeAdmin Component={SupplyMaster} />}
         />
         <Route
           path="/LC-admin/allocationmaster"

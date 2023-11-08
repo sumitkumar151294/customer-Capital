@@ -330,8 +330,8 @@ const Sidebar = () => {
             </>
           )}
 
-          
-            {/* <li
+
+          {/* <li
               className={
                 location.pathname === "/LC-admin/allocationmaster"
                   ? "mm-active"
@@ -347,7 +347,7 @@ const Sidebar = () => {
                 <span class="nav-text ps-1">Allocated Master</span>
               </Link>
             </li> */}
-            {/* <li
+          {/* <li
                 className={
                   location.pathname === "/LC-admin/blog" ? "mm-active" : ""
                 }
@@ -358,7 +358,7 @@ const Sidebar = () => {
                 </Link>
               </li> */}
 
-            {/* <li
+          {/* <li
                 className={
                   location.pathname === "/LC-admin/contactlist"
                     ? "mm-active"
@@ -375,7 +375,7 @@ const Sidebar = () => {
                 </Link>
               </li> */}
 
-            {/* <li
+          {/* <li
                 className={
                   location.pathname === "/LC-admin/customerlist"
                     ? "mm-active"
@@ -392,7 +392,7 @@ const Sidebar = () => {
                 </Link>
               </li> */}
 
-            {/* <li
+          {/* <li
                 className={
                   location.pathname === "/LC-admin/emailtemplates"
                     ? "mm-active"
@@ -410,7 +410,7 @@ const Sidebar = () => {
               </li> */}
 
 
-              {/* <li
+          {/* <li
                 className={
                   location.pathname === "/LC-admin/productcata"
                     ? "mm-active"

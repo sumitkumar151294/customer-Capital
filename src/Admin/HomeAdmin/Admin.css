@@ -2642,9 +2642,28 @@
     appearance: auto;
     font-size: 17px;
   }
+   
+  .form-select-error {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.25rem 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: #fff;
+    background-image: url(data:image/svg+xml,%3csvg xmlns="http://www.w3.org/2000/svg viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e);
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 3px solid red !important;
+    border-radius: 0.75rem;
+    appearance: auto;
+    font-size: 17px;
+  }
   
   .form-select:focus {
-    border-color: #feb49f;
+    border-color: #fff;
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(253, 104, 62, 0.25);
   }
@@ -2720,7 +2739,7 @@
   }
   
   .form-check-input:focus {
-    border-color: #feb49f;
+    /* border-color: #feb49f; */
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(253, 104, 62, 0.25);
   }
@@ -5080,6 +5099,18 @@
     overflow: hidden;
     overflow-y: auto;
 }
+.has-error {
+  border: 1px solid red; /* Define your error border style */
+}
+
+.border-danger {
+  background: #fff !important;
+  border: 3px solid red !important;
+  padding: 0.3125rem 1.25rem !important;
+  color: #6e6e6e !important;
+  height: 3rem !important;
+  border-radius: 1rem !important;}
+
 .bootstrap-tagsinput {
   width: 100%;
   height: 85px;
@@ -33941,22 +33972,21 @@
     background-color: var(--primary) !important;
   }
   
-  .btn-primary:active,
-  .btn-primary:focus,
+  /* .btn-primary:active, */
+  /* .btn-primary:focus, */
   .btn-primary:hover {
     background-color: #FD683E !important;
-    background-color: #FD683E;
   }
   
-  .btn-primary:focus {
+  /* .btn-primary:focus {
     box-shadow: 0 0 0 0.25rem var(--rgba-primary-5);
-  }
+  } */
   
-  .btn-primary:disabled,
+  /* .btn-primary:disabled,
   .btn-primary.disabled {
     background-color: var(--primary);
     border-color: var(--primary);
-  }
+  } */
   
   .btn-link {
     color: var(--primary);
