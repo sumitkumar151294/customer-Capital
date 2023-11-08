@@ -28,7 +28,8 @@ const Sidebar = () => {
 
           {isAdmin && (
             <>
-              {/* Admin Sidebar */}            <li
+              {/* Admin Sidebar */}            
+              <li
                 className={location.pathname === "/LC-admin" ? "mm-active" : ""}
               >
                 <Link class="ai-icon" to="/LC-admin" aria-expanded="false">
@@ -39,14 +40,14 @@ const Sidebar = () => {
 
               <li
                 className={
-                  location.pathname === "/LC-admin/vendormaster"
+                  location.pathname === "/LC-admin/supplymaster"
                     ? "mm-active"
                     : ""
                 }
               >
                 <Link
                   class="ai-icon"
-                  to="/LC-admin/vendormaster"
+                  to="/LC-admin/supplymaster"
                   aria-expanded="false"
                 >
                   <img class="w-20px" src={vendor} alt="file not exist" />

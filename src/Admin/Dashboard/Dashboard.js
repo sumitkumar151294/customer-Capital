@@ -341,7 +341,7 @@ const Dashboard = () => {
                       <div className="d-inline-block position-relative donut-chart-sale">
                       <ReactApexChart
                           options={donutChartOptions}
-                          series={donutChartData}
+                          series={orderDonutChartData}
                           type="donut"
                         />
                         <small className="text-black">

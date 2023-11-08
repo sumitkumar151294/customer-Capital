@@ -96,8 +96,8 @@ const CreateCategory = () => {
                 </h4>
               </div>
               <div className="card-body position-relative">
-                {!isLoading ? (
-                  <div style={{ height: "400px" }}>
+                {!isformLoading ? (
+                  <div style={{ height: "200px" }}>
                     <Loader classType={"absoluteLoader"} />
                   </div>
                 ) : (
@@ -220,43 +220,49 @@ const CreateCategory = () => {
                   </div>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table header-border table-responsive-sm">
-                    <thead>
-                      <tr>
-                        <th>Category Name</th>
-                        <th>Supplier Name</th>
-
-                        <th>Supplier Brand</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tableData.map((item) => (
+              <div class="card-body position-relative">
+                {!isLoading ? (
+                  <div style={{ height: "300px" }}>
+                    <Loader classType={"absoluteLoader"} />
+                  </div>
+                ) : (
+                  <div class="table-responsive">
+                    <table class="table header-border table-responsive-sm">
+                      <thead>
                         <tr>
-                          <td>{item.category}</td>
-                          <td>
-                            {item.supplier}
-                            <a href="javascript:void();"></a>
-                          </td>
-                          <td>{item.company}</td>
+                          <th>Category Name</th>
+                          <th>Supplier Name</th>
 
-                          <td>
-                            <div class="d-flex">
-                              <a
-                                href="#"
-                                class="btn btn-danger shadow btn-xs sharp"
-                              >
-                                <i class="fa fa-trash"></i>
-                              </a>
-                            </div>
-                          </td>
+                          <th>Supplier Brand</th>
+                          <th>Action</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                      </thead>
+                      <tbody>
+                        {tableData.map((item) => (
+                          <tr>
+                            <td>{item.category}</td>
+                            <td>
+                              {item.supplier}
+                              <a href="javascript:void();"></a>
+                            </td>
+                            <td>{item.company}</td>
+
+                            <td>
+                              <div class="d-flex">
+                                <a
+                                  href="#"
+                                  class="btn btn-danger shadow btn-xs sharp"
+                                >
+                                  <i class="fa fa-trash"></i>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </div>
             </div>
           </div>

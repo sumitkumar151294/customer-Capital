@@ -63,7 +63,6 @@ const SupplyMaster = () => {
     { label: "MinThresholdAmount", key: "MinThresholdAmount" },
     { label: "status", key: "status" },
   ];
-  console.log(vendorList, vendorList.length);
 
   const [vendorData, setVendorData] = useState({
     name: "",
@@ -381,7 +380,9 @@ const SupplyMaster = () => {
 
                 <div className="card-body position-relative">
                   {!isLoading ? (
-                    <Loader classType={"absoluteLoader"} />
+                    <div style={{ height: "200px" }}>
+                      <Loader classType={"absoluteLoader"} />
+                    </div>
                   ) : (
                     <div className="table-responsive">
                       <table className="table header-border table-responsive-sm">
