@@ -129,6 +129,10 @@ function App() {
 
         {/* User Admin Section */}
         <Route
+          path="/LC-user-admin"
+          element={<HomeAdmin Component={Dashboard} />}
+        />
+        <Route
           path="/LC-user-admin/addspecial"
           element={<HomeAdmin Component={AddSpecial} />}
         />
