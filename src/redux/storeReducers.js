@@ -19,6 +19,7 @@ import  ClientCommissionReducer  from './modules/UserAdmin/ClientCommissionSlice
 import offerMasterReducer from './modules/UserAdmin/offerMasterSlice';
 import BannerMasterReducer from './modules/UserAdmin/BannerMasterSlice';
 import emailEventReducer from './modules/UserAdmin/emailEventSlice';
+import activeTabReducer from './modules/User/activeTabSlice'
 
 
 const reducers = combineReducers({
@@ -42,6 +43,7 @@ const reducers = combineReducers({
   allocateMasterReducer: allocateMasterReducer,
   toggleReducer:toogleReducer,
   addSpecialReducer:addSpecialReducer,
+  activeTabReducer:activeTabReducer
 
 });
 
