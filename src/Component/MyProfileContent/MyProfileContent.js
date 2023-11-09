@@ -1,10 +1,16 @@
 import React, { useEffect } from "react";
 import img1 from "../../Images/amazon.png";
 import img2 from "../../Images/amazon.com.png";
-const MyProfileContent = ({}) => {
-  const wishlist = sessionStorage.getItem("activeTab");
-  const isActiveWishlist = wishlist === "wishlist";
-  const isActiveOrder = wishlist === "order";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveTab } from "../../redux/modules/User/activeTabSlice";
+const MyProfileContent = ({ }) => {
+
+  const dispatch = useDispatch();
+  const activeTab = useSelector((state) => state.activeTabReducer.activeTab);
+
+  const handleTabClick = (tab) => {
+    dispatch(setActiveTab(tab));
+  };
 
   return (
     <>
@@ -19,9 +25,7 @@ const MyProfileContent = ({}) => {
                 aria-orientation="vertical"
               >
                 <a
-                  class={`nav-link1 mb-3 p-3 shadow mr-2 ${
-                    isActiveWishlist || isActiveOrder ? "" : "show active"
-                  }`}
+                  className={`nav-link1 mb-3 p-3 shadow mr-2 ${(activeTab == 'wishlist' || activeTab == 'order') ? "":"show active"}`}
                   id="v-pills-home-tab"
                   data-toggle="pill"
                   href="#v-pills-home"
@@ -35,9 +39,8 @@ const MyProfileContent = ({}) => {
                   </span>
                 </a>
                 <a
-                  class={`nav-link1 mb-3 p-3 shadow mr-2 ${
-                    wishlist === "order" ? "show active" : ""
-                  }`}
+                  className={`nav-link1 mb-3 p-3 shadow mr-2 ${activeTab === "order" ? "show active" : ""}`}
+                  onClick={() => handleTabClick("order")}
                   id="v-pills-profile-tab"
                   data-toggle="pill"
                   href="#v-pills-profile"
@@ -51,9 +54,8 @@ const MyProfileContent = ({}) => {
                   </span>
                 </a>
                 <a
-                  class={`nav-link1 mb-3 p-3 shadow mr-2 ${
-                    wishlist === "wishlist" ? "show active" : ""
-                  }`}
+                  className={`nav-link1 mb-3 p-3 shadow mr-2 ${activeTab === "wishlist" ? "show active" : ""}`}
+                  onClick={() => handleTabClick("wishlist")}
                   id="v-pills-wish-tab"
                   data-toggle="pill"
                   href="#wishlist"
@@ -96,9 +98,7 @@ const MyProfileContent = ({}) => {
             <div class="col-md-9">
               <div class="tab-content" id="v-pills-tabContent">
                 <div
-                  className={`tab-pane fade shadow rounded bg-white p-5 ${
-                    isActiveWishlist || isActiveOrder ? "" : "show active"
-                  }`}
+                  className={`tab-pane fade shadow rounded bg-white p-5 ${(activeTab === 'wishlist' || activeTab=== 'order') ? "" : "show active"}`}
                   id="v-pills-home"
                   role="tabpanel"
                   aria-labelledby="v-pills-home-tab"
@@ -188,10 +188,10 @@ const MyProfileContent = ({}) => {
                     </div>
                   </div>
                 </div>
+
                 <div
-                  className={`tab-pane fade shadow rounded bg-white ${
-                    wishlist === "wishlist" ? "show active" : ""
-                  } p-5`}
+                  className={`tab-pane fade shadow rounded bg-white ${activeTab === "wishlist" ? "show active" : ""
+                    } p-5`}
                   id="wishlist"
                   role="tabpanel"
                   aria-labelledby="v-pills-wish-tab"
@@ -332,9 +332,8 @@ const MyProfileContent = ({}) => {
                 </div>
 
                 <div
-                  class={`tab-pane fade shadow rounded bg-white p-5 ${
-                    wishlist === "order" ? "show active" : ""
-                  }`}
+                  class={`tab-pane fade shadow rounded bg-white p-5 ${activeTab === "order" ? "show active" : ""
+                    }`}
                   id="v-pills-profile"
                   role="tabpanel"
                   aria-labelledby="v-pills-profile-tab"

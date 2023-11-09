@@ -156,10 +156,6 @@ const NewHeader = () => {
       if (i === index) {
         element.classList.add("active");
       }
-      // else {
-      //   element.classList.remove('active');
-      //   document.querySelector('.mobile-menu-head').classList.remove('active');
-      // }
     });
   };
 
