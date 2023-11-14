@@ -45309,3 +45309,19 @@ font-size: 1.125rem !important;
   border-radius: 1.125rem;
     font-weight: 400;
 }
+
+.update-val{
+  
+    background: #fff !important;
+    border: 3px solid #616161 !important;
+    padding: 0.3125rem 1.25rem !important;
+    color: #6e6e6e !important;
+    height: 2.5rem !important;
+    border-radius: 1rem !important;
+}
+
+
+.headdd{
+  font-size: 1.25rem !important;
+
+}

@@ -53,6 +53,13 @@ import FailedOrders from "./admin-user/FailedOrders/FailedOrders";
 
 
 
+import Order from "./admin-user/Order/Order";
+import FailedOrders from "./admin-user/FailedOrders/FailedOrders";
+import ClientBrandList from "./Admin/ClientMaster/ClientBrandList";
+
+
+
+
 function ScrollToTop() {
   const location = useLocation();
 
@@ -111,6 +118,11 @@ function App() {
           path="/LC-admin/clientmaster"
           element={<HomeAdmin Component={ClientMaster} />}
         />
+        <Route
+          path="/LC-admin/clientbrandlist"
+          element={<HomeAdmin Component={ClientBrandList} />}
+        />
+
         <Route
           path="/LC-admin/productcategory"
           element={<HomeAdmin Component={ProductCategory} />}
