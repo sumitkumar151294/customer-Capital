@@ -5,8 +5,16 @@ import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { LocalizationProvider } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import { DateRangePicker } from "@mui/x-date-pickers-pro/DateRangePicker";
+import { CSVLink } from "react-csv";
 const Orders = () => {
   const dispatch = useDispatch();
+  const headers = [
+    { label: "Brand", key: "brand" },
+    { label: "Total No. Vouchers", key: "TotalNoVouchers" },
+    { label: "Total Face Value", key: "TotalFaceValue" },
+    { label: "Margin", key: "Margin" },
+    { label: "Total Margin Value", key: "TotalMarginValue" },
+  ];
   const [supplier, setSupplier] = useState();
   const [client, setClient] = useState();
   const productList = [
@@ -72,12 +80,11 @@ const Orders = () => {
                       </div>
                     </div>
                     <div class="d-flex align-items-center flex-wrap">
-                      <a
-                        href="javascript:void(0);"
-                        class="btn btn-primary btn-sm btn-rounded me-3 mb-2"
-                      >
-                        <i class="fa fa-file-excel me-2"></i>Export
-                      </a>
+                      <CSVLink data={productList} headers={headers}>
+                        <button className="btn btn-primary btn-sm btn-rounded me-3 mb-2">
+                          <i className="fa fa-file-excel me-2"></i>export
+                        </button>
+                      </CSVLink>
                     </div>
                   </div>
                 </div>

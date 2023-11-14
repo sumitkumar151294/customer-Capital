@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Loader from "../Loader/Loader";
 import { useDispatch } from "react-redux";
 import { onCategorySubmit } from "../../redux/modules/Admin/categorySlice";
+import { CSVLink } from "react-csv";
 
 const CreateCategory = () => {
   const [isLoading, setIsLoading] = useState("true");
@@ -20,6 +21,33 @@ const CreateCategory = () => {
   });
 
   const dispatch = useDispatch();
+  let tableData = [
+    {
+      category: "E-Commerce",
+      supplier: "Qucksilver",
+      company: "Amazon",
+    },
+    {
+      category: "E-Commerce",
+      supplier: "Supplier 2",
+      company: "Flipcart",
+    },
+    {
+      category: "Shopping",
+      supplier: "Supplier 3",
+      company: "Nykaa",
+    },
+    {
+      category: "Food",
+      supplier: "Supplier 4",
+      company: "KFC",
+    },
+  ];
+  const headers = [
+    { label: "category", key: "category" },
+    { label: "supplier", key: "supplier" },
+    { label: "company", key: "company" },
+  ];
 
   const handleChange = (e, fieldName) => {
     setCreateCategory({
@@ -68,8 +96,8 @@ const CreateCategory = () => {
                 </h4>
               </div>
               <div className="card-body position-relative">
-                {!isLoading ? (
-                  <div style={{ height: "400px" }}>
+                {!isformLoading ? (
+                  <div style={{ height: "200px" }}>
                     <Loader classType={"absoluteLoader"} />
                   </div>
                 ) : (
@@ -184,103 +212,57 @@ const CreateCategory = () => {
                     </div>
                   </div>
                   <div class="d-flex align-items-center flex-wrap">
-                    <a
-                      href="javascript:void(0);"
-                      class="btn btn-primary btn-sm btn-rounded me-3 mb-2"
-                    >
-                      <i class="fa fa-file-excel me-2"></i>Export
-                    </a>
+                    <CSVLink data={tableData} headers={headers}>
+                      <button className="btn btn-primary btn-sm btn-rounded me-3 mb-2">
+                        <i className="fa fa-file-excel me-2"></i>export
+                      </button>
+                    </CSVLink>
                   </div>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table header-border table-responsive-sm">
-                    <thead>
-                      <tr>
-                        <th>Category Name</th>
-                        <th>Supplier Name</th>
+              <div class="card-body position-relative">
+                {!isLoading ? (
+                  <div style={{ height: "300px" }}>
+                    <Loader classType={"absoluteLoader"} />
+                  </div>
+                ) : (
+                  <div class="table-responsive">
+                    <table class="table header-border table-responsive-sm">
+                      <thead>
+                        <tr>
+                          <th>Category Name</th>
+                          <th>Supplier Name</th>
 
-                        <th>Supplier Brand</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>E-Commerce</td>
-                        <td>
-                          Qucksilver<a href="javascript:void();"></a>
-                        </td>
-                        <td>Amazon</td>
+                          <th>Supplier Brand</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {tableData.map((item) => (
+                          <tr>
+                            <td>{item.category}</td>
+                            <td>
+                              {item.supplier}
+                              <a href="javascript:void();"></a>
+                            </td>
+                            <td>{item.company}</td>
 
-                        <td>
-                          <div class="d-flex">
-                            <a
-                              href="#"
-                              class="btn btn-danger shadow btn-xs sharp"
-                            >
-                              <i class="fa fa-trash"></i>
-                            </a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>E-Commerce</td>
-                        <td>
-                          Supplier 2<a href="javascript:void();"></a>
-                        </td>
-                        <td>Flipcart</td>
-
-                        <td>
-                          <div class="d-flex">
-                            <a
-                              href="#"
-                              class="btn btn-danger shadow btn-xs sharp"
-                            >
-                              <i class="fa fa-trash"></i>
-                            </a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Shopping</td>
-                        <td>
-                          Supplier 3<a href="javascript:void();"></a>
-                        </td>
-                        <td>Nykaa</td>
-
-                        <td>
-                          <div class="d-flex">
-                            <a
-                              href="#"
-                              class="btn btn-danger shadow btn-xs sharp"
-                            >
-                              <i class="fa fa-trash"></i>
-                            </a>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Food</td>
-                        <td>
-                          Supplier 4<a href="javascript:void();"></a>
-                        </td>
-                        <td>KFC</td>
-
-                        <td>
-                          <div class="d-flex">
-                            <a
-                              href="#"
-                              class="btn btn-danger shadow btn-xs sharp"
-                            >
-                              <i class="fa fa-trash"></i>
-                            </a>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                            <td>
+                              <div class="d-flex">
+                                <a
+                                  href="#"
+                                  class="btn btn-danger shadow btn-xs sharp"
+                                >
+                                  <i class="fa fa-trash"></i>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
               </div>
             </div>
           </div>

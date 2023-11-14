@@ -1,13 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { setActiveTab } from "../../redux/modules/User/activeTabSlice";
 function Footer() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleMyAccount = () => {
-        sessionStorage.clear();
+        dispatch(setActiveTab(''));
         navigate("/myprofile");
     };
     const handleOrder = () => {
-        sessionStorage.setItem("activeTab", "order");
+        dispatch(setActiveTab('order'));
         navigate("/myprofile");
       };
     return (
