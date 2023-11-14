@@ -50,11 +50,6 @@ import BannerList from "./admin-user/bannerMaster/bannerMaster";
 import EmailEventMaster from "./admin-user/EmailEventMaster/emailEventMaster";
 import Order from "./admin-user/Order/Order";
 import FailedOrders from "./admin-user/FailedOrders/FailedOrders";
-
-
-
-import Order from "./admin-user/Order/Order";
-import FailedOrders from "./admin-user/FailedOrders/FailedOrders";
 import ClientBrandList from "./Admin/ClientMaster/ClientBrandList";
 
 
