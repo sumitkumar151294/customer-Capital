@@ -56,7 +56,7 @@ const Customerlist = () => {
 
   return (
     <div className="content-body">
-      {!isLoading ? (
+      {isLoading ? (
         <Loader />
       ) : (
         <div className="container-fluid">
