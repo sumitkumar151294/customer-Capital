@@ -45242,13 +45242,16 @@
 font-size: 1rem !important;
 }
 
+.txxt{
+  font-weight: 500 !important;
+}
+
 .range-font{
 font-size: 1.125rem !important;
 }
 
 .mrr {
   margin-right: 10px;
-
 }
 
 .weak {

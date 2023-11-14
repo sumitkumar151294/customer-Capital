@@ -7,22 +7,24 @@ import img4 from "../../Images/offers.png";
 import img5 from "../../Images/profile.png";
 import { Link } from "react-router-dom";
 import { toggleNavbar } from "../../redux/modules/User/toggleSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setActiveTab } from "../../redux/modules/User/activeTabSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const activeTab = useSelector((state)=>state.activeTabReducer);
 
   const toggleMenu = () => {
     dispatch(toggleNavbar());
   };
   const handleMyAccount = () => {
-    sessionStorage.clear();
+    dispatch(setActiveTab(''));
     navigate("/myprofile");
   };
   const handleWishList = () => {
-    sessionStorage.setItem("activeTab", "wishlist");
+    dispatch(setActiveTab('wishlist'));
     navigate("/myprofile");
   };
   return (
