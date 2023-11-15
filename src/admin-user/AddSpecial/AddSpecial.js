@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { onAddSpecialSubmit } from '../../redux/modules/UserAdmin/addSpecialSlice';
 import Loader from '../../Admin/Loader/Loader'
+import { Link } from 'react-router-dom';
 
 
 const AddSpecial = () => {
@@ -186,9 +187,9 @@ const AddSpecial = () => {
                                                                     </div>
                                                                 </td>
                                                                 <td>
-                                                                    <a href="allocatebrands.html" className="btn btn-primary btn-sm float-right">
+                                                                    <Link to='/LC-user-admin/allocatebrands' className="btn btn-primary btn-sm float-right">
                                                                         <i className="fa fa-plus"></i>&nbsp;Allocate Brands
-                                                                    </a>
+                                                                    </Link>
                                                                 </td>
                                                             </tr>
                                                         ))

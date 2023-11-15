@@ -1,4 +1,6 @@
 import React from 'react'
+// import Loader from "../Loader/Loader";
+
 
 const customerdetails = [
     {
@@ -37,6 +39,8 @@ const customerdetails = [
 
 
 const ClientBrandList = () => {
+    // const [isLoading, setIsLoading] = useState("true");
+
     return (
         <>
             <div class="content-body">

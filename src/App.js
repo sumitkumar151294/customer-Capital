@@ -51,6 +51,7 @@ import EmailEventMaster from "./admin-user/EmailEventMaster/emailEventMaster";
 import Order from "./admin-user/Order/Order";
 import FailedOrders from "./admin-user/FailedOrders/FailedOrders";
 import ClientBrandList from "./Admin/ClientMaster/ClientBrandList";
+import { AllocateBrands } from "./admin-user/CMS/AllocateBrands";
 
 
 
@@ -148,6 +149,19 @@ function App() {
           path="/LC-user-admin"
           element={<HomeAdmin Component={Dashboard} />}
         />
+
+<Route
+          path="/LC-user-admin/allocatebrands"
+          element={<HomeAdmin Component={AllocateBrands} />}
+        />
+
+
+
+<Route
+          path="/LC-user-admin/brandcatalouge"
+          element={<HomeAdmin Component={BrandCatalogue} />}
+        />
+
         <Route
           path="/LC-user-admin/addspecial"
           element={<HomeAdmin Component={AddSpecial} />}

@@ -244,7 +244,7 @@ const SupplyMaster = () => {
                           </div>
 
                           <div className="col-sm-4 form-group mb-2">
-                            <label htmlFor="">Password</label>
+                            <label htmlFor="password-1">Password</label>
                             <input
                               type="password"
                               value={vendorData.password}
@@ -253,6 +253,9 @@ const SupplyMaster = () => {
                                   ? "border-danger"
                                   : "form-control"
                               }`}
+                              name='password'
+                              id='password-1'
+                              placeholder=""
                               onChange={(e) => handleChange(e, "password")}
                             />
                             <p className="text-danger">{errors.password}</p>
@@ -311,6 +314,7 @@ const SupplyMaster = () => {
                             />
                             <p className="text-danger">{errors.code}</p>
                           </div>
+
                           <div className="col-sm-4 form-group mb-2">
                             <label htmlFor="amount">
                               Min. Threshold Amount

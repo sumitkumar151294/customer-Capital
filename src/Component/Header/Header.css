@@ -20171,6 +20171,7 @@ textarea {
 .lis input[type="text"],
 input[type="text"],
 input[type="email"],
+input[type='password'],
 input[type="tel"] {
   border: 1px solid #dbdbdb;
   border-radius: 2px;
@@ -20180,6 +20181,8 @@ input[type="tel"] {
   width: 100%;
   outline: 0;
 }
+
+
 
 .grid-50-50 {
   display: grid;
@@ -22370,4 +22373,8 @@ font-weight: 700;
 .para{
   font-weight: 400;
   color: #8b8a8a;
+}
+
+.txt-admin{
+  font-size: 1.25rem !important;
 }

@@ -164,7 +164,7 @@ const EmailEventMaster = () => {
                         </div>
                         <div className=" form-group mb-2">
                           <label htmlFor="name-f">SMS Body</label>
-                          <div className=" bootstrap-tagsinput">
+                          <div className=" bootstrap-tagsinput border_type">
                             <input
                               className=""
                               onChange={(e) => handleChange(e, "smsBody")}
@@ -176,7 +176,7 @@ const EmailEventMaster = () => {
                         </div>
                         <div className="form-group mb-2">
                           <label htmlFor="name-f">Subject</label>
-                          <div className=" bootstrap-tagsinput">
+                          <div className=" bootstrap-tagsinput border_type">
                             <input
                               className="input-tags"
                               type="text"
@@ -188,7 +188,7 @@ const EmailEventMaster = () => {
                         </div>
                         <div className="form-group mb-2">
                           <label htmlFor="name-f">Mail Body</label>
-                          <div className=" bootstrap-tagsinput">
+                          <div className=" bootstrap-tagsinput border_type">
                             <input
                               className="input-tags"
                               onChange={(e) => handleChange(e, "mailBody")}
