@@ -63,7 +63,7 @@ const Orders = () => {
                 <div class="container-fluid">
                   <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
                     <div class="card-header">
-                      <h4 class="card-title">Orders</h4>
+                      <h4 class="card-title headdd txxt">Orders</h4>
                     </div>
                     <div class="customer-search mb-sm-0 mb-3">
                       <div class="input-group search-area">

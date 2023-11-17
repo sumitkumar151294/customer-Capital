@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Loader from "../Loader/Loader";
 import { onRoleMasterSubmit } from "../../redux/modules/Admin/roleMasterSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const RoleMaster = () => {
   const dispatch = useDispatch();
@@ -70,6 +71,7 @@ const RoleMaster = () => {
     const { name, value, type, checked } = e.target;
     if (name === "selectAll") {
       const updatedModules = { ...formData.modules };
+      console.log(updatedModules);
       for (const key in updatedModules) {
         updatedModules[key] = checked;
       }
@@ -110,7 +112,7 @@ const RoleMaster = () => {
             <div class="col-xl-12 col-xxl-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Role Master</h4>
+                  <h4 class="card-title txt-admin txtt">Role Master</h4>
                 </div>
                 <div class="card-body position-relative">
                   {!isformLoading ? (
@@ -213,7 +215,7 @@ const RoleMaster = () => {
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Role Module Access List</h4>
+                  <h4 class="card-title txt-admin txtt">Role Module Access List</h4>
                 </div>
 
                 <div class="card-body position-relative">
@@ -228,22 +230,20 @@ const RoleMaster = () => {
                           <tr>
                             <th>Role Name</th>
                             <th>Modules</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
                           {roleData.map((row, index) => (
                             <tr key={index}>
                               <td>{row.roleName}</td>
-                              <td>
-                                <div className="d-flex"></div>
-                              </td>
                               {row.modules.map((module, moduleIndex) => (
                                 <td key={moduleIndex}>
-                                  <span className="badge badge-success">
-                                    {module}
-                                  </span>
-                                </td>
+
+                                    <span class="badge badge-success mr-10">{module}</span>
+                                  </td>
                               ))}
+                              <td><Link  class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></Link></td>
                             </tr>
                           ))}
                         </tbody>

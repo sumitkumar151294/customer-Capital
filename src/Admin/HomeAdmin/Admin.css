@@ -45323,5 +45323,13 @@ font-size: 1.125rem !important;
 
 .headdd{
   font-size: 1.25rem !important;
+}
 
+.cont-fluid{
+  padding-top: 1.3rem !important;
+}
+
+.cardd-body{
+  padding: 1.875rem !important;
+  padding-top: 0px !important;
 }

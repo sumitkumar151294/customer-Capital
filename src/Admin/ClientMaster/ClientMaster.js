@@ -50,7 +50,7 @@ const ClientMaster = () => {
       ...clientData,
       [fieldName]: e.target.value,
     });
-  
+
     // Remove the error message when the user starts typing
     setErrors({
       ...errors,
@@ -87,23 +87,24 @@ const ClientMaster = () => {
   };
 
   return (
-    <div class="content-body">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-12 col-xxl-12">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title">Client Master</h4>
+    <div className="content-body">
+      <div className="container-fluid  ">
+        <div className="row">
+          <div className="col-xl-12 col-xxl-12">
+            <div className="card">
+              <div className="card-header">
+                <h4 className="card-title headdd txxt ">Client Master</h4>
               </div>
-              <div class="card-body position-relative">
-                {!isformLoading ? (
+
+              <div className="card-body cardd-body position-relative">
+              {!isformLoading ? (
                   <div style={{ height: "400px" }}>
                     <Loader classType={"absoluteLoader"} />
                   </div>
-                ) : (
-                  <div class="container mt-3">
-                    <form onSubmit={handleSubmit}>
-                      <div class="row">
+                  ) : (
+                    <div class="container-fluid cont-fluid">
+                      <form onSubmit={handleSubmit}>
+                        <div class="row">
                         <div class="col-sm-4 form-group mb-2">
                           <label for="contact-name">Contact Name</label>
                           <input
@@ -141,18 +142,10 @@ const ClientMaster = () => {
                           <p className="text-danger">{errors.email}</p>
                         </div>
 
-                        <div class="col-sm-4 form-group mb-2">
-                          <label for="ipAddress">Database IP Address</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="ipAddress"
-                            id="ipAddress"
-                            placeholder=""
-                            onChange={(e) => handleChange(e, 'ipAddress')}
-                          />
-                          <p className="text-danger">{errors.ipAddress}</p>
-                        </div>
+
+
+
+
                         <div class="col-sm-4 form-group mb-2">
                           <label for="contact-name">Username</label>
                           <input
@@ -165,7 +158,8 @@ const ClientMaster = () => {
                           />
                           <p className="text-danger">{errors.userName}</p>
                         </div>
-                        <div class="col-sm-4 form-group mb-2">
+
+                      <div class="col-sm-4 form-group mb-2">
                           <label for="contact-name">Password</label>
                           <input
                             type="password"
@@ -177,6 +171,7 @@ const ClientMaster = () => {
                           />
                           <p className="text-danger">{errors.password}</p>
                         </div>
+
 
                         <div class="col-sm-4 form-group mb-2">
                           <label for="status">Status</label>
@@ -195,7 +190,10 @@ const ClientMaster = () => {
                           <p className="text-danger">{errors.status}</p>
                         </div>
 
-                        <div class="col-sm-4 form-group mb-2">
+                      <div className="row mt-3" >
+                        <h3 style={{ borderBottom: "1px solid #ededed" }}>Theme Details</h3>
+
+                        <div className="col-sm-3 form-group mb-2">
                           <label for="color">Color</label>
                           <input
                             type="color"
@@ -208,8 +206,8 @@ const ClientMaster = () => {
                           <p className="text-danger">{errors.color}</p>
                         </div>
 
-                        <div class="col-sm-6 form-group mb-2">
-                          <label for="logo">Logo Link</label>
+                        <div className="col-sm-6 form-group mb-2">
+                        <label for="logo">Logo Link</label>
                           <input
                             type="text"
                             class="form-control"
@@ -221,8 +219,8 @@ const ClientMaster = () => {
                           <p className="text-danger">{errors.logoLink}</p>
                         </div>
 
-                        <div class="col-sm-6 form-group mb-2">
-                          <label for="status">Select Theme</label>
+                        <div className="col-sm-3 form-group mb-2">
+                        <label for="status">Select Theme</label>
                           <select
                             class="form-select"
                             value={clientData?.theme}
@@ -238,16 +236,82 @@ const ClientMaster = () => {
                           <p className="text-danger">{errors.theme}</p>
                         </div>
 
-                        <div class="row mt-2">
-                          <h3 style={{ borderBottom: "1px solid #ededed" }}>
-                            Razorpay Payment Gateway
-                          </h3>
+                      </div>
 
-                          <div class="col-lg-6 mt-2">
-                            <div class="row p-0">
-                              <h4>Staging</h4>
-                              <div class="col-sm-12 form-group mb-2">
-                                <input
+                      <div className="row mt-3" >
+                        <h3 style={{ borderBottom: "1px solid #ededed" }}>Database Credentials</h3>
+
+                        <div className="col-lg-4">
+
+                          <h4 className="range-font" >Database IP Address</h4>
+                          <div className="col-sm-12 form-group mb-2">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="ipAddress"
+                            id="ipAddress"
+                            placeholder=""
+                            onChange={(e) => handleChange(e, 'ipAddress')}
+                          />
+                          <p className="text-danger">{errors.ipAddress}</p>
+                          </div>
+
+
+
+                        </div>
+
+                        <div className="col-lg-4 ">
+
+                          <h4 className="range-font">Database User ID</h4>
+                          <div className="col-sm-12 form-group mb-2">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="userId"
+                            id="userId"
+                            placeholder=""
+                            onChange={(e) => handleChange(e, 'userId')}
+                          />
+                          <p className="text-danger">{errors.userId}</p>
+                          </div>
+
+
+
+                        </div>
+
+                        <div className="col-lg-4 ">
+
+                          <h4 className="range-font">Database User Password</h4>
+                          <div className="col-sm-12 form-group mb-2">
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="userPassword"
+                            id="userPassword"
+                            placeholder=""
+                            onChange={(e) => handleChange(e, 'userPassword')}
+                          />
+                          <p className="text-danger">{errors.ipAddress}</p>
+                          </div>
+
+
+
+                        </div>
+
+
+                      </div>
+
+
+
+
+                      <div className="row mt-3" >
+                        <h3 style={{ borderBottom: "1px solid #ededed" }}>Razorpay Payment Gateway</h3>
+
+                        <div className="col-lg-6 mt-2">
+                          <div className="row p-0">
+                            <h4 className="range-font">Staging</h4>
+                            <div className="col-sm-12 form-group mb-2">
+                            <input
                                   type="text"
                                   class="form-control"
                                   name="stagingKey"
@@ -256,10 +320,10 @@ const ClientMaster = () => {
                                   onChange={(e) => handleChange(e, 'stagingKey')}
                                 />
                                 <p className="text-danger">{errors.stagingKey}</p>
-                              </div>
+                            </div>
 
-                              <div class="col-sm-12 form-group mb-2">
-                                <input
+                            <div className="col-sm-12 form-group mb-2">
+                            <input
                                   type="text"
                                   class="form-control"
                                   name="stagingSecretKey"
@@ -268,15 +332,16 @@ const ClientMaster = () => {
                                   onChange={(e) => handleChange(e, 'stagingSecretKey')}
                                 />
                                 <p className="text-danger">{errors.stagingSecretKey}</p>
-                              </div>
                             </div>
                           </div>
+                        </div>
 
-                          <div class="col-lg-6 mt-2">
-                            <div class="row p-0">
-                              <h4>Production</h4>
-                              <div class="col-sm-12 form-group mb-2">
-                                <input
+
+                        <div className="col-lg-6 mt-2">
+                          <div className="row p-0">
+                            <h4 className="range-font">Production</h4>
+                            <div className="col-sm-12 form-group mb-2">
+                            <input
                                   type="text"
                                   class="form-control"
                                   name="productionKey"
@@ -285,10 +350,10 @@ const ClientMaster = () => {
                                   onChange={(e) => handleChange(e, 'productionKey')}
                                 />
                                 <p className="text-danger">{errors.productionKey}</p>
-                              </div>
+                            </div>
 
-                              <div class="col-sm-12 form-group mb-2">
-                                <input
+                            <div className="col-sm-12 form-group mb-2">
+                            <input
                                   type="text"
                                   class="form-control"
                                   name="productionSecretKey"
@@ -297,28 +362,27 @@ const ClientMaster = () => {
                                   onChange={(e) => handleChange(e, 'productionSecretKey')}
                                 />
                                 <p className="text-danger">{errors.productionSecretKey}</p>
-                              </div>
                             </div>
                           </div>
                         </div>
 
-                        <div class="col-sm-12 form-group mb-0 mt-2">
-                          <button
-                            type="submit"
-                            class="btn btn-primary float-right pad-aa"
-                          >
-                            Add<i class="fa fa-arrow-right"></i>
-                          </button>
-                        </div>
                       </div>
-                    </form>
-                  </div>
+
+
+                      <div className="col-sm-12 form-group mb-0 mt-2">
+                        <button className="btn btn-primary float-right pad-aa">Add <i className="fa fa-arrow-right"></i></button>
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
                 )}
               </div>
             </div>
           </div>
         </div>
       </div>
+
 
       <div class="container-fluid pt-0">
             <div class="row">
@@ -442,6 +506,8 @@ const ClientMaster = () => {
         
         </div>
     </div>
+
+
     </div>
   );
 };
