@@ -91,7 +91,7 @@ const CreateCategory = () => {
           <div className="col-xl-12 col-xxl-12">
             <div className="card">
               <div className="card-header">
-                <h4 className="card-title">
+                <h4 className="card-title txt-admin txtt ">
                   Create And Update & Brand Mapping
                 </h4>
               </div>
@@ -195,7 +195,7 @@ const CreateCategory = () => {
               <div class="container mt-2 mb-2">
                 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
                   <div class="card-header">
-                    <h4 class="card-title">Category List</h4>
+                    <h4 class="card-title  txt-admin txtt">Category List</h4>
                   </div>
                   <div class="customer-search mb-sm-0 mb-3">
                     <div class="input-group search-area">

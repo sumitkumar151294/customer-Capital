@@ -70,6 +70,7 @@ const RoleMaster = () => {
     const { name, value, type, checked } = e.target;
     if (name === "selectAll") {
       const updatedModules = { ...formData.modules };
+      console.log(updatedModules);
       for (const key in updatedModules) {
         updatedModules[key] = checked;
       }
@@ -110,7 +111,7 @@ const RoleMaster = () => {
             <div class="col-xl-12 col-xxl-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Role Master</h4>
+                  <h4 class="card-title txt-admin txtt">Role Master</h4>
                 </div>
                 <div class="card-body position-relative">
                   {!isformLoading ? (
@@ -213,7 +214,7 @@ const RoleMaster = () => {
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Role Module Access List</h4>
+                  <h4 class="card-title txt-admin txtt">Role Module Access List</h4>
                 </div>
 
                 <div class="card-body position-relative">
@@ -228,34 +229,84 @@ const RoleMaster = () => {
                           <tr>
                             <th>Role Name</th>
                             <th>Modules</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {roleData.map((row, index) => (
-                            <tr key={index}>
-                              <td>{row.roleName}</td>
-                              <td>
-                                <div className="d-flex"></div>
-                              </td>
-                              {row.modules.map((module, moduleIndex) => (
-                                <td key={moduleIndex}>
-                                  <span className="badge badge-success">
-                                    {module}
-                                  </span>
-                                </td>
-                              ))}
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
+                          <tr>
+                            <td>Admin<a href="javascript:void();"></a>
+                            </td>
+
+                            <td><div class="d-flex">
+                              <span class="badge badge-success mr-10">Module Access 1</span>
+                              <span class="badge badge-success mr-10">Module Access 2</span>
+                              <span class="badge badge-success mr-10">Module Access 3</span>
+                              <span class="badge badge-success mr-10">Module Access 4</span>
+
+
+                            </div></td>
+                            <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+                          </tr>
+                          <tr>
+                            <td>Data Analyst<a href="javascript:void();"></a>
+                            </td>
+                            <td><div class="d-flex">
+                              <span class="badge badge-success mr-10">Module Access 1</span>
+                              <span class="badge badge-success mr-10">Module Access 2</span>
+                              <span class="badge badge-success mr-10">Module Access 3</span>
+                              <span class="badge badge-success mr-10">Module Access 4</span>
+                              <span class="badge badge-success">Module Access 4</span>
+
+
+
+
+
+
+                            </div></td>
+                            <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+                          </tr>
+                          <tr>
+                            <td>Accountant<a href="javascript:void();"></a>
+                            </td>
+                            <td>
+                              <span class="badge badge-success mr-10">Module Access 1</span>
+                              <span class="badge badge-success mr-10">Module Access 2</span>
+                              <span class="badge badge-success mr-10">Module Access 3</span>
+
+
+                            </td>
+                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+                        </tr>
+                        <tr>
+                          <td>Manager<a href="javascript:void();"></a>
+                          </td>
+                          <td><div class="d-flex">
+                            <span class="badge badge-success mr-10">Module Access 1</span>
+                            <span class="badge badge-success mr-10">Module Access 2</span>
+                            <span class="badge badge-success mr-10">Module Access 3</span>
+                            <span class="badge badge-success mr-10">Module Access 4</span>
+                            <span class="badge badge-success mr-10">Module Access 4</span>
+
+                            <span class="badge badge-success mr-10">Module Access 4</span>
+
+                            <span class="badge badge-success mr-10">Module Access 4</span>
+
+
+
+                          </div></td>
+                          <td><a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a></td>
+
+                        </tr>
+                      </tbody>
+                    </table>
                     </div>
                   )}
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };

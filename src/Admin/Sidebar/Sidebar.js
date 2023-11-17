@@ -14,6 +14,10 @@ import FAQ from "../../assets/img/faq.png";
 import contact from "../../assets/img/contact.png";
 import customer from "../../assets/img/customer.png";
 import email from "../../assets/img/email.png";
+import clist from "../../assets/img/clists.png"
+import cnlist from '../../assets/img/cnlist.png'
+import faq from '../../assets/img/faq.png'
+
 
 import { Link, useLocation } from "react-router-dom";
 
@@ -67,7 +71,7 @@ const Sidebar = () => {
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={email} alt="file not exist" />
+                  <img class="w-20px" src={productcate} alt="file not exist" />
                   <span class="nav-text ps-1">Supplier Brand List</span>
                 </Link>
               </li>
@@ -145,12 +149,12 @@ const Sidebar = () => {
                 }
               >
                 <Link
-                  to="/LC-admin/brandcatalogue"
+                  to="/LC-admin/brandcatalouge"
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={email} alt="file not exist" />
-                  <span class="nav-text ps-1">Brand Catalogue</span>
+                  <img class="w-20px" src={product} alt="file not exist" />
+                  <span class="nav-text ps-1">Brand Catalouge</span>
                 </Link>
               </li>
 
@@ -180,39 +184,42 @@ const Sidebar = () => {
                 }
               >
                 <Link to="/LC-user-admin" class="ai-icon" aria-expanded="false">
-                  <img class="w-20px" src={CMS} alt="file not exist" />
+                  <img class="w-20px" src={vendor} alt="file not exist" />
                   <span class="nav-text ps-1">Dashboard</span>
-                </Link>
-              </li>
-              <li
-                className={
-                  location.pathname === "/LC-user-admin/CMS" ? "mm-active" : ""
-                }
-              >
-                <Link
-                  to="/LC-user-admin/CMS"
-                  class="ai-icon"
-                  aria-expanded="false"
-                >
-                  <img class="w-20px" src={CMS} alt="file not exist" />
-                  <span class="nav-text ps-1">CMS</span>
                 </Link>
               </li>
 
               <li
                 className={
-                  location.pathname === "/LC-user-admin/faqs" ? "mm-active" : ""
+                  location.pathname === "/LC-user-admin/brandcatalouge" ? "mm-active" : ""
                 }
               >
                 <Link
-                  to="/LC-user-admin/faqs"
+                  to="/LC-user-admin/brandcatalouge"
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={FAQ} alt="file not exist" />
-                  <span class="nav-text ps-1">FAQ'S Master</span>
+                  <img class="w-20px" src={clist} alt="file not exist" />
+                  <span class="nav-text ps-1">Brand Catalouge</span>
                 </Link>
               </li>
+
+
+              <li
+                className={
+                  location.pathname === "/LC-user-admin/orders" ? "mm-active" : ""
+                }
+              >
+                <Link
+                  to="/LC-user-admin/orders"
+                  class="ai-icon"
+                  aria-expanded="false"
+                >
+                  <img class="w-20px" src={clist} alt="file not exist" />
+                  <span class="nav-text ps-1">Orders</span>
+                </Link>
+              </li>
+
 
               <li
                 className={
@@ -226,10 +233,11 @@ const Sidebar = () => {
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={clists} alt="file not exist" />
+                  <img class="w-20px" src={clist} alt="file not exist" />
                   <span class="nav-text ps-1">Client Commission Report</span>
                 </Link>
               </li>
+
               <li
                 className={
                   location.pathname === "/LC-user-admin/abandonedcart  "
@@ -242,10 +250,26 @@ const Sidebar = () => {
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={clists} alt="file not exist" />
+                  <img class="w-20px" src={clist} alt="file not exist" />
                   <span class="nav-text ps-1">Abandoned Cart Report</span>
                 </Link>
               </li>
+
+              <li
+                className={
+                  location.pathname === "/LC-user-admin/failedorders" ? "mm-active" : ""
+                }
+              >
+                <Link
+                  to="/LC-user-admin/failedorders"
+                  class="ai-icon"
+                  aria-expanded="false"
+                >
+                  <img class="w-20px" src={clist} alt="file not exist" />
+                  <span class="nav-text ps-1">Failed Orders</span>
+                </Link>
+              </li>
+
               <li
                 className={
                   location.pathname === "/LC-user-admin/customerlist  "
@@ -258,10 +282,87 @@ const Sidebar = () => {
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={clists} alt="file not exist" />
+                  <img class="w-20px" src={cnlist} alt="file not exist" />
                   <span class="nav-text ps-1">Customer List</span>
                 </Link>
               </li>
+
+              <li
+                className={
+                  location.pathname === "/LC-user-admin/emaileventmaster  "
+                    ? "mm-active"
+                    : ""
+                }
+              >
+                <Link
+                  to="/LC-user-admin/emaileventmaster  "
+                  class="ai-icon"
+                  aria-expanded="false"
+                >
+                  <img class="w-20px" src={cnlist} alt="file not exist" />
+                  <span class="nav-text ps-1">Email Event Master</span>
+                </Link>
+              </li>
+
+
+
+              <li
+                className={
+                  location.pathname === "/LC-user-admin/CMS" ? "mm-active" : ""
+                }
+              >
+                <Link
+                  to="/LC-user-admin/CMS"
+                  class="ai-icon"
+                  aria-expanded="false"
+                >
+                  <img class="w-20px" src={clist} alt="file not exist" />
+                  <span class="nav-text ps-1">CMS</span>
+                </Link>
+              </li>
+
+
+
+              <li
+                className={
+                  location.pathname === "/LC-user-admin/faqs" ? "mm-active" : ""
+                }
+              >
+                <Link
+                  to="/LC-user-admin/faqs"
+                  class="ai-icon"
+                  aria-expanded="false"
+                >
+                  <img class="w-20px" src={faq} alt="file not exist" />
+                  <span class="nav-text ps-1">FAQ'S Master</span>
+                </Link>
+              </li>
+
+
+              <li
+                className={
+                  location.pathname === "/LC-user-admin/bannermaster"
+                    ? "mm-active"
+                    : ""
+                }
+              >
+                <Link
+                  to="/LC-user-admin/bannermaster"
+                  class="ai-icon"
+                  aria-expanded="false"
+                >
+                  <img class="w-20px" src={clist} alt="file not exist" />
+                  <span class="nav-text ps-1">Banner Master</span>
+                </Link>
+              </li>
+              
+
+              
+
+
+
+
+
               <li
                 className={
                   location.pathname === "/LC-user-admin/offermaster  "
@@ -274,7 +375,7 @@ const Sidebar = () => {
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={clists} alt="file not exist" />
+                  <img class="w-20px" src={clist} alt="file not exist" />
                   <span class="nav-text ps-1">Offer Master</span>
                 </Link>
               </li>
@@ -291,43 +392,17 @@ const Sidebar = () => {
                   class="ai-icon"
                   aria-expanded="false"
                 >
-                  <img class="w-20px" src={email} alt="file not exist" />
+                  <img class="w-20px" src={clist} alt="file not exist" />
                   <span class="nav-text ps-1">Add Special</span>
                 </Link>
               </li>
-              <li
-                className={
-                  location.pathname === "/LC-user-admin/bannermaster"
-                    ? "mm-active"
-                    : ""
-                }
-              >
-                <Link
-                  to="/LC-user-admin/bannermaster"
-                  class="ai-icon"
-                  aria-expanded="false"
-                >
-                  <img class="w-20px" src={clists} alt="file not exist" />
-                  <span class="nav-text ps-1">Banner Master</span>
-                </Link>
-              </li>
 
-              <li
-                className={
-                  location.pathname === "/LC-user-admin/emaileventmaster  "
-                    ? "mm-active"
-                    : ""
-                }
-              >
-                <Link
-                  to="/LC-user-admin/emaileventmaster  "
-                  class="ai-icon"
-                  aria-expanded="false"
-                >
-                  <img class="w-20px" src={clists} alt="file not exist" />
-                  <span class="nav-text ps-1">Email Event Master</span>
-                </Link>
-              </li>
+
+              
+
+              
+
+
             </>
           )}
         </ul>

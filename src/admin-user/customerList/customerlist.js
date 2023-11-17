@@ -56,7 +56,7 @@ const Customerlist = () => {
 
   return (
     <div className="content-body">
-      {isLoading ? (
+      {!isLoading ? (
         <Loader />
       ) : (
         <div className="container-fluid">
@@ -108,7 +108,7 @@ const Customerlist = () => {
                               <tr class="btn-reveal-trigger">
                                 <td class="py-3">
                                   <div class="media-body">
-                                    <h5 class="mb-0 fs--1">{item.name}</h5>
+                                    <h5 class="mb-0 fs--1 txt txxt ">{item.name}</h5>
                                   </div>
                                 </td>
                                 <td class="py-2">

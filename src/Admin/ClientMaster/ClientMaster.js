@@ -8,31 +8,31 @@ import { Link } from "react-router-dom";
 const ClientMaster = () => {
   const clientMasterList = [
     {
-      contactName: "Jaswant Rawat",
-      contactNumber: "9650531790",
-      contactEmail: "jaswant@way2webworld.com",
-      clientId: "#98878",
+      name: "Jaswant Rawat",
+      mobile: "9650531790",
+      email: "jaswant@way2webworld.com",
+      id: "#98878",
       status: "Active",
     },
     {
-      contactName: "Manish Gautam",
-      contactNumber: "7838345657",
-      contactEmail: "manishgautam.1@way.webworld.com",
-      clientId: "#98788",
+      name: "Manish Gautam",
+      mobile: "7838345657",
+      email: "manishgautam.1@way.webworld.com",
+      id: "#98788",
       status: "Non-Active",
     },
     {
-      contactName: "Naveen Jha",
-      contactNumber: "9876680901",
-      contactEmail: "naveenjha@way2webworld.com",
-      clientId: "#78899",
+      name: "Naveen Jha",
+      mobile: "9876680901",
+      email: "naveenjha@way2webworld.com",
+      id: "#78899",
       status: "Active",
     },
     {
-      contactName: "Vithal Chaudhary",
-      contactNumber: "7890654321",
-      contactEmail: "vithalchaudhary@way2webworld.com",
-      clientId: "#98766",
+      name: "Vithal Chaudhary",
+      mobile: "7890654321",
+      email: "vithalchaudhary@way2webworld.com",
+      id: "#98766",
       status: "Non-Active",
     },
   ];
@@ -361,14 +361,15 @@ const ClientMaster = () => {
                                             </tr>
                                         </thead>
                                         <tbody>
+{clientMasterList.map((data)=>(
                                             <tr>
-                                                <td>Jaswant Rawat<a href="javascript:void();"></a>
+                                                <td>{data.name}<a href="javascript:void();"></a>
                                                 </td>
-                                                <td>9650531790</td>
-                                                <td><span class="text-muted">jaswant@way2webworld.com</span>
+                                                <td>{data.mobile}</td>
+                                                <td><span class="text-muted">{data.email}</span>
                                                 </td>
-                                                <td>#98878</td>
-                                                <td><span class="badge badge-success">Active</span>
+                                                <td>{data.id}</td>
+                                                <td><span class="badge badge-success">{data.status}</span>
                                                 </td>
                                                 <td><div class="d-flex">
                                                         <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
@@ -379,60 +380,7 @@ const ClientMaster = () => {
                                                     <td>        <Link to='/LC-admin/clientbrandlist' class="btn btn-primary btn-sm float-right"><i class="fa fa-eye"></i>&nbsp;Brands</Link>
 </td>
                                             </tr>
-                                            <tr>
-                                                <td>Manish Gautam<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>7838345657</td>
-                                                <td><span class="text-muted">manishgautam.1@way.webworld.com</span>
-                                                </td>
-                                                <td>#98788</td>
-                                                <td><span class="badge badge-danger">Non-Active</span>
-                                                </td>
-                                                <td><div class="d-flex">
-                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                    </div></td>
-                                                    <td>        <a  class="btn btn-secondary btn-sm float-right"><i class="fa fa-user"></i>&nbsp;Login</a>
-</td>
-                                                   <td>        <Link to='/LC-admin/clientbrandlist' class="btn btn-primary btn-sm float-right"><i class="fa fa-eye"></i>&nbsp;Brands</Link>
-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Naveen Jha<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>9876680901</td>
-                                                <td><span class="text-muted">naveenjha@way2webworld.com</span>
-                                                </td>
-                                                <td>#78899</td>
-                                                <td><span class="badge badge-success">Active</span>
-                                                </td>
-                                                <td><div class="d-flex">
-                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                    </div></td>
-                                                    <td>        <a  class="btn btn-secondary btn-sm float-right"><i class="fa fa-user"></i>&nbsp;Login</a>
-</td>
-                                                    <td>        <Link to='/LC-admin/clientbrandlist' class="btn btn-primary btn-sm float-right"><i class="fa fa-eye"></i>&nbsp;Brands</Link>
-</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Vithal Chaudhary<a href="javascript:void();"></a>
-                                                </td>
-                                                <td>7890654321</td>
-                                                <td><span class="text-muted">vithalchaudhary@way2webworld.com</span>
-                                                </td>
-                                                <td>#98766</td>
-                                                <td><span class="badge badge-danger">Non-Active</span>
-                                                </td>
-                                                <td><div class="d-flex">
-                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                                    </div></td>
-                                                    <td>        <a  class="btn btn-secondary btn-sm float-right"><i class="fa fa-user"></i>&nbsp;Login</a>
-</td>
-                                                    <td>        <Link to='/LC-admin/clientbrandlist' class="btn btn-primary btn-sm float-right"><i class="fa fa-eye"></i>&nbsp;Brands</Link>
-</td>
-                                            </tr>
+      ))}                          
                                         </tbody>
                                     </table>
                                 </div>
